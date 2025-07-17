@@ -1,0 +1,26 @@
+meta:
+  version: 2
+  flow: FABulousTile
+  substituting_steps:
+    # Don't resize the buffers
+    OpenROAD.Resizer*: null
+    OpenROAD.RepairDesign*: null
+
+FABULOUS_TILE_DIR: dir::. #tiles/SE_term
+
+# Basics
+DESIGN_NAME: SE_term
+VERILOG_FILES:
+  - dir::../../models_pack.v
+  - dir::../../custom.v
+
+# Clock
+CLOCK_PERIOD: 20
+CLOCK_PORT: UserCLK
+
+# Area
+FP_SIZING: absolute
+pdk::ihp-sg13g2:
+    # Width should be multiple of 0.48 (Metal2 pitch)
+    # Height should be multiple of 0.42 (Metal3 pitch)
+    DIE_AREA: [0, 0, 107.52, 53.76]

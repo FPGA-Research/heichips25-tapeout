@@ -1,0 +1,233 @@
+{
+  "creator": "Yosys 0.54 (git sha1 db72ec3bde296a9512b2d1e6fabf81cfb07c2c1b, clang++ 19.1.7 -fPIC -O3)",
+  "modules": {
+    "TT_PROJECT": {
+      "attributes": {
+        "dynports": 1,
+        "cells_not_processed": 1,
+        "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:15.1-53.10"
+      },
+      "parameter_default_values": {
+        "NoConfigBits": 0
+      },
+      "ports": {
+        "UI_IN": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ]
+        },
+        "UO_OUT": {
+          "direction": "output",
+          "bits": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
+        },
+        "UIO_IN": {
+          "direction": "input",
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25 ]
+        },
+        "UIO_OUT": {
+          "direction": "output",
+          "bits": [ 26, 27, 28, 29, 30, 31, 32, 33 ]
+        },
+        "UIO_OE": {
+          "direction": "output",
+          "bits": [ 34, 35, 36, 37, 38, 39, 40, 41 ]
+        },
+        "ENA": {
+          "direction": "input",
+          "bits": [ 42 ]
+        },
+        "RST_N": {
+          "direction": "input",
+          "bits": [ 43 ]
+        },
+        "UI_IN_TT_PROJECT": {
+          "direction": "output",
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ]
+        },
+        "UO_OUT_TT_PROJECT": {
+          "direction": "input",
+          "bits": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
+        },
+        "UIO_IN_TT_PROJECT": {
+          "direction": "output",
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25 ]
+        },
+        "UIO_OUT_TT_PROJECT": {
+          "direction": "input",
+          "bits": [ 26, 27, 28, 29, 30, 31, 32, 33 ]
+        },
+        "UIO_OE_TT_PROJECT": {
+          "direction": "input",
+          "bits": [ 34, 35, 36, 37, 38, 39, 40, 41 ]
+        },
+        "ENA_TT_PROJECT": {
+          "direction": "output",
+          "bits": [ 42 ]
+        },
+        "CLK_TT_PROJECT": {
+          "direction": "output",
+          "bits": [ 44 ]
+        },
+        "RST_N_TT_PROJECT": {
+          "direction": "output",
+          "bits": [ 43 ]
+        },
+        "UserCLK": {
+          "direction": "input",
+          "bits": [ 44 ]
+        },
+        "ConfigBits": {
+          "direction": "input",
+          "offset": -1,
+          "upto": 1,
+          "bits": [ 45, 46 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "CLK_TT_PROJECT": {
+          "hide_name": 0,
+          "bits": [ 44 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:34.48-34.62"
+          }
+        },
+        "ConfigBits": {
+          "hide_name": 0,
+          "bits": [ 45, 46 ],
+          "offset": -1,
+          "upto": 1,
+          "attributes": {
+            "FABulous": 1,
+            "GLOBAL": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:40.54-40.64"
+          }
+        },
+        "ENA": {
+          "hide_name": 0,
+          "bits": [ 42 ],
+          "attributes": {
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:24.23-24.26"
+          }
+        },
+        "ENA_TT_PROJECT": {
+          "hide_name": 0,
+          "bits": [ 42 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:33.48-33.62"
+          }
+        },
+        "RST_N": {
+          "hide_name": 0,
+          "bits": [ 43 ],
+          "attributes": {
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:25.23-25.28"
+          }
+        },
+        "RST_N_TT_PROJECT": {
+          "hide_name": 0,
+          "bits": [ 43 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:35.48-35.64"
+          }
+        },
+        "UIO_IN": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25 ],
+          "attributes": {
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:21.23-21.29"
+          }
+        },
+        "UIO_IN_TT_PROJECT": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:30.48-30.65"
+          }
+        },
+        "UIO_OE": {
+          "hide_name": 0,
+          "bits": [ 34, 35, 36, 37, 38, 39, 40, 41 ],
+          "attributes": {
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:23.23-23.29"
+          }
+        },
+        "UIO_OE_TT_PROJECT": {
+          "hide_name": 0,
+          "bits": [ 34, 35, 36, 37, 38, 39, 40, 41 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:32.48-32.65"
+          }
+        },
+        "UIO_OUT": {
+          "hide_name": 0,
+          "bits": [ 26, 27, 28, 29, 30, 31, 32, 33 ],
+          "attributes": {
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:22.23-22.30"
+          }
+        },
+        "UIO_OUT_TT_PROJECT": {
+          "hide_name": 0,
+          "bits": [ 26, 27, 28, 29, 30, 31, 32, 33 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:31.48-31.66"
+          }
+        },
+        "UI_IN": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ],
+          "attributes": {
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:19.23-19.28"
+          }
+        },
+        "UI_IN_TT_PROJECT": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5, 6, 7, 8, 9 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:28.48-28.64"
+          }
+        },
+        "UO_OUT": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13, 14, 15, 16, 17 ],
+          "attributes": {
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:20.23-20.29"
+          }
+        },
+        "UO_OUT_TT_PROJECT": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13, 14, 15, 16, 17 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:29.48-29.65"
+          }
+        },
+        "UserCLK": {
+          "hide_name": 0,
+          "bits": [ 44 ],
+          "attributes": {
+            "EXTERNAL": 1,
+            "FABulous": 1,
+            "SHARED_PORT": 1,
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/E_TT_IF/TT_PROJECT.v:38.49-38.56"
+          }
+        }
+      }
+    }
+  }
+}

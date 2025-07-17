@@ -1,0 +1,134 @@
+meta:
+  version: 2
+  flow: Classic #CustomFlow
+  substituting_steps:
+    # IO pads are used instead of pins
+    OpenROAD.IOPlacement: null
+    +OpenROAD.Floorplan: OpenROAD.Padring
+    
+    # Add Seal Ring
+    +Checker.XOR: KLayout.SealRing
+    
+    # Run Filler insertion
+    +KLayout.SealRing: KLayout.FillerGeneration
+    
+    # Save time
+    #KLayout.DRC: null
+    Magic.DRC: null
+    #KLayout.XOR: null
+
+    Odb.ReportDisconnectedPins: null # TODO IOs
+
+    # Add steps for LVS with KLayout
+    #+Checker.LVS: OpenROAD.WriteCDL
+    #+OpenROAD.WriteCDL: KLayout.LVS
+
+DESIGN_NAME: heichips25_top
+VERILOG_FILES:
+- dir::src/heichips25_top.v
+- dir::src/heichips25_core.sv
+
+# TODO magic places the I/O pads at wrong positions
+#PRIMARY_GDSII_STREAMOUT_TOOL: klayout
+#MAGIC_EXT_USE_GDS: true
+
+# Use minimal DRC rules
+#KLAYOUT_DRC_RUNSET: pdk_dir::/libs.tech/klayout/tech/drc/sg13g2_minimal.lydrc
+
+KLAYOUT_DRC_OPTIONS:
+  densityRules: true
+
+EXTRA_GDS:
+- dir::ip/bondpad/bondpad_70x70.gds
+
+EXTRA_LEFS:
+- dir::ip/bondpad/bondpad_70x70.lef
+
+PAD_IO_SOUTH: [
+    [sg13g2_IOPadIn,            sg13g2_IOPadIn_fpga_clk],
+    [sg13g2_IOPadIn,            sg13g2_IOPadIn_fpga_rst_n],
+    
+    [sg13g2_IOPadInOut30mA,     sg13g2_IOPadInOut30mA_fpga_sclk],
+    [sg13g2_IOPadInOut30mA,     sg13g2_IOPadInOut30mA_fpga_cs_n],
+    [sg13g2_IOPadInOut30mA,     sg13g2_IOPadInOut30mA_fpga_mosi],
+    [sg13g2_IOPadInOut30mA,     sg13g2_IOPadInOut30mA_fpga_miso],
+    
+    [sg13g2_IOPadIn,            sg13g2_IOPadIn_fpga_mode],
+]
+
+PAD_IO_EAST: [
+    [sg13g2_IOPadIOVdd,         sg13g2_IOPadIOVdd_east],
+    [sg13g2_IOPadIOVss,         sg13g2_IOPadIOVss_east],
+    
+    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[0\\].tt_ui"],
+    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[1\\].tt_ui"],
+    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[2\\].tt_ui"],
+    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[3\\].tt_ui"],
+    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[4\\].tt_ui"],
+    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[5\\].tt_ui"],
+    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[6\\].tt_ui"],
+    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[7\\].tt_ui"],
+    
+    [sg13g2_IOPadVss,           sg13g2_IOPadVss_east],
+    [sg13g2_IOPadVdd,           sg13g2_IOPadVdd_east]
+]
+
+PAD_IO_NORTH: [
+    [sg13g2_IOPadIn,            sg13g2_IOPadIn_tt_clk],
+    [sg13g2_IOPadIn,            sg13g2_IOPadIn_tt_rst_n],
+
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[0\\].tt_uio"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[1\\].tt_uio"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[2\\].tt_uio"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[3\\].tt_uio"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[4\\].tt_uio"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[5\\].tt_uio"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[6\\].tt_uio"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[7\\].tt_uio"]
+]
+
+PAD_IO_WEST: [
+    [sg13g2_IOPadVdd,           sg13g2_IOPadVdd_west],
+    [sg13g2_IOPadVss,           sg13g2_IOPadVss_west],
+
+    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[0\\].tt_uo"],
+    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[1\\].tt_uo"],
+    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[2\\].tt_uo"],
+    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[3\\].tt_uo"],
+    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[4\\].tt_uo"],
+    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[5\\].tt_uo"],
+    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[6\\].tt_uo"],
+    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[7\\].tt_uo"],
+    
+    [sg13g2_IOPadIOVss,         sg13g2_IOPadIOVss_west],
+    [sg13g2_IOPadIOVdd,         sg13g2_IOPadIOVdd_west]
+]
+
+PNR_SDC_FILE: dir::constraint.sdc
+SIGNOFF_SDC_FILE: dir::constraint.sdc
+FALLBACK_SDC: dir::constraint.sdc
+
+VDD_NETS:
+- VDD
+GND_NETS:
+- VSS
+
+GRT_ALLOW_CONGESTION: true
+
+IGNORE_DISCONNECTED_MODULES:
+- sg13g2_IOPadIn
+- sg13g2_IOPadVdd
+- sg13g2_IOPadVss
+- sg13g2_IOPadInOut32mA
+- sg13g2_IOPadOut32mA
+- sg13g2_IOPadIOVss
+- sg13g2_IOPadIOVdd
+
+CLOCK_PORT: clock
+CLOCK_PERIOD: 100
+FP_SIZING: absolute
+DIE_AREA: [0, 0, 2800, 2800]
+CORE_AREA: [400, 400, 2400, 2400]
+PL_TARGET_DENSITY_PCT: 50
+
+FP_PDN_CFG: dir::pdn.tcl
