@@ -1,7 +1,7 @@
 PDK ?= ihp-sg13g2
 PDK_ROOT ?= ~/.ciel
 
-TILES = S_term_single N_term_single S_term_IHP_SRAM N_term_IHP_SRAM LUT4AB W_IO N_IO S_IO IHP_SRAM E_TT_IF W_TT_IF NE_term SE_term NW_term SW_term
+TILES = S_term_single N_term_single S_term_IHP_SRAM N_term_IHP_SRAM LUT4AB N_IO4 S_IO4 IHP_SRAM E_TT_IF W_TT_IF NE_term SE_term NW_term SW_term
 TILE_DIR = tiles
 
 TILE_PATHS := $(addprefix $(TILE_DIR)/,$(TILES))
