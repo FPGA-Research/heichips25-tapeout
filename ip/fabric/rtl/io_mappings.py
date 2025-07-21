@@ -1,6 +1,8 @@
-FABRIC_NUM_IO_WEST = 28
-FABRIC_NUM_IO_NORTH = 4
-NUM_SRAM = 7
+FABRIC_HEIGHT = 10
+FABRIC_NUM_IO_NORTH = 16
+FABRIC_NUM_IO_SOUTH = 16
+BELS_PER_IO_TILE = ['A', 'B', 'C', 'D']
+NUM_SRAM = 0
 SRAM_WIDTH = 32
 
 print(f'------------------ header ------------------\n')
@@ -9,42 +11,15 @@ print(f'    // Fabric is configured')
 print("""    input                                configured_i,\n""")
 
 # I/Os
-print(f'    // I/Os West')
-print("""    input  [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_in_i,
-    output [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_out_o,
-    output [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_oe_o,\n""")
-
-print(f'    // I/O West config')
-print("""    output [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_config_bit0_o,
-    output [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_config_bit1_o,
-    output [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_config_bit2_o,
-    output [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_config_bit3_o,\n""")
-
 print(f'    // I/Os North')
 print("""    input  [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_in_i,
     output [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_out_o,
     output [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_oe_o,\n""")
 
-print(f'    // I/O North config')
-print("""    output [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_config_bit0_o,
-    output [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_config_bit1_o,
-    output [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_config_bit2_o,
-    output [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_config_bit3_o,\n""")
-
-# WARMBOOT
-print(f'    // WARMBOOT')
-print("""    output        fabric_warmboot_boot_o,""")
-print("""    output  [3:0] fabric_warmboot_slot_o,""")
-print("""    input         fabric_warmboot_reset_i,\n""")
-
-# CPU_IRQ
-print(f'    // CPU_IRQ')
-print("""    output  [3:0] fabric_irq_o,\n""")
-
-# CPU_IF
-print(f'    // CPU_IF')
-print("""    output  [63:0] fabric_cpu_o,""")
-print("""    input   [63:0] fabric_cpu_i,\n""")
+print(f'    // I/Os South')
+print("""    input  [FABRIC_NUM_IO_SOUTH-1:0]      fabric_io_south_in_i,
+    output [FABRIC_NUM_IO_SOUTH-1:0]      fabric_io_south_out_o,
+    output [FABRIC_NUM_IO_SOUTH-1:0]      fabric_io_south_oe_o,\n""")
 
 print(f'------------------ signals ------------------\n')
 
@@ -66,76 +41,24 @@ for i in range(NUM_SRAM):
 print(f'------------------ body ------------------\n')
 
 # I/Os
-print(f"""        // West I/Os""")
-for i in range(1,(FABRIC_NUM_IO_WEST//2)+1):
-    print(f"""        .Tile_X0Y{i}_A_O_top(fabric_io_west_in_i[{FABRIC_NUM_IO_WEST-i*2+1}]),
-        .Tile_X0Y{i}_A_I_top(fabric_io_west_out_o[{FABRIC_NUM_IO_WEST-i*2+1}]),
-        .Tile_X0Y{i}_A_T_top(fabric_io_west_oe_o[{FABRIC_NUM_IO_WEST-i*2+1}]),\n""")
-
-    print(f"""        .Tile_X0Y{i}_B_O_top(fabric_io_west_in_i[{FABRIC_NUM_IO_WEST-i*2}]),
-        .Tile_X0Y{i}_B_I_top(fabric_io_west_out_o[{FABRIC_NUM_IO_WEST-i*2}]),
-        .Tile_X0Y{i}_B_T_top(fabric_io_west_oe_o[{FABRIC_NUM_IO_WEST-i*2}]),\n""")
-
-    print(f"""        .Tile_X0Y{i}_A_config_C_bit0(fabric_io_west_config_bit0_o[{FABRIC_NUM_IO_WEST-i*2+1}]),
-        .Tile_X0Y{i}_A_config_C_bit1(fabric_io_west_config_bit1_o[{FABRIC_NUM_IO_WEST-i*2+1}]),
-        .Tile_X0Y{i}_A_config_C_bit2(fabric_io_west_config_bit2_o[{FABRIC_NUM_IO_WEST-i*2+1}]),
-        .Tile_X0Y{i}_A_config_C_bit3(fabric_io_west_config_bit3_o[{FABRIC_NUM_IO_WEST-i*2+1}]),\n""")
-        
-    print(f"""        .Tile_X0Y{i}_B_config_C_bit0(fabric_io_west_config_bit0_o[{FABRIC_NUM_IO_WEST-i*2}]),
-        .Tile_X0Y{i}_B_config_C_bit1(fabric_io_west_config_bit1_o[{FABRIC_NUM_IO_WEST-i*2}]),
-        .Tile_X0Y{i}_B_config_C_bit2(fabric_io_west_config_bit2_o[{FABRIC_NUM_IO_WEST-i*2}]),
-        .Tile_X0Y{i}_B_config_C_bit3(fabric_io_west_config_bit3_o[{FABRIC_NUM_IO_WEST-i*2}]),\n""")
+print(f"""        // North I/Os""")
+num_bels = len(BELS_PER_IO_TILE)
+IO_NORTH_OFFSET = 1
+for i in range(IO_NORTH_OFFSET,(FABRIC_NUM_IO_NORTH//num_bels)+1):
+    for j, bel in enumerate(BELS_PER_IO_TILE):
+        print(f"""        .Tile_X{i}Y0_{bel}_O_top(io_north_in_i[{(i-IO_NORTH_OFFSET)*num_bels+j}]),
+        .Tile_X{i}Y0_{bel}_I_top(io_north_out_o[{(i-IO_NORTH_OFFSET)*num_bels+j}]),
+        .Tile_X{i}Y0_{bel}_T_top(io_north_oe_o[{(i-IO_NORTH_OFFSET)*num_bels+j}]),\n""")
 
 # I/Os
-print(f"""        // North I/Os""")
-for i in range(FABRIC_NUM_IO_NORTH//2):
-    print(f"""        .Tile_X{i+1}Y0_A_O_top(fabric_io_north_in_i[{i*2+1}]),
-        .Tile_X{i+1}Y0_A_I_top(fabric_io_north_out_o[{i*2+1}]),
-        .Tile_X{i+1}Y0_A_T_top(fabric_io_north_oe_o[{i*2+1}]),\n""")
-
-    print(f"""        .Tile_X{i+1}Y0_B_O_top(fabric_io_north_in_i[{i*2}]),
-        .Tile_X{i+1}Y0_B_I_top(fabric_io_north_out_o[{i*2}]),
-        .Tile_X{i+1}Y0_B_T_top(fabric_io_north_oe_o[{i*2}]),\n""")
-
-    print(f"""        .Tile_X{i+1}Y0_A_config_C_bit0(fabric_io_north_config_bit0_o[{i*2+1}]),
-        .Tile_X{i+1}Y0_A_config_C_bit1(fabric_io_north_config_bit1_o[{i*2+1}]),
-        .Tile_X{i+1}Y0_A_config_C_bit2(fabric_io_north_config_bit2_o[{i*2+1}]),
-        .Tile_X{i+1}Y0_A_config_C_bit3(fabric_io_north_config_bit3_o[{i*2+1}]),\n""")
-        
-    print(f"""        .Tile_X{i+1}Y0_B_config_C_bit0(fabric_io_north_config_bit0_o[{i*2}]),
-        .Tile_X{i+1}Y0_B_config_C_bit1(fabric_io_north_config_bit1_o[{i*2}]),
-        .Tile_X{i+1}Y0_B_config_C_bit2(fabric_io_north_config_bit2_o[{i*2}]),
-        .Tile_X{i+1}Y0_B_config_C_bit3(fabric_io_north_config_bit3_o[{i*2}]),\n""")
-
-# WARMBOOT
-warmboot_coords = 'X2Y15'
-print('        // WARMBOOT')
-print(f"""        .Tile_{warmboot_coords}_RESET_top(fabric_warmboot_reset_i),
-        .Tile_{warmboot_coords}_BOOT_top(fabric_warmboot_boot_o),
-        .Tile_{warmboot_coords}_SLOT_top0(fabric_warmboot_slot_o[0]),
-        .Tile_{warmboot_coords}_SLOT_top1(fabric_warmboot_slot_o[1]),
-        .Tile_{warmboot_coords}_SLOT_top2(fabric_warmboot_slot_o[2]),
-        .Tile_{warmboot_coords}_SLOT_top3(fabric_warmboot_slot_o[3]),
-        .Tile_{warmboot_coords}_CONFIGURED_top(configured_i),\n""")
-
-# IRQ
-irq_coords = 'X3Y15'
-print('        // IRQ')
-print(f"""        .Tile_{irq_coords}_IRQ_top0(fabric_irq_o[0]),
-        .Tile_{irq_coords}_IRQ_top1(fabric_irq_o[1]),
-        .Tile_{irq_coords}_IRQ_top2(fabric_irq_o[2]),
-        .Tile_{irq_coords}_IRQ_top3(fabric_irq_o[3]),
-        .Tile_{irq_coords}_CONFIGURED_top(configured_i),\n""")
-
-# CPU_IF
-cpu_if_coords = 'Y15'
-for index, i in enumerate([5, 6, 8, 9]):
-    print(f'        // CPU_IF {index}')
-    for j in range(16):
-        print(f'        .Tile_X{i}{cpu_if_coords}_I_top{j}(fabric_cpu_o[{16*index+j}]),')
-    for j in range(16):
-        print(f'        .Tile_X{i}{cpu_if_coords}_O_top{j}(fabric_cpu_i[{16*index+j}]),')
-    print('')
+print(f"""        // South I/Os""")
+num_bels = len(BELS_PER_IO_TILE)
+IO_SOUTH_OFFSET = 1
+for i in range(IO_SOUTH_OFFSET,(FABRIC_NUM_IO_SOUTH//num_bels)+1):
+    for j, bel in enumerate(BELS_PER_IO_TILE):
+        print(f"""        .Tile_X{i}Y{FABRIC_HEIGHT-1}_{bel}_O_top(io_south_in_i[{(i-IO_SOUTH_OFFSET)*num_bels+j}]),
+        .Tile_X{i}Y{FABRIC_HEIGHT-1}_{bel}_I_top(io_south_out_o[{(i-IO_SOUTH_OFFSET)*num_bels+j}]),
+        .Tile_X{i}Y{FABRIC_HEIGHT-1}_{bel}_T_top(io_south_oe_o[{(i-IO_SOUTH_OFFSET)*num_bels+j}]),\n""")
 
 # SRAM
 sram_coords = 'X10'

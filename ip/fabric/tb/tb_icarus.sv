@@ -14,11 +14,11 @@ module tb;
     parameter FrameBitsPerRow = 32;
     parameter MaxFramesPerCol = 20;
 
-    parameter NumColumns = 11;
-    parameter NumRows = 16;
+    parameter NumColumns = 6;
+    parameter NumRows = 10;
 
-    parameter FABRIC_NUM_IO_WEST = 28;
-    parameter FABRIC_NUM_IO_NORTH = 4;
+    parameter FABRIC_NUM_IO_NORTH = 16;
+    parameter FABRIC_NUM_IO_SOUTH = 16;
 
     wire clk_i;
     wire rst_ni;
@@ -37,55 +37,15 @@ module tb;
     wire [(FrameBitsPerRow*NumRows)-1:0]    FrameData_o;
     wire [(MaxFramesPerCol*NumColumns)-1:0] FrameStrobe_o;
     
-    // I/Os West
-    wire [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_in_i;
-    wire [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_out_o;
-    wire [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_oe_o;
-
-    // I/O West config
-    wire [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_config_bit0_o;
-    wire [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_config_bit1_o;
-    wire [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_config_bit2_o;
-    wire [FABRIC_NUM_IO_WEST-1:0]      fabric_io_west_config_bit3_o;
-
     // I/Os North
-    wire [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_in_i;
-    wire [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_out_o;
-    wire [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_oe_o;
+    wire [FABRIC_NUM_IO_NORTH-1:0]      io_north_in_i;
+    wire [FABRIC_NUM_IO_NORTH-1:0]      io_north_out_o;
+    wire [FABRIC_NUM_IO_NORTH-1:0]      io_north_oe_o;
 
-    // I/O West config
-    wire [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_config_bit0_o;
-    wire [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_config_bit1_o;
-    wire [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_config_bit2_o;
-    wire [FABRIC_NUM_IO_NORTH-1:0]      fabric_io_north_config_bit3_o;
-
-    // WARMBOOT
-    wire        fabric_warmboot_boot_o;
-    wire  [3:0] fabric_warmboot_slot_o;
-    wire        fabric_warmboot_reset_i;
-    
-    assign fabric_warmboot_reset_i = busy_o;
-
-    // CPU_IRQ
-    wire  [3:0] fabric_irq_o;
-
-    // CPU_IF - Selector
-    logic            fabric_xif_or_periph_i;
-    
-    // Custom instruction interface
-    logic [31:0]     fabric_rs1_i;
-    logic [31:0]     fabric_rs2_i;
-    logic [31:0]     fabric_result_o;
-    
-    // Bus interface
-    logic            fabric_gnt_o;
-    logic            fabric_req_i;
-    logic            fabric_rvalid_o;
-    logic            fabric_we_i;
-    logic [ 3:0]     fabric_be_i;
-    logic [23:0]     fabric_addr_i;
-    logic [31:0]     fabric_wdata_i;
-    logic [31:0]     fabric_rdata_o;
+    // I/Os South
+    wire [FABRIC_NUM_IO_SOUTH-1:0]      io_south_in_i;
+    wire [FABRIC_NUM_IO_SOUTH-1:0]      io_south_out_o;
+    wire [FABRIC_NUM_IO_SOUTH-1:0]      io_south_oe_o;
     
     fabric_config #(
         	.FrameBitsPerRow    (FrameBitsPerRow),
@@ -123,53 +83,15 @@ module tb;
         // Fabric is configured
         .configured_i   (configured_o),
         
-        // I/Os West
-        .fabric_io_west_in_i,
-        .fabric_io_west_out_o,
-        .fabric_io_west_oe_o,
-
-        // I/O West config
-        .fabric_io_west_config_bit0_o,
-        .fabric_io_west_config_bit1_o,
-        .fabric_io_west_config_bit2_o,
-        .fabric_io_west_config_bit3_o,
-        
         // I/Os North
-        .fabric_io_north_in_i,
-        .fabric_io_north_out_o,
-        .fabric_io_north_oe_o,
+        .io_north_in_i,
+        .io_north_out_o,
+        .io_north_oe_o,
 
-        // I/O North config
-        .fabric_io_north_config_bit0_o,
-        .fabric_io_north_config_bit1_o,
-        .fabric_io_north_config_bit2_o,
-        .fabric_io_north_config_bit3_o,
-
-        // WARMBOOT
-        .fabric_warmboot_boot_o,
-        .fabric_warmboot_slot_o,
-        .fabric_warmboot_reset_i,
-
-        // CPU_IRQ
-        .fabric_irq_o,
-
-        // CPU_IF - Selector
-        .fabric_xif_or_periph_i,
-
-        // Custom instruction interface
-        .fabric_rs1_i,
-        .fabric_rs2_i,
-        .fabric_result_o,
-
-        // Bus interface
-        .fabric_gnt_o,
-        .fabric_req_i,
-        .fabric_rvalid_o,
-        .fabric_we_i,
-        .fabric_be_i,
-        .fabric_addr_i,
-        .fabric_wdata_i,
-        .fabric_rdata_o
+        // I/Os South
+        .io_south_in_i,
+        .io_south_out_o,
+        .io_south_oe_o
     );
 
 endmodule

@@ -1,5 +1,5 @@
 FabricBegin,,,,,
-NW_term,N_IO,N_IO,N_IO,N_IO,NE_term
+NW_term,N_IO4,N_IO4,N_IO4,N_IO4,NE_term
 W_TT_IF,LUT4AB,LUT4AB,LUT4AB,LUT4AB,IHP_SRAM_top
 W_TT_IF,LUT4AB,LUT4AB,LUT4AB,LUT4AB,IHP_SRAM_bot
 W_TT_IF,LUT4AB,LUT4AB,LUT4AB,LUT4AB,E_TT_IF
@@ -8,7 +8,7 @@ W_TT_IF,LUT4AB,LUT4AB,LUT4AB,LUT4AB,E_TT_IF
 W_TT_IF,LUT4AB,LUT4AB,LUT4AB,LUT4AB,E_TT_IF
 W_TT_IF,LUT4AB,LUT4AB,LUT4AB,LUT4AB,E_TT_IF
 W_TT_IF,LUT4AB,LUT4AB,LUT4AB,LUT4AB,E_TT_IF
-SW_term,S_IO,S_IO,S_IO,S_IO,SE_term
+SW_term,S_IO4,S_IO4,S_IO4,S_IO4,SE_term
 FabricEnd,,,,,
 ,,,,,
 ParametersBegin,,,,,
@@ -23,8 +23,8 @@ SuperTileEnable,TRUE,#,TRUE,FALSE,
 Tile,../tile_library/tiles/LUT4AB/LUT4AB.csv,,,,
 Tile,../tile_library/tiles/E_TT_IF/E_TT_IF.csv,,,,
 Tile,../tile_library/tiles/W_TT_IF/W_TT_IF.csv,,,,
-Tile,../tile_library/tiles/N_IO/N_IO.csv,,,,
-Tile,../tile_library/tiles/S_IO/S_IO.csv,,,,
+Tile,../tile_library/tiles/N_IO4/N_IO4.csv,,,,
+Tile,../tile_library/tiles/S_IO4/S_IO4.csv,,,,
 Tile,../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/IHP_SRAM_bot.csv,,,,
 Tile,../tile_library/tiles/IHP_SRAM/IHP_SRAM_top/IHP_SRAM_top.csv,,,,
 Tile,../tile_library/tiles/NE_term/NE_term.csv,,,,

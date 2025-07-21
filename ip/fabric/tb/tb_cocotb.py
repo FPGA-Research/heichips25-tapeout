@@ -21,31 +21,29 @@ FrameBitsPerRow = 32
 MaxFramesPerCol = 20
 FrameSelectWidth = 5 # hardcoded, should be based on NumColumns
 
-NumColumns = 11
-NumRows = 16
+NumColumns = 6
+NumRows = 10
 
 BITSTREAM_START = 0xFAB0FAB1
 DESYNC_FLAG = 20
 
-FABRIC_NUM_IO_WEST = 28
-FABRIC_NUM_IO_NORTH = 4
+FABRIC_NUM_IO_NORTH = 16
+FABRIC_NUM_IO_SOUTH = 16
 
 run_all_zeros   = True
 run_all_ones    = True
 run_counter     = True
 run_passthrough = True
-run_sram        = True
-run_peripheral  = True
-run_xif         = True
+run_sram        = False
 
 def set_fabric_io(dut, value):
     value = value & 0xFFFFFFFF
 
-    dut.fabric_io_west_in_i.value = value & 0x0FFFFFFF
-    dut.fabric_io_north_in_i.value = (value & 0xF0000000) >> 28
+    dut.io_north_in_i.value = value & 0x0000FFFF
+    dut.io_south_in_i.value = (value & 0xFFFF0000) >> 16
 
 def get_fabric_io(dut):
-    value = dut.fabric_io_west_out_o.value | (dut.fabric_io_north_out_o.value << 28)
+    value = dut.io_north_out_o.value | (dut.io_south_out_o.value << 16)
     
     return value
 
@@ -58,19 +56,8 @@ async def set_defaults(dut):
     dut.bitstream_data_i.value = 0
     dut.bitstream_valid_i.value = 0
     
-    dut.fabric_io_west_in_i.value = 0
-    dut.fabric_io_north_in_i.value = 0
-    
-    dut.fabric_xif_or_periph_i.value = 0 # XIF
-    
-    dut.fabric_rs1_i.value = 13
-    dut.fabric_rs2_i.value = 42
-    
-    dut.fabric_req_i.value = 0
-    dut.fabric_we_i.value = 0
-    dut.fabric_be_i.value = 0
-    dut.fabric_addr_i.value = 13
-    dut.fabric_wdata_i.value = 42
+    dut.io_north_in_i.value = 0
+    dut.io_south_in_i.value = 0
     
     print('Clearing bitstream!')
     
@@ -334,133 +321,10 @@ async def test_sram(dut):
     
     await ClockCycles(dut.clk_i, 10)
 
-async def write_reg(dut, addr, data, be=0xF):
-    dut.fabric_req_i.value = 1
-    dut.fabric_we_i.value = 1
-    dut.fabric_be_i.value = be
-    dut.fabric_addr_i.value = addr
-    dut.fabric_wdata_i.value = data
-    
-    while 1:
-        await ClockCycles(dut.clk_i, 1)
-        if dut.fabric_gnt_o.value == 1 and dut.fabric_rvalid_o.value == 1:
-            dut.fabric_req_i.value = 0
-            dut.fabric_we_i.value = 0
-            dut.fabric_be_i.value = 0
-            dut.fabric_addr_i.value = 0
-            dut.fabric_wdata_i.value = 0
-            await ClockCycles(dut.clk_i, 1)
-            return
-
-async def read_reg(dut, addr):
-    dut.fabric_req_i.value = 1
-    dut.fabric_we_i.value = 0
-    dut.fabric_be_i.value = 0
-    dut.fabric_addr_i.value = addr
-    dut.fabric_wdata_i.value = 0
-
-    while 1:
-        await ClockCycles(dut.clk_i, 1)
-        if dut.fabric_gnt_o.value == 1 and dut.fabric_rvalid_o.value == 1:
-            rdata = dut.fabric_rdata_o.value
-            dut.fabric_req_i.value = 0
-            dut.fabric_we_i.value = 0
-            dut.fabric_be_i.value = 0
-            dut.fabric_addr_i.value = 0
-            dut.fabric_wdata_i.value = 0
-            await ClockCycles(dut.clk_i, 1)
-            return rdata
-
-@cocotb.test(skip=run_peripheral==False)
-async def test_peripheral(dut):
-    """Load bitstream for peripheral"""
-
-    # Start the clock
-    c = Clock(dut.clk_i, 10, 'ns')
-    await cocotb.start(c.start())
-
-    # Assign default values
-    await set_defaults(dut)
-    await reset_design(dut)
-    dut._log.info("Reset done")
-    
-    await upload_bitstream(dut, 'peripheral')
-
-    dut.fabric_xif_or_periph_i.value = 1 # Peripheral
-
-    NUM_REGS = 32
-
-    for i in range(NUM_REGS):
-        for _ in range(5):
-            value = random.randint(0,(1<<32)-1)
-            
-            await write_reg(dut, i, value)
-            assert (await read_reg(dut, i) == value)
-
-    for i in reversed(range(NUM_REGS)):
-        for _ in range(5):
-            value = random.randint(0,(1<<32)-1)
-            
-            await write_reg(dut, i, value)
-            assert (await read_reg(dut, i) == value)
-
-    # Test byte enable
-    await write_reg(dut, 0, 0)
-
-    await write_reg(dut, 0, 0x000000FF, be=0x1)
-    assert (await read_reg(dut, 0) == 0x000000FF)
-    
-    await write_reg(dut, 0, 0xFF000000, be=0x8)
-    assert (await read_reg(dut, 0) == 0xFF0000FF)
-    
-    await write_reg(dut, 0, 0xFFFF00FF, be=0x2)
-    assert (await read_reg(dut, 0) == 0xFF0000FF)
-    
-    await write_reg(dut, 0, 0x000000FF, be=0x8)
-    assert (await read_reg(dut, 0) == 0x000000FF)
-    
-    await write_reg(dut, 0, 0xDEADBEEF)
-    assert (await read_reg(dut, 0) == 0xDEADBEEF)
-    
-    await ClockCycles(dut.clk_i, 10)
-
-@cocotb.test(skip=run_xif==False)
-async def test_xif(dut):
-    """Load bitstream for xif"""
-
-    # Start the clock
-    c = Clock(dut.clk_i, 10, 'ns')
-    await cocotb.start(c.start())
-
-    # Assign default values
-    await set_defaults(dut)
-    await reset_design(dut)
-    dut._log.info("Reset done")
-    
-    await upload_bitstream(dut, 'xif')
-    
-    dut.fabric_xif_or_periph_i.value = 0 # XIF
-    
-    values_rs1 = [random.randint(0,(1<<32)-1) for _ in range(10)]
-    values_rs2 = [random.randint(0,(1<<32)-1) for _ in range(10)]
-    
-    for value_rs1, value_rs2 in zip(values_rs1, values_rs2):
-    
-        result = (value_rs1 + value_rs2) & 0xFFFFFFFF
-    
-        dut.fabric_rs1_i.value = value_rs1
-        dut.fabric_rs2_i.value = value_rs2
-        
-        await ClockCycles(dut.clk_i, 1)
-        
-        assert (dut.fabric_result_o.value == result)
-
-    await ClockCycles(dut.clk_i, 10)
-
 if __name__ == "__main__":
 
     sim = os.getenv("SIM", "icarus")
-    pdk_root = os.getenv("PDK_ROOT", "~/.volare")
+    pdk_root = os.getenv("PDK_ROOT", "~/.ciel")
     pdk = os.getenv("PDK", "ihp-sg13g2")
     scl = os.getenv("SCL", "sg13g2_stdcell")
     gl = os.getenv("GL", None)
@@ -470,7 +334,7 @@ if __name__ == "__main__":
     # Add fabric wrapper, fabric config and tb wrapper
     sources = [
         '../rtl/fabric_wrapper.sv',
-        '../../rtl/fabric_config.sv',
+        '../../fabric_config/fabric_config.sv',
         'tb_icarus.sv',
         
         # SRAM models
@@ -479,43 +343,26 @@ if __name__ == "__main__":
     ]
     
     # Add tiles
-    TILES_ROOT = '../../fabulous_tiles/tiles'
+    TILES_ROOT = '../../tile_library/tiles'
 
     if gl:
         # GL does not work because of pessimistic x-propagation!
         sources.append(f'../macro/{pdk}/nl/eFPGA.nl.v')
         sources.append(Path(pdk_root).expanduser() / pdk / "libs.ref" / scl / "verilog" / f"{scl}.v" )
         
-        sources.append(f'{TILES_ROOT}/DSP/macro/{pdk}/nl/DSP.nl.v')
-        sources.append(f'{TILES_ROOT}/IHP_SRAM/macro/{pdk}/nl/IHP_SRAM.nl.v')
         sources.append(f'{TILES_ROOT}/LUT4AB/macro/{pdk}/nl/LUT4AB.nl.v')
-        sources.append(f'{TILES_ROOT}/N_IO/macro/{pdk}/nl/N_IO.nl.v')
-        sources.append(f'{TILES_ROOT}/N_term_DSP/macro/{pdk}/nl/N_term_DSP.nl.v')
-        sources.append(f'{TILES_ROOT}/N_term_IHP_SRAM/macro/{pdk}/nl/N_term_IHP_SRAM.nl.v')
-        sources.append(f'{TILES_ROOT}/N_term_single/macro/{pdk}/nl/N_term_single.nl.v')
-        sources.append(f'{TILES_ROOT}/N_term_single2/macro/{pdk}/nl/N_term_single2.nl.v')
-        sources.append(f'{TILES_ROOT}/RegFile/macro/{pdk}/nl/RegFile.nl.v')
-        sources.append(f'{TILES_ROOT}/S_CPU_IF/macro/{pdk}/nl/S_CPU_IF.nl.v')
-        sources.append(f'{TILES_ROOT}/S_CPU_IRQ/macro/{pdk}/nl/S_CPU_IRQ.nl.v')
-        sources.append(f'{TILES_ROOT}/S_WARMBOOT/macro/{pdk}/nl/S_WARMBOOT.nl.v')
-        sources.append(f'{TILES_ROOT}/S_term_DSP/macro/{pdk}/nl/S_term_DSP.nl.v')
-        sources.append(f'{TILES_ROOT}/S_term_IHP_SRAM/macro/{pdk}/nl/S_term_IHP_SRAM.nl.v')
-        sources.append(f'{TILES_ROOT}/S_term_single/macro/{pdk}/nl/S_term_single.nl.v')
-        sources.append(f'{TILES_ROOT}/S_term_single2/macro/{pdk}/nl/S_term_single2.nl.v')
-        sources.append(f'{TILES_ROOT}/W_IO/macro/{pdk}/nl/W_IO.nl.v')
+        sources.append(f'{TILES_ROOT}/E_TT_IF/macro/{pdk}/nl/E_TT_IF.nl.v')
+        sources.append(f'{TILES_ROOT}/W_TT_IF/macro/{pdk}/nl/W_TT_IF.nl.v')
+        sources.append(f'{TILES_ROOT}/N_IO4/macro/{pdk}/nl/N_IO4.nl.v')
+        sources.append(f'{TILES_ROOT}/S_IO4/macro/{pdk}/nl/S_IO4.nl.v')
+        sources.append(f'{TILES_ROOT}/IHP_SRAM/macro/{pdk}/nl/IHP_SRAM.nl.v')
+        sources.append(f'{TILES_ROOT}/NE_term/macro/{pdk}/nl/NE_term.nl.v')
+        sources.append(f'{TILES_ROOT}/SE_term/macro/{pdk}/nl/SE_term.nl.v')
+        sources.append(f'{TILES_ROOT}/NW_term/macro/{pdk}/nl/NW_term.nl.v')
+        sources.append(f'{TILES_ROOT}/SW_term/macro/{pdk}/nl/SW_term.nl.v')
     else:
         # Add fabric
         sources.append(f'../macro/{pdk}/fabulous/eFPGA.v')
-        
-        # DSP
-        sources.append(f'{TILES_ROOT}/DSP/DSP.v')
-        sources.append(f'{TILES_ROOT}/DSP/DSP_bot/DSP_bot.v')
-        sources.append(f'{TILES_ROOT}/DSP/DSP_bot/DSP_bot_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/DSP/DSP_bot/DSP_bot_switch_matrix.v')
-        sources.append(f'{TILES_ROOT}/DSP/DSP_bot/MULADD.v')
-        sources.append(f'{TILES_ROOT}/DSP/DSP_top/DSP_top.v')
-        sources.append(f'{TILES_ROOT}/DSP/DSP_top/DSP_top_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/DSP/DSP_top/DSP_top_switch_matrix.v')
         
         # LUT4AB
         sources.append(f'{TILES_ROOT}/LUT4AB/LUT4AB.v')
@@ -524,74 +371,28 @@ if __name__ == "__main__":
         sources.append(f'{TILES_ROOT}/LUT4AB/LUT4c_frame_config_dffesr.v')
         sources.append(f'{TILES_ROOT}/LUT4AB/MUX8LUT_frame_config_mux.v')
         
-        # N_term_DSP
-        sources.append(f'{TILES_ROOT}/N_term_DSP/N_term_DSP.v')
-        sources.append(f'{TILES_ROOT}/N_term_DSP/N_term_DSP_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/N_term_DSP/N_term_DSP_switch_matrix.v')
+        # E_TT_IF
+        sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF.v')
+        sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF_ConfigMem.v')
+        sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF_switch_matrix.v')
+        sources.append(f'{TILES_ROOT}/E_TT_IF/TT_PROJECT.v')
         
-        # N_term_single
-        sources.append(f'{TILES_ROOT}/N_term_single/N_term_single.v')
-        sources.append(f'{TILES_ROOT}/N_term_single/N_term_single_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/N_term_single/N_term_single_switch_matrix.v')
+        # W_TT_IF
+        sources.append(f'{TILES_ROOT}/W_TT_IF/W_TT_IF.v')
+        sources.append(f'{TILES_ROOT}/W_TT_IF/W_TT_IF_ConfigMem.v')
+        sources.append(f'{TILES_ROOT}/W_TT_IF/W_TT_IF_switch_matrix.v')
         
-        # N_term_single2
-        sources.append(f'{TILES_ROOT}/N_term_single2/N_term_single2.v')
-        sources.append(f'{TILES_ROOT}/N_term_single2/N_term_single2_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/N_term_single2/N_term_single2_switch_matrix.v')
-
-        # RegFile
-        sources.append(f'{TILES_ROOT}/RegFile/RegFile.v')
-        sources.append(f'{TILES_ROOT}/RegFile/RegFile_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/RegFile/RegFile_switch_matrix.v')
-        sources.append(f'{TILES_ROOT}/RegFile/RegFile_32x4.v')
+        # N_IO4
+        sources.append(f'{TILES_ROOT}/N_IO4/N_IO4.v')
+        sources.append(f'{TILES_ROOT}/N_IO4/N_IO4_ConfigMem.v')
+        sources.append(f'{TILES_ROOT}/N_IO4/N_IO4_switch_matrix.v')
+        sources.append(f'{TILES_ROOT}/N_IO4/IO_1_bidirectional_frame_config_pass.v')
         
-        # S_term_DSP
-        sources.append(f'{TILES_ROOT}/S_term_DSP/S_term_DSP.v')
-        sources.append(f'{TILES_ROOT}/S_term_DSP/S_term_DSP_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/S_term_DSP/S_term_DSP_switch_matrix.v')
+        # S_IO4
+        sources.append(f'{TILES_ROOT}/S_IO4/S_IO4.v')
+        sources.append(f'{TILES_ROOT}/S_IO4/S_IO4_ConfigMem.v')
+        sources.append(f'{TILES_ROOT}/S_IO4/S_IO4_switch_matrix.v')
         
-        # S_term_single
-        sources.append(f'{TILES_ROOT}/S_term_single/S_term_single.v')
-        sources.append(f'{TILES_ROOT}/S_term_single/S_term_single_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/S_term_single/S_term_single_switch_matrix.v')
-
-        # S_term_single2
-        sources.append(f'{TILES_ROOT}/S_term_single2/S_term_single2.v')
-        sources.append(f'{TILES_ROOT}/S_term_single2/S_term_single2_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/S_term_single2/S_term_single2_switch_matrix.v')
-
-        # W_IO
-        sources.append(f'{TILES_ROOT}/W_IO/W_IO.v')
-        sources.append(f'{TILES_ROOT}/W_IO/W_IO_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/W_IO/W_IO_switch_matrix.v')
-        sources.append(f'{TILES_ROOT}/W_IO/IO_1_bidirectional_frame_config_pass.v')
-        sources.append(f'{TILES_ROOT}/W_IO/Config_access.v')
-
-        # N_IO
-        sources.append(f'{TILES_ROOT}/N_IO/N_IO.v')
-        sources.append(f'{TILES_ROOT}/N_IO/N_IO_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/N_IO/N_IO_switch_matrix.v')
-        #sources.append(f'{TILES_ROOT}/N_IO/IO_1_bidirectional_frame_config_pass.v')
-        #sources.append(f'{TILES_ROOT}/N_IO/Config_access.v')
-
-        # S_WARMBOOT
-        sources.append(f'{TILES_ROOT}/S_WARMBOOT/S_WARMBOOT.v')
-        sources.append(f'{TILES_ROOT}/S_WARMBOOT/S_WARMBOOT_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/S_WARMBOOT/S_WARMBOOT_switch_matrix.v')
-        sources.append(f'{TILES_ROOT}/S_WARMBOOT/WARMBOOT.v')
-        
-        # S_CPU_IF
-        sources.append(f'{TILES_ROOT}/S_CPU_IF/S_CPU_IF.v')
-        sources.append(f'{TILES_ROOT}/S_CPU_IF/S_CPU_IF_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/S_CPU_IF/S_CPU_IF_switch_matrix.v')
-        sources.append(f'{TILES_ROOT}/S_CPU_IF/CPU_IF.v')
-
-        # S_CPU_IRQ
-        sources.append(f'{TILES_ROOT}/S_CPU_IRQ/S_CPU_IRQ.v')
-        sources.append(f'{TILES_ROOT}/S_CPU_IRQ/S_CPU_IRQ_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/S_CPU_IRQ/S_CPU_IRQ_switch_matrix.v')
-        sources.append(f'{TILES_ROOT}/S_CPU_IRQ/CPU_IRQ.v')
-
         # IHP_SRAM
         sources.append(f'{TILES_ROOT}/IHP_SRAM/IHP_SRAM.v')
         sources.append(f'{TILES_ROOT}/IHP_SRAM/IHP_SRAM_bot/IHP_SRAM_bot.v')
@@ -601,18 +402,28 @@ if __name__ == "__main__":
         sources.append(f'{TILES_ROOT}/IHP_SRAM/IHP_SRAM_top/IHP_SRAM_top.v')
         sources.append(f'{TILES_ROOT}/IHP_SRAM/IHP_SRAM_top/IHP_SRAM_top_ConfigMem.v')
         sources.append(f'{TILES_ROOT}/IHP_SRAM/IHP_SRAM_top/IHP_SRAM_top_switch_matrix.v')
+        
+        # NE_term
+        sources.append(f'{TILES_ROOT}/NE_term/NE_term.v')
+        sources.append(f'{TILES_ROOT}/NE_term/NE_term_ConfigMem.v')
+        sources.append(f'{TILES_ROOT}/NE_term/NE_term_switch_matrix.v')
+        
+        # SE_term
+        sources.append(f'{TILES_ROOT}/SE_term/SE_term.v')
+        sources.append(f'{TILES_ROOT}/SE_term/SE_term_ConfigMem.v')
+        sources.append(f'{TILES_ROOT}/SE_term/SE_term_switch_matrix.v')
+        
+        # NW_term
+        sources.append(f'{TILES_ROOT}/NW_term/NW_term.v')
+        sources.append(f'{TILES_ROOT}/NW_term/NW_term_ConfigMem.v')
+        sources.append(f'{TILES_ROOT}/NW_term/NW_term_switch_matrix.v')
+        
+        # SW_term
+        sources.append(f'{TILES_ROOT}/SW_term/SW_term.v')
+        sources.append(f'{TILES_ROOT}/SW_term/SW_term_ConfigMem.v')
+        sources.append(f'{TILES_ROOT}/SW_term/SW_term_switch_matrix.v')
 
-        # N_term_IHP_SRAM
-        sources.append(f'{TILES_ROOT}/N_term_IHP_SRAM/N_term_IHP_SRAM.v')
-        sources.append(f'{TILES_ROOT}/N_term_IHP_SRAM/N_term_IHP_SRAM_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/N_term_IHP_SRAM/N_term_IHP_SRAM_switch_matrix.v')
-
-        # S_term_IHP_SRAM
-        sources.append(f'{TILES_ROOT}/S_term_IHP_SRAM/S_term_IHP_SRAM.v')
-        sources.append(f'{TILES_ROOT}/S_term_IHP_SRAM/S_term_IHP_SRAM_ConfigMem.v')
-        sources.append(f'{TILES_ROOT}/S_term_IHP_SRAM/S_term_IHP_SRAM_switch_matrix.v')
-
-        sources.append('../../fabulous_tiles/models_pack.v')
+        sources.append('../../tile_library/models_pack.v')
 
     hdl_toplevel = "tb"
 
