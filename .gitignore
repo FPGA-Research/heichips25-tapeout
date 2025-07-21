@@ -9,6 +9,8 @@ runs/
 *.bin
 *.hex
 
+.~lock.*
+
 extract_script.tcl
 extraction/
 feedback.txt

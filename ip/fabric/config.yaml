@@ -12,7 +12,8 @@ meta:
     
     # New version of OpenROAD says
     # that it needs stdcell rows
-    OpenROAD.DetailedPlacement: null
+    # (even though we don't use any stdcells)
+    #OpenROAD.DetailedPlacement: null
 
 # Basics
 DESIGN_NAME: eFPGA
@@ -34,7 +35,7 @@ FABULOUS_TILE_SPACING: 0
 # Horizontal spacing should be multiple of 0.48 (Metal3 pitch)
 # The halo was chosen so that there's just enough space for the pins
 # except for the bottom: here the clock net needs to be routed
-FABULOUS_HALO_SPACING: [ 0.48, 4.2, 0.48, 0.48 ]
+FABULOUS_HALO_SPACING: [ 0.48, 46.2, 0.48, 0.48 ]
 
 # Match spacing if possible
 FP_IO_HLENGTH: 0.48
@@ -59,9 +60,41 @@ PRIMARY_GDSII_STREAMOUT_TOOL: klayout
 FP_IO_MIN_DISTANCE: 0.42 # horizontal grid distance
 
 # Manual pin placement to prevent congestion
-#FABULOUS_MANUAL_PINS:
-#    "FrameData[0]": [Metal2, 0.24, 3453.92, 0.48, 0.4]
+FABULOUS_MANUAL_PINS:
 
+    "UserCLK": [Metal2, 5.76, 0.24, 0.4, 0.48]
+
+    "FrameStrobe[0]": [Metal2, 10.56, 0.24, 0.4, 0.48]
+    "FrameStrobe[1]": [Metal2, 15.36, 0.24, 0.4, 0.48]
+    "FrameStrobe[2]": [Metal2, 20.16, 0.24, 0.4, 0.48]
+    "FrameStrobe[3]": [Metal2, 24.96, 0.24, 0.4, 0.48]
+    "FrameStrobe[4]": [Metal2, 29.76, 0.24, 0.4, 0.48]
+    "FrameStrobe[5]": [Metal2, 34.56, 0.24, 0.4, 0.48]
+
+    "FrameStrobe[109]": [Metal2, 1021.44, 0.24, 0.4, 0.48]
+    "FrameStrobe[110]": [Metal2, 1026.24, 0.24, 0.4, 0.48]
+
+    "FrameStrobe[111]": [Metal2, 1031.04, 0.24, 0.4, 0.48]
+    "FrameStrobe[112]": [Metal2, 1035.84, 0.24, 0.4, 0.48]
+    "FrameStrobe[113]": [Metal2, 1040.64, 0.24, 0.4, 0.48]
+    "FrameStrobe[114]": [Metal2, 1045.44, 0.24, 0.4, 0.48]
+    "FrameStrobe[115]": [Metal2, 1050.24, 0.24, 0.4, 0.48]
+    "FrameStrobe[116]": [Metal2, 1055.04, 0.24, 0.4, 0.48]
+    "FrameStrobe[117]": [Metal2, 1059.84, 0.24, 0.4, 0.48]
+    "FrameStrobe[118]": [Metal2, 1064.64, 0.24, 0.4, 0.48]
+    "FrameStrobe[119]": [Metal2, 1069.44, 0.24, 0.4, 0.48]
+    
+    "FrameData[22]": [Metal3, 0.24, 1857.66, 0.48, 0.4]
+    "FrameData[23]": [Metal3, 0.24, 1859.34, 0.48, 0.4]
+    "FrameData[24]": [Metal3, 0.24, 1861.02, 0.48, 0.4]
+    "FrameData[25]": [Metal3, 0.24, 1862.70, 0.48, 0.4]
+    "FrameData[26]": [Metal3, 0.24, 1864.38, 0.48, 0.4]
+    "FrameData[27]": [Metal3, 0.24, 1866.06, 0.48, 0.4]
+    "FrameData[28]": [Metal3, 0.24, 1867.74, 0.48, 0.4]
+    "FrameData[29]": [Metal3, 0.24, 1869.42, 0.48, 0.4]
+    "FrameData[30]": [Metal3, 0.24, 1871.10, 0.48, 0.4]
+    "FrameData[31]": [Metal3, 0.24, 1872.78, 0.48, 0.4]
+    
 # Clock
 CLOCK_PERIOD: 20
 CLOCK_PORT: UserCLK
