@@ -22,14 +22,38 @@ set clk_core_inout_30mA_ports [get_ports {
 	fpga_cs_n_PAD
 	fpga_mosi_PAD
 	fpga_miso_PAD
-	tt_uio_PAD[0]
-	tt_uio_PAD[1]
-	tt_uio_PAD[2]
-	tt_uio_PAD[3]
-	tt_uio_PAD[4]
-	tt_uio_PAD[5]
-	tt_uio_PAD[6]
-	tt_uio_PAD[7]
+	fpga_io_PAD[0]
+	fpga_io_PAD[1]
+	fpga_io_PAD[2]
+	fpga_io_PAD[3]
+	fpga_io_PAD[4]
+	fpga_io_PAD[5]
+	fpga_io_PAD[6]
+	fpga_io_PAD[7]
+	fpga_io_PAD[8]
+	fpga_io_PAD[9]
+	fpga_io_PAD[10]
+	fpga_io_PAD[11]
+	fpga_io_PAD[12]
+	fpga_io_PAD[13]
+	fpga_io_PAD[14]
+	fpga_io_PAD[15]
+	fpga_io_PAD[16]
+	fpga_io_PAD[17]
+	fpga_io_PAD[18]
+	fpga_io_PAD[19]
+	fpga_io_PAD[20]
+	fpga_io_PAD[21]
+	fpga_io_PAD[22]
+	fpga_io_PAD[23]
+	fpga_io_PAD[24]
+	fpga_io_PAD[25]
+	fpga_io_PAD[26]
+	fpga_io_PAD[27]
+	fpga_io_PAD[28]
+	fpga_io_PAD[29]
+	fpga_io_PAD[30]
+	fpga_io_PAD[31]
 }] 
 set_driving_cell -lib_cell sg13g2_IOPadInOut30mA -pin pad $clk_core_inout_30mA_ports
 set_input_delay 8 -clock clk_core $clk_core_inout_30mA_ports
@@ -38,29 +62,12 @@ set_output_delay 8 -clock clk_core $clk_core_inout_30mA_ports
 set clk_core_input_ports [get_ports { 
 	fpga_rst_n_PAD 
 	fpga_mode_PAD
-	tt_clk_PAD
-	tt_rst_n_PAD
-	tt_ui_PAD[0]
-	tt_ui_PAD[1]
-	tt_ui_PAD[2]
-	tt_ui_PAD[3]
-	tt_ui_PAD[4]
-	tt_ui_PAD[5]
-	tt_ui_PAD[6]
-	tt_ui_PAD[7]
 }] 
 set_driving_cell -lib_cell sg13g2_IOPadIn -pin pad $clk_core_input_ports
 set_input_delay 8 -clock clk_core $clk_core_input_ports
 
 set clk_core_output_30mA_ports [get_ports { 
-    tt_uo_PAD[0]
-    tt_uo_PAD[1]
-    tt_uo_PAD[2]
-    tt_uo_PAD[3]
-    tt_uo_PAD[4]
-    tt_uo_PAD[5]
-    tt_uo_PAD[6]
-    tt_uo_PAD[7]
+    fpga_config_busy_PAD
 }] 
 set_driving_cell -lib_cell sg13g2_IOPadOut30mA -pin pad $clk_core_output_30mA_ports
 set_output_delay 8 -clock clk_core $clk_core_output_30mA_ports

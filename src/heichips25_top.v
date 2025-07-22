@@ -11,12 +11,9 @@ module heichips25_top (
     inout  wire         fpga_miso_PAD,
 
     inout  wire         fpga_mode_PAD,
+    output wire         fpga_config_busy_PAD,
 
-    inout  wire         tt_clk_PAD,
-    inout  wire         tt_rst_n_PAD,
-    inout  wire [7:0]   tt_ui_PAD,
-    inout  wire [7:0]   tt_uo_PAD,
-    inout  wire [7:0]   tt_uio_PAD
+    inout  wire [31:0]  fpga_io_PAD
 );
     // FPGA
     wire fpga_clk_PAD2CORE;
@@ -39,16 +36,12 @@ module heichips25_top (
     wire fpga_miso_PAD2CORE;
     
     wire fpga_mode_PAD2CORE;
+    
+    wire fpga_config_busy_CORE2PAD;
 
-    // Tiny Tapeout
-    wire       tt_clk_PAD2CORE;
-    wire       tt_rst_n_PAD2CORE;
-
-    wire [7:0] tt_ui_PAD2CORE;
-    wire [7:0] tt_uo_CORE2PAD;
-    wire [7:0] tt_uio_PAD2CORE;
-    wire [7:0] tt_uio_CORE2PAD;
-    wire [7:0] tt_uio_CORE2PAD_EN;
+    wire [31:0] fpga_io_PAD2CORE;
+    wire [31:0] fpga_io_CORE2PAD;
+    wire [31:0] fpga_io_CORE2PAD_EN;
 
     // Power/Ground IO pad instances
     
@@ -120,49 +113,31 @@ module heichips25_top (
         .p2c (fpga_mode_PAD2CORE),
         .pad (fpga_mode_PAD)
     );
-
-    // Tiny Tapeout IO pad instances
-
-    sg13g2_IOPadIn sg13g2_IOPadIn_tt_clk (
-        .p2c (tt_clk_PAD2CORE),
-        .pad (tt_clk_PAD)
+    
+    sg13g2_IOPadOut30mA sg13g2_IOPadOut30mA_fpga_config_busy (
+        .c2p (fpga_config_busy_CORE2PAD),
+        .pad (fpga_config_busy_PAD)
     );
-
-    sg13g2_IOPadIn sg13g2_IOPadIn_tt_rst_n (
-        .p2c (tt_rst_n_PAD2CORE),
-        .pad (tt_rst_n_PAD)
-    );
-
-    generate
-    for (genvar i=0; i<8; i++) begin : sg13g2_IOPadIn_tt_ui
-        sg13g2_IOPadIn tt_ui (
-            .p2c (tt_ui_PAD2CORE[i]),
-            .pad (tt_ui_PAD[i])
-        );
-    end
-    endgenerate
-
-    generate
-    for (genvar i=0; i<8; i++) begin : sg13g2_IOPadOut30mA_tt_uo
-        sg13g2_IOPadOut30mA tt_uo (
-            .c2p (tt_uo_CORE2PAD[i]),
-            .pad (tt_uo_PAD[i])
-        );
-    end
-    endgenerate
     
     generate
-    for (genvar i=0; i<8; i++) begin : sg13g2_IOPadInOut30mA_tt_uio
-        sg13g2_IOPadInOut30mA tt_uio (
-            .c2p    (tt_uio_CORE2PAD[i]),
-            .c2p_en (tt_uio_CORE2PAD_EN[i]),
-            .p2c    (tt_uio_PAD2CORE[i]),
-            .pad    (tt_uio_PAD[i])
+    for (genvar i=0; i<32; i++) begin : sg13g2_IOPadInOut30mA_fpga_io
+        sg13g2_IOPadInOut30mA fpga_io (
+            .c2p    (fpga_io_CORE2PAD[i]),
+            .c2p_en (fpga_io_CORE2PAD_EN[i]),
+            .p2c    (fpga_io_PAD2CORE[i]),
+            .pad    (fpga_io_PAD[i])
         );
     end
     endgenerate
 
+    // TODO synchronize reset deassert!
+
+    wire [32-1:0] fabric_io_in_i;
+    wire [32-1:0] fabric_io_out_o;
+    wire [32-1:0] fabric_io_oe_o;
+
     // Core
+    // TODO remove keep
     (* keep *) heichips25_core heichips25_core (
         // FPGA
         .fpga_clk_i     (fpga_clk_PAD2CORE),
@@ -185,16 +160,12 @@ module heichips25_top (
         .fpga_miso_en_o (fpga_miso_CORE2PAD_EN),
 
         .fpga_mode_i    (fpga_mode_PAD2CORE),
+        .fpga_config_busy_o (fpga_config_busy_CORE2PAD),
 
-        // Tiny Tapeout
-        .tt_clk_i       (tt_clk_PAD2CORE),
-        .tt_rst_n_i     (tt_rst_n_PAD2CORE),
-
-        .tt_ui_in       (tt_ui_PAD2CORE),
-        .tt_uo_out      (tt_uo_CORE2PAD),
-        .tt_uio_in      (tt_uio_PAD2CORE),
-        .tt_uio_out     (tt_uio_CORE2PAD),
-        .tt_uio_oe      (tt_uio_CORE2PAD_EN)
+        // I/Os FPGA
+        .fabric_io_in_i     (fpga_io_PAD2CORE),
+        .fabric_io_out_o    (fpga_io_CORE2PAD),
+        .fabric_io_oe_o     (fpga_io_CORE2PAD_EN)
     );
 
 endmodule

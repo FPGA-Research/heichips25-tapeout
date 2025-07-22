@@ -27,6 +27,10 @@ DESIGN_NAME: heichips25_top
 VERILOG_FILES:
 - dir::src/heichips25_top.v
 - dir::src/heichips25_core.sv
+- dir::ip/fabric/rtl/fabric_wrapper.sv
+- dir::ip/fabric_config/fabric_config.sv
+- dir::ip/fabric_config/fabric_spi_controller.sv
+- dir::ip/fabric_config/fabric_spi_receiver.sv
 
 # TODO magic places the I/O pads at wrong positions
 #PRIMARY_GDSII_STREAMOUT_TOOL: klayout
@@ -54,51 +58,58 @@ PAD_IO_SOUTH: [
     [sg13g2_IOPadInOut30mA,     sg13g2_IOPadInOut30mA_fpga_miso],
     
     [sg13g2_IOPadIn,            sg13g2_IOPadIn_fpga_mode],
+    [sg13g2_IOPadOut30mA,       sg13g2_IOPadOut30mA_fpga_config_busy],
+    
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[0\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[1\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[2\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[3\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[4\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[5\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[6\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[7\\].fpga_io"]
 ]
 
 PAD_IO_EAST: [
     [sg13g2_IOPadIOVdd,         sg13g2_IOPadIOVdd_east],
     [sg13g2_IOPadIOVss,         sg13g2_IOPadIOVss_east],
     
-    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[0\\].tt_ui"],
-    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[1\\].tt_ui"],
-    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[2\\].tt_ui"],
-    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[3\\].tt_ui"],
-    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[4\\].tt_ui"],
-    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[5\\].tt_ui"],
-    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[6\\].tt_ui"],
-    [sg13g2_IOPadIn,            "sg13g2_IOPadIn_tt_ui\\[7\\].tt_ui"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[8\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[9\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[10\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[11\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[12\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[13\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[14\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[15\\].fpga_io"],
     
     [sg13g2_IOPadVss,           sg13g2_IOPadVss_east],
     [sg13g2_IOPadVdd,           sg13g2_IOPadVdd_east]
 ]
 
 PAD_IO_NORTH: [
-    [sg13g2_IOPadIn,            sg13g2_IOPadIn_tt_clk],
-    [sg13g2_IOPadIn,            sg13g2_IOPadIn_tt_rst_n],
-
-    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[0\\].tt_uio"],
-    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[1\\].tt_uio"],
-    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[2\\].tt_uio"],
-    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[3\\].tt_uio"],
-    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[4\\].tt_uio"],
-    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[5\\].tt_uio"],
-    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[6\\].tt_uio"],
-    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_tt_uio\\[7\\].tt_uio"]
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[16\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[17\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[18\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[19\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[20\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[21\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[22\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[23\\].fpga_io"]
 ]
 
 PAD_IO_WEST: [
     [sg13g2_IOPadVdd,           sg13g2_IOPadVdd_west],
     [sg13g2_IOPadVss,           sg13g2_IOPadVss_west],
 
-    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[0\\].tt_uo"],
-    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[1\\].tt_uo"],
-    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[2\\].tt_uo"],
-    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[3\\].tt_uo"],
-    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[4\\].tt_uo"],
-    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[5\\].tt_uo"],
-    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[6\\].tt_uo"],
-    [sg13g2_IOPadOut30mA,            "sg13g2_IOPadOut30mA_tt_uo\\[7\\].tt_uo"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[24\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[25\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[26\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[27\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[28\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[29\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[30\\].fpga_io"],
+    [sg13g2_IOPadInOut30mA,            "sg13g2_IOPadInOut30mA_fpga_io\\[31\\].fpga_io"],
     
     [sg13g2_IOPadIOVss,         sg13g2_IOPadIOVss_west],
     [sg13g2_IOPadIOVdd,         sg13g2_IOPadIOVdd_west]
@@ -128,7 +139,26 @@ CLOCK_PORT: clock
 CLOCK_PERIOD: 100
 FP_SIZING: absolute
 DIE_AREA: [0, 0, 2800, 2800]
-CORE_AREA: [400, 400, 2400, 2400]
+CORE_AREA: [345, 345, 2455, 2455]
 PL_TARGET_DENSITY_PCT: 50
 
 FP_PDN_CFG: dir::pdn.tcl
+
+MACROS:
+  eFPGA:
+    gds:
+      - dir::ip/fabric/macro/ihp-sg13g2/gds/eFPGA.gds
+    lef:
+      - dir::ip/fabric/macro/ihp-sg13g2/lef/eFPGA.lef
+    nl:
+      - dir::ip/fabric/macro/ihp-sg13g2/nl/eFPGA.nl.v
+    spef:
+      "nom_*":
+        - dir::ip/fabric/macro/ihp-sg13g2/spef/nom/eFPGA.nom.spef
+    instances: 
+      heichips25_core.fabric_wrapper.eFPGA:
+        location: [800, 500]
+        orientation: N
+
+PDN_MACRO_CONNECTIONS:
+  - "heichips25_core.fabric_wrapper.eFPGA VDD VSS VPWR VGND"
