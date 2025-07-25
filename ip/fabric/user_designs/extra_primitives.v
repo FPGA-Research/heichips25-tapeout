@@ -13,6 +13,59 @@
 // limitations under the License.
 
 (* blackbox *)
+module TT_PROJECT (
+    input  UI_IN0,
+    input  UI_IN1,
+    input  UI_IN2,
+    input  UI_IN3,
+    input  UI_IN4,
+    input  UI_IN5,
+    input  UI_IN6,
+    input  UI_IN7,
+
+    output UO_OUT0,
+    output UO_OUT1,
+    output UO_OUT2,
+    output UO_OUT3,
+    output UO_OUT4,
+    output UO_OUT5,
+    output UO_OUT6,
+    output UO_OUT7,
+
+    input  UIO_IN0,
+    input  UIO_IN1,
+    input  UIO_IN2,
+    input  UIO_IN3,
+    input  UIO_IN4,
+    input  UIO_IN5,
+    input  UIO_IN6,
+    input  UIO_IN7,
+
+    output UIO_OUT0,
+    output UIO_OUT1,
+    output UIO_OUT2,
+    output UIO_OUT3,
+    output UIO_OUT4,
+    output UIO_OUT5,
+    output UIO_OUT6,
+    output UIO_OUT7,
+        
+    output UIO_OE0,
+    output UIO_OE1,
+    output UIO_OE2,
+    output UIO_OE3,
+    output UIO_OE4,
+    output UIO_OE5,
+    output UIO_OE6,
+    output UIO_OE7,
+        
+    input  ENA,
+    input  RST_N
+);
+
+endmodule
+
+(* blackbox *)
 module IHP_SRAM_1024x32 (
     input  ADDR0,
     input  ADDR1,

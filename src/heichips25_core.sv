@@ -110,9 +110,9 @@ module heichips25_core (
     logic startup_trigger;
     always_ff @(posedge fpga_clk_i, negedge fpga_rst_ni) begin
         if (!fpga_rst_ni) begin
-            startup_trigger = 1'b1;
+            startup_trigger <= 1'b1;
         end else begin
-            startup_trigger = 1'b0;
+            startup_trigger <= 1'b0;
         end
     end
 
@@ -245,7 +245,7 @@ module heichips25_core (
     );
     
     // TODO remove keep
-    (* keep *) fabric_wrapper fabric_wrapper (
+    fabric_wrapper fabric_wrapper (
         .clk_i  (fpga_clk_i),
         
         // Configuration

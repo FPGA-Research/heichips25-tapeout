@@ -10,8 +10,6 @@ from cocotb.triggers import ClockCycles
 from cocotb.triggers import Timer, Edge, RisingEdge, FallingEdge
 from cocotb.regression import TestFactory
 from cocotb.runner import get_runner
-#from cocotb_tools.runner import get_runner
-from cocotbext.uart import UartSource, UartSink
 
 from cocotbext.spi import SpiBus, SpiConfig, SpiMaster
 

@@ -138,8 +138,8 @@ IGNORE_DISCONNECTED_MODULES:
 CLOCK_PORT: clock
 CLOCK_PERIOD: 100
 FP_SIZING: absolute
-DIE_AREA: [0, 0, 2800, 2800]
-CORE_AREA: [345, 345, 2455, 2455]
+DIE_AREA: [0, 0, 3000, 2600]
+CORE_AREA: [345, 345, 2655, 2255]
 PL_TARGET_DENSITY_PCT: 50
 
 FP_PDN_CFG: dir::pdn.tcl
@@ -157,8 +157,67 @@ MACROS:
         - dir::ip/fabric/macro/ihp-sg13g2/spef/nom/eFPGA.nom.spef
     instances: 
       heichips25_core.fabric_wrapper.eFPGA:
-        location: [800, 500]
+        location: [875, 400]
+        orientation: N
+  heichips25_example_small:
+    gds:
+      - dir::ip/user_designs/heichips25_example_small/macro/gds/heichips25_example_small.gds
+    lef:
+      - dir::ip/user_designs/heichips25_example_small/macro/lef/heichips25_example_small.lef
+    nl:
+      - dir::ip/user_designs/heichips25_example_small/macro/nl/heichips25_example_small.nl.v
+    spef:
+      "nom_*":
+        - dir::ip/user_designs/heichips25_example_small/macro/spef/nom/heichips25_example_small.nom.spef
+    instances: 
+      heichips25_core.fabric_wrapper.heichips25_example_small_0:
+        location: [355, 1970]
+        orientation: FN
+      heichips25_core.fabric_wrapper.heichips25_example_small_1:
+        location: [355, 1755]
+        orientation: FN
+      heichips25_core.fabric_wrapper.heichips25_example_small_2:
+        location: [355, 1540]
+        orientation: FN
+      heichips25_core.fabric_wrapper.heichips25_example_small_3:
+        location: [355, 1325]
+        orientation: FN
+      heichips25_core.fabric_wrapper.heichips25_example_small_4:
+        location: [355, 1110]
+        orientation: FN
+      heichips25_core.fabric_wrapper.heichips25_example_small_5:
+        location: [355, 895]
+        orientation: FN
+      heichips25_core.fabric_wrapper.heichips25_example_small_6:
+        location: [355, 680]
+        orientation: FN
+      heichips25_core.fabric_wrapper.heichips25_example_small_7:
+        location: [355, 465]
+        orientation: FN
+
+      heichips25_core.fabric_wrapper.heichips25_example_small_8:
+        location: [2000, 1540]
+        orientation: N
+      heichips25_core.fabric_wrapper.heichips25_example_small_9:
+        location: [2000, 1325]
+        orientation: N
+      heichips25_core.fabric_wrapper.heichips25_example_small_10:
+        location: [2000, 1110]
+        orientation: N
+      heichips25_core.fabric_wrapper.heichips25_example_small_11:
+        location: [2000, 895]
+        orientation: N
+      heichips25_core.fabric_wrapper.heichips25_example_small_12:
+        location: [2000, 680]
+        orientation: N
+      heichips25_core.fabric_wrapper.heichips25_example_small_13:
+        location: [2000, 465]
         orientation: N
 
+
+
+
+# TODO update pdn config
 PDN_MACRO_CONNECTIONS:
-  - "heichips25_core.fabric_wrapper.eFPGA VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.eFPGA VDD VSS VPWR VGND" 
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_0 VDD VSS VPWR VGND"

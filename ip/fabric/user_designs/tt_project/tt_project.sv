@@ -1,0 +1,24 @@
+module top(
+    input  wire        clk,
+    input  wire [`NUM_IO-1:0] io_in,
+    output wire [`NUM_IO-1:0] io_out,
+    output wire [`NUM_IO-1:0] io_oeb
+);
+
+    logic [7:0] uio_oe;
+
+    // Top left
+    (* keep, BEL="X0Y1" *) TT_PROJECT_wrapper TT_PROJECT_wrapper (
+        .UI_IN      (io_in[7:0]),
+        .UO_OUT     (io_out[7:0]),
+        .UIO_IN     (io_in[15:8]),
+        .UIO_OUT    (io_out[15:8]),
+        .UIO_OE     (uio_oe),
+        .ENA        (1'b1),
+        .RST_N      (1'b0)
+    );
+    
+    assign io_oeb[7:0] = ~uio_oe;
+    assign io_oeb[`NUM_IO-1:8] = '1;
+
+endmodule

@@ -5,6 +5,29 @@ BELS_PER_IO_TILE = ['A', 'B', 'C', 'D']
 NUM_SRAM = 0
 SRAM_WIDTH = 32
 
+# coord: (module, instance)
+tt_projects = {
+    # left side
+    'X0Y1': ('heichips25_example_small', 'heichips25_example_small_0'),
+    'X0Y2': ('heichips25_example_small', 'heichips25_example_small_1'),
+    'X0Y3': ('heichips25_example_small', 'heichips25_example_small_2'),
+    'X0Y4': ('heichips25_example_small', 'heichips25_example_small_3'),
+    'X0Y5': ('heichips25_example_small', 'heichips25_example_small_4'),
+    'X0Y6': ('heichips25_example_small', 'heichips25_example_small_5'),
+    'X0Y7': ('heichips25_example_small', 'heichips25_example_small_6'),
+    'X0Y8': ('heichips25_example_small', 'heichips25_example_small_7'),
+
+    # right side
+    # SRAM Top
+    # SRAM Bot
+    'X5Y3': ('heichips25_example_small', 'heichips25_example_small_8'),
+    'X5Y4': ('heichips25_example_small', 'heichips25_example_small_9'),
+    'X5Y5': ('heichips25_example_small', 'heichips25_example_small_10'),
+    'X5Y6': ('heichips25_example_small', 'heichips25_example_small_11'),
+    'X5Y7': ('heichips25_example_small', 'heichips25_example_small_12'),
+    'X5Y8': ('heichips25_example_small', 'heichips25_example_small_13'),
+}
+
 print(f'------------------ header ------------------\n')
 
 print(f'    // Fabric is configured')
@@ -22,6 +45,17 @@ print("""    input  [FABRIC_NUM_IO_SOUTH-1:0]      fabric_io_south_in_i,
     output [FABRIC_NUM_IO_SOUTH-1:0]      fabric_io_south_oe_o,\n""")
 
 print(f'------------------ signals ------------------\n')
+
+for i, coords in enumerate(tt_projects.keys()):
+    print(f'    // TT_PROJECT {i} ({coords})')
+    print(f'    logic [7:0] tt_project_{i}_ui_in;')
+    print(f'    logic [7:0] tt_project_{i}_uo_out;')
+    print(f'    logic [7:0] tt_project_{i}_uio_in;')
+    print(f'    logic [7:0] tt_project_{i}_uio_out;')
+    print(f'    logic [7:0] tt_project_{i}_uio_oe;')
+    print(f'    logic  tt_project_{i}_ena;')
+    print(f'    logic  tt_project_{i}_clk;')
+    print(f'    logic  tt_project_{i}_rst_n;\n')
 
 # SRAM
 for i in range(NUM_SRAM):
@@ -60,6 +94,27 @@ for i in range(IO_SOUTH_OFFSET,(FABRIC_NUM_IO_SOUTH//num_bels)+1):
         .Tile_X{i}Y{FABRIC_HEIGHT-1}_{bel}_I_top(io_south_out_o[{(i-IO_SOUTH_OFFSET)*num_bels+j}]),
         .Tile_X{i}Y{FABRIC_HEIGHT-1}_{bel}_T_top(io_south_oe_o[{(i-IO_SOUTH_OFFSET)*num_bels+j}]),\n""")
 
+
+# TT_PROJECT
+for i, coords in enumerate(tt_projects.keys()):
+    print(f'        // TT_PROJECT {i} ({coords})')
+    
+    for j in range(8):
+        print(f'        .Tile_{coords}_UI_IN_TT_PROJECT{j}(tt_project_{i}_ui_in[{j}]),')
+    for j in range(8):
+        print(f'        .Tile_{coords}_UO_OUT_TT_PROJECT{j}(tt_project_{i}_uo_out[{j}]),')
+    for j in range(8):
+        print(f'        .Tile_{coords}_UIO_IN_TT_PROJECT{j}(tt_project_{i}_uio_in[{j}]),')
+    for j in range(8):
+        print(f'        .Tile_{coords}_UIO_OUT_TT_PROJECT{j}(tt_project_{i}_uio_out[{j}]),')
+    for j in range(8):
+        print(f'        .Tile_{coords}_UIO_OE_TT_PROJECT{j}(tt_project_{i}_uio_oe[{j}]),')
+
+    print(f'        .Tile_{coords}_ENA_TT_PROJECT(tt_project_{i}_ena),')
+    print(f'        .Tile_{coords}_CLK_TT_PROJECT(tt_project_{i}_clk),')
+    print(f'        .Tile_{coords}_RST_N_TT_PROJECT(tt_project_{i}_rst_n),')
+    print('')
+
 # SRAM
 sram_coords = 'X10'
 for i in range(NUM_SRAM):
@@ -82,6 +137,27 @@ for i in range(NUM_SRAM):
     print('')
 
 print(f'------------------ modules ------------------\n')
+
+for i, (coord, mod_inst) in enumerate(tt_projects.items()):
+
+    if not mod_inst:
+        print(f"""assign tt_project_{i}_uo_out  = '0;
+assign tt_project_{i}_uio_out = '0;
+assign tt_project_{i}_uio_oe  = '0;\n""")
+    else:
+        module, instance = mod_inst
+
+        print(f"""{module} {instance} (
+    .clk        (tt_project_{i}_clk),
+    .rst_n      (tt_project_{i}_rst_n),
+    .ena        (tt_project_{i}_ena),
+    .ui_in      (tt_project_{i}_ui_in),
+    .uio_in     (tt_project_{i}_uio_in),
+    .uo_out     (tt_project_{i}_uo_out),
+    .uio_out    (tt_project_{i}_uio_out),
+    .uio_oe     (tt_project_{i}_uio_oe)
+);\n""")
+
 
 for i in range(NUM_SRAM):
 

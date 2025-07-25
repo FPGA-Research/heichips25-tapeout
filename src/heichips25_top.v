@@ -12,6 +12,9 @@ module heichips25_top (
 
     inout  wire         fpga_mode_PAD,
     output wire         fpga_config_busy_PAD,
+    //output wire         fpga_config_configured_PAD,
+    //input  wire [3:0]   fpga_config_slot_PAD,
+    //input  wire         fpga_config_trigger_PAD,
 
     inout  wire [31:0]  fpga_io_PAD
 );
@@ -137,8 +140,7 @@ module heichips25_top (
     wire [32-1:0] fabric_io_oe_o;
 
     // Core
-    // TODO remove keep
-    (* keep *) heichips25_core heichips25_core (
+    heichips25_core heichips25_core (
         // FPGA
         .fpga_clk_i     (fpga_clk_PAD2CORE),
         .fpga_rst_ni    (fpga_rst_n_PAD2CORE),

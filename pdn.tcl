@@ -72,13 +72,13 @@ add_pdn_stripe \
 add_pdn_connect -grid stdcell_grid -layers "$::env(FP_PDN_RAIL_LAYER) $::env(FP_PDN_VERTICAL_LAYER)"
 add_pdn_connect -grid stdcell_grid -layers "$::env(FP_PDN_VERTICAL_LAYER) $::env(FP_PDN_HORIZONTAL_LAYER)"
 
-# eFPGA grid
 define_pdn_grid \
     -macro \
-    -instances "heichips25_core.fabric_wrapper.eFPGA" \
-    -name eFPGA \
-    -starts_with POWER
+    -default \
+    -name macro \
+    -starts_with POWER \
+    -halo "$::env(FP_PDN_HORIZONTAL_HALO) $::env(FP_PDN_VERTICAL_HALO)"
 
 add_pdn_connect \
-    -grid eFPGA \
+    -grid macro \
     -layers "$::env(FP_PDN_VERTICAL_LAYER) $::env(FP_PDN_HORIZONTAL_LAYER)"
