@@ -337,8 +337,12 @@ if __name__ == "__main__":
         '../../fabric_config/fabric_config.sv',
         'tb_icarus.sv',
         
+        # User projects
+        proj_path / '../../user_projects/heichips25_example_large/src/heichips25_example_large.sv',
+        proj_path / '../../user_projects/heichips25_example_small/src/heichips25_example_small.sv',
+        
         # SRAM models
-        Path(pdk_root).expanduser() / pdk / "libs.ref" / "sg13g2_sram" / "verilog" / "RM_IHPSG13_1P_1024x16_c2_bm_bist.v",
+        Path(pdk_root).expanduser() / pdk / "libs.ref" / "sg13g2_sram" / "verilog" / "RM_IHPSG13_1P_512x32_c2_bm_bist.v",
         Path(pdk_root).expanduser() / pdk / "libs.ref" / "sg13g2_sram" / "verilog" / "RM_IHPSG13_1P_core_behavioral_bm_bist.v",
     ]
     
@@ -364,6 +368,14 @@ if __name__ == "__main__":
         # Add fabric
         sources.append(f'../macro/{pdk}/fabulous/eFPGA.v')
         
+        # Add primitives
+        PRIMITIVES_ROOT = proj_path / '../../tile_library/primitives'
+        
+        # TT_PROJECT
+        sources.append(f'{PRIMITIVES_ROOT}/TT_PROJECT/TT_PROJECT.v')
+
+        # Add tiles
+        
         # LUT4AB
         sources.append(f'{TILES_ROOT}/LUT4AB/LUT4AB.v')
         sources.append(f'{TILES_ROOT}/LUT4AB/LUT4AB_ConfigMem.v')
@@ -375,7 +387,6 @@ if __name__ == "__main__":
         sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF.v')
         sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF_ConfigMem.v')
         sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF_switch_matrix.v')
-        sources.append(f'{TILES_ROOT}/E_TT_IF/TT_PROJECT.v')
         
         # W_TT_IF
         sources.append(f'{TILES_ROOT}/W_TT_IF/W_TT_IF.v')

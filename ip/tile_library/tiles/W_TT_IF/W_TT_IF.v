@@ -5,7 +5,7 @@ module W_TT_IF
 `endif
         parameter MaxFramesPerCol=20,
         parameter FrameBitsPerRow=32,
-        parameter NoConfigBits=278
+        parameter NoConfigBits=298
     )
     (
  //Side.NORTH
@@ -1251,8 +1251,8 @@ W_TT_IF_switch_matrix Inst_W_TT_IF_switch_matrix (
     .J_NS1_BEG1(J_NS1_BEG[1]),
     .J_NS1_BEG2(J_NS1_BEG[2]),
     .J_NS1_BEG3(J_NS1_BEG[3]),
-    .ConfigBits(ConfigBits[278-1:0]),
-    .ConfigBits_N(ConfigBits_N[278-1:0])
+    .ConfigBits(ConfigBits[298-1:0]),
+    .ConfigBits_N(ConfigBits_N[298-1:0])
 );
 
 endmodule

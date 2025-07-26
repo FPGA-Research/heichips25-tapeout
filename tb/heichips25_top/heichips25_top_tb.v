@@ -24,8 +24,13 @@ module heichips25_top_tb;
     
     wire          fpga_mode_PAD;
     wire          fpga_config_busy_PAD;
-
+    wire          fpga_config_configured_PAD;
+    wire [3:0]    fpga_config_slot_PAD;
+    wire          fpga_config_trigger_PAD;
+    
     wire [31:0]   fpga_io_PAD;
+
+    wire [9:0]    analog_PAD;
     
     `ifdef BITSTREAM_FLASH
     
@@ -62,8 +67,13 @@ module heichips25_top_tb;
 
         .fpga_mode_PAD,
         .fpga_config_busy_PAD,
+        .fpga_config_configured_PAD,
+        .fpga_config_slot_PAD,
+        .fpga_config_trigger_PAD,
 
-        .fpga_io_PAD
+        .fpga_io_PAD,
+        
+        .analog_PAD
     );
 
 endmodule

@@ -82,3 +82,16 @@ define_pdn_grid \
 add_pdn_connect \
     -grid macro \
     -layers "$::env(FP_PDN_VERTICAL_LAYER) $::env(FP_PDN_HORIZONTAL_LAYER)"
+
+# sram grid
+define_pdn_grid \
+    -macro \
+    -instances "\
+heichips25_core.fabric_wrapper.sram0_0 \
+heichips25_core.fabric_wrapper.sram0_1" \
+    -name sram \
+    -starts_with POWER
+
+add_pdn_connect \
+    -grid sram \
+    -layers "Metal4 $::env(FP_PDN_HORIZONTAL_LAYER)"

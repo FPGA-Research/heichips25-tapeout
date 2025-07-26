@@ -78,6 +78,8 @@ async def test_fpga_all_zeros(dut):
 
     # Static setup
     dut.fpga_mode_PAD.value = 0 # Configure FPGA as controller
+    dut.fpga_config_slot_PAD.value = 0
+    dut.fpga_config_trigger_PAD.value = 0
 
     # Start up
     await start_up(dut)
@@ -111,6 +113,8 @@ async def test_fpga_all_ones(dut):
 
     # Static setup
     dut.fpga_mode_PAD.value = 1 # Configure FPGA as receiver
+    dut.fpga_config_slot_PAD.value = 0
+    dut.fpga_config_trigger_PAD.value = 0
 
     # Start up
     await start_up(dut)
@@ -136,6 +140,8 @@ async def test_fpga_counter_top(dut):
 
     # Static setup
     dut.fpga_mode_PAD.value = 0 # Configure FPGA as controller
+    dut.fpga_config_slot_PAD.value = 0
+    dut.fpga_config_trigger_PAD.value = 0
 
     # Start up
     await start_up(dut)
@@ -172,8 +178,12 @@ if __name__ == "__main__":
         testbench_path / 'heichips25_top_tb.v',
         testbench_path / 'spiflash_powered.v',
         
+        # User projects
+        testbench_path / '../../ip/user_projects/heichips25_example_large/src/heichips25_example_large.sv',
+        testbench_path / '../../ip/user_projects/heichips25_example_small/src/heichips25_example_small.sv',
+        
         # SRAM models
-        Path(pdk_root).expanduser() / pdk / "libs.ref" / "sg13g2_sram" / "verilog" / "RM_IHPSG13_1P_1024x16_c2_bm_bist.v",
+        Path(pdk_root).expanduser() / pdk / "libs.ref" / "sg13g2_sram" / "verilog" / "RM_IHPSG13_1P_512x32_c2_bm_bist.v",
         Path(pdk_root).expanduser() / pdk / "libs.ref" / "sg13g2_sram" / "verilog" / "RM_IHPSG13_1P_core_behavioral_bm_bist.v",
         
         # IO Pad models
@@ -205,6 +215,12 @@ if __name__ == "__main__":
     # Add FPGA fabric
     verilog_sources.append(testbench_path / f'../../ip/fabric/macro/{pdk}/fabulous/eFPGA.v')
 
+    # Add primitives
+    PRIMITIVES_ROOT = testbench_path / '../../ip/tile_library/primitives'
+    
+    # TT_PROJECT
+    verilog_sources.append(f'{PRIMITIVES_ROOT}/TT_PROJECT/TT_PROJECT.v')
+
     # Add tiles
     TILES_ROOT = testbench_path / '../../ip/tile_library/tiles'
     
@@ -219,7 +235,6 @@ if __name__ == "__main__":
     verilog_sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF.v')
     verilog_sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF_ConfigMem.v')
     verilog_sources.append(f'{TILES_ROOT}/E_TT_IF/E_TT_IF_switch_matrix.v')
-    verilog_sources.append(f'{TILES_ROOT}/E_TT_IF/TT_PROJECT.v')
     
     # W_TT_IF
     verilog_sources.append(f'{TILES_ROOT}/W_TT_IF/W_TT_IF.v')

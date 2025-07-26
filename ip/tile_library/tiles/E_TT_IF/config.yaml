@@ -32,5 +32,5 @@ pdk::ihp-sg13g2:
     # Height should be multiple of 0.42 (Metal3 pitch)
     DIE_AREA: [0, 0, 107.52, 215.04]
     
-    PL_TARGET_DENSITY_PCT: 84
+    PL_TARGET_DENSITY_PCT: 94
     SYNTH_STRATEGY: "AREA 2" # "AREA 0" "AREA 1" "AREA 2" "AREA 3"

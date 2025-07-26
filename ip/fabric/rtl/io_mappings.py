@@ -2,7 +2,7 @@ FABRIC_HEIGHT = 10
 FABRIC_NUM_IO_NORTH = 16
 FABRIC_NUM_IO_SOUTH = 16
 BELS_PER_IO_TILE = ['A', 'B', 'C', 'D']
-NUM_SRAM = 0
+NUM_SRAM = 1
 SRAM_WIDTH = 32
 
 # coord: (module, instance)
@@ -116,7 +116,7 @@ for i, coords in enumerate(tt_projects.keys()):
     print('')
 
 # SRAM
-sram_coords = 'X10'
+sram_coords = 'X5'
 for i in range(NUM_SRAM):
     print(f'        // SRAM {i}')
     for j in range(SRAM_WIDTH):
@@ -161,44 +161,63 @@ assign tt_project_{i}_uio_oe  = '0;\n""")
 
 for i in range(NUM_SRAM):
 
-    print(f"""RM_IHPSG13_1P_1024x16_c2_bm_bist sram{i}_0 (
+    print(f"""# SRAM {i} instances
+
+logic [31:0] fabric_sram{i}_dout_sram{i}_0;
+logic [31:0] fabric_sram{i}_dout_sram{i}_1;
+
+logic select_sram{i};
+
+always_ff @(posedge clk_i) begin
+    select_sram{i} <= fabric_sram{i}_addr_o[9]; // Highest bit selects the SRAM
+end
+
+always_comb begin
+    if (select_sram{i}) begin
+        fabric_sram{i}_dout_i = fabric_sram{i}_dout_sram{i}_1;
+    end else begin
+        fabric_sram{i}_dout_i = fabric_sram{i}_dout_sram{i}_0;
+    end
+end
+
+RM_IHPSG13_1P_512x32_c2_bm_bist sram{i}_0 (
     .A_CLK      (fabric_sram{i}_clk_o),
-    .A_MEN      (fabric_sram{i}_men_o),
+    .A_MEN      (fabric_sram{i}_men_o && select_sram{i} == 1'b0),
     .A_WEN      (fabric_sram{i}_wen_o),
     .A_REN      (fabric_sram{i}_ren_o),
-    .A_ADDR     (fabric_sram{i}_addr_o),
-    .A_DIN      (fabric_sram{i}_din_o[15:0]),
+    .A_ADDR     (fabric_sram{i}_addr_o[8:0]),
+    .A_DIN      (fabric_sram{i}_din_o),
     .A_DLY      (fabric_sram{i}_tie_high_o),
-    .A_DOUT     (fabric_sram{i}_dout_i[15:0]),
-    .A_BM       (fabric_sram{i}_bm_o[15:0]),
+    .A_DOUT     (fabric_sram{i}_dout_sram{i}_0),
+    .A_BM       (fabric_sram{i}_bm_o),
 
     .A_BIST_EN      (fabric_sram{i}_tie_low_o),
     .A_BIST_CLK     (fabric_sram{i}_tie_low_o),
     .A_BIST_MEN     (fabric_sram{i}_tie_low_o),
     .A_BIST_WEN     (fabric_sram{i}_tie_low_o),
     .A_BIST_REN     (fabric_sram{i}_tie_low_o),
-    .A_BIST_ADDR    ({{10{{fabric_sram{i}_tie_low_o}}}}),
-    .A_BIST_DIN     ({{16{{fabric_sram{i}_tie_low_o}}}}),
-    .A_BIST_BM      ({{16{{fabric_sram{i}_tie_low_o}}}})
+    .A_BIST_ADDR    ({{9{{fabric_sram{i}_tie_low_o}}}}),
+    .A_BIST_DIN     ({{32{{fabric_sram{i}_tie_low_o}}}}),
+    .A_BIST_BM      ({{32{{fabric_sram{i}_tie_low_o}}}})
 );
 
-RM_IHPSG13_1P_1024x16_c2_bm_bist sram{i}_1 (
+RM_IHPSG13_1P_512x32_c2_bm_bist sram{i}_1 (
     .A_CLK      (fabric_sram{i}_clk_o),
-    .A_MEN      (fabric_sram{i}_men_o),
+    .A_MEN      (fabric_sram{i}_men_o && select_sram{i} == 1'b1),
     .A_WEN      (fabric_sram{i}_wen_o),
     .A_REN      (fabric_sram{i}_ren_o),
-    .A_ADDR     (fabric_sram{i}_addr_o),
-    .A_DIN      (fabric_sram{i}_din_o[31:16]),
+    .A_ADDR     (fabric_sram{i}_addr_o[8:0]),
+    .A_DIN      (fabric_sram{i}_din_o),
     .A_DLY      (fabric_sram{i}_tie_high_o),
-    .A_DOUT     (fabric_sram{i}_dout_i[31:16]),
-    .A_BM       (fabric_sram{i}_bm_o[31:16]),
+    .A_DOUT     (fabric_sram{i}_dout_sram{i}_1),
+    .A_BM       (fabric_sram{i}_bm_o),
 
     .A_BIST_EN      (fabric_sram{i}_tie_low_o),
     .A_BIST_CLK     (fabric_sram{i}_tie_low_o),
     .A_BIST_MEN     (fabric_sram{i}_tie_low_o),
     .A_BIST_WEN     (fabric_sram{i}_tie_low_o),
     .A_BIST_REN     (fabric_sram{i}_tie_low_o),
-    .A_BIST_ADDR    ({{10{{fabric_sram{i}_tie_low_o}}}}),
-    .A_BIST_DIN     ({{16{{fabric_sram{i}_tie_low_o}}}}),
-    .A_BIST_BM      ({{16{{fabric_sram{i}_tie_low_o}}}})
+    .A_BIST_ADDR    ({{9{{fabric_sram{i}_tie_low_o}}}}),
+    .A_BIST_DIN     ({{32{{fabric_sram{i}_tie_low_o}}}}),
+    .A_BIST_BM      ({{32{{fabric_sram{i}_tie_low_o}}}})
 );""")

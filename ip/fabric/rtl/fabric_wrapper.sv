@@ -169,7 +169,19 @@ module fabric_wrapper #(
     logic  tt_project_13_ena;
     logic  tt_project_13_clk;
     logic  tt_project_13_rst_n;
-    
+
+    // SRAM 0
+    logic [31:0] fabric_sram0_dout_i;
+    logic [9 :0] fabric_sram0_addr_o;
+    logic [31:0] fabric_sram0_bm_o;
+    logic [31:0] fabric_sram0_din_o;
+    logic        fabric_sram0_wen_o;
+    logic        fabric_sram0_men_o;
+    logic        fabric_sram0_ren_o;
+    logic        fabric_sram0_clk_o;
+    logic        fabric_sram0_tie_high_o;
+    logic        fabric_sram0_tie_low_o;
+
     eFPGA
     //#(
     //    .MaxFramesPerCol(MaxFramesPerCol),
@@ -939,7 +951,122 @@ module fabric_wrapper #(
         .Tile_X5Y8_UIO_OE_TT_PROJECT7(tt_project_13_uio_oe[7]),
         .Tile_X5Y8_ENA_TT_PROJECT(tt_project_13_ena),
         .Tile_X5Y8_CLK_TT_PROJECT(tt_project_13_clk),
-        .Tile_X5Y8_RST_N_TT_PROJECT(tt_project_13_rst_n)
+        .Tile_X5Y8_RST_N_TT_PROJECT(tt_project_13_rst_n),
+        
+        // SRAM 0
+        .Tile_X5Y2_DOUT_SRAM0(fabric_sram0_dout_i[0]),
+        .Tile_X5Y2_DOUT_SRAM1(fabric_sram0_dout_i[1]),
+        .Tile_X5Y2_DOUT_SRAM2(fabric_sram0_dout_i[2]),
+        .Tile_X5Y2_DOUT_SRAM3(fabric_sram0_dout_i[3]),
+        .Tile_X5Y2_DOUT_SRAM4(fabric_sram0_dout_i[4]),
+        .Tile_X5Y2_DOUT_SRAM5(fabric_sram0_dout_i[5]),
+        .Tile_X5Y2_DOUT_SRAM6(fabric_sram0_dout_i[6]),
+        .Tile_X5Y2_DOUT_SRAM7(fabric_sram0_dout_i[7]),
+        .Tile_X5Y2_DOUT_SRAM8(fabric_sram0_dout_i[8]),
+        .Tile_X5Y2_DOUT_SRAM9(fabric_sram0_dout_i[9]),
+        .Tile_X5Y2_DOUT_SRAM10(fabric_sram0_dout_i[10]),
+        .Tile_X5Y2_DOUT_SRAM11(fabric_sram0_dout_i[11]),
+        .Tile_X5Y2_DOUT_SRAM12(fabric_sram0_dout_i[12]),
+        .Tile_X5Y2_DOUT_SRAM13(fabric_sram0_dout_i[13]),
+        .Tile_X5Y2_DOUT_SRAM14(fabric_sram0_dout_i[14]),
+        .Tile_X5Y2_DOUT_SRAM15(fabric_sram0_dout_i[15]),
+        .Tile_X5Y2_DOUT_SRAM16(fabric_sram0_dout_i[16]),
+        .Tile_X5Y2_DOUT_SRAM17(fabric_sram0_dout_i[17]),
+        .Tile_X5Y2_DOUT_SRAM18(fabric_sram0_dout_i[18]),
+        .Tile_X5Y2_DOUT_SRAM19(fabric_sram0_dout_i[19]),
+        .Tile_X5Y2_DOUT_SRAM20(fabric_sram0_dout_i[20]),
+        .Tile_X5Y2_DOUT_SRAM21(fabric_sram0_dout_i[21]),
+        .Tile_X5Y2_DOUT_SRAM22(fabric_sram0_dout_i[22]),
+        .Tile_X5Y2_DOUT_SRAM23(fabric_sram0_dout_i[23]),
+        .Tile_X5Y2_DOUT_SRAM24(fabric_sram0_dout_i[24]),
+        .Tile_X5Y2_DOUT_SRAM25(fabric_sram0_dout_i[25]),
+        .Tile_X5Y2_DOUT_SRAM26(fabric_sram0_dout_i[26]),
+        .Tile_X5Y2_DOUT_SRAM27(fabric_sram0_dout_i[27]),
+        .Tile_X5Y2_DOUT_SRAM28(fabric_sram0_dout_i[28]),
+        .Tile_X5Y2_DOUT_SRAM29(fabric_sram0_dout_i[29]),
+        .Tile_X5Y2_DOUT_SRAM30(fabric_sram0_dout_i[30]),
+        .Tile_X5Y2_DOUT_SRAM31(fabric_sram0_dout_i[31]),
+        .Tile_X5Y2_ADDR_SRAM0(fabric_sram0_addr_o[0]),
+        .Tile_X5Y2_ADDR_SRAM1(fabric_sram0_addr_o[1]),
+        .Tile_X5Y2_ADDR_SRAM2(fabric_sram0_addr_o[2]),
+        .Tile_X5Y2_ADDR_SRAM3(fabric_sram0_addr_o[3]),
+        .Tile_X5Y2_ADDR_SRAM4(fabric_sram0_addr_o[4]),
+        .Tile_X5Y2_ADDR_SRAM5(fabric_sram0_addr_o[5]),
+        .Tile_X5Y2_ADDR_SRAM6(fabric_sram0_addr_o[6]),
+        .Tile_X5Y2_ADDR_SRAM7(fabric_sram0_addr_o[7]),
+        .Tile_X5Y2_ADDR_SRAM8(fabric_sram0_addr_o[8]),
+        .Tile_X5Y2_ADDR_SRAM9(fabric_sram0_addr_o[9]),
+        .Tile_X5Y2_BM_SRAM0(fabric_sram0_bm_o[0]),
+        .Tile_X5Y2_BM_SRAM1(fabric_sram0_bm_o[1]),
+        .Tile_X5Y2_BM_SRAM2(fabric_sram0_bm_o[2]),
+        .Tile_X5Y2_BM_SRAM3(fabric_sram0_bm_o[3]),
+        .Tile_X5Y2_BM_SRAM4(fabric_sram0_bm_o[4]),
+        .Tile_X5Y2_BM_SRAM5(fabric_sram0_bm_o[5]),
+        .Tile_X5Y2_BM_SRAM6(fabric_sram0_bm_o[6]),
+        .Tile_X5Y2_BM_SRAM7(fabric_sram0_bm_o[7]),
+        .Tile_X5Y2_BM_SRAM8(fabric_sram0_bm_o[8]),
+        .Tile_X5Y2_BM_SRAM9(fabric_sram0_bm_o[9]),
+        .Tile_X5Y2_BM_SRAM10(fabric_sram0_bm_o[10]),
+        .Tile_X5Y2_BM_SRAM11(fabric_sram0_bm_o[11]),
+        .Tile_X5Y2_BM_SRAM12(fabric_sram0_bm_o[12]),
+        .Tile_X5Y2_BM_SRAM13(fabric_sram0_bm_o[13]),
+        .Tile_X5Y2_BM_SRAM14(fabric_sram0_bm_o[14]),
+        .Tile_X5Y2_BM_SRAM15(fabric_sram0_bm_o[15]),
+        .Tile_X5Y2_BM_SRAM16(fabric_sram0_bm_o[16]),
+        .Tile_X5Y2_BM_SRAM17(fabric_sram0_bm_o[17]),
+        .Tile_X5Y2_BM_SRAM18(fabric_sram0_bm_o[18]),
+        .Tile_X5Y2_BM_SRAM19(fabric_sram0_bm_o[19]),
+        .Tile_X5Y2_BM_SRAM20(fabric_sram0_bm_o[20]),
+        .Tile_X5Y2_BM_SRAM21(fabric_sram0_bm_o[21]),
+        .Tile_X5Y2_BM_SRAM22(fabric_sram0_bm_o[22]),
+        .Tile_X5Y2_BM_SRAM23(fabric_sram0_bm_o[23]),
+        .Tile_X5Y2_BM_SRAM24(fabric_sram0_bm_o[24]),
+        .Tile_X5Y2_BM_SRAM25(fabric_sram0_bm_o[25]),
+        .Tile_X5Y2_BM_SRAM26(fabric_sram0_bm_o[26]),
+        .Tile_X5Y2_BM_SRAM27(fabric_sram0_bm_o[27]),
+        .Tile_X5Y2_BM_SRAM28(fabric_sram0_bm_o[28]),
+        .Tile_X5Y2_BM_SRAM29(fabric_sram0_bm_o[29]),
+        .Tile_X5Y2_BM_SRAM30(fabric_sram0_bm_o[30]),
+        .Tile_X5Y2_BM_SRAM31(fabric_sram0_bm_o[31]),
+        .Tile_X5Y2_DIN_SRAM0(fabric_sram0_din_o[0]),
+        .Tile_X5Y2_DIN_SRAM1(fabric_sram0_din_o[1]),
+        .Tile_X5Y2_DIN_SRAM2(fabric_sram0_din_o[2]),
+        .Tile_X5Y2_DIN_SRAM3(fabric_sram0_din_o[3]),
+        .Tile_X5Y2_DIN_SRAM4(fabric_sram0_din_o[4]),
+        .Tile_X5Y2_DIN_SRAM5(fabric_sram0_din_o[5]),
+        .Tile_X5Y2_DIN_SRAM6(fabric_sram0_din_o[6]),
+        .Tile_X5Y2_DIN_SRAM7(fabric_sram0_din_o[7]),
+        .Tile_X5Y2_DIN_SRAM8(fabric_sram0_din_o[8]),
+        .Tile_X5Y2_DIN_SRAM9(fabric_sram0_din_o[9]),
+        .Tile_X5Y2_DIN_SRAM10(fabric_sram0_din_o[10]),
+        .Tile_X5Y2_DIN_SRAM11(fabric_sram0_din_o[11]),
+        .Tile_X5Y2_DIN_SRAM12(fabric_sram0_din_o[12]),
+        .Tile_X5Y2_DIN_SRAM13(fabric_sram0_din_o[13]),
+        .Tile_X5Y2_DIN_SRAM14(fabric_sram0_din_o[14]),
+        .Tile_X5Y2_DIN_SRAM15(fabric_sram0_din_o[15]),
+        .Tile_X5Y2_DIN_SRAM16(fabric_sram0_din_o[16]),
+        .Tile_X5Y2_DIN_SRAM17(fabric_sram0_din_o[17]),
+        .Tile_X5Y2_DIN_SRAM18(fabric_sram0_din_o[18]),
+        .Tile_X5Y2_DIN_SRAM19(fabric_sram0_din_o[19]),
+        .Tile_X5Y2_DIN_SRAM20(fabric_sram0_din_o[20]),
+        .Tile_X5Y2_DIN_SRAM21(fabric_sram0_din_o[21]),
+        .Tile_X5Y2_DIN_SRAM22(fabric_sram0_din_o[22]),
+        .Tile_X5Y2_DIN_SRAM23(fabric_sram0_din_o[23]),
+        .Tile_X5Y2_DIN_SRAM24(fabric_sram0_din_o[24]),
+        .Tile_X5Y2_DIN_SRAM25(fabric_sram0_din_o[25]),
+        .Tile_X5Y2_DIN_SRAM26(fabric_sram0_din_o[26]),
+        .Tile_X5Y2_DIN_SRAM27(fabric_sram0_din_o[27]),
+        .Tile_X5Y2_DIN_SRAM28(fabric_sram0_din_o[28]),
+        .Tile_X5Y2_DIN_SRAM29(fabric_sram0_din_o[29]),
+        .Tile_X5Y2_DIN_SRAM30(fabric_sram0_din_o[30]),
+        .Tile_X5Y2_DIN_SRAM31(fabric_sram0_din_o[31]),
+        .Tile_X5Y2_WEN_SRAM(fabric_sram0_wen_o),
+        .Tile_X5Y2_MEN_SRAM(fabric_sram0_men_o),
+        .Tile_X5Y2_REN_SRAM(fabric_sram0_ren_o),
+        .Tile_X5Y2_CLK_SRAM(fabric_sram0_clk_o),
+        .Tile_X5Y2_TIE_HIGH_SRAM(fabric_sram0_tie_high_o),
+        .Tile_X5Y2_TIE_LOW_SRAM(fabric_sram0_tie_low_o),
+        .Tile_X5Y2_CONFIGURED_top(configured_i)
     );
 
     // TT_PROJECT
@@ -1098,9 +1225,66 @@ module fabric_wrapper #(
         .uio_oe     (tt_project_13_uio_oe)
     );
 
+    // SRAM 0 instances
 
-    // SRAMs
+    logic [31:0] fabric_sram0_dout_sram0_0;
+    logic [31:0] fabric_sram0_dout_sram0_1;
 
+    logic select_sram0;
+
+    always_ff @(posedge clk_i) begin
+        select_sram0 <= fabric_sram0_addr_o[9]; // Highest bit selects the SRAM
+    end
+
+    always_comb begin
+        if (select_sram0) begin
+            fabric_sram0_dout_i = fabric_sram0_dout_sram0_1;
+        end else begin
+            fabric_sram0_dout_i = fabric_sram0_dout_sram0_0;
+        end
+    end
+
+    RM_IHPSG13_1P_512x32_c2_bm_bist sram0_0 (
+        .A_CLK      (fabric_sram0_clk_o),
+        .A_MEN      (fabric_sram0_men_o && select_sram0 == 1'b0),
+        .A_WEN      (fabric_sram0_wen_o),
+        .A_REN      (fabric_sram0_ren_o),
+        .A_ADDR     (fabric_sram0_addr_o[8:0]),
+        .A_DIN      (fabric_sram0_din_o),
+        .A_DLY      (fabric_sram0_tie_high_o),
+        .A_DOUT     (fabric_sram0_dout_sram0_0),
+        .A_BM       (fabric_sram0_bm_o),
+
+        .A_BIST_EN      (fabric_sram0_tie_low_o),
+        .A_BIST_CLK     (fabric_sram0_tie_low_o),
+        .A_BIST_MEN     (fabric_sram0_tie_low_o),
+        .A_BIST_WEN     (fabric_sram0_tie_low_o),
+        .A_BIST_REN     (fabric_sram0_tie_low_o),
+        .A_BIST_ADDR    ({9{fabric_sram0_tie_low_o}}),
+        .A_BIST_DIN     ({32{fabric_sram0_tie_low_o}}),
+        .A_BIST_BM      ({32{fabric_sram0_tie_low_o}})
+    );
+
+    RM_IHPSG13_1P_512x32_c2_bm_bist sram0_1 (
+        .A_CLK      (fabric_sram0_clk_o),
+        .A_MEN      (fabric_sram0_men_o && select_sram0 == 1'b1),
+        .A_WEN      (fabric_sram0_wen_o),
+        .A_REN      (fabric_sram0_ren_o),
+        .A_ADDR     (fabric_sram0_addr_o[8:0]),
+        .A_DIN      (fabric_sram0_din_o),
+        .A_DLY      (fabric_sram0_tie_high_o),
+        .A_DOUT     (fabric_sram0_dout_sram0_1),
+        .A_BM       (fabric_sram0_bm_o),
+
+        .A_BIST_EN      (fabric_sram0_tie_low_o),
+        .A_BIST_CLK     (fabric_sram0_tie_low_o),
+        .A_BIST_MEN     (fabric_sram0_tie_low_o),
+        .A_BIST_WEN     (fabric_sram0_tie_low_o),
+        .A_BIST_REN     (fabric_sram0_tie_low_o),
+        .A_BIST_ADDR    ({9{fabric_sram0_tie_low_o}}),
+        .A_BIST_DIN     ({32{fabric_sram0_tie_low_o}}),
+        .A_BIST_BM      ({32{fabric_sram0_tie_low_o}})
+    );
 endmodule
 
 `default_nettype wire

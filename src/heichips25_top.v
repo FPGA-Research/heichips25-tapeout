@@ -11,12 +11,14 @@ module heichips25_top (
     inout  wire         fpga_miso_PAD,
 
     inout  wire         fpga_mode_PAD,
-    output wire         fpga_config_busy_PAD,
-    //output wire         fpga_config_configured_PAD,
-    //input  wire [3:0]   fpga_config_slot_PAD,
-    //input  wire         fpga_config_trigger_PAD,
+    inout  wire         fpga_config_busy_PAD,
+    inout  wire         fpga_config_configured_PAD,
+    inout  wire [3:0]   fpga_config_slot_PAD,
+    inout  wire         fpga_config_trigger_PAD,
 
-    inout  wire [31:0]  fpga_io_PAD
+    inout  wire [31:0]  fpga_io_PAD,
+    
+    inout  wire [9:0]   analog_PAD
 );
     // FPGA
     wire fpga_clk_PAD2CORE;
@@ -38,9 +40,11 @@ module heichips25_top (
     wire fpga_miso_CORE2PAD_EN;
     wire fpga_miso_PAD2CORE;
     
-    wire fpga_mode_PAD2CORE;
-    
-    wire fpga_config_busy_CORE2PAD;
+    wire        fpga_mode_PAD2CORE;
+    wire        fpga_config_busy_CORE2PAD;
+    wire        fpga_config_configured_CORE2PAD;
+    wire [3:0]  fpga_config_slot_PAD2CORE;
+    wire        fpga_config_trigger_PAD2CORE;
 
     wire [31:0] fpga_io_PAD2CORE;
     wire [31:0] fpga_io_CORE2PAD;
@@ -133,11 +137,33 @@ module heichips25_top (
     end
     endgenerate
 
-    // TODO synchronize reset deassert!
+    sg13g2_IOPadOut30mA sg13g2_IOPadOut30mA_fpga_config_configured (
+        .c2p (fpga_config_configured_CORE2PAD),
+        .pad (fpga_config_configured_PAD)
+    );
 
-    wire [32-1:0] fabric_io_in_i;
-    wire [32-1:0] fabric_io_out_o;
-    wire [32-1:0] fabric_io_oe_o;
+    generate
+    for (genvar i=0; i<4; i++) begin : sg13g2_IOPadIn_fpga_config_slot
+        sg13g2_IOPadIn fpga_config_slot (
+            .p2c (fpga_config_slot_PAD2CORE[i]),
+            .pad (fpga_config_slot_PAD[i])
+        );
+    end
+    endgenerate
+
+    sg13g2_IOPadIn sg13g2_IOPadIn_fpga_config_trigger (
+        .p2c (fpga_config_trigger_PAD2CORE),
+        .pad (fpga_config_trigger_PAD)
+    );
+    
+    generate
+    for (genvar i=0; i<10; i++) begin : sg13g2_IOPadAnalog_analog
+        (* keep *) sg13g2_IOPadAnalog analog (
+            .padres (),
+            .pad (analog_PAD[i])
+        );
+    end
+    endgenerate
 
     // Core
     heichips25_core heichips25_core (
@@ -163,6 +189,9 @@ module heichips25_top (
 
         .fpga_mode_i    (fpga_mode_PAD2CORE),
         .fpga_config_busy_o (fpga_config_busy_CORE2PAD),
+        .fpga_config_configured_o   (fpga_config_configured_CORE2PAD),
+        .fpga_config_slot_i         (fpga_config_slot_PAD2CORE),
+        .fpga_config_trigger_i      (fpga_config_trigger_PAD2CORE),
 
         // I/Os FPGA
         .fabric_io_in_i     (fpga_io_PAD2CORE),

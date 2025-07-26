@@ -25,8 +25,11 @@ module heichips25_core (
     // FPGA config mode
     // if mode == 0: SPI controller
     // if mode == 1: SPI receiver
-    input  logic fpga_mode_i,
-    output logic fpga_config_busy_o,
+    input  logic        fpga_mode_i,
+    output logic        fpga_config_busy_o,
+    output logic        fpga_config_configured_o,
+    input  logic [3:0]  fpga_config_slot_i,
+    input  logic        fpga_config_trigger_i,
 
     // I/Os FPGA
     input  wire [32-1:0] fabric_io_in_i,
@@ -68,6 +71,7 @@ module heichips25_core (
     
     // Fabric is configured
     wire            fabric_config_configured;
+    assign fpga_config_configured_o = fabric_config_configured;
     
     // Fabric SPI controller is busy
     logic fabric_spi_controller_busy;
@@ -75,6 +79,21 @@ module heichips25_core (
     // To the fabric
     wire [(FrameBitsPerRow*NumRows)-1:0]    FrameData;
     wire [(MaxFramesPerCol*NumColumns)-1:0] FrameStrobe;
+    
+    // Reset with asynchronous assertion and synchronous relase
+    logic [1:0] fpga_rst_nd;
+    logic fpga_rst_n_sync;
+    
+    always_ff @(posedge fpga_clk_i, negedge fpga_rst_ni) begin
+        if (!fpga_rst_ni) begin
+            fpga_rst_nd <= '0;
+        end else begin
+            fpga_rst_nd[0] <= 1'b1;
+            fpga_rst_nd[1] <= fpga_rst_nd[0];
+        end
+    end
+    
+    assign fpga_rst_n_sync = fpga_rst_nd[1];
     
     // Sync fpga_mode_i
     logic [1:0] fpga_mode_d;
@@ -108,75 +127,105 @@ module heichips25_core (
     // At startup, trigger configuration
     // when fpga_mode_sync == 1'b0
     logic startup_trigger;
-    always_ff @(posedge fpga_clk_i, negedge fpga_rst_ni) begin
-        if (!fpga_rst_ni) begin
+    always_ff @(posedge fpga_clk_i, negedge fpga_rst_n_sync) begin
+        if (!fpga_rst_n_sync) begin
             startup_trigger <= 1'b1;
         end else begin
             startup_trigger <= 1'b0;
         end
     end
 
-    // TODO on reset tri-state!
     always_comb begin
-        // Default output
-        fpga_sclk_o = 1'b0;
-        fpga_cs_n_o = 1'b0;
-        fpga_mosi_o = 1'b0;
-        fpga_miso_o = 1'b0;
+        // On reset, set SPI to tri-state
+        if (!fpga_rst_n_sync) begin
+            // Default output
+            fpga_sclk_o = 1'b0;
+            fpga_cs_n_o = 1'b0;
+            fpga_mosi_o = 1'b0;
+            fpga_miso_o = 1'b0;
         
-        // Receiver not selected
-        spi_receiver_sclk_i = 1'b0;
-        spi_receiver_cs_ni  = 1'b1;
-        spi_receiver_mosi_i = 1'b0;
-        
-        // Controller not selected
-        spi_controller_miso_i = 1'b0;
-
-        if (fpga_mode_sync == 1'b0) begin
-            // SPI Controller
-            fpga_sclk_en_o = 1'b1;
-            fpga_cs_n_en_o = 1'b1;
-            fpga_mosi_en_o = 1'b1;
-            fpga_miso_en_o = 1'b0;
-            
-            fpga_sclk_o = spi_controller_sclk_o;
-            fpga_cs_n_o = spi_controller_cs_no;
-            fpga_mosi_o = spi_controller_mosi_o;
-            spi_controller_miso_i = fpga_miso_i;
-            
-            // Re-route bitstream
-            spi_bitstream_data  = spi_controller_bitstream_data_o;
-            spi_bitstream_valid = spi_controller_bitstream_valid_o;
-            
-            // Slot and trigger
-            spi_controller_start_i  = startup_trigger && !(fabric_config_busy || fabric_spi_controller_busy);
-            spi_controller_slot_i   = '0; // TODO get from outside
-            
-        end else begin
-            // SPI receiver
+            // Tri-state
             fpga_sclk_en_o = 1'b0;
             fpga_cs_n_en_o = 1'b0;
             fpga_mosi_en_o = 1'b0;
-            fpga_miso_en_o = 1'b1;
+            fpga_miso_en_o = 1'b0;
             
-            spi_receiver_sclk_i = fpga_sclk_i;
-            spi_receiver_cs_ni  = fpga_cs_n_i;
-            spi_receiver_mosi_i = fpga_mosi_i;
-            fpga_miso_o = spi_receiver_miso_o;
+            // Receiver not selected
+            spi_receiver_sclk_i = 1'b0;
+            spi_receiver_cs_ni  = 1'b1;
+            spi_receiver_mosi_i = 1'b0;
             
-            // Re-route bitstream
-            spi_bitstream_data  = spi_receiver_bitstream_data_o;
-            spi_bitstream_valid = spi_receiver_bitstream_valid_o;
+            // Controller not selected
+            spi_controller_miso_i = 1'b0;
+            
+            // No bitstream
+            spi_bitstream_data  = '0;
+            spi_bitstream_valid = '0;
             
             // Slot and trigger
-            spi_controller_start_i  = '0;
             spi_controller_slot_i   = '0;
+            spi_controller_start_i  = '0;
+        end else begin
+            // Default output
+            fpga_sclk_o = 1'b0;
+            fpga_cs_n_o = 1'b0;
+            fpga_mosi_o = 1'b0;
+            fpga_miso_o = 1'b0;
+            
+            // Receiver not selected
+            spi_receiver_sclk_i = 1'b0;
+            spi_receiver_cs_ni  = 1'b1;
+            spi_receiver_mosi_i = 1'b0;
+            
+            // Controller not selected
+            spi_controller_miso_i = 1'b0;
+
+            if (fpga_mode_sync == 1'b0) begin
+                // SPI Controller
+                fpga_sclk_en_o = 1'b1;
+                fpga_cs_n_en_o = 1'b1;
+                fpga_mosi_en_o = 1'b1;
+                fpga_miso_en_o = 1'b0;
+                
+                fpga_sclk_o = spi_controller_sclk_o;
+                fpga_cs_n_o = spi_controller_cs_no;
+                fpga_mosi_o = spi_controller_mosi_o;
+                spi_controller_miso_i = fpga_miso_i;
+                
+                // Re-route bitstream
+                spi_bitstream_data  = spi_controller_bitstream_data_o;
+                spi_bitstream_valid = spi_controller_bitstream_valid_o;
+                
+                // Slot and trigger
+                spi_controller_slot_i   = startup_trigger ? '0 : fpga_config_slot_i; // Always boot from slot 0
+                spi_controller_start_i  = startup_trigger || (fpga_config_trigger_i && !(fabric_config_busy || fabric_spi_controller_busy));
+                
+            end else begin
+                // SPI receiver
+                fpga_sclk_en_o = 1'b0;
+                fpga_cs_n_en_o = 1'b0;
+                fpga_mosi_en_o = 1'b0;
+                fpga_miso_en_o = 1'b1;
+                
+                spi_receiver_sclk_i = fpga_sclk_i;
+                spi_receiver_cs_ni  = fpga_cs_n_i;
+                spi_receiver_mosi_i = fpga_mosi_i;
+                fpga_miso_o = spi_receiver_miso_o;
+                
+                // Re-route bitstream
+                spi_bitstream_data  = spi_receiver_bitstream_data_o;
+                spi_bitstream_valid = spi_receiver_bitstream_valid_o;
+                
+                // Slot and trigger
+                spi_controller_slot_i   = '0;
+                spi_controller_start_i  = '0;
+            end
         end
     end
 
     fabric_spi_receiver fabric_spi_receiver (
         .clk_i  (fpga_clk_i),
-        .rst_ni (fpga_rst_ni),
+        .rst_ni (fpga_rst_n_sync),
         
         // Bitstream data
         .bitstream_data_o   (spi_receiver_bitstream_data_o),
@@ -194,12 +243,12 @@ module heichips25_core (
 
     // TODO update length
     fabric_spi_controller #(
-        .BITSTREAM_LENGTH_WORDS (32'hEA2),
-        .SLOT_OFFSET_WORDS      (32'h1000),
+        .BITSTREAM_LENGTH_WORDS (32'h52E),
+        .SLOT_OFFSET_WORDS      (32'h800),
         .NUM_SLOTS              (16)
     ) fabric_spi_controller (
         .clk_i  (fpga_clk_i),
-        .rst_ni (fpga_rst_ni),
+        .rst_ni (fpga_rst_n_sync),
         
         // Start reading data at selected slot
         .start_i    (spi_controller_start_i),
@@ -227,7 +276,7 @@ module heichips25_core (
 	    .NumRows            (NumRows)
     ) fabric_config (
         .clk_i              (fpga_clk_i),
-        .rst_ni             (fpga_rst_ni),
+        .rst_ni             (fpga_rst_n_sync),
         
         // Bitstream
         .bitstream_valid_i  (spi_bitstream_valid),
@@ -267,5 +316,5 @@ module heichips25_core (
     );
     
     //$assert(fabric_wrapper.FrameBitsPerRow ...)
-
+    
 endmodule

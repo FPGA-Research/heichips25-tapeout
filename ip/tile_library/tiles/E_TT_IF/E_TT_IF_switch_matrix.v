@@ -1,7 +1,7 @@
- // NumberOfConfigBits: 278
+ // NumberOfConfigBits: 298
 module E_TT_IF_switch_matrix
     #(
-        parameter NoConfigBits=278
+        parameter NoConfigBits=298
     )
     (
         input N1END0,
@@ -337,26 +337,26 @@ wire[8-1:0] S4BEG0_input;
 wire[8-1:0] S4BEG1_input;
 wire[8-1:0] S4BEG2_input;
 wire[8-1:0] S4BEG3_input;
-wire[4-1:0] W1BEG0_input;
-wire[4-1:0] W1BEG1_input;
-wire[4-1:0] W1BEG2_input;
-wire[4-1:0] W1BEG3_input;
-wire[4-1:0] W2BEG0_input;
-wire[4-1:0] W2BEG1_input;
-wire[4-1:0] W2BEG2_input;
-wire[4-1:0] W2BEG3_input;
-wire[4-1:0] W2BEG4_input;
-wire[4-1:0] W2BEG5_input;
-wire[4-1:0] W2BEG6_input;
-wire[4-1:0] W2BEG7_input;
-wire[4-1:0] W2BEGb0_input;
-wire[4-1:0] W2BEGb1_input;
-wire[4-1:0] W2BEGb2_input;
-wire[4-1:0] W2BEGb3_input;
-wire[4-1:0] W2BEGb4_input;
-wire[4-1:0] W2BEGb5_input;
-wire[4-1:0] W2BEGb6_input;
-wire[4-1:0] W2BEGb7_input;
+wire[8-1:0] W1BEG0_input;
+wire[8-1:0] W1BEG1_input;
+wire[8-1:0] W1BEG2_input;
+wire[8-1:0] W1BEG3_input;
+wire[8-1:0] W2BEG0_input;
+wire[8-1:0] W2BEG1_input;
+wire[8-1:0] W2BEG2_input;
+wire[8-1:0] W2BEG3_input;
+wire[8-1:0] W2BEG4_input;
+wire[8-1:0] W2BEG5_input;
+wire[8-1:0] W2BEG6_input;
+wire[8-1:0] W2BEG7_input;
+wire[8-1:0] W2BEGb0_input;
+wire[8-1:0] W2BEGb1_input;
+wire[8-1:0] W2BEGb2_input;
+wire[8-1:0] W2BEGb3_input;
+wire[8-1:0] W2BEGb4_input;
+wire[8-1:0] W2BEGb5_input;
+wire[8-1:0] W2BEGb6_input;
+wire[8-1:0] W2BEGb7_input;
 wire[4-1:0] WW4BEG0_input;
 wire[4-1:0] WW4BEG1_input;
 wire[4-1:0] WW4BEG2_input;
@@ -464,26 +464,26 @@ wire[2:0] DEBUG_select_S4BEG0;
 wire[2:0] DEBUG_select_S4BEG1;
 wire[2:0] DEBUG_select_S4BEG2;
 wire[2:0] DEBUG_select_S4BEG3;
-wire[1:0] DEBUG_select_W1BEG0;
-wire[1:0] DEBUG_select_W1BEG1;
-wire[1:0] DEBUG_select_W1BEG2;
-wire[1:0] DEBUG_select_W1BEG3;
-wire[1:0] DEBUG_select_W2BEG0;
-wire[1:0] DEBUG_select_W2BEG1;
-wire[1:0] DEBUG_select_W2BEG2;
-wire[1:0] DEBUG_select_W2BEG3;
-wire[1:0] DEBUG_select_W2BEG4;
-wire[1:0] DEBUG_select_W2BEG5;
-wire[1:0] DEBUG_select_W2BEG6;
-wire[1:0] DEBUG_select_W2BEG7;
-wire[1:0] DEBUG_select_W2BEGb0;
-wire[1:0] DEBUG_select_W2BEGb1;
-wire[1:0] DEBUG_select_W2BEGb2;
-wire[1:0] DEBUG_select_W2BEGb3;
-wire[1:0] DEBUG_select_W2BEGb4;
-wire[1:0] DEBUG_select_W2BEGb5;
-wire[1:0] DEBUG_select_W2BEGb6;
-wire[1:0] DEBUG_select_W2BEGb7;
+wire[2:0] DEBUG_select_W1BEG0;
+wire[2:0] DEBUG_select_W1BEG1;
+wire[2:0] DEBUG_select_W1BEG2;
+wire[2:0] DEBUG_select_W1BEG3;
+wire[2:0] DEBUG_select_W2BEG0;
+wire[2:0] DEBUG_select_W2BEG1;
+wire[2:0] DEBUG_select_W2BEG2;
+wire[2:0] DEBUG_select_W2BEG3;
+wire[2:0] DEBUG_select_W2BEG4;
+wire[2:0] DEBUG_select_W2BEG5;
+wire[2:0] DEBUG_select_W2BEG6;
+wire[2:0] DEBUG_select_W2BEG7;
+wire[2:0] DEBUG_select_W2BEGb0;
+wire[2:0] DEBUG_select_W2BEGb1;
+wire[2:0] DEBUG_select_W2BEGb2;
+wire[2:0] DEBUG_select_W2BEGb3;
+wire[2:0] DEBUG_select_W2BEGb4;
+wire[2:0] DEBUG_select_W2BEGb5;
+wire[2:0] DEBUG_select_W2BEGb6;
+wire[2:0] DEBUG_select_W2BEGb7;
 wire[1:0] DEBUG_select_WW4BEG0;
 wire[1:0] DEBUG_select_WW4BEG1;
 wire[1:0] DEBUG_select_WW4BEG2;
@@ -1104,283 +1104,403 @@ cus_mux81_buf inst_cus_mux81_buf_S4BEG3 (
     .X(S4BEG3)
 );
 
- //switch matrix multiplexer W1BEG0 MUX-4
-assign W1BEG0_input = {UO_OUT7,UO_OUT2,S1END0,N1END0};
-cus_mux41_buf inst_cus_mux41_buf_W1BEG0 (
+ //switch matrix multiplexer W1BEG0 MUX-8
+assign W1BEG0_input = {UIO_OE7,UIO_OE6,UIO_OE2,UIO_OE0,UO_OUT7,UO_OUT2,S1END0,N1END0};
+cus_mux81_buf inst_cus_mux81_buf_W1BEG0 (
     .A0(W1BEG0_input[0]),
     .A1(W1BEG0_input[1]),
     .A2(W1BEG0_input[2]),
     .A3(W1BEG0_input[3]),
+    .A4(W1BEG0_input[4]),
+    .A5(W1BEG0_input[5]),
+    .A6(W1BEG0_input[6]),
+    .A7(W1BEG0_input[7]),
     .S0(ConfigBits[72+0]),
     .S0N(ConfigBits_N[72+0]),
     .S1(ConfigBits[72+1]),
     .S1N(ConfigBits_N[72+1]),
+    .S2(ConfigBits[72+2]),
+    .S2N(ConfigBits_N[72+2]),
     .X(W1BEG0)
 );
 
- //switch matrix multiplexer W1BEG1 MUX-4
-assign W1BEG1_input = {UO_OUT6,UO_OUT3,S1END1,N1END1};
-cus_mux41_buf inst_cus_mux41_buf_W1BEG1 (
+ //switch matrix multiplexer W1BEG1 MUX-8
+assign W1BEG1_input = {UIO_OE6,UIO_OE5,UIO_OE1,UIO_OE0,UO_OUT6,UO_OUT3,S1END1,N1END1};
+cus_mux81_buf inst_cus_mux81_buf_W1BEG1 (
     .A0(W1BEG1_input[0]),
     .A1(W1BEG1_input[1]),
     .A2(W1BEG1_input[2]),
     .A3(W1BEG1_input[3]),
-    .S0(ConfigBits[74+0]),
-    .S0N(ConfigBits_N[74+0]),
-    .S1(ConfigBits[74+1]),
-    .S1N(ConfigBits_N[74+1]),
+    .A4(W1BEG1_input[4]),
+    .A5(W1BEG1_input[5]),
+    .A6(W1BEG1_input[6]),
+    .A7(W1BEG1_input[7]),
+    .S0(ConfigBits[75+0]),
+    .S0N(ConfigBits_N[75+0]),
+    .S1(ConfigBits[75+1]),
+    .S1N(ConfigBits_N[75+1]),
+    .S2(ConfigBits[75+2]),
+    .S2N(ConfigBits_N[75+2]),
     .X(W1BEG1)
 );
 
- //switch matrix multiplexer W1BEG2 MUX-4
-assign W1BEG2_input = {UO_OUT5,UO_OUT0,S1END2,N1END2};
-cus_mux41_buf inst_cus_mux41_buf_W1BEG2 (
+ //switch matrix multiplexer W1BEG2 MUX-8
+assign W1BEG2_input = {UIO_OE5,UIO_OE4,UIO_OE3,UIO_OE2,UO_OUT5,UO_OUT0,S1END2,N1END2};
+cus_mux81_buf inst_cus_mux81_buf_W1BEG2 (
     .A0(W1BEG2_input[0]),
     .A1(W1BEG2_input[1]),
     .A2(W1BEG2_input[2]),
     .A3(W1BEG2_input[3]),
-    .S0(ConfigBits[76+0]),
-    .S0N(ConfigBits_N[76+0]),
-    .S1(ConfigBits[76+1]),
-    .S1N(ConfigBits_N[76+1]),
-    .X(W1BEG2)
-);
-
- //switch matrix multiplexer W1BEG3 MUX-4
-assign W1BEG3_input = {UO_OUT4,UO_OUT1,S1END3,N1END3};
-cus_mux41_buf inst_cus_mux41_buf_W1BEG3 (
-    .A0(W1BEG3_input[0]),
-    .A1(W1BEG3_input[1]),
-    .A2(W1BEG3_input[2]),
-    .A3(W1BEG3_input[3]),
+    .A4(W1BEG2_input[4]),
+    .A5(W1BEG2_input[5]),
+    .A6(W1BEG2_input[6]),
+    .A7(W1BEG2_input[7]),
     .S0(ConfigBits[78+0]),
     .S0N(ConfigBits_N[78+0]),
     .S1(ConfigBits[78+1]),
     .S1N(ConfigBits_N[78+1]),
+    .S2(ConfigBits[78+2]),
+    .S2N(ConfigBits_N[78+2]),
+    .X(W1BEG2)
+);
+
+ //switch matrix multiplexer W1BEG3 MUX-8
+assign W1BEG3_input = {UIO_OE7,UIO_OE4,UIO_OE3,UIO_OE1,UO_OUT4,UO_OUT1,S1END3,N1END3};
+cus_mux81_buf inst_cus_mux81_buf_W1BEG3 (
+    .A0(W1BEG3_input[0]),
+    .A1(W1BEG3_input[1]),
+    .A2(W1BEG3_input[2]),
+    .A3(W1BEG3_input[3]),
+    .A4(W1BEG3_input[4]),
+    .A5(W1BEG3_input[5]),
+    .A6(W1BEG3_input[6]),
+    .A7(W1BEG3_input[7]),
+    .S0(ConfigBits[81+0]),
+    .S0N(ConfigBits_N[81+0]),
+    .S1(ConfigBits[81+1]),
+    .S1N(ConfigBits_N[81+1]),
+    .S2(ConfigBits[81+2]),
+    .S2N(ConfigBits_N[81+2]),
     .X(W1BEG3)
 );
 
- //switch matrix multiplexer W2BEG0 MUX-4
-assign W2BEG0_input = {J_NS2_END7,J_NS2_END0,UIO_OUT0,UO_OUT0};
-cus_mux41_buf inst_cus_mux41_buf_W2BEG0 (
+ //switch matrix multiplexer W2BEG0 MUX-8
+assign W2BEG0_input = {J_NS1_END0,J_NS2_END7,J_NS2_END0,J_NS4_END0,UIO_OE7,UIO_OUT0,UO_OUT3,UO_OUT0};
+cus_mux81_buf inst_cus_mux81_buf_W2BEG0 (
     .A0(W2BEG0_input[0]),
     .A1(W2BEG0_input[1]),
     .A2(W2BEG0_input[2]),
     .A3(W2BEG0_input[3]),
-    .S0(ConfigBits[80+0]),
-    .S0N(ConfigBits_N[80+0]),
-    .S1(ConfigBits[80+1]),
-    .S1N(ConfigBits_N[80+1]),
-    .X(W2BEG0)
-);
-
- //switch matrix multiplexer W2BEG1 MUX-4
-assign W2BEG1_input = {J_NS2_END6,J_NS2_END1,UIO_OUT1,UO_OUT1};
-cus_mux41_buf inst_cus_mux41_buf_W2BEG1 (
-    .A0(W2BEG1_input[0]),
-    .A1(W2BEG1_input[1]),
-    .A2(W2BEG1_input[2]),
-    .A3(W2BEG1_input[3]),
-    .S0(ConfigBits[82+0]),
-    .S0N(ConfigBits_N[82+0]),
-    .S1(ConfigBits[82+1]),
-    .S1N(ConfigBits_N[82+1]),
-    .X(W2BEG1)
-);
-
- //switch matrix multiplexer W2BEG2 MUX-4
-assign W2BEG2_input = {J_NS2_END5,J_NS2_END2,UIO_OUT2,UO_OUT2};
-cus_mux41_buf inst_cus_mux41_buf_W2BEG2 (
-    .A0(W2BEG2_input[0]),
-    .A1(W2BEG2_input[1]),
-    .A2(W2BEG2_input[2]),
-    .A3(W2BEG2_input[3]),
+    .A4(W2BEG0_input[4]),
+    .A5(W2BEG0_input[5]),
+    .A6(W2BEG0_input[6]),
+    .A7(W2BEG0_input[7]),
     .S0(ConfigBits[84+0]),
     .S0N(ConfigBits_N[84+0]),
     .S1(ConfigBits[84+1]),
     .S1N(ConfigBits_N[84+1]),
-    .X(W2BEG2)
+    .S2(ConfigBits[84+2]),
+    .S2N(ConfigBits_N[84+2]),
+    .X(W2BEG0)
 );
 
- //switch matrix multiplexer W2BEG3 MUX-4
-assign W2BEG3_input = {J_NS2_END4,J_NS2_END3,UIO_OUT3,UO_OUT3};
-cus_mux41_buf inst_cus_mux41_buf_W2BEG3 (
-    .A0(W2BEG3_input[0]),
-    .A1(W2BEG3_input[1]),
-    .A2(W2BEG3_input[2]),
-    .A3(W2BEG3_input[3]),
-    .S0(ConfigBits[86+0]),
-    .S0N(ConfigBits_N[86+0]),
-    .S1(ConfigBits[86+1]),
-    .S1N(ConfigBits_N[86+1]),
-    .X(W2BEG3)
+ //switch matrix multiplexer W2BEG1 MUX-8
+assign W2BEG1_input = {J_NS1_END1,J_NS2_END6,J_NS2_END1,J_NS4_END1,UIO_OE6,UIO_OUT1,UO_OUT2,UO_OUT1};
+cus_mux81_buf inst_cus_mux81_buf_W2BEG1 (
+    .A0(W2BEG1_input[0]),
+    .A1(W2BEG1_input[1]),
+    .A2(W2BEG1_input[2]),
+    .A3(W2BEG1_input[3]),
+    .A4(W2BEG1_input[4]),
+    .A5(W2BEG1_input[5]),
+    .A6(W2BEG1_input[6]),
+    .A7(W2BEG1_input[7]),
+    .S0(ConfigBits[87+0]),
+    .S0N(ConfigBits_N[87+0]),
+    .S1(ConfigBits[87+1]),
+    .S1N(ConfigBits_N[87+1]),
+    .S2(ConfigBits[87+2]),
+    .S2N(ConfigBits_N[87+2]),
+    .X(W2BEG1)
 );
 
- //switch matrix multiplexer W2BEG4 MUX-4
-assign W2BEG4_input = {J_NS2_END4,J_NS2_END3,UIO_OUT4,UO_OUT4};
-cus_mux41_buf inst_cus_mux41_buf_W2BEG4 (
-    .A0(W2BEG4_input[0]),
-    .A1(W2BEG4_input[1]),
-    .A2(W2BEG4_input[2]),
-    .A3(W2BEG4_input[3]),
-    .S0(ConfigBits[88+0]),
-    .S0N(ConfigBits_N[88+0]),
-    .S1(ConfigBits[88+1]),
-    .S1N(ConfigBits_N[88+1]),
-    .X(W2BEG4)
-);
-
- //switch matrix multiplexer W2BEG5 MUX-4
-assign W2BEG5_input = {J_NS2_END5,J_NS2_END2,UIO_OUT5,UO_OUT5};
-cus_mux41_buf inst_cus_mux41_buf_W2BEG5 (
-    .A0(W2BEG5_input[0]),
-    .A1(W2BEG5_input[1]),
-    .A2(W2BEG5_input[2]),
-    .A3(W2BEG5_input[3]),
+ //switch matrix multiplexer W2BEG2 MUX-8
+assign W2BEG2_input = {J_NS1_END2,J_NS2_END5,J_NS2_END2,J_NS4_END2,UIO_OE5,UIO_OUT2,UO_OUT2,UO_OUT1};
+cus_mux81_buf inst_cus_mux81_buf_W2BEG2 (
+    .A0(W2BEG2_input[0]),
+    .A1(W2BEG2_input[1]),
+    .A2(W2BEG2_input[2]),
+    .A3(W2BEG2_input[3]),
+    .A4(W2BEG2_input[4]),
+    .A5(W2BEG2_input[5]),
+    .A6(W2BEG2_input[6]),
+    .A7(W2BEG2_input[7]),
     .S0(ConfigBits[90+0]),
     .S0N(ConfigBits_N[90+0]),
     .S1(ConfigBits[90+1]),
     .S1N(ConfigBits_N[90+1]),
-    .X(W2BEG5)
+    .S2(ConfigBits[90+2]),
+    .S2N(ConfigBits_N[90+2]),
+    .X(W2BEG2)
 );
 
- //switch matrix multiplexer W2BEG6 MUX-4
-assign W2BEG6_input = {J_NS2_END6,J_NS2_END1,UIO_OUT6,UO_OUT6};
-cus_mux41_buf inst_cus_mux41_buf_W2BEG6 (
-    .A0(W2BEG6_input[0]),
-    .A1(W2BEG6_input[1]),
-    .A2(W2BEG6_input[2]),
-    .A3(W2BEG6_input[3]),
-    .S0(ConfigBits[92+0]),
-    .S0N(ConfigBits_N[92+0]),
-    .S1(ConfigBits[92+1]),
-    .S1N(ConfigBits_N[92+1]),
-    .X(W2BEG6)
+ //switch matrix multiplexer W2BEG3 MUX-8
+assign W2BEG3_input = {J_NS1_END3,J_NS2_END4,J_NS2_END3,J_NS4_END3,UIO_OE4,UIO_OUT3,UO_OUT3,UO_OUT0};
+cus_mux81_buf inst_cus_mux81_buf_W2BEG3 (
+    .A0(W2BEG3_input[0]),
+    .A1(W2BEG3_input[1]),
+    .A2(W2BEG3_input[2]),
+    .A3(W2BEG3_input[3]),
+    .A4(W2BEG3_input[4]),
+    .A5(W2BEG3_input[5]),
+    .A6(W2BEG3_input[6]),
+    .A7(W2BEG3_input[7]),
+    .S0(ConfigBits[93+0]),
+    .S0N(ConfigBits_N[93+0]),
+    .S1(ConfigBits[93+1]),
+    .S1N(ConfigBits_N[93+1]),
+    .S2(ConfigBits[93+2]),
+    .S2N(ConfigBits_N[93+2]),
+    .X(W2BEG3)
 );
 
- //switch matrix multiplexer W2BEG7 MUX-4
-assign W2BEG7_input = {J_NS2_END7,J_NS2_END0,UIO_OUT7,UO_OUT7};
-cus_mux41_buf inst_cus_mux41_buf_W2BEG7 (
-    .A0(W2BEG7_input[0]),
-    .A1(W2BEG7_input[1]),
-    .A2(W2BEG7_input[2]),
-    .A3(W2BEG7_input[3]),
-    .S0(ConfigBits[94+0]),
-    .S0N(ConfigBits_N[94+0]),
-    .S1(ConfigBits[94+1]),
-    .S1N(ConfigBits_N[94+1]),
-    .X(W2BEG7)
-);
-
- //switch matrix multiplexer W2BEGb0 MUX-4
-assign W2BEGb0_input = {J_NS2_END7,J_NS2_END0,UIO_OE0,UIO_OUT0};
-cus_mux41_buf inst_cus_mux41_buf_W2BEGb0 (
-    .A0(W2BEGb0_input[0]),
-    .A1(W2BEGb0_input[1]),
-    .A2(W2BEGb0_input[2]),
-    .A3(W2BEGb0_input[3]),
+ //switch matrix multiplexer W2BEG4 MUX-8
+assign W2BEG4_input = {J_NS1_END3,J_NS2_END4,J_NS2_END3,J_NS4_END4,UIO_OE3,UIO_OUT4,UO_OUT7,UO_OUT4};
+cus_mux81_buf inst_cus_mux81_buf_W2BEG4 (
+    .A0(W2BEG4_input[0]),
+    .A1(W2BEG4_input[1]),
+    .A2(W2BEG4_input[2]),
+    .A3(W2BEG4_input[3]),
+    .A4(W2BEG4_input[4]),
+    .A5(W2BEG4_input[5]),
+    .A6(W2BEG4_input[6]),
+    .A7(W2BEG4_input[7]),
     .S0(ConfigBits[96+0]),
     .S0N(ConfigBits_N[96+0]),
     .S1(ConfigBits[96+1]),
     .S1N(ConfigBits_N[96+1]),
-    .X(W2BEGb0)
+    .S2(ConfigBits[96+2]),
+    .S2N(ConfigBits_N[96+2]),
+    .X(W2BEG4)
 );
 
- //switch matrix multiplexer W2BEGb1 MUX-4
-assign W2BEGb1_input = {J_NS2_END6,J_NS2_END1,UIO_OE1,UIO_OUT1};
-cus_mux41_buf inst_cus_mux41_buf_W2BEGb1 (
-    .A0(W2BEGb1_input[0]),
-    .A1(W2BEGb1_input[1]),
-    .A2(W2BEGb1_input[2]),
-    .A3(W2BEGb1_input[3]),
-    .S0(ConfigBits[98+0]),
-    .S0N(ConfigBits_N[98+0]),
-    .S1(ConfigBits[98+1]),
-    .S1N(ConfigBits_N[98+1]),
-    .X(W2BEGb1)
+ //switch matrix multiplexer W2BEG5 MUX-8
+assign W2BEG5_input = {J_NS1_END2,J_NS2_END5,J_NS2_END2,J_NS4_END5,UIO_OE2,UIO_OUT5,UO_OUT6,UO_OUT5};
+cus_mux81_buf inst_cus_mux81_buf_W2BEG5 (
+    .A0(W2BEG5_input[0]),
+    .A1(W2BEG5_input[1]),
+    .A2(W2BEG5_input[2]),
+    .A3(W2BEG5_input[3]),
+    .A4(W2BEG5_input[4]),
+    .A5(W2BEG5_input[5]),
+    .A6(W2BEG5_input[6]),
+    .A7(W2BEG5_input[7]),
+    .S0(ConfigBits[99+0]),
+    .S0N(ConfigBits_N[99+0]),
+    .S1(ConfigBits[99+1]),
+    .S1N(ConfigBits_N[99+1]),
+    .S2(ConfigBits[99+2]),
+    .S2N(ConfigBits_N[99+2]),
+    .X(W2BEG5)
 );
 
- //switch matrix multiplexer W2BEGb2 MUX-4
-assign W2BEGb2_input = {J_NS2_END5,J_NS2_END2,UIO_OE2,UIO_OUT2};
-cus_mux41_buf inst_cus_mux41_buf_W2BEGb2 (
-    .A0(W2BEGb2_input[0]),
-    .A1(W2BEGb2_input[1]),
-    .A2(W2BEGb2_input[2]),
-    .A3(W2BEGb2_input[3]),
-    .S0(ConfigBits[100+0]),
-    .S0N(ConfigBits_N[100+0]),
-    .S1(ConfigBits[100+1]),
-    .S1N(ConfigBits_N[100+1]),
-    .X(W2BEGb2)
-);
-
- //switch matrix multiplexer W2BEGb3 MUX-4
-assign W2BEGb3_input = {J_NS2_END4,J_NS2_END3,UIO_OE3,UIO_OUT3};
-cus_mux41_buf inst_cus_mux41_buf_W2BEGb3 (
-    .A0(W2BEGb3_input[0]),
-    .A1(W2BEGb3_input[1]),
-    .A2(W2BEGb3_input[2]),
-    .A3(W2BEGb3_input[3]),
+ //switch matrix multiplexer W2BEG6 MUX-8
+assign W2BEG6_input = {J_NS1_END1,J_NS2_END6,J_NS2_END1,J_NS4_END6,UIO_OE1,UIO_OUT6,UO_OUT6,UO_OUT5};
+cus_mux81_buf inst_cus_mux81_buf_W2BEG6 (
+    .A0(W2BEG6_input[0]),
+    .A1(W2BEG6_input[1]),
+    .A2(W2BEG6_input[2]),
+    .A3(W2BEG6_input[3]),
+    .A4(W2BEG6_input[4]),
+    .A5(W2BEG6_input[5]),
+    .A6(W2BEG6_input[6]),
+    .A7(W2BEG6_input[7]),
     .S0(ConfigBits[102+0]),
     .S0N(ConfigBits_N[102+0]),
     .S1(ConfigBits[102+1]),
     .S1N(ConfigBits_N[102+1]),
-    .X(W2BEGb3)
+    .S2(ConfigBits[102+2]),
+    .S2N(ConfigBits_N[102+2]),
+    .X(W2BEG6)
 );
 
- //switch matrix multiplexer W2BEGb4 MUX-4
-assign W2BEGb4_input = {J_NS2_END4,J_NS2_END3,UIO_OE4,UIO_OUT4};
-cus_mux41_buf inst_cus_mux41_buf_W2BEGb4 (
-    .A0(W2BEGb4_input[0]),
-    .A1(W2BEGb4_input[1]),
-    .A2(W2BEGb4_input[2]),
-    .A3(W2BEGb4_input[3]),
-    .S0(ConfigBits[104+0]),
-    .S0N(ConfigBits_N[104+0]),
-    .S1(ConfigBits[104+1]),
-    .S1N(ConfigBits_N[104+1]),
-    .X(W2BEGb4)
+ //switch matrix multiplexer W2BEG7 MUX-8
+assign W2BEG7_input = {J_NS1_END0,J_NS2_END7,J_NS2_END0,J_NS4_END7,UIO_OE0,UIO_OUT7,UO_OUT7,UO_OUT4};
+cus_mux81_buf inst_cus_mux81_buf_W2BEG7 (
+    .A0(W2BEG7_input[0]),
+    .A1(W2BEG7_input[1]),
+    .A2(W2BEG7_input[2]),
+    .A3(W2BEG7_input[3]),
+    .A4(W2BEG7_input[4]),
+    .A5(W2BEG7_input[5]),
+    .A6(W2BEG7_input[6]),
+    .A7(W2BEG7_input[7]),
+    .S0(ConfigBits[105+0]),
+    .S0N(ConfigBits_N[105+0]),
+    .S1(ConfigBits[105+1]),
+    .S1N(ConfigBits_N[105+1]),
+    .S2(ConfigBits[105+2]),
+    .S2N(ConfigBits_N[105+2]),
+    .X(W2BEG7)
 );
 
- //switch matrix multiplexer W2BEGb5 MUX-4
-assign W2BEGb5_input = {J_NS2_END5,J_NS2_END2,UIO_OE5,UIO_OUT5};
-cus_mux41_buf inst_cus_mux41_buf_W2BEGb5 (
-    .A0(W2BEGb5_input[0]),
-    .A1(W2BEGb5_input[1]),
-    .A2(W2BEGb5_input[2]),
-    .A3(W2BEGb5_input[3]),
-    .S0(ConfigBits[106+0]),
-    .S0N(ConfigBits_N[106+0]),
-    .S1(ConfigBits[106+1]),
-    .S1N(ConfigBits_N[106+1]),
-    .X(W2BEGb5)
-);
-
- //switch matrix multiplexer W2BEGb6 MUX-4
-assign W2BEGb6_input = {J_NS2_END6,J_NS2_END1,UIO_OE6,UIO_OUT6};
-cus_mux41_buf inst_cus_mux41_buf_W2BEGb6 (
-    .A0(W2BEGb6_input[0]),
-    .A1(W2BEGb6_input[1]),
-    .A2(W2BEGb6_input[2]),
-    .A3(W2BEGb6_input[3]),
+ //switch matrix multiplexer W2BEGb0 MUX-8
+assign W2BEGb0_input = {J_NS2_END7,J_NS2_END0,J_NS4_END8,UIO_OE0,UIO_OUT7,UIO_OUT3,UIO_OUT0,E2END7};
+cus_mux81_buf inst_cus_mux81_buf_W2BEGb0 (
+    .A0(W2BEGb0_input[0]),
+    .A1(W2BEGb0_input[1]),
+    .A2(W2BEGb0_input[2]),
+    .A3(W2BEGb0_input[3]),
+    .A4(W2BEGb0_input[4]),
+    .A5(W2BEGb0_input[5]),
+    .A6(W2BEGb0_input[6]),
+    .A7(W2BEGb0_input[7]),
     .S0(ConfigBits[108+0]),
     .S0N(ConfigBits_N[108+0]),
     .S1(ConfigBits[108+1]),
     .S1N(ConfigBits_N[108+1]),
+    .S2(ConfigBits[108+2]),
+    .S2N(ConfigBits_N[108+2]),
+    .X(W2BEGb0)
+);
+
+ //switch matrix multiplexer W2BEGb1 MUX-8
+assign W2BEGb1_input = {J_NS2_END6,J_NS2_END1,J_NS4_END9,UIO_OE1,UIO_OUT6,UIO_OUT2,UIO_OUT1,E2END6};
+cus_mux81_buf inst_cus_mux81_buf_W2BEGb1 (
+    .A0(W2BEGb1_input[0]),
+    .A1(W2BEGb1_input[1]),
+    .A2(W2BEGb1_input[2]),
+    .A3(W2BEGb1_input[3]),
+    .A4(W2BEGb1_input[4]),
+    .A5(W2BEGb1_input[5]),
+    .A6(W2BEGb1_input[6]),
+    .A7(W2BEGb1_input[7]),
+    .S0(ConfigBits[111+0]),
+    .S0N(ConfigBits_N[111+0]),
+    .S1(ConfigBits[111+1]),
+    .S1N(ConfigBits_N[111+1]),
+    .S2(ConfigBits[111+2]),
+    .S2N(ConfigBits_N[111+2]),
+    .X(W2BEGb1)
+);
+
+ //switch matrix multiplexer W2BEGb2 MUX-8
+assign W2BEGb2_input = {J_NS2_END5,J_NS2_END2,J_NS4_END10,UIO_OE2,UIO_OUT5,UIO_OUT2,UIO_OUT1,E2END5};
+cus_mux81_buf inst_cus_mux81_buf_W2BEGb2 (
+    .A0(W2BEGb2_input[0]),
+    .A1(W2BEGb2_input[1]),
+    .A2(W2BEGb2_input[2]),
+    .A3(W2BEGb2_input[3]),
+    .A4(W2BEGb2_input[4]),
+    .A5(W2BEGb2_input[5]),
+    .A6(W2BEGb2_input[6]),
+    .A7(W2BEGb2_input[7]),
+    .S0(ConfigBits[114+0]),
+    .S0N(ConfigBits_N[114+0]),
+    .S1(ConfigBits[114+1]),
+    .S1N(ConfigBits_N[114+1]),
+    .S2(ConfigBits[114+2]),
+    .S2N(ConfigBits_N[114+2]),
+    .X(W2BEGb2)
+);
+
+ //switch matrix multiplexer W2BEGb3 MUX-8
+assign W2BEGb3_input = {J_NS2_END4,J_NS2_END3,J_NS4_END11,UIO_OE3,UIO_OUT4,UIO_OUT3,UIO_OUT0,E2END4};
+cus_mux81_buf inst_cus_mux81_buf_W2BEGb3 (
+    .A0(W2BEGb3_input[0]),
+    .A1(W2BEGb3_input[1]),
+    .A2(W2BEGb3_input[2]),
+    .A3(W2BEGb3_input[3]),
+    .A4(W2BEGb3_input[4]),
+    .A5(W2BEGb3_input[5]),
+    .A6(W2BEGb3_input[6]),
+    .A7(W2BEGb3_input[7]),
+    .S0(ConfigBits[117+0]),
+    .S0N(ConfigBits_N[117+0]),
+    .S1(ConfigBits[117+1]),
+    .S1N(ConfigBits_N[117+1]),
+    .S2(ConfigBits[117+2]),
+    .S2N(ConfigBits_N[117+2]),
+    .X(W2BEGb3)
+);
+
+ //switch matrix multiplexer W2BEGb4 MUX-8
+assign W2BEGb4_input = {J_NS2_END4,J_NS2_END3,J_NS4_END12,UIO_OE4,UIO_OUT7,UIO_OUT4,UIO_OUT3,E2END3};
+cus_mux81_buf inst_cus_mux81_buf_W2BEGb4 (
+    .A0(W2BEGb4_input[0]),
+    .A1(W2BEGb4_input[1]),
+    .A2(W2BEGb4_input[2]),
+    .A3(W2BEGb4_input[3]),
+    .A4(W2BEGb4_input[4]),
+    .A5(W2BEGb4_input[5]),
+    .A6(W2BEGb4_input[6]),
+    .A7(W2BEGb4_input[7]),
+    .S0(ConfigBits[120+0]),
+    .S0N(ConfigBits_N[120+0]),
+    .S1(ConfigBits[120+1]),
+    .S1N(ConfigBits_N[120+1]),
+    .S2(ConfigBits[120+2]),
+    .S2N(ConfigBits_N[120+2]),
+    .X(W2BEGb4)
+);
+
+ //switch matrix multiplexer W2BEGb5 MUX-8
+assign W2BEGb5_input = {J_NS2_END5,J_NS2_END2,J_NS4_END13,UIO_OE5,UIO_OUT6,UIO_OUT5,UIO_OUT2,E2END2};
+cus_mux81_buf inst_cus_mux81_buf_W2BEGb5 (
+    .A0(W2BEGb5_input[0]),
+    .A1(W2BEGb5_input[1]),
+    .A2(W2BEGb5_input[2]),
+    .A3(W2BEGb5_input[3]),
+    .A4(W2BEGb5_input[4]),
+    .A5(W2BEGb5_input[5]),
+    .A6(W2BEGb5_input[6]),
+    .A7(W2BEGb5_input[7]),
+    .S0(ConfigBits[123+0]),
+    .S0N(ConfigBits_N[123+0]),
+    .S1(ConfigBits[123+1]),
+    .S1N(ConfigBits_N[123+1]),
+    .S2(ConfigBits[123+2]),
+    .S2N(ConfigBits_N[123+2]),
+    .X(W2BEGb5)
+);
+
+ //switch matrix multiplexer W2BEGb6 MUX-8
+assign W2BEGb6_input = {J_NS2_END6,J_NS2_END1,J_NS4_END14,UIO_OE6,UIO_OUT6,UIO_OUT5,UIO_OUT1,E2END1};
+cus_mux81_buf inst_cus_mux81_buf_W2BEGb6 (
+    .A0(W2BEGb6_input[0]),
+    .A1(W2BEGb6_input[1]),
+    .A2(W2BEGb6_input[2]),
+    .A3(W2BEGb6_input[3]),
+    .A4(W2BEGb6_input[4]),
+    .A5(W2BEGb6_input[5]),
+    .A6(W2BEGb6_input[6]),
+    .A7(W2BEGb6_input[7]),
+    .S0(ConfigBits[126+0]),
+    .S0N(ConfigBits_N[126+0]),
+    .S1(ConfigBits[126+1]),
+    .S1N(ConfigBits_N[126+1]),
+    .S2(ConfigBits[126+2]),
+    .S2N(ConfigBits_N[126+2]),
     .X(W2BEGb6)
 );
 
- //switch matrix multiplexer W2BEGb7 MUX-4
-assign W2BEGb7_input = {J_NS2_END7,J_NS2_END0,UIO_OE7,UIO_OUT7};
-cus_mux41_buf inst_cus_mux41_buf_W2BEGb7 (
+ //switch matrix multiplexer W2BEGb7 MUX-8
+assign W2BEGb7_input = {J_NS2_END7,J_NS2_END0,J_NS4_END15,UIO_OE7,UIO_OUT7,UIO_OUT4,UIO_OUT0,E2END0};
+cus_mux81_buf inst_cus_mux81_buf_W2BEGb7 (
     .A0(W2BEGb7_input[0]),
     .A1(W2BEGb7_input[1]),
     .A2(W2BEGb7_input[2]),
     .A3(W2BEGb7_input[3]),
-    .S0(ConfigBits[110+0]),
-    .S0N(ConfigBits_N[110+0]),
-    .S1(ConfigBits[110+1]),
-    .S1N(ConfigBits_N[110+1]),
+    .A4(W2BEGb7_input[4]),
+    .A5(W2BEGb7_input[5]),
+    .A6(W2BEGb7_input[6]),
+    .A7(W2BEGb7_input[7]),
+    .S0(ConfigBits[129+0]),
+    .S0N(ConfigBits_N[129+0]),
+    .S1(ConfigBits[129+1]),
+    .S1N(ConfigBits_N[129+1]),
+    .S2(ConfigBits[129+2]),
+    .S2N(ConfigBits_N[129+2]),
     .X(W2BEGb7)
 );
 
@@ -1391,10 +1511,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG0 (
     .A1(WW4BEG0_input[1]),
     .A2(WW4BEG0_input[2]),
     .A3(WW4BEG0_input[3]),
-    .S0(ConfigBits[112+0]),
-    .S0N(ConfigBits_N[112+0]),
-    .S1(ConfigBits[112+1]),
-    .S1N(ConfigBits_N[112+1]),
+    .S0(ConfigBits[132+0]),
+    .S0N(ConfigBits_N[132+0]),
+    .S1(ConfigBits[132+1]),
+    .S1N(ConfigBits_N[132+1]),
     .X(WW4BEG0)
 );
 
@@ -1405,10 +1525,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG1 (
     .A1(WW4BEG1_input[1]),
     .A2(WW4BEG1_input[2]),
     .A3(WW4BEG1_input[3]),
-    .S0(ConfigBits[114+0]),
-    .S0N(ConfigBits_N[114+0]),
-    .S1(ConfigBits[114+1]),
-    .S1N(ConfigBits_N[114+1]),
+    .S0(ConfigBits[134+0]),
+    .S0N(ConfigBits_N[134+0]),
+    .S1(ConfigBits[134+1]),
+    .S1N(ConfigBits_N[134+1]),
     .X(WW4BEG1)
 );
 
@@ -1419,10 +1539,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG2 (
     .A1(WW4BEG2_input[1]),
     .A2(WW4BEG2_input[2]),
     .A3(WW4BEG2_input[3]),
-    .S0(ConfigBits[116+0]),
-    .S0N(ConfigBits_N[116+0]),
-    .S1(ConfigBits[116+1]),
-    .S1N(ConfigBits_N[116+1]),
+    .S0(ConfigBits[136+0]),
+    .S0N(ConfigBits_N[136+0]),
+    .S1(ConfigBits[136+1]),
+    .S1N(ConfigBits_N[136+1]),
     .X(WW4BEG2)
 );
 
@@ -1433,10 +1553,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG3 (
     .A1(WW4BEG3_input[1]),
     .A2(WW4BEG3_input[2]),
     .A3(WW4BEG3_input[3]),
-    .S0(ConfigBits[118+0]),
-    .S0N(ConfigBits_N[118+0]),
-    .S1(ConfigBits[118+1]),
-    .S1N(ConfigBits_N[118+1]),
+    .S0(ConfigBits[138+0]),
+    .S0N(ConfigBits_N[138+0]),
+    .S1(ConfigBits[138+1]),
+    .S1N(ConfigBits_N[138+1]),
     .X(WW4BEG3)
 );
 
@@ -1447,10 +1567,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG4 (
     .A1(WW4BEG4_input[1]),
     .A2(WW4BEG4_input[2]),
     .A3(WW4BEG4_input[3]),
-    .S0(ConfigBits[120+0]),
-    .S0N(ConfigBits_N[120+0]),
-    .S1(ConfigBits[120+1]),
-    .S1N(ConfigBits_N[120+1]),
+    .S0(ConfigBits[140+0]),
+    .S0N(ConfigBits_N[140+0]),
+    .S1(ConfigBits[140+1]),
+    .S1N(ConfigBits_N[140+1]),
     .X(WW4BEG4)
 );
 
@@ -1461,10 +1581,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG5 (
     .A1(WW4BEG5_input[1]),
     .A2(WW4BEG5_input[2]),
     .A3(WW4BEG5_input[3]),
-    .S0(ConfigBits[122+0]),
-    .S0N(ConfigBits_N[122+0]),
-    .S1(ConfigBits[122+1]),
-    .S1N(ConfigBits_N[122+1]),
+    .S0(ConfigBits[142+0]),
+    .S0N(ConfigBits_N[142+0]),
+    .S1(ConfigBits[142+1]),
+    .S1N(ConfigBits_N[142+1]),
     .X(WW4BEG5)
 );
 
@@ -1475,10 +1595,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG6 (
     .A1(WW4BEG6_input[1]),
     .A2(WW4BEG6_input[2]),
     .A3(WW4BEG6_input[3]),
-    .S0(ConfigBits[124+0]),
-    .S0N(ConfigBits_N[124+0]),
-    .S1(ConfigBits[124+1]),
-    .S1N(ConfigBits_N[124+1]),
+    .S0(ConfigBits[144+0]),
+    .S0N(ConfigBits_N[144+0]),
+    .S1(ConfigBits[144+1]),
+    .S1N(ConfigBits_N[144+1]),
     .X(WW4BEG6)
 );
 
@@ -1489,10 +1609,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG7 (
     .A1(WW4BEG7_input[1]),
     .A2(WW4BEG7_input[2]),
     .A3(WW4BEG7_input[3]),
-    .S0(ConfigBits[126+0]),
-    .S0N(ConfigBits_N[126+0]),
-    .S1(ConfigBits[126+1]),
-    .S1N(ConfigBits_N[126+1]),
+    .S0(ConfigBits[146+0]),
+    .S0N(ConfigBits_N[146+0]),
+    .S1(ConfigBits[146+1]),
+    .S1N(ConfigBits_N[146+1]),
     .X(WW4BEG7)
 );
 
@@ -1503,10 +1623,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG8 (
     .A1(WW4BEG8_input[1]),
     .A2(WW4BEG8_input[2]),
     .A3(WW4BEG8_input[3]),
-    .S0(ConfigBits[128+0]),
-    .S0N(ConfigBits_N[128+0]),
-    .S1(ConfigBits[128+1]),
-    .S1N(ConfigBits_N[128+1]),
+    .S0(ConfigBits[148+0]),
+    .S0N(ConfigBits_N[148+0]),
+    .S1(ConfigBits[148+1]),
+    .S1N(ConfigBits_N[148+1]),
     .X(WW4BEG8)
 );
 
@@ -1517,10 +1637,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG9 (
     .A1(WW4BEG9_input[1]),
     .A2(WW4BEG9_input[2]),
     .A3(WW4BEG9_input[3]),
-    .S0(ConfigBits[130+0]),
-    .S0N(ConfigBits_N[130+0]),
-    .S1(ConfigBits[130+1]),
-    .S1N(ConfigBits_N[130+1]),
+    .S0(ConfigBits[150+0]),
+    .S0N(ConfigBits_N[150+0]),
+    .S1(ConfigBits[150+1]),
+    .S1N(ConfigBits_N[150+1]),
     .X(WW4BEG9)
 );
 
@@ -1531,10 +1651,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG10 (
     .A1(WW4BEG10_input[1]),
     .A2(WW4BEG10_input[2]),
     .A3(WW4BEG10_input[3]),
-    .S0(ConfigBits[132+0]),
-    .S0N(ConfigBits_N[132+0]),
-    .S1(ConfigBits[132+1]),
-    .S1N(ConfigBits_N[132+1]),
+    .S0(ConfigBits[152+0]),
+    .S0N(ConfigBits_N[152+0]),
+    .S1(ConfigBits[152+1]),
+    .S1N(ConfigBits_N[152+1]),
     .X(WW4BEG10)
 );
 
@@ -1545,10 +1665,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG11 (
     .A1(WW4BEG11_input[1]),
     .A2(WW4BEG11_input[2]),
     .A3(WW4BEG11_input[3]),
-    .S0(ConfigBits[134+0]),
-    .S0N(ConfigBits_N[134+0]),
-    .S1(ConfigBits[134+1]),
-    .S1N(ConfigBits_N[134+1]),
+    .S0(ConfigBits[154+0]),
+    .S0N(ConfigBits_N[154+0]),
+    .S1(ConfigBits[154+1]),
+    .S1N(ConfigBits_N[154+1]),
     .X(WW4BEG11)
 );
 
@@ -1559,10 +1679,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG12 (
     .A1(WW4BEG12_input[1]),
     .A2(WW4BEG12_input[2]),
     .A3(WW4BEG12_input[3]),
-    .S0(ConfigBits[136+0]),
-    .S0N(ConfigBits_N[136+0]),
-    .S1(ConfigBits[136+1]),
-    .S1N(ConfigBits_N[136+1]),
+    .S0(ConfigBits[156+0]),
+    .S0N(ConfigBits_N[156+0]),
+    .S1(ConfigBits[156+1]),
+    .S1N(ConfigBits_N[156+1]),
     .X(WW4BEG12)
 );
 
@@ -1573,10 +1693,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG13 (
     .A1(WW4BEG13_input[1]),
     .A2(WW4BEG13_input[2]),
     .A3(WW4BEG13_input[3]),
-    .S0(ConfigBits[138+0]),
-    .S0N(ConfigBits_N[138+0]),
-    .S1(ConfigBits[138+1]),
-    .S1N(ConfigBits_N[138+1]),
+    .S0(ConfigBits[158+0]),
+    .S0N(ConfigBits_N[158+0]),
+    .S1(ConfigBits[158+1]),
+    .S1N(ConfigBits_N[158+1]),
     .X(WW4BEG13)
 );
 
@@ -1587,10 +1707,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG14 (
     .A1(WW4BEG14_input[1]),
     .A2(WW4BEG14_input[2]),
     .A3(WW4BEG14_input[3]),
-    .S0(ConfigBits[140+0]),
-    .S0N(ConfigBits_N[140+0]),
-    .S1(ConfigBits[140+1]),
-    .S1N(ConfigBits_N[140+1]),
+    .S0(ConfigBits[160+0]),
+    .S0N(ConfigBits_N[160+0]),
+    .S1(ConfigBits[160+1]),
+    .S1N(ConfigBits_N[160+1]),
     .X(WW4BEG14)
 );
 
@@ -1601,10 +1721,10 @@ cus_mux41_buf inst_cus_mux41_buf_WW4BEG15 (
     .A1(WW4BEG15_input[1]),
     .A2(WW4BEG15_input[2]),
     .A3(WW4BEG15_input[3]),
-    .S0(ConfigBits[142+0]),
-    .S0N(ConfigBits_N[142+0]),
-    .S1(ConfigBits[142+1]),
-    .S1N(ConfigBits_N[142+1]),
+    .S0(ConfigBits[162+0]),
+    .S0N(ConfigBits_N[162+0]),
+    .S1(ConfigBits[162+1]),
+    .S1N(ConfigBits_N[162+1]),
     .X(WW4BEG15)
 );
 
@@ -1615,10 +1735,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG0 (
     .A1(W6BEG0_input[1]),
     .A2(W6BEG0_input[2]),
     .A3(W6BEG0_input[3]),
-    .S0(ConfigBits[144+0]),
-    .S0N(ConfigBits_N[144+0]),
-    .S1(ConfigBits[144+1]),
-    .S1N(ConfigBits_N[144+1]),
+    .S0(ConfigBits[164+0]),
+    .S0N(ConfigBits_N[164+0]),
+    .S1(ConfigBits[164+1]),
+    .S1N(ConfigBits_N[164+1]),
     .X(W6BEG0)
 );
 
@@ -1629,10 +1749,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG1 (
     .A1(W6BEG1_input[1]),
     .A2(W6BEG1_input[2]),
     .A3(W6BEG1_input[3]),
-    .S0(ConfigBits[146+0]),
-    .S0N(ConfigBits_N[146+0]),
-    .S1(ConfigBits[146+1]),
-    .S1N(ConfigBits_N[146+1]),
+    .S0(ConfigBits[166+0]),
+    .S0N(ConfigBits_N[166+0]),
+    .S1(ConfigBits[166+1]),
+    .S1N(ConfigBits_N[166+1]),
     .X(W6BEG1)
 );
 
@@ -1643,10 +1763,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG2 (
     .A1(W6BEG2_input[1]),
     .A2(W6BEG2_input[2]),
     .A3(W6BEG2_input[3]),
-    .S0(ConfigBits[148+0]),
-    .S0N(ConfigBits_N[148+0]),
-    .S1(ConfigBits[148+1]),
-    .S1N(ConfigBits_N[148+1]),
+    .S0(ConfigBits[168+0]),
+    .S0N(ConfigBits_N[168+0]),
+    .S1(ConfigBits[168+1]),
+    .S1N(ConfigBits_N[168+1]),
     .X(W6BEG2)
 );
 
@@ -1657,10 +1777,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG3 (
     .A1(W6BEG3_input[1]),
     .A2(W6BEG3_input[2]),
     .A3(W6BEG3_input[3]),
-    .S0(ConfigBits[150+0]),
-    .S0N(ConfigBits_N[150+0]),
-    .S1(ConfigBits[150+1]),
-    .S1N(ConfigBits_N[150+1]),
+    .S0(ConfigBits[170+0]),
+    .S0N(ConfigBits_N[170+0]),
+    .S1(ConfigBits[170+1]),
+    .S1N(ConfigBits_N[170+1]),
     .X(W6BEG3)
 );
 
@@ -1671,10 +1791,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG4 (
     .A1(W6BEG4_input[1]),
     .A2(W6BEG4_input[2]),
     .A3(W6BEG4_input[3]),
-    .S0(ConfigBits[152+0]),
-    .S0N(ConfigBits_N[152+0]),
-    .S1(ConfigBits[152+1]),
-    .S1N(ConfigBits_N[152+1]),
+    .S0(ConfigBits[172+0]),
+    .S0N(ConfigBits_N[172+0]),
+    .S1(ConfigBits[172+1]),
+    .S1N(ConfigBits_N[172+1]),
     .X(W6BEG4)
 );
 
@@ -1685,10 +1805,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG5 (
     .A1(W6BEG5_input[1]),
     .A2(W6BEG5_input[2]),
     .A3(W6BEG5_input[3]),
-    .S0(ConfigBits[154+0]),
-    .S0N(ConfigBits_N[154+0]),
-    .S1(ConfigBits[154+1]),
-    .S1N(ConfigBits_N[154+1]),
+    .S0(ConfigBits[174+0]),
+    .S0N(ConfigBits_N[174+0]),
+    .S1(ConfigBits[174+1]),
+    .S1N(ConfigBits_N[174+1]),
     .X(W6BEG5)
 );
 
@@ -1699,10 +1819,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG6 (
     .A1(W6BEG6_input[1]),
     .A2(W6BEG6_input[2]),
     .A3(W6BEG6_input[3]),
-    .S0(ConfigBits[156+0]),
-    .S0N(ConfigBits_N[156+0]),
-    .S1(ConfigBits[156+1]),
-    .S1N(ConfigBits_N[156+1]),
+    .S0(ConfigBits[176+0]),
+    .S0N(ConfigBits_N[176+0]),
+    .S1(ConfigBits[176+1]),
+    .S1N(ConfigBits_N[176+1]),
     .X(W6BEG6)
 );
 
@@ -1713,10 +1833,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG7 (
     .A1(W6BEG7_input[1]),
     .A2(W6BEG7_input[2]),
     .A3(W6BEG7_input[3]),
-    .S0(ConfigBits[158+0]),
-    .S0N(ConfigBits_N[158+0]),
-    .S1(ConfigBits[158+1]),
-    .S1N(ConfigBits_N[158+1]),
+    .S0(ConfigBits[178+0]),
+    .S0N(ConfigBits_N[178+0]),
+    .S1(ConfigBits[178+1]),
+    .S1N(ConfigBits_N[178+1]),
     .X(W6BEG7)
 );
 
@@ -1727,10 +1847,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG8 (
     .A1(W6BEG8_input[1]),
     .A2(W6BEG8_input[2]),
     .A3(W6BEG8_input[3]),
-    .S0(ConfigBits[160+0]),
-    .S0N(ConfigBits_N[160+0]),
-    .S1(ConfigBits[160+1]),
-    .S1N(ConfigBits_N[160+1]),
+    .S0(ConfigBits[180+0]),
+    .S0N(ConfigBits_N[180+0]),
+    .S1(ConfigBits[180+1]),
+    .S1N(ConfigBits_N[180+1]),
     .X(W6BEG8)
 );
 
@@ -1741,10 +1861,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG9 (
     .A1(W6BEG9_input[1]),
     .A2(W6BEG9_input[2]),
     .A3(W6BEG9_input[3]),
-    .S0(ConfigBits[162+0]),
-    .S0N(ConfigBits_N[162+0]),
-    .S1(ConfigBits[162+1]),
-    .S1N(ConfigBits_N[162+1]),
+    .S0(ConfigBits[182+0]),
+    .S0N(ConfigBits_N[182+0]),
+    .S1(ConfigBits[182+1]),
+    .S1N(ConfigBits_N[182+1]),
     .X(W6BEG9)
 );
 
@@ -1755,10 +1875,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG10 (
     .A1(W6BEG10_input[1]),
     .A2(W6BEG10_input[2]),
     .A3(W6BEG10_input[3]),
-    .S0(ConfigBits[164+0]),
-    .S0N(ConfigBits_N[164+0]),
-    .S1(ConfigBits[164+1]),
-    .S1N(ConfigBits_N[164+1]),
+    .S0(ConfigBits[184+0]),
+    .S0N(ConfigBits_N[184+0]),
+    .S1(ConfigBits[184+1]),
+    .S1N(ConfigBits_N[184+1]),
     .X(W6BEG10)
 );
 
@@ -1769,10 +1889,10 @@ cus_mux41_buf inst_cus_mux41_buf_W6BEG11 (
     .A1(W6BEG11_input[1]),
     .A2(W6BEG11_input[2]),
     .A3(W6BEG11_input[3]),
-    .S0(ConfigBits[166+0]),
-    .S0N(ConfigBits_N[166+0]),
-    .S1(ConfigBits[166+1]),
-    .S1N(ConfigBits_N[166+1]),
+    .S0(ConfigBits[186+0]),
+    .S0N(ConfigBits_N[186+0]),
+    .S1(ConfigBits[186+1]),
+    .S1N(ConfigBits_N[186+1]),
     .X(W6BEG11)
 );
 
@@ -1787,12 +1907,12 @@ cus_mux81_buf inst_cus_mux81_buf_UI_IN0 (
     .A5(UI_IN0_input[5]),
     .A6(UI_IN0_input[6]),
     .A7(UI_IN0_input[7]),
-    .S0(ConfigBits[168+0]),
-    .S0N(ConfigBits_N[168+0]),
-    .S1(ConfigBits[168+1]),
-    .S1N(ConfigBits_N[168+1]),
-    .S2(ConfigBits[168+2]),
-    .S2N(ConfigBits_N[168+2]),
+    .S0(ConfigBits[188+0]),
+    .S0N(ConfigBits_N[188+0]),
+    .S1(ConfigBits[188+1]),
+    .S1N(ConfigBits_N[188+1]),
+    .S2(ConfigBits[188+2]),
+    .S2N(ConfigBits_N[188+2]),
     .X(UI_IN0)
 );
 
@@ -1807,12 +1927,12 @@ cus_mux81_buf inst_cus_mux81_buf_UI_IN1 (
     .A5(UI_IN1_input[5]),
     .A6(UI_IN1_input[6]),
     .A7(UI_IN1_input[7]),
-    .S0(ConfigBits[171+0]),
-    .S0N(ConfigBits_N[171+0]),
-    .S1(ConfigBits[171+1]),
-    .S1N(ConfigBits_N[171+1]),
-    .S2(ConfigBits[171+2]),
-    .S2N(ConfigBits_N[171+2]),
+    .S0(ConfigBits[191+0]),
+    .S0N(ConfigBits_N[191+0]),
+    .S1(ConfigBits[191+1]),
+    .S1N(ConfigBits_N[191+1]),
+    .S2(ConfigBits[191+2]),
+    .S2N(ConfigBits_N[191+2]),
     .X(UI_IN1)
 );
 
@@ -1827,12 +1947,12 @@ cus_mux81_buf inst_cus_mux81_buf_UI_IN2 (
     .A5(UI_IN2_input[5]),
     .A6(UI_IN2_input[6]),
     .A7(UI_IN2_input[7]),
-    .S0(ConfigBits[174+0]),
-    .S0N(ConfigBits_N[174+0]),
-    .S1(ConfigBits[174+1]),
-    .S1N(ConfigBits_N[174+1]),
-    .S2(ConfigBits[174+2]),
-    .S2N(ConfigBits_N[174+2]),
+    .S0(ConfigBits[194+0]),
+    .S0N(ConfigBits_N[194+0]),
+    .S1(ConfigBits[194+1]),
+    .S1N(ConfigBits_N[194+1]),
+    .S2(ConfigBits[194+2]),
+    .S2N(ConfigBits_N[194+2]),
     .X(UI_IN2)
 );
 
@@ -1847,12 +1967,12 @@ cus_mux81_buf inst_cus_mux81_buf_UI_IN3 (
     .A5(UI_IN3_input[5]),
     .A6(UI_IN3_input[6]),
     .A7(UI_IN3_input[7]),
-    .S0(ConfigBits[177+0]),
-    .S0N(ConfigBits_N[177+0]),
-    .S1(ConfigBits[177+1]),
-    .S1N(ConfigBits_N[177+1]),
-    .S2(ConfigBits[177+2]),
-    .S2N(ConfigBits_N[177+2]),
+    .S0(ConfigBits[197+0]),
+    .S0N(ConfigBits_N[197+0]),
+    .S1(ConfigBits[197+1]),
+    .S1N(ConfigBits_N[197+1]),
+    .S2(ConfigBits[197+2]),
+    .S2N(ConfigBits_N[197+2]),
     .X(UI_IN3)
 );
 
@@ -1867,12 +1987,12 @@ cus_mux81_buf inst_cus_mux81_buf_UI_IN4 (
     .A5(UI_IN4_input[5]),
     .A6(UI_IN4_input[6]),
     .A7(UI_IN4_input[7]),
-    .S0(ConfigBits[180+0]),
-    .S0N(ConfigBits_N[180+0]),
-    .S1(ConfigBits[180+1]),
-    .S1N(ConfigBits_N[180+1]),
-    .S2(ConfigBits[180+2]),
-    .S2N(ConfigBits_N[180+2]),
+    .S0(ConfigBits[200+0]),
+    .S0N(ConfigBits_N[200+0]),
+    .S1(ConfigBits[200+1]),
+    .S1N(ConfigBits_N[200+1]),
+    .S2(ConfigBits[200+2]),
+    .S2N(ConfigBits_N[200+2]),
     .X(UI_IN4)
 );
 
@@ -1887,12 +2007,12 @@ cus_mux81_buf inst_cus_mux81_buf_UI_IN5 (
     .A5(UI_IN5_input[5]),
     .A6(UI_IN5_input[6]),
     .A7(UI_IN5_input[7]),
-    .S0(ConfigBits[183+0]),
-    .S0N(ConfigBits_N[183+0]),
-    .S1(ConfigBits[183+1]),
-    .S1N(ConfigBits_N[183+1]),
-    .S2(ConfigBits[183+2]),
-    .S2N(ConfigBits_N[183+2]),
+    .S0(ConfigBits[203+0]),
+    .S0N(ConfigBits_N[203+0]),
+    .S1(ConfigBits[203+1]),
+    .S1N(ConfigBits_N[203+1]),
+    .S2(ConfigBits[203+2]),
+    .S2N(ConfigBits_N[203+2]),
     .X(UI_IN5)
 );
 
@@ -1907,12 +2027,12 @@ cus_mux81_buf inst_cus_mux81_buf_UI_IN6 (
     .A5(UI_IN6_input[5]),
     .A6(UI_IN6_input[6]),
     .A7(UI_IN6_input[7]),
-    .S0(ConfigBits[186+0]),
-    .S0N(ConfigBits_N[186+0]),
-    .S1(ConfigBits[186+1]),
-    .S1N(ConfigBits_N[186+1]),
-    .S2(ConfigBits[186+2]),
-    .S2N(ConfigBits_N[186+2]),
+    .S0(ConfigBits[206+0]),
+    .S0N(ConfigBits_N[206+0]),
+    .S1(ConfigBits[206+1]),
+    .S1N(ConfigBits_N[206+1]),
+    .S2(ConfigBits[206+2]),
+    .S2N(ConfigBits_N[206+2]),
     .X(UI_IN6)
 );
 
@@ -1927,12 +2047,12 @@ cus_mux81_buf inst_cus_mux81_buf_UI_IN7 (
     .A5(UI_IN7_input[5]),
     .A6(UI_IN7_input[6]),
     .A7(UI_IN7_input[7]),
-    .S0(ConfigBits[189+0]),
-    .S0N(ConfigBits_N[189+0]),
-    .S1(ConfigBits[189+1]),
-    .S1N(ConfigBits_N[189+1]),
-    .S2(ConfigBits[189+2]),
-    .S2N(ConfigBits_N[189+2]),
+    .S0(ConfigBits[209+0]),
+    .S0N(ConfigBits_N[209+0]),
+    .S1(ConfigBits[209+1]),
+    .S1N(ConfigBits_N[209+1]),
+    .S2(ConfigBits[209+2]),
+    .S2N(ConfigBits_N[209+2]),
     .X(UI_IN7)
 );
 
@@ -1947,12 +2067,12 @@ cus_mux81_buf inst_cus_mux81_buf_UIO_IN0 (
     .A5(UIO_IN0_input[5]),
     .A6(UIO_IN0_input[6]),
     .A7(UIO_IN0_input[7]),
-    .S0(ConfigBits[192+0]),
-    .S0N(ConfigBits_N[192+0]),
-    .S1(ConfigBits[192+1]),
-    .S1N(ConfigBits_N[192+1]),
-    .S2(ConfigBits[192+2]),
-    .S2N(ConfigBits_N[192+2]),
+    .S0(ConfigBits[212+0]),
+    .S0N(ConfigBits_N[212+0]),
+    .S1(ConfigBits[212+1]),
+    .S1N(ConfigBits_N[212+1]),
+    .S2(ConfigBits[212+2]),
+    .S2N(ConfigBits_N[212+2]),
     .X(UIO_IN0)
 );
 
@@ -1967,12 +2087,12 @@ cus_mux81_buf inst_cus_mux81_buf_UIO_IN1 (
     .A5(UIO_IN1_input[5]),
     .A6(UIO_IN1_input[6]),
     .A7(UIO_IN1_input[7]),
-    .S0(ConfigBits[195+0]),
-    .S0N(ConfigBits_N[195+0]),
-    .S1(ConfigBits[195+1]),
-    .S1N(ConfigBits_N[195+1]),
-    .S2(ConfigBits[195+2]),
-    .S2N(ConfigBits_N[195+2]),
+    .S0(ConfigBits[215+0]),
+    .S0N(ConfigBits_N[215+0]),
+    .S1(ConfigBits[215+1]),
+    .S1N(ConfigBits_N[215+1]),
+    .S2(ConfigBits[215+2]),
+    .S2N(ConfigBits_N[215+2]),
     .X(UIO_IN1)
 );
 
@@ -1987,12 +2107,12 @@ cus_mux81_buf inst_cus_mux81_buf_UIO_IN2 (
     .A5(UIO_IN2_input[5]),
     .A6(UIO_IN2_input[6]),
     .A7(UIO_IN2_input[7]),
-    .S0(ConfigBits[198+0]),
-    .S0N(ConfigBits_N[198+0]),
-    .S1(ConfigBits[198+1]),
-    .S1N(ConfigBits_N[198+1]),
-    .S2(ConfigBits[198+2]),
-    .S2N(ConfigBits_N[198+2]),
+    .S0(ConfigBits[218+0]),
+    .S0N(ConfigBits_N[218+0]),
+    .S1(ConfigBits[218+1]),
+    .S1N(ConfigBits_N[218+1]),
+    .S2(ConfigBits[218+2]),
+    .S2N(ConfigBits_N[218+2]),
     .X(UIO_IN2)
 );
 
@@ -2007,12 +2127,12 @@ cus_mux81_buf inst_cus_mux81_buf_UIO_IN3 (
     .A5(UIO_IN3_input[5]),
     .A6(UIO_IN3_input[6]),
     .A7(UIO_IN3_input[7]),
-    .S0(ConfigBits[201+0]),
-    .S0N(ConfigBits_N[201+0]),
-    .S1(ConfigBits[201+1]),
-    .S1N(ConfigBits_N[201+1]),
-    .S2(ConfigBits[201+2]),
-    .S2N(ConfigBits_N[201+2]),
+    .S0(ConfigBits[221+0]),
+    .S0N(ConfigBits_N[221+0]),
+    .S1(ConfigBits[221+1]),
+    .S1N(ConfigBits_N[221+1]),
+    .S2(ConfigBits[221+2]),
+    .S2N(ConfigBits_N[221+2]),
     .X(UIO_IN3)
 );
 
@@ -2027,12 +2147,12 @@ cus_mux81_buf inst_cus_mux81_buf_UIO_IN4 (
     .A5(UIO_IN4_input[5]),
     .A6(UIO_IN4_input[6]),
     .A7(UIO_IN4_input[7]),
-    .S0(ConfigBits[204+0]),
-    .S0N(ConfigBits_N[204+0]),
-    .S1(ConfigBits[204+1]),
-    .S1N(ConfigBits_N[204+1]),
-    .S2(ConfigBits[204+2]),
-    .S2N(ConfigBits_N[204+2]),
+    .S0(ConfigBits[224+0]),
+    .S0N(ConfigBits_N[224+0]),
+    .S1(ConfigBits[224+1]),
+    .S1N(ConfigBits_N[224+1]),
+    .S2(ConfigBits[224+2]),
+    .S2N(ConfigBits_N[224+2]),
     .X(UIO_IN4)
 );
 
@@ -2047,12 +2167,12 @@ cus_mux81_buf inst_cus_mux81_buf_UIO_IN5 (
     .A5(UIO_IN5_input[5]),
     .A6(UIO_IN5_input[6]),
     .A7(UIO_IN5_input[7]),
-    .S0(ConfigBits[207+0]),
-    .S0N(ConfigBits_N[207+0]),
-    .S1(ConfigBits[207+1]),
-    .S1N(ConfigBits_N[207+1]),
-    .S2(ConfigBits[207+2]),
-    .S2N(ConfigBits_N[207+2]),
+    .S0(ConfigBits[227+0]),
+    .S0N(ConfigBits_N[227+0]),
+    .S1(ConfigBits[227+1]),
+    .S1N(ConfigBits_N[227+1]),
+    .S2(ConfigBits[227+2]),
+    .S2N(ConfigBits_N[227+2]),
     .X(UIO_IN5)
 );
 
@@ -2067,12 +2187,12 @@ cus_mux81_buf inst_cus_mux81_buf_UIO_IN6 (
     .A5(UIO_IN6_input[5]),
     .A6(UIO_IN6_input[6]),
     .A7(UIO_IN6_input[7]),
-    .S0(ConfigBits[210+0]),
-    .S0N(ConfigBits_N[210+0]),
-    .S1(ConfigBits[210+1]),
-    .S1N(ConfigBits_N[210+1]),
-    .S2(ConfigBits[210+2]),
-    .S2N(ConfigBits_N[210+2]),
+    .S0(ConfigBits[230+0]),
+    .S0N(ConfigBits_N[230+0]),
+    .S1(ConfigBits[230+1]),
+    .S1N(ConfigBits_N[230+1]),
+    .S2(ConfigBits[230+2]),
+    .S2N(ConfigBits_N[230+2]),
     .X(UIO_IN6)
 );
 
@@ -2087,12 +2207,12 @@ cus_mux81_buf inst_cus_mux81_buf_UIO_IN7 (
     .A5(UIO_IN7_input[5]),
     .A6(UIO_IN7_input[6]),
     .A7(UIO_IN7_input[7]),
-    .S0(ConfigBits[213+0]),
-    .S0N(ConfigBits_N[213+0]),
-    .S1(ConfigBits[213+1]),
-    .S1N(ConfigBits_N[213+1]),
-    .S2(ConfigBits[213+2]),
-    .S2N(ConfigBits_N[213+2]),
+    .S0(ConfigBits[233+0]),
+    .S0N(ConfigBits_N[233+0]),
+    .S1(ConfigBits[233+1]),
+    .S1N(ConfigBits_N[233+1]),
+    .S2(ConfigBits[233+2]),
+    .S2N(ConfigBits_N[233+2]),
     .X(UIO_IN7)
 );
 
@@ -2103,10 +2223,10 @@ cus_mux41_buf inst_cus_mux41_buf_ENA (
     .A1(ENA_input[1]),
     .A2(ENA_input[2]),
     .A3(ENA_input[3]),
-    .S0(ConfigBits[216+0]),
-    .S0N(ConfigBits_N[216+0]),
-    .S1(ConfigBits[216+1]),
-    .S1N(ConfigBits_N[216+1]),
+    .S0(ConfigBits[236+0]),
+    .S0N(ConfigBits_N[236+0]),
+    .S1(ConfigBits[236+1]),
+    .S1N(ConfigBits_N[236+1]),
     .X(ENA)
 );
 
@@ -2129,14 +2249,14 @@ cus_mux161_buf inst_cus_mux161_buf_RST_N (
     .A13(RST_N_input[13]),
     .A14(RST_N_input[14]),
     .A15(RST_N_input[15]),
-    .S0(ConfigBits[218+0]),
-    .S0N(ConfigBits_N[218+0]),
-    .S1(ConfigBits[218+1]),
-    .S1N(ConfigBits_N[218+1]),
-    .S2(ConfigBits[218+2]),
-    .S2N(ConfigBits_N[218+2]),
-    .S3(ConfigBits[218+3]),
-    .S3N(ConfigBits_N[218+3]),
+    .S0(ConfigBits[238+0]),
+    .S0N(ConfigBits_N[238+0]),
+    .S1(ConfigBits[238+1]),
+    .S1N(ConfigBits_N[238+1]),
+    .S2(ConfigBits[238+2]),
+    .S2N(ConfigBits_N[238+2]),
+    .S3(ConfigBits[238+3]),
+    .S3N(ConfigBits_N[238+3]),
     .X(RST_N)
 );
 
@@ -2147,10 +2267,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG0 (
     .A1(J_NS4_BEG0_input[1]),
     .A2(J_NS4_BEG0_input[2]),
     .A3(J_NS4_BEG0_input[3]),
-    .S0(ConfigBits[222+0]),
-    .S0N(ConfigBits_N[222+0]),
-    .S1(ConfigBits[222+1]),
-    .S1N(ConfigBits_N[222+1]),
+    .S0(ConfigBits[242+0]),
+    .S0N(ConfigBits_N[242+0]),
+    .S1(ConfigBits[242+1]),
+    .S1N(ConfigBits_N[242+1]),
     .X(J_NS4_BEG0)
 );
 
@@ -2161,10 +2281,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG1 (
     .A1(J_NS4_BEG1_input[1]),
     .A2(J_NS4_BEG1_input[2]),
     .A3(J_NS4_BEG1_input[3]),
-    .S0(ConfigBits[224+0]),
-    .S0N(ConfigBits_N[224+0]),
-    .S1(ConfigBits[224+1]),
-    .S1N(ConfigBits_N[224+1]),
+    .S0(ConfigBits[244+0]),
+    .S0N(ConfigBits_N[244+0]),
+    .S1(ConfigBits[244+1]),
+    .S1N(ConfigBits_N[244+1]),
     .X(J_NS4_BEG1)
 );
 
@@ -2175,10 +2295,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG2 (
     .A1(J_NS4_BEG2_input[1]),
     .A2(J_NS4_BEG2_input[2]),
     .A3(J_NS4_BEG2_input[3]),
-    .S0(ConfigBits[226+0]),
-    .S0N(ConfigBits_N[226+0]),
-    .S1(ConfigBits[226+1]),
-    .S1N(ConfigBits_N[226+1]),
+    .S0(ConfigBits[246+0]),
+    .S0N(ConfigBits_N[246+0]),
+    .S1(ConfigBits[246+1]),
+    .S1N(ConfigBits_N[246+1]),
     .X(J_NS4_BEG2)
 );
 
@@ -2189,10 +2309,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG3 (
     .A1(J_NS4_BEG3_input[1]),
     .A2(J_NS4_BEG3_input[2]),
     .A3(J_NS4_BEG3_input[3]),
-    .S0(ConfigBits[228+0]),
-    .S0N(ConfigBits_N[228+0]),
-    .S1(ConfigBits[228+1]),
-    .S1N(ConfigBits_N[228+1]),
+    .S0(ConfigBits[248+0]),
+    .S0N(ConfigBits_N[248+0]),
+    .S1(ConfigBits[248+1]),
+    .S1N(ConfigBits_N[248+1]),
     .X(J_NS4_BEG3)
 );
 
@@ -2203,10 +2323,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG4 (
     .A1(J_NS4_BEG4_input[1]),
     .A2(J_NS4_BEG4_input[2]),
     .A3(J_NS4_BEG4_input[3]),
-    .S0(ConfigBits[230+0]),
-    .S0N(ConfigBits_N[230+0]),
-    .S1(ConfigBits[230+1]),
-    .S1N(ConfigBits_N[230+1]),
+    .S0(ConfigBits[250+0]),
+    .S0N(ConfigBits_N[250+0]),
+    .S1(ConfigBits[250+1]),
+    .S1N(ConfigBits_N[250+1]),
     .X(J_NS4_BEG4)
 );
 
@@ -2217,10 +2337,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG5 (
     .A1(J_NS4_BEG5_input[1]),
     .A2(J_NS4_BEG5_input[2]),
     .A3(J_NS4_BEG5_input[3]),
-    .S0(ConfigBits[232+0]),
-    .S0N(ConfigBits_N[232+0]),
-    .S1(ConfigBits[232+1]),
-    .S1N(ConfigBits_N[232+1]),
+    .S0(ConfigBits[252+0]),
+    .S0N(ConfigBits_N[252+0]),
+    .S1(ConfigBits[252+1]),
+    .S1N(ConfigBits_N[252+1]),
     .X(J_NS4_BEG5)
 );
 
@@ -2231,10 +2351,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG6 (
     .A1(J_NS4_BEG6_input[1]),
     .A2(J_NS4_BEG6_input[2]),
     .A3(J_NS4_BEG6_input[3]),
-    .S0(ConfigBits[234+0]),
-    .S0N(ConfigBits_N[234+0]),
-    .S1(ConfigBits[234+1]),
-    .S1N(ConfigBits_N[234+1]),
+    .S0(ConfigBits[254+0]),
+    .S0N(ConfigBits_N[254+0]),
+    .S1(ConfigBits[254+1]),
+    .S1N(ConfigBits_N[254+1]),
     .X(J_NS4_BEG6)
 );
 
@@ -2245,10 +2365,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG7 (
     .A1(J_NS4_BEG7_input[1]),
     .A2(J_NS4_BEG7_input[2]),
     .A3(J_NS4_BEG7_input[3]),
-    .S0(ConfigBits[236+0]),
-    .S0N(ConfigBits_N[236+0]),
-    .S1(ConfigBits[236+1]),
-    .S1N(ConfigBits_N[236+1]),
+    .S0(ConfigBits[256+0]),
+    .S0N(ConfigBits_N[256+0]),
+    .S1(ConfigBits[256+1]),
+    .S1N(ConfigBits_N[256+1]),
     .X(J_NS4_BEG7)
 );
 
@@ -2259,10 +2379,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG8 (
     .A1(J_NS4_BEG8_input[1]),
     .A2(J_NS4_BEG8_input[2]),
     .A3(J_NS4_BEG8_input[3]),
-    .S0(ConfigBits[238+0]),
-    .S0N(ConfigBits_N[238+0]),
-    .S1(ConfigBits[238+1]),
-    .S1N(ConfigBits_N[238+1]),
+    .S0(ConfigBits[258+0]),
+    .S0N(ConfigBits_N[258+0]),
+    .S1(ConfigBits[258+1]),
+    .S1N(ConfigBits_N[258+1]),
     .X(J_NS4_BEG8)
 );
 
@@ -2273,10 +2393,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG9 (
     .A1(J_NS4_BEG9_input[1]),
     .A2(J_NS4_BEG9_input[2]),
     .A3(J_NS4_BEG9_input[3]),
-    .S0(ConfigBits[240+0]),
-    .S0N(ConfigBits_N[240+0]),
-    .S1(ConfigBits[240+1]),
-    .S1N(ConfigBits_N[240+1]),
+    .S0(ConfigBits[260+0]),
+    .S0N(ConfigBits_N[260+0]),
+    .S1(ConfigBits[260+1]),
+    .S1N(ConfigBits_N[260+1]),
     .X(J_NS4_BEG9)
 );
 
@@ -2287,10 +2407,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG10 (
     .A1(J_NS4_BEG10_input[1]),
     .A2(J_NS4_BEG10_input[2]),
     .A3(J_NS4_BEG10_input[3]),
-    .S0(ConfigBits[242+0]),
-    .S0N(ConfigBits_N[242+0]),
-    .S1(ConfigBits[242+1]),
-    .S1N(ConfigBits_N[242+1]),
+    .S0(ConfigBits[262+0]),
+    .S0N(ConfigBits_N[262+0]),
+    .S1(ConfigBits[262+1]),
+    .S1N(ConfigBits_N[262+1]),
     .X(J_NS4_BEG10)
 );
 
@@ -2301,10 +2421,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG11 (
     .A1(J_NS4_BEG11_input[1]),
     .A2(J_NS4_BEG11_input[2]),
     .A3(J_NS4_BEG11_input[3]),
-    .S0(ConfigBits[244+0]),
-    .S0N(ConfigBits_N[244+0]),
-    .S1(ConfigBits[244+1]),
-    .S1N(ConfigBits_N[244+1]),
+    .S0(ConfigBits[264+0]),
+    .S0N(ConfigBits_N[264+0]),
+    .S1(ConfigBits[264+1]),
+    .S1N(ConfigBits_N[264+1]),
     .X(J_NS4_BEG11)
 );
 
@@ -2315,10 +2435,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG12 (
     .A1(J_NS4_BEG12_input[1]),
     .A2(J_NS4_BEG12_input[2]),
     .A3(J_NS4_BEG12_input[3]),
-    .S0(ConfigBits[246+0]),
-    .S0N(ConfigBits_N[246+0]),
-    .S1(ConfigBits[246+1]),
-    .S1N(ConfigBits_N[246+1]),
+    .S0(ConfigBits[266+0]),
+    .S0N(ConfigBits_N[266+0]),
+    .S1(ConfigBits[266+1]),
+    .S1N(ConfigBits_N[266+1]),
     .X(J_NS4_BEG12)
 );
 
@@ -2329,10 +2449,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG13 (
     .A1(J_NS4_BEG13_input[1]),
     .A2(J_NS4_BEG13_input[2]),
     .A3(J_NS4_BEG13_input[3]),
-    .S0(ConfigBits[248+0]),
-    .S0N(ConfigBits_N[248+0]),
-    .S1(ConfigBits[248+1]),
-    .S1N(ConfigBits_N[248+1]),
+    .S0(ConfigBits[268+0]),
+    .S0N(ConfigBits_N[268+0]),
+    .S1(ConfigBits[268+1]),
+    .S1N(ConfigBits_N[268+1]),
     .X(J_NS4_BEG13)
 );
 
@@ -2343,10 +2463,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG14 (
     .A1(J_NS4_BEG14_input[1]),
     .A2(J_NS4_BEG14_input[2]),
     .A3(J_NS4_BEG14_input[3]),
-    .S0(ConfigBits[250+0]),
-    .S0N(ConfigBits_N[250+0]),
-    .S1(ConfigBits[250+1]),
-    .S1N(ConfigBits_N[250+1]),
+    .S0(ConfigBits[270+0]),
+    .S0N(ConfigBits_N[270+0]),
+    .S1(ConfigBits[270+1]),
+    .S1N(ConfigBits_N[270+1]),
     .X(J_NS4_BEG14)
 );
 
@@ -2357,10 +2477,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS4_BEG15 (
     .A1(J_NS4_BEG15_input[1]),
     .A2(J_NS4_BEG15_input[2]),
     .A3(J_NS4_BEG15_input[3]),
-    .S0(ConfigBits[252+0]),
-    .S0N(ConfigBits_N[252+0]),
-    .S1(ConfigBits[252+1]),
-    .S1N(ConfigBits_N[252+1]),
+    .S0(ConfigBits[272+0]),
+    .S0N(ConfigBits_N[272+0]),
+    .S1(ConfigBits[272+1]),
+    .S1N(ConfigBits_N[272+1]),
     .X(J_NS4_BEG15)
 );
 
@@ -2371,10 +2491,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS2_BEG0 (
     .A1(J_NS2_BEG0_input[1]),
     .A2(J_NS2_BEG0_input[2]),
     .A3(J_NS2_BEG0_input[3]),
-    .S0(ConfigBits[254+0]),
-    .S0N(ConfigBits_N[254+0]),
-    .S1(ConfigBits[254+1]),
-    .S1N(ConfigBits_N[254+1]),
+    .S0(ConfigBits[274+0]),
+    .S0N(ConfigBits_N[274+0]),
+    .S1(ConfigBits[274+1]),
+    .S1N(ConfigBits_N[274+1]),
     .X(J_NS2_BEG0)
 );
 
@@ -2385,10 +2505,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS2_BEG1 (
     .A1(J_NS2_BEG1_input[1]),
     .A2(J_NS2_BEG1_input[2]),
     .A3(J_NS2_BEG1_input[3]),
-    .S0(ConfigBits[256+0]),
-    .S0N(ConfigBits_N[256+0]),
-    .S1(ConfigBits[256+1]),
-    .S1N(ConfigBits_N[256+1]),
+    .S0(ConfigBits[276+0]),
+    .S0N(ConfigBits_N[276+0]),
+    .S1(ConfigBits[276+1]),
+    .S1N(ConfigBits_N[276+1]),
     .X(J_NS2_BEG1)
 );
 
@@ -2399,10 +2519,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS2_BEG2 (
     .A1(J_NS2_BEG2_input[1]),
     .A2(J_NS2_BEG2_input[2]),
     .A3(J_NS2_BEG2_input[3]),
-    .S0(ConfigBits[258+0]),
-    .S0N(ConfigBits_N[258+0]),
-    .S1(ConfigBits[258+1]),
-    .S1N(ConfigBits_N[258+1]),
+    .S0(ConfigBits[278+0]),
+    .S0N(ConfigBits_N[278+0]),
+    .S1(ConfigBits[278+1]),
+    .S1N(ConfigBits_N[278+1]),
     .X(J_NS2_BEG2)
 );
 
@@ -2413,10 +2533,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS2_BEG3 (
     .A1(J_NS2_BEG3_input[1]),
     .A2(J_NS2_BEG3_input[2]),
     .A3(J_NS2_BEG3_input[3]),
-    .S0(ConfigBits[260+0]),
-    .S0N(ConfigBits_N[260+0]),
-    .S1(ConfigBits[260+1]),
-    .S1N(ConfigBits_N[260+1]),
+    .S0(ConfigBits[280+0]),
+    .S0N(ConfigBits_N[280+0]),
+    .S1(ConfigBits[280+1]),
+    .S1N(ConfigBits_N[280+1]),
     .X(J_NS2_BEG3)
 );
 
@@ -2427,10 +2547,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS2_BEG4 (
     .A1(J_NS2_BEG4_input[1]),
     .A2(J_NS2_BEG4_input[2]),
     .A3(J_NS2_BEG4_input[3]),
-    .S0(ConfigBits[262+0]),
-    .S0N(ConfigBits_N[262+0]),
-    .S1(ConfigBits[262+1]),
-    .S1N(ConfigBits_N[262+1]),
+    .S0(ConfigBits[282+0]),
+    .S0N(ConfigBits_N[282+0]),
+    .S1(ConfigBits[282+1]),
+    .S1N(ConfigBits_N[282+1]),
     .X(J_NS2_BEG4)
 );
 
@@ -2441,10 +2561,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS2_BEG5 (
     .A1(J_NS2_BEG5_input[1]),
     .A2(J_NS2_BEG5_input[2]),
     .A3(J_NS2_BEG5_input[3]),
-    .S0(ConfigBits[264+0]),
-    .S0N(ConfigBits_N[264+0]),
-    .S1(ConfigBits[264+1]),
-    .S1N(ConfigBits_N[264+1]),
+    .S0(ConfigBits[284+0]),
+    .S0N(ConfigBits_N[284+0]),
+    .S1(ConfigBits[284+1]),
+    .S1N(ConfigBits_N[284+1]),
     .X(J_NS2_BEG5)
 );
 
@@ -2455,10 +2575,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS2_BEG6 (
     .A1(J_NS2_BEG6_input[1]),
     .A2(J_NS2_BEG6_input[2]),
     .A3(J_NS2_BEG6_input[3]),
-    .S0(ConfigBits[266+0]),
-    .S0N(ConfigBits_N[266+0]),
-    .S1(ConfigBits[266+1]),
-    .S1N(ConfigBits_N[266+1]),
+    .S0(ConfigBits[286+0]),
+    .S0N(ConfigBits_N[286+0]),
+    .S1(ConfigBits[286+1]),
+    .S1N(ConfigBits_N[286+1]),
     .X(J_NS2_BEG6)
 );
 
@@ -2469,10 +2589,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS2_BEG7 (
     .A1(J_NS2_BEG7_input[1]),
     .A2(J_NS2_BEG7_input[2]),
     .A3(J_NS2_BEG7_input[3]),
-    .S0(ConfigBits[268+0]),
-    .S0N(ConfigBits_N[268+0]),
-    .S1(ConfigBits[268+1]),
-    .S1N(ConfigBits_N[268+1]),
+    .S0(ConfigBits[288+0]),
+    .S0N(ConfigBits_N[288+0]),
+    .S1(ConfigBits[288+1]),
+    .S1N(ConfigBits_N[288+1]),
     .X(J_NS2_BEG7)
 );
 
@@ -2483,10 +2603,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS1_BEG0 (
     .A1(J_NS1_BEG0_input[1]),
     .A2(J_NS1_BEG0_input[2]),
     .A3(J_NS1_BEG0_input[3]),
-    .S0(ConfigBits[270+0]),
-    .S0N(ConfigBits_N[270+0]),
-    .S1(ConfigBits[270+1]),
-    .S1N(ConfigBits_N[270+1]),
+    .S0(ConfigBits[290+0]),
+    .S0N(ConfigBits_N[290+0]),
+    .S1(ConfigBits[290+1]),
+    .S1N(ConfigBits_N[290+1]),
     .X(J_NS1_BEG0)
 );
 
@@ -2497,10 +2617,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS1_BEG1 (
     .A1(J_NS1_BEG1_input[1]),
     .A2(J_NS1_BEG1_input[2]),
     .A3(J_NS1_BEG1_input[3]),
-    .S0(ConfigBits[272+0]),
-    .S0N(ConfigBits_N[272+0]),
-    .S1(ConfigBits[272+1]),
-    .S1N(ConfigBits_N[272+1]),
+    .S0(ConfigBits[292+0]),
+    .S0N(ConfigBits_N[292+0]),
+    .S1(ConfigBits[292+1]),
+    .S1N(ConfigBits_N[292+1]),
     .X(J_NS1_BEG1)
 );
 
@@ -2511,10 +2631,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS1_BEG2 (
     .A1(J_NS1_BEG2_input[1]),
     .A2(J_NS1_BEG2_input[2]),
     .A3(J_NS1_BEG2_input[3]),
-    .S0(ConfigBits[274+0]),
-    .S0N(ConfigBits_N[274+0]),
-    .S1(ConfigBits[274+1]),
-    .S1N(ConfigBits_N[274+1]),
+    .S0(ConfigBits[294+0]),
+    .S0N(ConfigBits_N[294+0]),
+    .S1(ConfigBits[294+1]),
+    .S1N(ConfigBits_N[294+1]),
     .X(J_NS1_BEG2)
 );
 
@@ -2525,10 +2645,10 @@ cus_mux41_buf inst_cus_mux41_buf_J_NS1_BEG3 (
     .A1(J_NS1_BEG3_input[1]),
     .A2(J_NS1_BEG3_input[2]),
     .A3(J_NS1_BEG3_input[3]),
-    .S0(ConfigBits[276+0]),
-    .S0N(ConfigBits_N[276+0]),
-    .S1(ConfigBits[276+1]),
-    .S1N(ConfigBits_N[276+1]),
+    .S0(ConfigBits[296+0]),
+    .S0N(ConfigBits_N[296+0]),
+    .S1(ConfigBits[296+1]),
+    .S1N(ConfigBits_N[296+1]),
     .X(J_NS1_BEG3)
 );
 
@@ -2565,98 +2685,98 @@ assign DEBUG_select_S4BEG0          = ConfigBits[62:60];
 assign DEBUG_select_S4BEG1          = ConfigBits[65:63];
 assign DEBUG_select_S4BEG2          = ConfigBits[68:66];
 assign DEBUG_select_S4BEG3          = ConfigBits[71:69];
-assign DEBUG_select_W1BEG0          = ConfigBits[73:72];
-assign DEBUG_select_W1BEG1          = ConfigBits[75:74];
-assign DEBUG_select_W1BEG2          = ConfigBits[77:76];
-assign DEBUG_select_W1BEG3          = ConfigBits[79:78];
-assign DEBUG_select_W2BEG0          = ConfigBits[81:80];
-assign DEBUG_select_W2BEG1          = ConfigBits[83:82];
-assign DEBUG_select_W2BEG2          = ConfigBits[85:84];
-assign DEBUG_select_W2BEG3          = ConfigBits[87:86];
-assign DEBUG_select_W2BEG4          = ConfigBits[89:88];
-assign DEBUG_select_W2BEG5          = ConfigBits[91:90];
-assign DEBUG_select_W2BEG6          = ConfigBits[93:92];
-assign DEBUG_select_W2BEG7          = ConfigBits[95:94];
-assign DEBUG_select_W2BEGb0         = ConfigBits[97:96];
-assign DEBUG_select_W2BEGb1         = ConfigBits[99:98];
-assign DEBUG_select_W2BEGb2         = ConfigBits[101:100];
-assign DEBUG_select_W2BEGb3         = ConfigBits[103:102];
-assign DEBUG_select_W2BEGb4         = ConfigBits[105:104];
-assign DEBUG_select_W2BEGb5         = ConfigBits[107:106];
-assign DEBUG_select_W2BEGb6         = ConfigBits[109:108];
-assign DEBUG_select_W2BEGb7         = ConfigBits[111:110];
-assign DEBUG_select_WW4BEG0         = ConfigBits[113:112];
-assign DEBUG_select_WW4BEG1         = ConfigBits[115:114];
-assign DEBUG_select_WW4BEG2         = ConfigBits[117:116];
-assign DEBUG_select_WW4BEG3         = ConfigBits[119:118];
-assign DEBUG_select_WW4BEG4         = ConfigBits[121:120];
-assign DEBUG_select_WW4BEG5         = ConfigBits[123:122];
-assign DEBUG_select_WW4BEG6         = ConfigBits[125:124];
-assign DEBUG_select_WW4BEG7         = ConfigBits[127:126];
-assign DEBUG_select_WW4BEG8         = ConfigBits[129:128];
-assign DEBUG_select_WW4BEG9         = ConfigBits[131:130];
-assign DEBUG_select_WW4BEG10        = ConfigBits[133:132];
-assign DEBUG_select_WW4BEG11        = ConfigBits[135:134];
-assign DEBUG_select_WW4BEG12        = ConfigBits[137:136];
-assign DEBUG_select_WW4BEG13        = ConfigBits[139:138];
-assign DEBUG_select_WW4BEG14        = ConfigBits[141:140];
-assign DEBUG_select_WW4BEG15        = ConfigBits[143:142];
-assign DEBUG_select_W6BEG0          = ConfigBits[145:144];
-assign DEBUG_select_W6BEG1          = ConfigBits[147:146];
-assign DEBUG_select_W6BEG2          = ConfigBits[149:148];
-assign DEBUG_select_W6BEG3          = ConfigBits[151:150];
-assign DEBUG_select_W6BEG4          = ConfigBits[153:152];
-assign DEBUG_select_W6BEG5          = ConfigBits[155:154];
-assign DEBUG_select_W6BEG6          = ConfigBits[157:156];
-assign DEBUG_select_W6BEG7          = ConfigBits[159:158];
-assign DEBUG_select_W6BEG8          = ConfigBits[161:160];
-assign DEBUG_select_W6BEG9          = ConfigBits[163:162];
-assign DEBUG_select_W6BEG10         = ConfigBits[165:164];
-assign DEBUG_select_W6BEG11         = ConfigBits[167:166];
-assign DEBUG_select_UI_IN0          = ConfigBits[170:168];
-assign DEBUG_select_UI_IN1          = ConfigBits[173:171];
-assign DEBUG_select_UI_IN2          = ConfigBits[176:174];
-assign DEBUG_select_UI_IN3          = ConfigBits[179:177];
-assign DEBUG_select_UI_IN4          = ConfigBits[182:180];
-assign DEBUG_select_UI_IN5          = ConfigBits[185:183];
-assign DEBUG_select_UI_IN6          = ConfigBits[188:186];
-assign DEBUG_select_UI_IN7          = ConfigBits[191:189];
-assign DEBUG_select_UIO_IN0         = ConfigBits[194:192];
-assign DEBUG_select_UIO_IN1         = ConfigBits[197:195];
-assign DEBUG_select_UIO_IN2         = ConfigBits[200:198];
-assign DEBUG_select_UIO_IN3         = ConfigBits[203:201];
-assign DEBUG_select_UIO_IN4         = ConfigBits[206:204];
-assign DEBUG_select_UIO_IN5         = ConfigBits[209:207];
-assign DEBUG_select_UIO_IN6         = ConfigBits[212:210];
-assign DEBUG_select_UIO_IN7         = ConfigBits[215:213];
-assign DEBUG_select_ENA             = ConfigBits[217:216];
-assign DEBUG_select_RST_N           = ConfigBits[221:218];
-assign DEBUG_select_J_NS4_BEG0      = ConfigBits[223:222];
-assign DEBUG_select_J_NS4_BEG1      = ConfigBits[225:224];
-assign DEBUG_select_J_NS4_BEG2      = ConfigBits[227:226];
-assign DEBUG_select_J_NS4_BEG3      = ConfigBits[229:228];
-assign DEBUG_select_J_NS4_BEG4      = ConfigBits[231:230];
-assign DEBUG_select_J_NS4_BEG5      = ConfigBits[233:232];
-assign DEBUG_select_J_NS4_BEG6      = ConfigBits[235:234];
-assign DEBUG_select_J_NS4_BEG7      = ConfigBits[237:236];
-assign DEBUG_select_J_NS4_BEG8      = ConfigBits[239:238];
-assign DEBUG_select_J_NS4_BEG9      = ConfigBits[241:240];
-assign DEBUG_select_J_NS4_BEG10     = ConfigBits[243:242];
-assign DEBUG_select_J_NS4_BEG11     = ConfigBits[245:244];
-assign DEBUG_select_J_NS4_BEG12     = ConfigBits[247:246];
-assign DEBUG_select_J_NS4_BEG13     = ConfigBits[249:248];
-assign DEBUG_select_J_NS4_BEG14     = ConfigBits[251:250];
-assign DEBUG_select_J_NS4_BEG15     = ConfigBits[253:252];
-assign DEBUG_select_J_NS2_BEG0      = ConfigBits[255:254];
-assign DEBUG_select_J_NS2_BEG1      = ConfigBits[257:256];
-assign DEBUG_select_J_NS2_BEG2      = ConfigBits[259:258];
-assign DEBUG_select_J_NS2_BEG3      = ConfigBits[261:260];
-assign DEBUG_select_J_NS2_BEG4      = ConfigBits[263:262];
-assign DEBUG_select_J_NS2_BEG5      = ConfigBits[265:264];
-assign DEBUG_select_J_NS2_BEG6      = ConfigBits[267:266];
-assign DEBUG_select_J_NS2_BEG7      = ConfigBits[269:268];
-assign DEBUG_select_J_NS1_BEG0      = ConfigBits[271:270];
-assign DEBUG_select_J_NS1_BEG1      = ConfigBits[273:272];
-assign DEBUG_select_J_NS1_BEG2      = ConfigBits[275:274];
-assign DEBUG_select_J_NS1_BEG3      = ConfigBits[277:276];
+assign DEBUG_select_W1BEG0          = ConfigBits[74:72];
+assign DEBUG_select_W1BEG1          = ConfigBits[77:75];
+assign DEBUG_select_W1BEG2          = ConfigBits[80:78];
+assign DEBUG_select_W1BEG3          = ConfigBits[83:81];
+assign DEBUG_select_W2BEG0          = ConfigBits[86:84];
+assign DEBUG_select_W2BEG1          = ConfigBits[89:87];
+assign DEBUG_select_W2BEG2          = ConfigBits[92:90];
+assign DEBUG_select_W2BEG3          = ConfigBits[95:93];
+assign DEBUG_select_W2BEG4          = ConfigBits[98:96];
+assign DEBUG_select_W2BEG5          = ConfigBits[101:99];
+assign DEBUG_select_W2BEG6          = ConfigBits[104:102];
+assign DEBUG_select_W2BEG7          = ConfigBits[107:105];
+assign DEBUG_select_W2BEGb0         = ConfigBits[110:108];
+assign DEBUG_select_W2BEGb1         = ConfigBits[113:111];
+assign DEBUG_select_W2BEGb2         = ConfigBits[116:114];
+assign DEBUG_select_W2BEGb3         = ConfigBits[119:117];
+assign DEBUG_select_W2BEGb4         = ConfigBits[122:120];
+assign DEBUG_select_W2BEGb5         = ConfigBits[125:123];
+assign DEBUG_select_W2BEGb6         = ConfigBits[128:126];
+assign DEBUG_select_W2BEGb7         = ConfigBits[131:129];
+assign DEBUG_select_WW4BEG0         = ConfigBits[133:132];
+assign DEBUG_select_WW4BEG1         = ConfigBits[135:134];
+assign DEBUG_select_WW4BEG2         = ConfigBits[137:136];
+assign DEBUG_select_WW4BEG3         = ConfigBits[139:138];
+assign DEBUG_select_WW4BEG4         = ConfigBits[141:140];
+assign DEBUG_select_WW4BEG5         = ConfigBits[143:142];
+assign DEBUG_select_WW4BEG6         = ConfigBits[145:144];
+assign DEBUG_select_WW4BEG7         = ConfigBits[147:146];
+assign DEBUG_select_WW4BEG8         = ConfigBits[149:148];
+assign DEBUG_select_WW4BEG9         = ConfigBits[151:150];
+assign DEBUG_select_WW4BEG10        = ConfigBits[153:152];
+assign DEBUG_select_WW4BEG11        = ConfigBits[155:154];
+assign DEBUG_select_WW4BEG12        = ConfigBits[157:156];
+assign DEBUG_select_WW4BEG13        = ConfigBits[159:158];
+assign DEBUG_select_WW4BEG14        = ConfigBits[161:160];
+assign DEBUG_select_WW4BEG15        = ConfigBits[163:162];
+assign DEBUG_select_W6BEG0          = ConfigBits[165:164];
+assign DEBUG_select_W6BEG1          = ConfigBits[167:166];
+assign DEBUG_select_W6BEG2          = ConfigBits[169:168];
+assign DEBUG_select_W6BEG3          = ConfigBits[171:170];
+assign DEBUG_select_W6BEG4          = ConfigBits[173:172];
+assign DEBUG_select_W6BEG5          = ConfigBits[175:174];
+assign DEBUG_select_W6BEG6          = ConfigBits[177:176];
+assign DEBUG_select_W6BEG7          = ConfigBits[179:178];
+assign DEBUG_select_W6BEG8          = ConfigBits[181:180];
+assign DEBUG_select_W6BEG9          = ConfigBits[183:182];
+assign DEBUG_select_W6BEG10         = ConfigBits[185:184];
+assign DEBUG_select_W6BEG11         = ConfigBits[187:186];
+assign DEBUG_select_UI_IN0          = ConfigBits[190:188];
+assign DEBUG_select_UI_IN1          = ConfigBits[193:191];
+assign DEBUG_select_UI_IN2          = ConfigBits[196:194];
+assign DEBUG_select_UI_IN3          = ConfigBits[199:197];
+assign DEBUG_select_UI_IN4          = ConfigBits[202:200];
+assign DEBUG_select_UI_IN5          = ConfigBits[205:203];
+assign DEBUG_select_UI_IN6          = ConfigBits[208:206];
+assign DEBUG_select_UI_IN7          = ConfigBits[211:209];
+assign DEBUG_select_UIO_IN0         = ConfigBits[214:212];
+assign DEBUG_select_UIO_IN1         = ConfigBits[217:215];
+assign DEBUG_select_UIO_IN2         = ConfigBits[220:218];
+assign DEBUG_select_UIO_IN3         = ConfigBits[223:221];
+assign DEBUG_select_UIO_IN4         = ConfigBits[226:224];
+assign DEBUG_select_UIO_IN5         = ConfigBits[229:227];
+assign DEBUG_select_UIO_IN6         = ConfigBits[232:230];
+assign DEBUG_select_UIO_IN7         = ConfigBits[235:233];
+assign DEBUG_select_ENA             = ConfigBits[237:236];
+assign DEBUG_select_RST_N           = ConfigBits[241:238];
+assign DEBUG_select_J_NS4_BEG0      = ConfigBits[243:242];
+assign DEBUG_select_J_NS4_BEG1      = ConfigBits[245:244];
+assign DEBUG_select_J_NS4_BEG2      = ConfigBits[247:246];
+assign DEBUG_select_J_NS4_BEG3      = ConfigBits[249:248];
+assign DEBUG_select_J_NS4_BEG4      = ConfigBits[251:250];
+assign DEBUG_select_J_NS4_BEG5      = ConfigBits[253:252];
+assign DEBUG_select_J_NS4_BEG6      = ConfigBits[255:254];
+assign DEBUG_select_J_NS4_BEG7      = ConfigBits[257:256];
+assign DEBUG_select_J_NS4_BEG8      = ConfigBits[259:258];
+assign DEBUG_select_J_NS4_BEG9      = ConfigBits[261:260];
+assign DEBUG_select_J_NS4_BEG10     = ConfigBits[263:262];
+assign DEBUG_select_J_NS4_BEG11     = ConfigBits[265:264];
+assign DEBUG_select_J_NS4_BEG12     = ConfigBits[267:266];
+assign DEBUG_select_J_NS4_BEG13     = ConfigBits[269:268];
+assign DEBUG_select_J_NS4_BEG14     = ConfigBits[271:270];
+assign DEBUG_select_J_NS4_BEG15     = ConfigBits[273:272];
+assign DEBUG_select_J_NS2_BEG0      = ConfigBits[275:274];
+assign DEBUG_select_J_NS2_BEG1      = ConfigBits[277:276];
+assign DEBUG_select_J_NS2_BEG2      = ConfigBits[279:278];
+assign DEBUG_select_J_NS2_BEG3      = ConfigBits[281:280];
+assign DEBUG_select_J_NS2_BEG4      = ConfigBits[283:282];
+assign DEBUG_select_J_NS2_BEG5      = ConfigBits[285:284];
+assign DEBUG_select_J_NS2_BEG6      = ConfigBits[287:286];
+assign DEBUG_select_J_NS2_BEG7      = ConfigBits[289:288];
+assign DEBUG_select_J_NS1_BEG0      = ConfigBits[291:290];
+assign DEBUG_select_J_NS1_BEG1      = ConfigBits[293:292];
+assign DEBUG_select_J_NS1_BEG2      = ConfigBits[295:294];
+assign DEBUG_select_J_NS1_BEG3      = ConfigBits[297:296];
 endmodule

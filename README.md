@@ -5,14 +5,14 @@
 This repository contains the chip for the HeiChips Summer School 2025. It includes several designs created during the Hackathon all connected to a common eFPGA fabric in the center.
 Thanks to FABulous, the user bitstream for the FPGA can be generated using the upstream yosys and nextpnr toolchain.
 
-The chip was designed with open source EDA tools and the [IHP Open Source PDK](https://github.com/IHP-GmbH/IHP-Open-PDK).
+The chip is designed with open source EDA tools and the [IHP Open Source PDK](https://github.com/IHP-GmbH/IHP-Open-PDK).
 
 > [!WARNING]  
 > This repository is a Work in Progress.
 
 <p align="center">
-  <a href="img/heichips.png">
-    <img src="img/heichips_small.png" alt="chip layout" width=35%>
+  <a href="img/heichips25_top.png">
+    <img src="img/heichips25_top_small.png" alt="chip layout" width=40%>
   </a>
 </p>
 
@@ -25,11 +25,11 @@ The chip includes several user submitted designs from the HeiChips 2025 Hackatho
   - 256x LUT4 + FF
     - w. carry chain
   - 1x SRAM
-    - 32 bit-wide, 4kB deep
+    - 32 bit-wide, 4 KiB deep
     - individual bit-enable
   - 1x global clock network
 
-The following user designs are included:
+The following user projects are included:
 
 | Group | Size | Location | Description |
 |---------------|---------------|---------------|---------------|
@@ -37,13 +37,15 @@ The following user designs are included:
 |               |               |               |               |
 |               |               |               |               |
 
-TODO describe configuration
+TODO describe configuration modes
 
 ## Building User Designs for the eFPGA
 
 To build a bitstream of a user design for the eFPGA, see [README.md](ip/fabric/user_designs/README.md) under `ip/fabric/user_design`.
 
 ## Running Chip-Top Level Simulation
+
+TODO
 
 The chip-top level testbench is written using cocotb and located under `tb/heichips25_top/`.
 
@@ -96,3 +98,7 @@ And with this the chip is ready for tapeout.
 ## License
 
 The chip is licensed under the Apache 2.0 license. This license may *not* apply to the remainder of the repository.
+
+## Acknowledgements
+
+The chip was designed by Leo Moser for the HeiChips Summer School 2025.

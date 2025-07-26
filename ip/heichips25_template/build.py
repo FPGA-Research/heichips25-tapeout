@@ -82,6 +82,6 @@ if __name__ == '__main__':
 	if not os.path.exists("def"):
 		os.mkdir("def")
 
-	generate_template(width=450, height=200, name="heichips25_template_small.def")
-	generate_template(width=450, height=415, name="heichips25_template_large.def")
+	generate_template(width=500, height=200, name="heichips25_template_small.def")
+	generate_template(width=500, height=415, name="heichips25_template_large.def")
 	

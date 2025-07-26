@@ -1,0 +1,30 @@
+# LibreLane configuration file
+
+DESIGN_NAME: heichips25_example_large
+VERILOG_FILES: dir::src/*.sv
+CLOCK_PORT: clk
+CLOCK_PERIOD: 10 # 10ns = 100MHz
+
+# Reduce wasted space
+TOP_MARGIN_MULT: 1
+BOTTOM_MARGIN_MULT: 1
+LEFT_MARGIN_MULT: 6
+RIGHT_MARGIN_MULT: 6
+
+# Absolute die size
+FP_SIZING: absolute
+
+# Default size
+#DIE_AREA: [0, 0, 500, 200]
+#FP_DEF_TEMPLATE: dir::../../heichips25_template/def/heichips25_template_small.def
+
+# Default size
+DIE_AREA: [0, 0, 500, 415]
+FP_DEF_TEMPLATE: dir::../../heichips25_template/def/heichips25_template_large.def
+
+# Don't use power rings or TopMetal2 layer
+FP_PDN_MULTILAYER: false
+RT_MAX_LAYER: TopMetal1
+
+# Enable for better SystemVerilog support
+#USE_SLANG: true
