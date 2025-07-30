@@ -14,16 +14,16 @@ RIGHT_MARGIN_MULT: 6
 # Absolute die size
 FP_SIZING: absolute
 
-# Default size
+# Small DEF template
 DIE_AREA: [0, 0, 500, 200]
 FP_DEF_TEMPLATE: dir::../../heichips25_template/def/heichips25_template_small.def
 
-# Default size
+# Large DEF template
 #DIE_AREA: [0, 0, 500, 415]
 #FP_DEF_TEMPLATE: dir::../../heichips25_template/def/heichips25_template_large.def
 
 # Don't use power rings or TopMetal2 layer
-FP_PDN_MULTILAYER: false
+PDN_MULTILAYER: false
 RT_MAX_LAYER: TopMetal1
 
 # Enable for better SystemVerilog support

@@ -9,36 +9,36 @@ module S_IO4
     )
     (
  //Side.NORTH
-        output [3:0] N1BEG,        //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=NORTH)
-        output [7:0] N2BEG,        //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
-        output [7:0] N2BEGb,        //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
-        output [15:0] N4BEG,        //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
-        output [15:0] NN4BEG,        //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
-        output [0:0] Co,        //Port(Name=Co, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=1, Side=NORTH)
-        input [3:0] S1END,        //Port(Name=S1END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
-        input [7:0] S2MID,        //Port(Name=S2MID, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
-        input [7:0] S2END,        //Port(Name=S2END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
-        input [15:0] S4END,        //Port(Name=S4END, IO=INPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
-        input [15:0] SS4END,        //Port(Name=SS4END, IO=INPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
-        input A_O_top,
-        output A_I_top,
-        output A_T_top,
-        input B_O_top,
-        output B_I_top,
-        output B_T_top,
-        input C_O_top,
-        output C_I_top,
-        output C_T_top,
-        input D_O_top,
-        output D_I_top,
-        output D_T_top,
+        output  [3:0] N1BEG,        //Port(Name=N1BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=4, Side=NORTH)
+        output  [7:0] N2BEG,        //Port(Name=N2BEG, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
+        output  [7:0] N2BEGb,        //Port(Name=N2BEGb, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=8, Side=NORTH)
+        output  [15:0] N4BEG,        //Port(Name=N4BEG, IO=OUTPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
+        output  [15:0] NN4BEG,        //Port(Name=NN4BEG, IO=OUTPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
+        output  [0:0] Co,        //Port(Name=Co, IO=OUTPUT, XOffset=0, YOffset=1, WireCount=1, Side=NORTH)
+        input  [3:0] S1END,        //Port(Name=S1END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=4, Side=NORTH)
+        input  [7:0] S2MID,        //Port(Name=S2MID, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
+        input  [7:0] S2END,        //Port(Name=S2END, IO=INPUT, XOffset=0, YOffset=-1, WireCount=8, Side=NORTH)
+        input  [15:0] S4END,        //Port(Name=S4END, IO=INPUT, XOffset=0, YOffset=4, WireCount=4, Side=NORTH)
+        input  [15:0] SS4END,        //Port(Name=SS4END, IO=INPUT, XOffset=0, YOffset=-4, WireCount=4, Side=NORTH)
+        input  A_O_top,
+        output  A_I_top,
+        output  A_T_top,
+        input  B_O_top,
+        output  B_I_top,
+        output  B_T_top,
+        input  C_O_top,
+        output  C_I_top,
+        output  C_T_top,
+        input  D_O_top,
+        output  D_I_top,
+        output  D_T_top,
     //Tile IO ports from BELs
-        input UserCLK,
-        output UserCLKo,
-        input [FrameBitsPerRow-1:0] FrameData, //CONFIG_PORT
-        output [FrameBitsPerRow-1:0] FrameData_O,
-        input [MaxFramesPerCol-1:0] FrameStrobe, //CONFIG_PORT
-        output [MaxFramesPerCol-1:0] FrameStrobe_O
+        input  UserCLK,
+        output  UserCLKo,
+        input  [FrameBitsPerRow-1:0] FrameData, //CONFIG_PORT
+        output  [FrameBitsPerRow-1:0] FrameData_O,
+        input  [MaxFramesPerCol-1:0] FrameStrobe, //CONFIG_PORT
+        output  [MaxFramesPerCol-1:0] FrameStrobe_O
     //global
 );
  //signal declarations
@@ -614,6 +614,7 @@ S_IO4_ConfigMem
     .ConfigBits(ConfigBits),
     .ConfigBits_N(ConfigBits_N)
 );
+
 
  //BEL component instantiations
 IO_1_bidirectional_frame_config_pass Inst_A_IO_1_bidirectional_frame_config_pass (

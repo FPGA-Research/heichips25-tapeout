@@ -1,7 +1,7 @@
 {
     "design__lint_error__count": 0,
     "design__lint_timing_construct__count": 0,
-    "design__lint_warning__count": 316,
+    "design__lint_warning__count": 23,
     "design__inferred_latch__count": 0,
     "design__instance__count": 2612,
     "design__instance__area": 40279.7,
