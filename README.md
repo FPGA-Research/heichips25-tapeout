@@ -33,11 +33,22 @@ The following user projects are included:
 
 | Group | Size | Location | Description |
 |---------------|---------------|---------------|---------------|
-|               |               |               |               |
-|               |               |               |               |
-|               |               |               |               |
+|               |               | X0Y1          |               |
+|               |               | X0Y2          |               |
+|               |               | X0Y3          |               |
+|               |               | X0Y4          |               |
+|               |               | X0Y5          |               |
+|               |               | X0Y6          |               |
+|               |               | X0Y7          |               |
+|               |               | X0Y8          |               |
+|               |               | X5Y3          |               |
+|               |               | X5Y4          |               |
+|               |               | X5Y5          |               |
+|               |               | X5Y6          |               |
+|               |               | X5Y7          |               |
+|               |               | X5Y8          |               |
 
-TODO describe configuration modes
+The eFPGA fabric can be configured using the SPI peripheral or the SPI controller, depending on the value of `fpga_mode`. If the SPI controller is selected, upon startup it will fetch the bitstream from slot 0 of the external SPI flash. Using the slot input and the trigger one can initiate a reconfiguration. If the SPI peripheral is selected it will wait for bitstream data on the SPI interface upon startup.
 
 ## Building User Designs for the eFPGA
 

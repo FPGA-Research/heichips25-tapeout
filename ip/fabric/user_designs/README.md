@@ -5,8 +5,11 @@
 | `all_zeros` | all outputs set to zero |
 | `all_ones`  | all outputs set to one |
 | `counter`   | 32-bit counter |
+| `counter`   | 32-bit counter for top-level testing |
 | `passthrough` | inputs connected to outputs |
-| `sram` | all SRAMs muxed together for testing |
+| `sram` | `IHP_SRAM_1024x32` connected to the I/Os |
+| `tt_project` | `TT_PROJECT` connected to the I/Os  |
+| `tt_project_to_sram` | `TT_PROJECT` connected to `IHP_SRAM_1024x32` and I/Os |
 
 To build individual user designs, go into one of the directories and run the commands:
 

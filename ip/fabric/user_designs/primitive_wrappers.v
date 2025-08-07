@@ -22,6 +22,7 @@ module TT_PROJECT_wrapper (
     input  wire       RST_N
 );
 
+    (* keep, BEL="X0Y1.A" *)
     TT_PROJECT i_TT_PROJECT (
         .UI_IN0    (UI_IN[0]),
         .UI_IN1    (UI_IN[1]),

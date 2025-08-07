@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-(* blackbox *)
+(* blackbox, keep *)
 module TT_PROJECT (
     input  UI_IN0,
     input  UI_IN1,
