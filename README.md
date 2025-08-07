@@ -7,7 +7,7 @@ Thanks to FABulous, the user bitstream for the FPGA can be generated using the u
 
 The chip is designed with open source EDA tools and the [IHP Open Source PDK](https://github.com/IHP-GmbH/IHP-Open-PDK).
 
-> [!WARNING]  
+> [!WARNING]
 > This repository is a Work in Progress.
 
 <p align="center">
@@ -25,7 +25,7 @@ The chip includes several user submitted designs from the HeiChips 2025 Hackatho
   - 256x LUT4 + FF
     - w. carry chain
   - 1x SRAM
-    - 32 bit-wide, 4 KiB deep
+    - 4 KiB memory: 32 bit wide, 10 bit deep (1024 entries)
     - individual bit-enable
   - 1x global clock network
 
