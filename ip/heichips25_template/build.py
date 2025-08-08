@@ -32,7 +32,7 @@ class BlockTemplateFlow(SequentialFlow):
 	]
 
 
-def generate_template(width, height, name):
+def generate_template(width, height, name, pins="pins.cfg", src="src/heichips25_template.v"):
 	# Get PDK_ROOT and PDK
 	PDK_ROOT = os.getenv('PDK_ROOT', os.path.expanduser('~/.ciel'))
 	PDK = os.getenv('PDK', 'ihp-sg13g2')
@@ -44,7 +44,7 @@ def generate_template(width, height, name):
 
 		# Sources
 		"VERILOG_FILES"  : [
-			"src/heichips25_template.v",
+			src,
 		],
 
 		# Floorplanning
@@ -55,7 +55,7 @@ def generate_template(width, height, name):
 		#"LEFT_MARGIN_MULT"   : 6,
 		#"RIGHT_MARGIN_MULT"  : 6,
 		
-		"IO_PIN_ORDER_CFG": "pins.cfg",
+		"IO_PIN_ORDER_CFG": pins,
 
 		# Synthesis
 		"SYNTH_ELABORATE_ONLY" : True,
@@ -85,3 +85,5 @@ if __name__ == '__main__':
 	generate_template(width=500, height=200, name="heichips25_template_small.def")
 	generate_template(width=500, height=415, name="heichips25_template_large.def")
 	
+	# HDMI template
+	generate_template(width=500, height=200, name="heichips25_template_small_hdmi.def", pins="pins_hdmi.cfg", src="src/heichips25_template_hdmi.v")
