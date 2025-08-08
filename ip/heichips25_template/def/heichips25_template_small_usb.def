@@ -1,0 +1,320 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN heichips25_template ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 500000 200000 ) ;
+ROW ROW_0 CoreSite 5760 15120 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_1 CoreSite 5760 18900 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_2 CoreSite 5760 22680 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_3 CoreSite 5760 26460 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_4 CoreSite 5760 30240 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_5 CoreSite 5760 34020 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_6 CoreSite 5760 37800 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_7 CoreSite 5760 41580 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_8 CoreSite 5760 45360 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_9 CoreSite 5760 49140 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_10 CoreSite 5760 52920 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_11 CoreSite 5760 56700 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_12 CoreSite 5760 60480 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_13 CoreSite 5760 64260 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_14 CoreSite 5760 68040 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_15 CoreSite 5760 71820 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_16 CoreSite 5760 75600 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_17 CoreSite 5760 79380 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_18 CoreSite 5760 83160 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_19 CoreSite 5760 86940 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_20 CoreSite 5760 90720 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_21 CoreSite 5760 94500 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_22 CoreSite 5760 98280 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_23 CoreSite 5760 102060 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_24 CoreSite 5760 105840 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_25 CoreSite 5760 109620 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_26 CoreSite 5760 113400 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_27 CoreSite 5760 117180 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_28 CoreSite 5760 120960 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_29 CoreSite 5760 124740 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_30 CoreSite 5760 128520 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_31 CoreSite 5760 132300 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_32 CoreSite 5760 136080 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_33 CoreSite 5760 139860 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_34 CoreSite 5760 143640 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_35 CoreSite 5760 147420 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_36 CoreSite 5760 151200 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_37 CoreSite 5760 154980 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_38 CoreSite 5760 158760 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_39 CoreSite 5760 162540 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_40 CoreSite 5760 166320 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_41 CoreSite 5760 170100 FS DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_42 CoreSite 5760 173880 N DO 1017 BY 1 STEP 480 0 ;
+ROW ROW_43 CoreSite 5760 177660 FS DO 1017 BY 1 STEP 480 0 ;
+TRACKS X 480 DO 1041 STEP 480 LAYER Metal1 ;
+TRACKS Y 420 DO 476 STEP 420 LAYER Metal1 ;
+TRACKS X 480 DO 1041 STEP 480 LAYER Metal2 ;
+TRACKS Y 420 DO 475 STEP 420 LAYER Metal2 ;
+TRACKS X 480 DO 1041 STEP 480 LAYER Metal3 ;
+TRACKS Y 420 DO 475 STEP 420 LAYER Metal3 ;
+TRACKS X 480 DO 1041 STEP 480 LAYER Metal4 ;
+TRACKS Y 420 DO 475 STEP 420 LAYER Metal4 ;
+TRACKS X 480 DO 1041 STEP 480 LAYER Metal5 ;
+TRACKS Y 420 DO 475 STEP 420 LAYER Metal5 ;
+TRACKS X 1640 DO 219 STEP 2280 LAYER TopMetal1 ;
+TRACKS Y 1640 DO 87 STEP 2280 LAYER TopMetal1 ;
+TRACKS X 2000 DO 125 STEP 4000 LAYER TopMetal2 ;
+TRACKS Y 2000 DO 50 STEP 4000 LAYER TopMetal2 ;
+COMPONENTS 0 ;
+END COMPONENTS
+PINS 49 ;
+    - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 183540 ) N ;
+    - ena + NET ena + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 179340 ) N ;
+    - rst_n + NET rst_n + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 187740 ) N ;
+    - ui_in[0] + NET ui_in[0] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 112140 ) N ;
+    - ui_in[1] + NET ui_in[1] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 116340 ) N ;
+    - ui_in[2] + NET ui_in[2] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 120540 ) N ;
+    - ui_in[3] + NET ui_in[3] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 124740 ) N ;
+    - ui_in[4] + NET ui_in[4] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 128940 ) N ;
+    - ui_in[5] + NET ui_in[5] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 133140 ) N ;
+    - ui_in[6] + NET ui_in[6] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 137340 ) N ;
+    - ui_in[7] + NET ui_in[7] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 141540 ) N ;
+    - uio_in[0] + NET uio_in[0] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 145740 ) N ;
+    - uio_in[1] + NET uio_in[1] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 149940 ) N ;
+    - uio_in[2] + NET uio_in[2] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 154140 ) N ;
+    - uio_in[3] + NET uio_in[3] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 158340 ) N ;
+    - uio_in[4] + NET uio_in[4] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 162540 ) N ;
+    - uio_in[5] + NET uio_in[5] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 166740 ) N ;
+    - uio_in[6] + NET uio_in[6] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 170940 ) N ;
+    - uio_in[7] + NET uio_in[7] + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 175140 ) N ;
+    - uio_oe[0] + NET uio_oe[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 78540 ) N ;
+    - uio_oe[1] + NET uio_oe[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 82740 ) N ;
+    - uio_oe[2] + NET uio_oe[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 86940 ) N ;
+    - uio_oe[3] + NET uio_oe[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 91140 ) N ;
+    - uio_oe[4] + NET uio_oe[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 95340 ) N ;
+    - uio_oe[5] + NET uio_oe[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 99540 ) N ;
+    - uio_oe[6] + NET uio_oe[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 103740 ) N ;
+    - uio_oe[7] + NET uio_oe[7] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 107940 ) N ;
+    - uio_out[0] + NET uio_out[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 44940 ) N ;
+    - uio_out[1] + NET uio_out[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 49140 ) N ;
+    - uio_out[2] + NET uio_out[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 53340 ) N ;
+    - uio_out[3] + NET uio_out[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 57540 ) N ;
+    - uio_out[4] + NET uio_out[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 61740 ) N ;
+    - uio_out[5] + NET uio_out[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 65940 ) N ;
+    - uio_out[6] + NET uio_out[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 70140 ) N ;
+    - uio_out[7] + NET uio_out[7] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 74340 ) N ;
+    - uo_out[0] + NET uo_out[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 11340 ) N ;
+    - uo_out[1] + NET uo_out[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 15540 ) N ;
+    - uo_out[2] + NET uo_out[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 19740 ) N ;
+    - uo_out[3] + NET uo_out[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 23940 ) N ;
+    - uo_out[4] + NET uo_out[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 28140 ) N ;
+    - uo_out[5] + NET uo_out[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 32340 ) N ;
+    - uo_out[6] + NET uo_out[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 36540 ) N ;
+    - uo_out[7] + NET uo_out[7] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 200 40740 ) N ;
+    - usb_dn_en_o + NET usb_dn_en_o + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 499800 116340 ) N ;
+    - usb_dn_rx_i + NET usb_dn_rx_i + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 499800 149100 ) N ;
+    - usb_dn_tx_o + NET usb_dn_tx_o + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 499800 181860 ) N ;
+    - usb_dp_en_o + NET usb_dp_en_o + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 499800 18060 ) N ;
+    - usb_dp_rx_i + NET usb_dp_rx_i + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 499800 50820 ) N ;
+    - usb_dp_tx_o + NET usb_dp_tx_o + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 499800 83580 ) N ;
+END PINS
+SPECIALNETS 2 ;
+    - VGND + USE GROUND ;
+    - VPWR + USE POWER ;
+END SPECIALNETS
+NETS 49 ;
+    - clk ( PIN clk ) + USE SIGNAL ;
+    - ena ( PIN ena ) + USE SIGNAL ;
+    - rst_n ( PIN rst_n ) + USE SIGNAL ;
+    - ui_in[0] ( PIN ui_in[0] ) + USE SIGNAL ;
+    - ui_in[1] ( PIN ui_in[1] ) + USE SIGNAL ;
+    - ui_in[2] ( PIN ui_in[2] ) + USE SIGNAL ;
+    - ui_in[3] ( PIN ui_in[3] ) + USE SIGNAL ;
+    - ui_in[4] ( PIN ui_in[4] ) + USE SIGNAL ;
+    - ui_in[5] ( PIN ui_in[5] ) + USE SIGNAL ;
+    - ui_in[6] ( PIN ui_in[6] ) + USE SIGNAL ;
+    - ui_in[7] ( PIN ui_in[7] ) + USE SIGNAL ;
+    - uio_in[0] ( PIN uio_in[0] ) + USE SIGNAL ;
+    - uio_in[1] ( PIN uio_in[1] ) + USE SIGNAL ;
+    - uio_in[2] ( PIN uio_in[2] ) + USE SIGNAL ;
+    - uio_in[3] ( PIN uio_in[3] ) + USE SIGNAL ;
+    - uio_in[4] ( PIN uio_in[4] ) + USE SIGNAL ;
+    - uio_in[5] ( PIN uio_in[5] ) + USE SIGNAL ;
+    - uio_in[6] ( PIN uio_in[6] ) + USE SIGNAL ;
+    - uio_in[7] ( PIN uio_in[7] ) + USE SIGNAL ;
+    - uio_oe[0] ( PIN uio_oe[0] ) + USE SIGNAL ;
+    - uio_oe[1] ( PIN uio_oe[1] ) + USE SIGNAL ;
+    - uio_oe[2] ( PIN uio_oe[2] ) + USE SIGNAL ;
+    - uio_oe[3] ( PIN uio_oe[3] ) + USE SIGNAL ;
+    - uio_oe[4] ( PIN uio_oe[4] ) + USE SIGNAL ;
+    - uio_oe[5] ( PIN uio_oe[5] ) + USE SIGNAL ;
+    - uio_oe[6] ( PIN uio_oe[6] ) + USE SIGNAL ;
+    - uio_oe[7] ( PIN uio_oe[7] ) + USE SIGNAL ;
+    - uio_out[0] ( PIN uio_out[0] ) + USE SIGNAL ;
+    - uio_out[1] ( PIN uio_out[1] ) + USE SIGNAL ;
+    - uio_out[2] ( PIN uio_out[2] ) + USE SIGNAL ;
+    - uio_out[3] ( PIN uio_out[3] ) + USE SIGNAL ;
+    - uio_out[4] ( PIN uio_out[4] ) + USE SIGNAL ;
+    - uio_out[5] ( PIN uio_out[5] ) + USE SIGNAL ;
+    - uio_out[6] ( PIN uio_out[6] ) + USE SIGNAL ;
+    - uio_out[7] ( PIN uio_out[7] ) + USE SIGNAL ;
+    - uo_out[0] ( PIN uo_out[0] ) + USE SIGNAL ;
+    - uo_out[1] ( PIN uo_out[1] ) + USE SIGNAL ;
+    - uo_out[2] ( PIN uo_out[2] ) + USE SIGNAL ;
+    - uo_out[3] ( PIN uo_out[3] ) + USE SIGNAL ;
+    - uo_out[4] ( PIN uo_out[4] ) + USE SIGNAL ;
+    - uo_out[5] ( PIN uo_out[5] ) + USE SIGNAL ;
+    - uo_out[6] ( PIN uo_out[6] ) + USE SIGNAL ;
+    - uo_out[7] ( PIN uo_out[7] ) + USE SIGNAL ;
+    - usb_dn_en_o ( PIN usb_dn_en_o ) + USE SIGNAL ;
+    - usb_dn_rx_i ( PIN usb_dn_rx_i ) + USE SIGNAL ;
+    - usb_dn_tx_o ( PIN usb_dn_tx_o ) + USE SIGNAL ;
+    - usb_dp_en_o ( PIN usb_dp_en_o ) + USE SIGNAL ;
+    - usb_dp_rx_i ( PIN usb_dp_rx_i ) + USE SIGNAL ;
+    - usb_dp_tx_o ( PIN usb_dp_tx_o ) + USE SIGNAL ;
+END NETS
+END DESIGN

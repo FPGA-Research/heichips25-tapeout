@@ -87,3 +87,4 @@ if __name__ == '__main__':
 	
 	# HDMI template
 	generate_template(width=500, height=200, name="heichips25_template_small_hdmi.def", pins="pins_hdmi.cfg", src="src/heichips25_template_hdmi.v")
+	generate_template(width=500, height=200, name="heichips25_template_small_usb.def", pins="pins_usb.cfg", src="src/heichips25_template_usb.v")
