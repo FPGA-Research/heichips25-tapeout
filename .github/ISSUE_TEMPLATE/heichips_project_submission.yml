@@ -1,0 +1,74 @@
+name: HeiChips Project Submission
+description: Use this template to submit your HeiChips group project for tapeout.
+title: "[HeiChips Submission]: <project_name>"
+assigness:
+- mole99
+labels:
+- submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # HeiChips Project Submission
+        
+        Please fill out the information below in order to submit your group project for tapeout.
+        
+        ## Checklist
+        
+        - The project top-level has a unique name starting with `heichips25_`.
+        - The design is verified and tested.
+        - The macro is stored under `macro/`.
+        - `TopMetal2` in the macro is empty (for integration).
+        - The macro is DRC clean (minimal DRC set without fill checks).
+        - The macro is LVS clean.
+        - The macro uses the default power pins (VPWR, VGND). (If not, let us know.)
+        - User designs for the eFPGA are in the repository.
+        - The project is licensed under Apache 2.0 (or a compatible license).
+        
+        ---
+
+  - type: textarea
+    id: repository
+    attributes:
+      label: Repository
+      description: The link to your group project repository.
+    validations:
+      required: true
+
+  - type: textarea
+    id: group-members
+    attributes:
+      label: Group Members
+      description: The names of the group members. If you don't want your names to be listed, you can use pseudonyms.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: project-size
+    attributes:
+      label: HeiChips user project size
+      description: What user project size do you need?
+      options:
+        - Small
+        - Large
+      default: Small
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Preferred project location?
+      description: Do you have a preferred project location? For example, on the left or right side of the chip, or a fixed project coordinate e.g. X0Y1. If not, just leave empty.
+
+  - type: textarea
+    id: pcb-requirements
+    attributes:
+      label: PCB Requirements
+      description: If we create a default PCB for all designs, do you have any special requirements? For example, a USB connector on specific pins, or a QSPI flash, etc. If not, leave empty.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Anything else you want to let us know.
