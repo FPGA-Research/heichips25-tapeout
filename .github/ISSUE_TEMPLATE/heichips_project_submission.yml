@@ -1,7 +1,7 @@
 name: HeiChips Project Submission
 description: Use this template to submit your HeiChips group project for tapeout.
 title: "[HeiChips Submission]: <project_name>"
-assigness:
+assignees:
 - mole99
 labels:
 - submission
@@ -51,7 +51,7 @@ body:
       options:
         - Small
         - Large
-      default: Small
+      default: 0
     validations:
       required: true
 
