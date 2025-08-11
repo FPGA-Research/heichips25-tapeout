@@ -89,3 +89,4 @@ if __name__ == '__main__':
 	generate_template(width=500, height=200, name="heichips25_template_small_hdmi.def", pins="pins_hdmi.cfg", src="src/heichips25_template_hdmi.v")
 	generate_template(width=500, height=200, name="heichips25_template_small_usb.def", pins="pins_usb.cfg", src="src/heichips25_template_usb.v")
 	generate_template(width=500, height=200, name="heichips25_template_small_cryo.def", pins="pins_cryo.cfg", src="src/heichips25_template_cryo.v")
+	generate_template(width=500, height=200, name="heichips25_template_small_ethernet.def", pins="pins_ethernet.cfg", src="src/heichips25_template_ethernet.v")
