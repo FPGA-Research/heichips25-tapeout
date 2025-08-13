@@ -23,7 +23,9 @@ module heichips25_template (
 
     output wire usb_dn_en_o,
     input  wire usb_dn_rx_i,
-    output wire usb_dn_tx_o
+    output wire usb_dn_tx_o,
+    
+    output wire usb_dp_up_o
 );
 
 endmodule

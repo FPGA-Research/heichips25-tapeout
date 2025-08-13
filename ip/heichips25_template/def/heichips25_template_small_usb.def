@@ -64,7 +64,7 @@ TRACKS X 2000 DO 125 STEP 4000 LAYER TopMetal2 ;
 TRACKS Y 2000 DO 50 STEP 4000 LAYER TopMetal2 ;
 COMPONENTS 0 ;
 END COMPONENTS
-PINS 49 ;
+PINS 50 ;
     - clk + NET clk + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER Metal3 ( -200 -200 ) ( 200 200 )
@@ -240,33 +240,37 @@ PINS 49 ;
     - usb_dn_en_o + NET usb_dn_en_o + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER Metal3 ( -200 -200 ) ( 200 200 )
-        + PLACED ( 499800 116340 ) N ;
+        + PLACED ( 499800 99540 ) N ;
     - usb_dn_rx_i + NET usb_dn_rx_i + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER Metal3 ( -200 -200 ) ( 200 200 )
-        + PLACED ( 499800 149100 ) N ;
+        + PLACED ( 499800 128100 ) N ;
     - usb_dn_tx_o + NET usb_dn_tx_o + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER Metal3 ( -200 -200 ) ( 200 200 )
-        + PLACED ( 499800 181860 ) N ;
+        + PLACED ( 499800 156660 ) N ;
     - usb_dp_en_o + NET usb_dp_en_o + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER Metal3 ( -200 -200 ) ( 200 200 )
-        + PLACED ( 499800 18060 ) N ;
+        + PLACED ( 499800 13860 ) N ;
     - usb_dp_rx_i + NET usb_dp_rx_i + DIRECTION INPUT + USE SIGNAL
       + PORT
         + LAYER Metal3 ( -200 -200 ) ( 200 200 )
-        + PLACED ( 499800 50820 ) N ;
+        + PLACED ( 499800 42420 ) N ;
     - usb_dp_tx_o + NET usb_dp_tx_o + DIRECTION OUTPUT + USE SIGNAL
       + PORT
         + LAYER Metal3 ( -200 -200 ) ( 200 200 )
-        + PLACED ( 499800 83580 ) N ;
+        + PLACED ( 499800 70980 ) N ;
+    - usb_dp_up_o + NET usb_dp_up_o + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER Metal3 ( -200 -200 ) ( 200 200 )
+        + PLACED ( 499800 185220 ) N ;
 END PINS
 SPECIALNETS 2 ;
     - VGND + USE GROUND ;
     - VPWR + USE POWER ;
 END SPECIALNETS
-NETS 49 ;
+NETS 50 ;
     - clk ( PIN clk ) + USE SIGNAL ;
     - ena ( PIN ena ) + USE SIGNAL ;
     - rst_n ( PIN rst_n ) + USE SIGNAL ;
@@ -316,5 +320,6 @@ NETS 49 ;
     - usb_dp_en_o ( PIN usb_dp_en_o ) + USE SIGNAL ;
     - usb_dp_rx_i ( PIN usb_dp_rx_i ) + USE SIGNAL ;
     - usb_dp_tx_o ( PIN usb_dp_tx_o ) + USE SIGNAL ;
+    - usb_dp_up_o ( PIN usb_dp_up_o ) + USE SIGNAL ;
 END NETS
 END DESIGN
