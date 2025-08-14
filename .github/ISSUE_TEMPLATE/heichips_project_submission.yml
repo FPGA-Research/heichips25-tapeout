@@ -65,7 +65,7 @@ body:
     id: pcb-requirements
     attributes:
       label: PCB Requirements
-      description: If we create a default PCB for all designs, do you have any special requirements? For example, a USB connector on specific pins, or a QSPI flash, etc. If not, leave empty.
+      description: If we create a default PCB for all designs, do you have any special requirements? For example, a USB connector on specific pins, or a QSPI flash, etc. If not, leave empty. We will definitely  add some LEDs and Pmod connectors to the board, so these do not have to be listed here.
 
   - type: textarea
     id: additional
