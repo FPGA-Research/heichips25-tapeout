@@ -55,6 +55,18 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: small-template-merge
+    attributes:
+      label: Area usage less than half of the small template?
+      description: Do you need less than half of the small template's available area (<50000 µm²)? If yes, this would allow us to merge your design with another group's design and save some valuable area.
+      options:
+        - "No"
+        - "Yes"
+      default: 0
+    validations:
+      required: true
+
   - type: textarea
     id: location
     attributes:
