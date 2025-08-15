@@ -48,7 +48,7 @@ FABULOUS_TILE_SIZES:
   SW_term:      [ 107.52, 53.76 ]
   SE_term:      [ 107.52, 53.76 ]
   "*_IO4":      [ 215.04, 53.76 ]
-  "*_TT_IF":    [ 107.52, 215.04 ]
+  "*_TT_IF*":   [ 107.52, 215.04 ]
   "IHP_SRAM_*": [ 107.52, 215.04 ]
 
 # Save on file space by sharing same cells

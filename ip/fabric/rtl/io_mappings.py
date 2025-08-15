@@ -8,24 +8,22 @@ SRAM_WIDTH = 32
 # coord: (module, instance)
 tt_projects = {
     # left side
-    'X0Y1': ('heichips25_example_small', 'heichips25_example_small_0'),
-    'X0Y2': ('heichips25_example_small', 'heichips25_example_small_1'),
-    'X0Y3': ('heichips25_example_small', 'heichips25_example_small_2'),
-    'X0Y4': ('heichips25_example_small', 'heichips25_example_small_3'),
-    'X0Y5': ('heichips25_example_small', 'heichips25_example_small_4'),
-    'X0Y6': ('heichips25_example_small', 'heichips25_example_small_5'),
-    'X0Y7': ('heichips25_example_small', 'heichips25_example_small_6'),
-    'X0Y8': ('heichips25_example_small', 'heichips25_example_small_7'),
+    'X0Y2': ('heichips25_example_large', 'heichips25_example_large_0'),
+    'X0Y3': ('heichips25_example_small', 'heichips25_example_small_0'),
+    'X0Y4': ('heichips25_example_small', 'heichips25_example_small_1'),
+    'X0Y5': ('heichips25_example_small', 'heichips25_example_small_2'),
+    'X0Y6': ('heichips25_example_small', 'heichips25_example_small_3'),
+    'X0Y7': ('heichips25_example_small', 'heichips25_example_small_4'),
+    'X0Y8': ('heichips25_example_small', 'heichips25_example_small_5'),
 
     # right side
     # SRAM Top
     # SRAM Bot
-    'X5Y3': ('heichips25_example_small', 'heichips25_example_small_8'),
-    'X5Y4': ('heichips25_example_small', 'heichips25_example_small_9'),
-    'X5Y5': ('heichips25_example_small', 'heichips25_example_small_10'),
-    'X5Y6': ('heichips25_example_small', 'heichips25_example_small_11'),
-    'X5Y7': ('heichips25_example_small', 'heichips25_example_small_12'),
-    'X5Y8': ('heichips25_example_small', 'heichips25_example_small_13'),
+    'X5Y4': ('heichips25_example_large', 'heichips25_example_large_1'),
+    'X5Y5': ('heichips25_example_small', 'heichips25_example_small_6'),
+    'X5Y6': ('heichips25_example_small', 'heichips25_example_small_7'),
+    'X5Y7': ('heichips25_example_small', 'heichips25_example_small_8'),
+    'X5Y8': ('heichips25_example_small', 'heichips25_example_small_9'),
 }
 
 print(f'------------------ header ------------------\n')
