@@ -55,6 +55,18 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: small-template-merge
+    attributes:
+      label: Area usage less than half of the small template?
+      description: Do you need less than half of the small template's available area (<50000 µm²)? If yes, this would allow us to merge your design with another group's design and save some valuable area.
+      options:
+        - "No"
+        - "Yes"
+      default: 0
+    validations:
+      required: true
+
   - type: textarea
     id: location
     attributes:
@@ -65,10 +77,23 @@ body:
     id: pcb-requirements
     attributes:
       label: PCB Requirements
-      description: If we create a default PCB for all designs, do you have any special requirements? For example, a USB connector on specific pins, or a QSPI flash, etc. If not, leave empty.
+      description: If we create a default PCB for all designs, do you have any special requirements? For example, a USB connector on specific pins, or a QSPI flash, etc. If not, leave empty. We will definitely  add some LEDs and Pmod connectors to the board, so these do not have to be listed here.
 
   - type: textarea
     id: additional
     attributes:
       label: Additional Information
       description: Anything else you want to let us know.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## User Project Bitstream
+
+        While this is not mandatory to provide by the time of the submission
+        deadline, please also consider adding an example bitstream for your
+        project at some point in time. This allows you, us and everyone else to
+        test your design once we get the chips back. You can find instructions
+        on how to generate a bitstream [here](https://github.com/FPGA-Research/heichips25-tapeout/tree/main/ip/fabric/user_designs).
+        If you have questions regarding [FABulous](https://github.com/FPGA-Research/FABulous) or the bitstream
+        generation, feel free to open a [discussion](https://github.com/FPGA-Research/FABulous/discussions) in the FABulous repository.
