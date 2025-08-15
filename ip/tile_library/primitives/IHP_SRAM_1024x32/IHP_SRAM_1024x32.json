@@ -5,7 +5,7 @@
       "attributes": {
         "dynports": 1,
         "cells_not_processed": 1,
-        "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:15.1-63.10"
+        "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:15.1-63.10"
       },
       "parameter_default_values": {
         "NoConfigBits": 0
@@ -95,7 +95,7 @@
         }
       },
       "cells": {
-        "$logic_and$/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:54$1": {
+        "$logic_and$/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:54$1": {
           "hide_name": 1,
           "type": "$logic_and",
           "parameters": {
@@ -106,7 +106,7 @@
             "Y_WIDTH": 1
           },
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:54.24-54.45"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:54.24-54.45"
           },
           "port_directions": {
             "A": "input",
@@ -121,18 +121,18 @@
         }
       },
       "netnames": {
-        "$logic_and$/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:54$1_Y": {
+        "$logic_and$/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:54$1_Y": {
           "hide_name": 1,
           "bits": [ 111 ],
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:54.24-54.45"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:54.24-54.45"
           }
         },
         "ADDR": {
           "hide_name": 0,
           "bits": [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:19.27-19.31"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:19.27-19.31"
           }
         },
         "ADDR_SRAM": {
@@ -141,14 +141,14 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:28.52-28.61"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:28.52-28.61"
           }
         },
         "BM": {
           "hide_name": 0,
           "bits": [ 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75 ],
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:21.27-21.29"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:21.27-21.29"
           }
         },
         "BM_SRAM": {
@@ -157,7 +157,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:30.52-30.59"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:30.52-30.59"
           }
         },
         "CLK_SRAM": {
@@ -166,7 +166,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:36.52-36.60"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:36.52-36.60"
           }
         },
         "CONFIGURED_top": {
@@ -175,7 +175,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:41.52-41.66"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:41.52-41.66"
           }
         },
         "ConfigBits": {
@@ -186,14 +186,14 @@
           "attributes": {
             "FABulous": 1,
             "GLOBAL": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:46.54-46.64"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:46.54-46.64"
           }
         },
         "DIN": {
           "hide_name": 0,
           "bits": [ 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43 ],
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:20.27-20.30"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:20.27-20.30"
           }
         },
         "DIN_SRAM": {
@@ -202,14 +202,14 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:29.52-29.60"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:29.52-29.60"
           }
         },
         "DOUT": {
           "hide_name": 0,
           "bits": [ 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110 ],
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:25.28-25.32"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:25.28-25.32"
           }
         },
         "DOUT_SRAM": {
@@ -218,14 +218,14 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:34.52-34.61"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:34.52-34.61"
           }
         },
         "MEN": {
           "hide_name": 0,
           "bits": [ 77 ],
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:23.27-23.30"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:23.27-23.30"
           }
         },
         "MEN_SRAM": {
@@ -234,14 +234,14 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:32.52-32.60"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:32.52-32.60"
           }
         },
         "REN": {
           "hide_name": 0,
           "bits": [ 78 ],
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:24.27-24.30"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:24.27-24.30"
           }
         },
         "REN_SRAM": {
@@ -250,7 +250,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:33.52-33.60"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:33.52-33.60"
           }
         },
         "TIE_HIGH_SRAM": {
@@ -259,7 +259,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:38.52-38.65"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:38.52-38.65"
           }
         },
         "TIE_LOW_SRAM": {
@@ -268,7 +268,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:39.52-39.64"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:39.52-39.64"
           }
         },
         "UserCLK": {
@@ -278,14 +278,14 @@
             "EXTERNAL": 1,
             "FABulous": 1,
             "SHARED_PORT": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:44.49-44.56"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:44.49-44.56"
           }
         },
         "WEN": {
           "hide_name": 0,
           "bits": [ 76 ],
           "attributes": {
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:22.27-22.30"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:22.27-22.30"
           }
         },
         "WEN_SRAM": {
@@ -294,7 +294,7 @@
           "attributes": {
             "EXTERNAL": 1,
             "FABulous": 1,
-            "src": "/home/leo/Dokumente/HeiChips/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:31.52-31.60"
+            "src": "/home/leo/Repositories/heichips25-tapeout/ip/fabric/../tile_library/tiles/IHP_SRAM/IHP_SRAM_bot/../../../primitives/IHP_SRAM_1024x32/IHP_SRAM_1024x32.v:31.52-31.60"
           }
         }
       }
