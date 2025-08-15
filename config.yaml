@@ -1,6 +1,6 @@
 meta:
   version: 2
-  flow: Classic #CustomFlow
+  flow: Classic
   substituting_steps:
     # IO pads are used instead of pins
     OpenROAD.IOPlacement: null
@@ -10,13 +10,13 @@ meta:
     +Checker.XOR: KLayout.SealRing
     
     # Run Filler insertion
-    +KLayout.SealRing: KLayout.FillerGeneration
+    #+KLayout.SealRing: KLayout.FillerGeneration
     
     # TODO
     Magic.StreamOut: null
     
     # Save time
-    #KLayout.DRC: null
+    KLayout.DRC: null
     Magic.DRC: null
     
     # TODO
@@ -45,8 +45,7 @@ VERILOG_FILES:
 VERILOG_DEFINES:
 - FUNCTIONAL
 
-# TODO magic places the I/O pads at wrong positions
-#PRIMARY_GDSII_STREAMOUT_TOOL: klayout
+PRIMARY_GDSII_STREAMOUT_TOOL: klayout
 #MAGIC_EXT_USE_GDS: true
 
 # Use minimal DRC rules
@@ -226,58 +225,76 @@ MACROS:
     spef:
       "nom_*":
         - dir::ip/user_projects/heichips25_example_small/macro/spef/nom/heichips25_example_small.nom.spef
-    instances: 
+    instances:
       heichips25_core.fabric_wrapper.heichips25_example_small_0:
-        location: [388, 1970]
-        orientation: FN
-      heichips25_core.fabric_wrapper.heichips25_example_small_1:
-        location: [388, 1755]
-        orientation: FN
-      heichips25_core.fabric_wrapper.heichips25_example_small_2:
         location: [388, 1540]
         orientation: FN
-      heichips25_core.fabric_wrapper.heichips25_example_small_3:
+      heichips25_core.fabric_wrapper.heichips25_example_small_1:
         location: [388, 1325]
         orientation: FN
-      heichips25_core.fabric_wrapper.heichips25_example_small_4:
+      heichips25_core.fabric_wrapper.heichips25_example_small_2:
         location: [388, 1110]
         orientation: FN
-      heichips25_core.fabric_wrapper.heichips25_example_small_5:
+      heichips25_core.fabric_wrapper.heichips25_example_small_3:
         location: [388, 895]
         orientation: FN
-      heichips25_core.fabric_wrapper.heichips25_example_small_6:
+      heichips25_core.fabric_wrapper.heichips25_example_small_4:
         location: [388, 680]
         orientation: FN
-      heichips25_core.fabric_wrapper.heichips25_example_small_7:
+      heichips25_core.fabric_wrapper.heichips25_example_small_5:
         location: [388, 465]
         orientation: FN
 
-      heichips25_core.fabric_wrapper.heichips25_example_small_8:
-        location: [2109, 1540]
-        orientation: N
-      heichips25_core.fabric_wrapper.heichips25_example_small_9:
-        location: [2109, 1325]
-        orientation: N
-      heichips25_core.fabric_wrapper.heichips25_example_small_10:
+      heichips25_core.fabric_wrapper.heichips25_example_small_6:
         location: [2109, 1110]
         orientation: N
-      heichips25_core.fabric_wrapper.heichips25_example_small_11:
+      heichips25_core.fabric_wrapper.heichips25_example_small_7:
         location: [2109, 895]
         orientation: N
-      heichips25_core.fabric_wrapper.heichips25_example_small_12:
+      heichips25_core.fabric_wrapper.heichips25_example_small_8:
         location: [2109, 680]
         orientation: N
-      heichips25_core.fabric_wrapper.heichips25_example_small_13:
+      heichips25_core.fabric_wrapper.heichips25_example_small_9:
         location: [2109, 465]
         orientation: N
 
-
-
+  heichips25_example_large:
+    gds:
+      - dir::ip/user_projects/heichips25_example_large/macro/gds/heichips25_example_large.gds
+    lef:
+      - dir::ip/user_projects/heichips25_example_large/macro/lef/heichips25_example_large.lef
+    nl:
+      - dir::ip/user_projects/heichips25_example_large/macro/nl/heichips25_example_large.nl.v
+    spef:
+      "nom_*":
+        - dir::ip/user_projects/heichips25_example_large/macro/spef/nom/heichips25_example_large.nom.spef
+    instances:
+      heichips25_core.fabric_wrapper.heichips25_example_large_0:
+        location: [388, 1755]
+        orientation: FN
+      heichips25_core.fabric_wrapper.heichips25_example_large_1:
+        location: [2109, 1325]
+        orientation: N
 
 # TODO update pdn config
 PDN_MACRO_CONNECTIONS:
+  # eFPGA
   - "heichips25_core.fabric_wrapper.eFPGA VDD VSS VPWR VGND" 
+  # Large User Projects
+  - "heichips25_core.fabric_wrapper.heichips25_example_large_0 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_large_1 VDD VSS VPWR VGND"
+  # Small User Projects
   - "heichips25_core.fabric_wrapper.heichips25_example_small_0 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_1 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_2 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_3 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_4 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_5 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_6 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_7 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_8 VDD VSS VPWR VGND"
+  - "heichips25_core.fabric_wrapper.heichips25_example_small_9 VDD VSS VPWR VGND"
+  # SRAM
   - "heichips25_core.fabric_wrapper.sram0_0 VDD VSS VDD! VSS!"
   - "heichips25_core.fabric_wrapper.sram0_0 VDD VSS VDDARRAY! VSS!"
   - "heichips25_core.fabric_wrapper.sram0_1 VDD VSS VDD! VSS!"

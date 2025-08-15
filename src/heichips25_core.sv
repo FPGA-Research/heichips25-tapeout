@@ -293,7 +293,6 @@ module heichips25_core (
         .FrameStrobe_o      (FrameStrobe)
     );
     
-    // TODO remove keep
     fabric_wrapper fabric_wrapper (
         .clk_i  (fpga_clk_i),
         

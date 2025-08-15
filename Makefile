@@ -6,6 +6,14 @@ $(echo $RUN_TAG)
 PDK_ROOT ?= /home/leo/Repositories/IHP-Open-PDK
 PDK ?= ihp-sg13g2
 
+librelane:
+	librelane config.yaml --pdk ${PDK} --manual-pdk
+.PHONY: librelane
+
+librelane-view:
+	librelane config.yaml --pdk ${PDK} --manual-pdk --last-run --flow OpenInOpenROAD
+.PHONY: librelane-view
+
 copy-final:
 	mkdir -p final/pnl/
 	mkdir -p final/spice/
