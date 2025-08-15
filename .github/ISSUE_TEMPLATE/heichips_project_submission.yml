@@ -72,3 +72,16 @@ body:
     attributes:
       label: Additional Information
       description: Anything else you want to let us know.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## User Project Bitstream
+
+        While this is not mandatory to provide by the time of the submission
+        deadline, please also consider adding an example bitstream for your
+        project at some point in time. This allows you, us and everyone else to
+        test your design once we get the chips back. You can find instructions
+        on how to generate a bitstream [here](https://github.com/FPGA-Research/heichips25-tapeout/tree/main/ip/fabric/user_designs).
+        If you have questions regarding [FABulous](https://github.com/FPGA-Research/FABulous) or the bitstream
+        generation, feel free to open a [discussion](https://github.com/FPGA-Research/FABulous/discussions) in the FABulous repository.
