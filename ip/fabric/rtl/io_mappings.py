@@ -9,7 +9,7 @@ SRAM_WIDTH = 32
 tt_projects = {
     # left side
     'X0Y2': ('heichips25_example_large', 'heichips25_example_large_0'),
-    'X0Y3': ('heichips25_example_small', 'heichips25_example_small_0'),
+    'X0Y3': ('heichips25_CORDIC', 'heichips25_example_small_0'),
     'X0Y4': ('heichips25_example_small', 'heichips25_example_small_1'),
     'X0Y5': ('heichips25_example_small', 'heichips25_example_small_2'),
     'X0Y6': ('heichips25_example_small', 'heichips25_example_small_3'),
@@ -19,7 +19,7 @@ tt_projects = {
     # right side
     # SRAM Top
     # SRAM Bot
-    'X5Y4': ('heichips25_example_large', 'heichips25_example_large_1'),
+    'X5Y4': ('heichips25_fazyrv_exotiny', 'heichips25_example_large_1'),
     'X5Y5': ('heichips25_example_small', 'heichips25_example_small_6'),
     'X5Y6': ('heichips25_example_small', 'heichips25_example_small_7'),
     'X5Y7': ('heichips25_example_small', 'heichips25_example_small_8'),

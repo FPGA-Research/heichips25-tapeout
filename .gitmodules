@@ -1,0 +1,6 @@
+[submodule "ip/user_projects/heichips25-fazyrv-exotiny"]
+	path = ip/user_projects/heichips25-fazyrv-exotiny
+	url = ../../HeiChips/heichips25-fazyrv-exotiny.git
+[submodule "ip/user_projects/heichips25_CORDIC"]
+	path = ip/user_projects/heichips25_CORDIC
+	url = ../../HeiChips/heichips25_CORDIC.git

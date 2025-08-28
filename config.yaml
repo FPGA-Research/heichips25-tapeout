@@ -171,10 +171,10 @@ DIE_AREA: [0, 0, 3000, 2600]
 CORE_AREA: [345, 345, 2655, 2255]
 PL_TARGET_DENSITY_PCT: 50
 
-FP_PDN_CFG: dir::pdn.tcl
+PDN_CFG: dir::pdn.tcl
 
-FP_PDN_CORE_RING_VWIDTH: 8.0
-FP_PDN_CORE_RING_HWIDTH: 8.0
+PDN_CORE_RING_VWIDTH: 8.0
+PDN_CORE_RING_HWIDTH: 8.0
 
 MACROS:
   eFPGA:
@@ -226,9 +226,9 @@ MACROS:
       "nom_*":
         - dir::ip/user_projects/heichips25_example_small/macro/spef/nom/heichips25_example_small.nom.spef
     instances:
-      heichips25_core.fabric_wrapper.heichips25_example_small_0:
-        location: [388, 1540]
-        orientation: FN
+      #heichips25_core.fabric_wrapper.heichips25_example_small_0:
+      #  location: [388, 1540]
+      #  orientation: FN
       heichips25_core.fabric_wrapper.heichips25_example_small_1:
         location: [388, 1325]
         orientation: FN
@@ -272,10 +272,49 @@ MACROS:
       heichips25_core.fabric_wrapper.heichips25_example_large_0:
         location: [388, 1755]
         orientation: FN
+      #heichips25_core.fabric_wrapper.heichips25_example_large_1:
+      #  location: [2109, 1325]
+      #  orientation: N
+
+  heichips25_fazyrv_exotiny:
+    gds:
+      - dir::ip/user_projects/heichips25-fazyrv-exotiny/macro/gds/heichips25_fazyrv_exotiny.gds
+    lef:
+      - dir::ip/user_projects/heichips25-fazyrv-exotiny/macro/lef/heichips25_fazyrv_exotiny.lef
+    nl:
+      - dir::ip/user_projects/heichips25-fazyrv-exotiny/macro/nl/heichips25_fazyrv_exotiny.nl.v
+    spef:
+      "nom_*":
+        - dir::ip/user_projects/heichips25-fazyrv-exotiny/macro/spef/nom/heichips25_fazyrv_exotiny.nom.spef
+    instances:
       heichips25_core.fabric_wrapper.heichips25_example_large_1:
         location: [2109, 1325]
         orientation: N
 
+  heichips25_CORDIC:
+    gds:
+      - dir::ip/user_projects/heichips25_CORDIC/macro/gds/heichips25_CORDIC.gds
+    lef:
+      - dir::ip/user_projects/heichips25_CORDIC/macro/lef/heichips25_CORDIC.lef
+    nl:
+      - dir::ip/user_projects/heichips25_CORDIC/macro/nl/heichips25_CORDIC.nl.v
+    spef:
+      "nom_*":
+        - dir::ip/user_projects/heichips25_CORDIC/macro/spef/nom/heichips25_CORDIC.nom.spef
+    instances:
+      heichips25_core.fabric_wrapper.heichips25_example_small_0:
+        location: [388, 1540]
+        orientation: FN
+
+PDN_OBSTRUCTIONS:
+ - [TopMetal1,  388, 1540,  888, 1740] # heichips25_example_small_0
+ - [TopMetal1, 2109, 1325, 2609, 1740] # heichips25_example_large_1
+ - [TopMetal2, 2517, 1333, 2572, 1385] # heichips25_example_large_1 logo window
+ROUTING_OBSTRUCTIONS:
+ - [TopMetal1,  388, 1540,  888, 1740] # heichips25_example_small_0
+ - [TopMetal1, 2109, 1325, 2609, 1740] # heichips25_example_large_1
+ - [TopMetal2, 2517, 1333, 2572, 1385] # heichips25_example_large_1 logo window
+ 
 # TODO update pdn config
 PDN_MACRO_CONNECTIONS:
   # eFPGA
