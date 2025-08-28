@@ -159,14 +159,14 @@ assign tt_project_{i}_uio_oe  = '0;\n""")
 
 for i in range(NUM_SRAM):
 
-    print(f"""# SRAM {i} instances
+    print(f"""// SRAM {i} instances
 
 logic [31:0] fabric_sram{i}_dout_sram{i}_0;
 logic [31:0] fabric_sram{i}_dout_sram{i}_1;
 
 logic select_sram{i};
 
-always_ff @(posedge clk_i) begin
+always_ff @(posedge fabric_sram{i}_clk_o) begin
     select_sram{i} <= fabric_sram{i}_addr_o[9]; // Highest bit selects the SRAM
 end
 

@@ -7,12 +7,16 @@ PDK_ROOT ?= /home/leo/Repositories/IHP-Open-PDK
 PDK ?= ihp-sg13g2
 
 librelane:
-	librelane config.yaml --pdk ${PDK} --manual-pdk
+	librelane config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk
 .PHONY: librelane
 
-librelane-view:
-	librelane config.yaml --pdk ${PDK} --manual-pdk --last-run --flow OpenInOpenROAD
-.PHONY: librelane-view
+librelane-openroad:
+	librelane config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --last-run --flow OpenInOpenROAD
+.PHONY: librelane-openroad
+
+librelane-klayout:
+	librelane config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --last-run --flow OpenInOpenROAD
+.PHONY: librelane-klayout
 
 copy-final:
 	mkdir -p final/pnl/

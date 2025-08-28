@@ -1100,7 +1100,7 @@ module fabric_wrapper #(
 
     logic select_sram0;
 
-    always_ff @(posedge clk_i) begin
+    always_ff @(posedge fabric_sram0_clk_o) begin
         select_sram0 <= fabric_sram0_addr_o[9]; // Highest bit selects the SRAM
     end
 
@@ -1153,6 +1153,7 @@ module fabric_wrapper #(
         .A_BIST_DIN     ({32{fabric_sram0_tie_low_o}}),
         .A_BIST_BM      ({32{fabric_sram0_tie_low_o}})
     );
+
 endmodule
 
 `default_nettype wire
