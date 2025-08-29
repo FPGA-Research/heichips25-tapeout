@@ -10,8 +10,8 @@ tt_projects = {
     # left side
     'X0Y2': ('heichips25_example_large', 'heichips25_example_large_0'),
     'X0Y3': ('heichips25_CORDIC', 'heichips25_example_small_0'),
-    'X0Y4': ('heichips25_example_small', 'heichips25_example_small_1'),
-    'X0Y5': ('heichips25_example_small', 'heichips25_example_small_2'),
+    'X0Y4': ('heichips25_sap3', 'heichips25_example_small_1'),
+    'X0Y5': ('heichips25_top_sorter', 'heichips25_example_small_2'),
     'X0Y6': ('heichips25_example_small', 'heichips25_example_small_3'),
     'X0Y7': ('heichips25_example_small', 'heichips25_example_small_4'),
     'X0Y8': ('heichips25_example_small', 'heichips25_example_small_5'),

@@ -4,3 +4,6 @@
 [submodule "ip/user_projects/heichips25_CORDIC"]
 	path = ip/user_projects/heichips25_CORDIC
 	url = ../../HeiChips/heichips25_CORDIC.git
+[submodule "ip/user_projects/heiChips2025_sap3_and_sorter"]
+	path = ip/user_projects/heiChips2025_sap3_and_sorter
+	url = ../../HeiChips/heiChips2025_sap3_and_sorter.git
