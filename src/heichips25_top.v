@@ -98,7 +98,7 @@ module heichips25_top #(
     wire internal_analog_pin2_PADRES;
 
     wire pudding_i_in_PADRES;
-    wire pudding_i_out_PADRES;
+    wire pudding_i_out_PADBARE;
 
     wire ethernet_dp_PADBARE;
     wire ethernet_dn_PADBARE;
@@ -497,7 +497,7 @@ module heichips25_top #(
         .vdd    (VDD),
         .vss    (VSS),
         `endif
-        .padres (pudding_i_out_PADRES),
+        .padbare (pudding_i_out_PADBARE),
         .pad (pudding_i_out_PAD)
     );
 
@@ -580,7 +580,7 @@ module heichips25_top #(
         .internal_analog_pin2  (internal_analog_pin2_PADRES),
         
         .pudding_i_in    (pudding_i_in_PADRES),
-        .pudding_i_out   (pudding_i_out_PADRES),
+        .pudding_i_out   (pudding_i_out_PADBARE),
 
         .ethernet_dp    (ethernet_dp_PADBARE),
         .ethernet_dn    (ethernet_dn_PADBARE)
