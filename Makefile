@@ -5,12 +5,14 @@ TOP = heichips25_top
 
 PDK_ROOT ?= $(MAKEFILE_DIR)/IHP-Open-PDK
 PDK ?= ihp-sg13g2
-PDK_COMMIT ?= 3b5a704ba6738aa686b08706187830e6284d2a10
+#PDK_COMMIT ?= 3b5a704ba6738aa686b08706187830e6284d2a10
+PDK_BRANCH ?= heichips25
 
 .DEFAULT_GOAL := help
 
 $(PDK_ROOT)/$(PDK):
-	ciel enable $(PDK_COMMIT) --pdk-root $(PDK_ROOT) --pdk-family $(PDK)
+	#ciel enable $(PDK_COMMIT) --pdk-root $(PDK_ROOT) --pdk-family $(PDK)
+	git clone git@github.com:HeiChips/IHP-Open-PDK.git --recurse-submodules --depth=1 --single-branch -b $(PDK_BRANCH)
 
 # Get the fabric names
 FABRICS :=  $(patsubst fabrics/%,%,$(wildcard fabrics/*)) 
@@ -33,6 +35,13 @@ $(FABRICS_KLAYOUT):
 	librelane --pdk ${PDK} fabrics/$(subst -klayout,,$@)/config.yaml --last-run --flow OpenInKLayout
 .PHONY: $(FABRICS_KLAYOUT)
 
+copy-fabric:
+	# Copy fabric database
+	mkdir -p user_designs/fabrics/classic_fabric_heichips25/macro/ihp-sg13g2/
+	cp -R fabrics/classic_fabric_heichips25/macro/ihp-sg13g2/fabulous/ user_designs/fabrics/classic_fabric_heichips25/macro/ihp-sg13g2/
+	cp fabrics/classic_fabric_heichips25/constraints.pcf user_designs/fabrics/classic_fabric_heichips25/constraints.pcf
+.PHONY: copy-fabric
+
 help: ## Show this help message
 	@echo 'Usage: make [target]'
 	@echo ''
@@ -53,6 +62,10 @@ librelane: $(PDK_ROOT)/$(PDK) ## Run LibreLane
 librelane-nodrc: $(PDK_ROOT)/$(PDK) ## Run LibreLane without DRC checks
 	librelane librelane/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --save-views-to final/ --skip KLayout.DRC --skip Magic.DRC --skip KLayout.Antenna --skip KLayout.Density
 .PHONY: librelane-nodrc
+
+librelane-onlyfill: $(PDK_ROOT)/$(PDK) ## Run LibreLane onyl for filler generation and density checks
+	RUN=$$(ls librelane/runs/ | tail -n 1) && librelane librelane/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --last-run --with-initial-state librelane/runs/$$RUN/62-magic-filler/state_in.json --from Magic.Filler --to KLayout.Density
+.PHONY: librelane-onlyfill
 
 librelane-magicdrc: $(PDK_ROOT)/$(PDK) ## Run LibreLane with only Magic DRC checks
 	librelane librelane/config.yaml --pdk ${PDK} --pdk-root ${PDK_ROOT} --manual-pdk --save-views-to final/ --skip KLayout.DRC
@@ -96,4 +109,10 @@ render-image:
 	PDK_ROOT=${PDK_ROOT} PDK=${PDK} python3 scripts/lay2img.py final/gds/${TOP}.gds img/${TOP}.png --width 2048 --oversampling 4
 	magick img/${TOP}_white.png -resize 25% img/${TOP}_white_small.png
 	magick img/${TOP}_black.png -resize 25% img/${TOP}_black_small.png
+.PHONY: render-image
+
+precheck:
+	PDK_ROOT=${PDK_ROOT} PDK=${PDK} python3 ${PDK_ROOT}/${PDK}/libs.tech/klayout/tech/drc/run_drc.py \
+	--precheck_drc --mp=$$(nproc) --no_offgrid --density_thr=$$(nproc) \
+	--no_angle --disable_extra_rules --no_recommended --path=final/gds/heichips25_top.gds
 .PHONY: render-image
