@@ -78,7 +78,6 @@ jobs:
           submodules: 'true'
       - name: Clone the PDK
         run: |
-          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           make clone-pdk
       - name: Setup Nix
         uses: ./.github/actions/setup_nix
