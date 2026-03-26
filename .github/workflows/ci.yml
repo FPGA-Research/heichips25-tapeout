@@ -76,6 +76,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: 'true'
+      - name: Clone the PDK
+        run: |
+          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          nix develop --command make clone-pdk
       - name: Setup Nix
         uses: ./.github/actions/setup_nix
         with:
@@ -119,10 +123,6 @@ jobs:
       - name: Simulate the Fabric (Simulation)
         run: |
           PDK=${{ matrix.pdk }} TILE_LIBRARY=${{ env.TILE_LIBRARY }} FABRIC=${{ matrix.fabrics }} nix develop --command bash -c "cd tb; python3 fabric_tb.py"
-      - name: Clone the PDK
-        run: |
-          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          nix develop --command make clone-pdk
       - name: Implement the Chip
         if: success() || failure()
         run: |
