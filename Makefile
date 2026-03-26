@@ -12,7 +12,7 @@ PDK_BRANCH ?= heichips25
 
 $(PDK_ROOT)/$(PDK):
 	#ciel enable $(PDK_COMMIT) --pdk-root $(PDK_ROOT) --pdk-family $(PDK)
-	git clone git@github.com:HeiChips/IHP-Open-PDK.git --recurse-submodules --depth=1 --single-branch -b $(PDK_BRANCH)
+	git clone https://github.com/HeiChips/IHP-Open-PDK.git --recurse-submodules --depth=1 --single-branch -b $(PDK_BRANCH)
 
 # Get the fabric names
 FABRICS :=  $(patsubst fabrics/%,%,$(wildcard fabrics/*)) 
