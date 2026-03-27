@@ -179,7 +179,7 @@ module FazyRV_exotiny_wrapper (
   output logic       fzy_gpo_o
 );
 
-  (* keep, BEL="X5Y4.A" *) TT_PROJECT i_TT_PROJECT (
+  (* keep, BEL="X0Y9.A" *) TT_PROJECT i_TT_PROJECT (
     .UI_IN0   ( fzy_ccx_res_i[0]     ),
     .UI_IN1   ( fzy_ccx_res_i[1]     ),
     .UI_IN2   ( fzy_ccx_res_i[2]     ),
