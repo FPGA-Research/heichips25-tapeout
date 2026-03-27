@@ -199,6 +199,9 @@ PDN_CORE_RING_HSPACING: 5
 PDN_CORE_RING_CONNECT_TO_PADS: True
 PDN_ENABLE_PINS: False
 
+PDN_HWIDTH: 4
+PDN_HSPACING: 2
+PDN_HPITCH: 60
 
 NON_DEFAULT_RULES:
   # 3 times the width and spacing
@@ -550,7 +553,7 @@ MACROS:
         - dir::../ip/user_projects/heichips25_SDR/macro/spef/nom/heichips25_SDR.nom.spef
     instances:
       heichips25_core/fabric_wrapper/heichips25_example_small_4:
-        location: [expr::(0.48 * 812), expr::(895 + 95.00)]
+        location: [expr::(0.48 * 812), expr::((1333*0.42) + ((512*2)*0.42))]
         orientation: FN
 
   heichips25_tiny_wrapper:
@@ -565,7 +568,7 @@ MACROS:
         - dir::../ip/user_projects/heichips25-tiny-wrapper/macro/spef/nom/heichips25_tiny_wrapper.nom.spef
     instances:
       heichips25_core/fabric_wrapper/heichips25_example_small_9:
-        location: [expr::(0.48 * 4394), expr::(895 + 95.00)]
+        location: [expr::(0.48 * 4394), expr::((1333*0.42) + ((512*2)*0.42))]
         orientation: N
 
   heichips25_internal:
@@ -580,7 +583,7 @@ MACROS:
         - dir::../ip/user_projects/heichips25-internal/macro/spef/nom/heichips25_internal.nom.spef
     instances:
       heichips25_core/fabric_wrapper/heichips25_example_small_6:
-        location: [expr::(0.48 * 812), expr::(1333 * 0.42)]
+        location: [expr::(0.48 * 812), expr::((1333*0.42) + ((512*0)*0.42))]
         orientation: FN
 
   heichips25_pudding:
@@ -595,7 +598,7 @@ MACROS:
         - dir::../ip/user_projects/heichips25-pudding/macro/spef/nom/heichips25_pudding.nom.spef
     instances:
       heichips25_core/fabric_wrapper/heichips25_example_small_5:
-        location: [expr::(0.48 * 812), expr::(680 + 95.00)]
+        location: [expr::(0.48 * 812), expr::((1333*0.42) + ((512*1)*0.42))]
         orientation: FN
 
   heichips25_ethernet:
@@ -610,7 +613,7 @@ MACROS:
         - dir::../ip/user_projects/heichips25-ethernet/macro/spef/nom/heichips25_ethernet.nom.spef
     instances:
       heichips25_core/fabric_wrapper/heichips25_example_small_11:
-        location: [expr::(0.48 * 4394), expr::(1333 * 0.42)]
+        location: [expr::(0.48 * 4394), expr::((1333*0.42) + ((512*0)*0.42))]
         orientation: N
 
   heichips25_ICELab:
@@ -622,7 +625,7 @@ MACROS:
       - dir::../ip/user_projects/heichips25_ICELab/ihp130_cells/small_frame/heichips25_ICELab.vh
     instances:
       heichips25_core/fabric_wrapper/heichips25_example_small_10:
-        location: [expr::(0.48 * 4394), expr::(680 + 95.00)]
+        location: [expr::(0.48 * 4394), expr::((1333*0.42) + ((512*1)*0.42))]
         orientation: N
 
 PDN_OBSTRUCTIONS:
@@ -700,3 +703,6 @@ MAGIC_GDS_FLATGLOB:
  - "*_CELL_CORNER"
  - "RSC_*"
  - "*_CELL_SUB"
+
+# To check for shorts
+#MAGIC_EXT_USE_GDS: True
