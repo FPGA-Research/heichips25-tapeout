@@ -641,9 +641,9 @@ if __name__ == "__main__":
     sources.append(Path(pdk_root) / pdk / "libs.ref" / "sg13g2_sram" / "verilog" / "RM_IHPSG13_1P_512x32_c2_bm_bist.v")
     sources.append(Path(pdk_root) / pdk / "libs.ref" / "sg13g2_sram" / "verilog" / "RM_IHPSG13_1P_core_behavioral_bm_bist.v")
 
-    # Custom IO models
-    sources.append(proj_path / f"../sg13g2_io_custom/sg13g2_io.v")
-    
+    # IO models
+    sources.append(Path(pdk_root) / pdk / "libs.ref" / "sg13g2_io" / "verilog" / "sg13g2_io.v")
+        
     # Alignment mark
     sources.append(proj_path / '../ip/alignment_mark/vh/alignment_mark.v')
 
