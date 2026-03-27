@@ -3,12 +3,12 @@
 
 module heichips25_top #(
     // Power/ground pads for core
-    parameter NUM_VDD_PADS = 4,
-    parameter NUM_VSS_PADS = 4,
+    parameter NUM_VDD_PADS = 6,
+    parameter NUM_VSS_PADS = 6,
     
     // Power/ground pads for I/O
-    parameter NUM_IOVDD_PADS = 4,
-    parameter NUM_IOVSS_PADS = 4
+    parameter NUM_IOVDD_PADS = 6,
+    parameter NUM_IOVSS_PADS = 6
     )(
     `ifdef USE_POWER_PINS
     inout wire VDD,

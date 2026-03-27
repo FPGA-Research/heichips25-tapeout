@@ -54,3 +54,6 @@ pdk::gf180mcu*:
 pdk::ihp-sg13*:
     # Routing
     RT_MAX_LAYER: TopMetal1
+    
+    # Timing model generation
+    #FABULOUS_TIMING_MODEL: PHYSICAL

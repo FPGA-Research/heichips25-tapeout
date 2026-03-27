@@ -52,6 +52,49 @@ module classic_fabric_heichips25
         input  Tile_X4Y0_D_OUT_top, //EXTERNAL
         output  Tile_X4Y0_D_IN_top, //EXTERNAL
         output  Tile_X4Y0_D_EN_top, //EXTERNAL
+        input  Tile_X5Y1_UO_OUT_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y1_UO_OUT_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y1_UO_OUT_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y1_UO_OUT_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y1_UO_OUT_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y1_UO_OUT_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y1_UO_OUT_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y1_UO_OUT_TT_PROJECT7, //EXTERNAL
+        input  Tile_X5Y1_UIO_OUT_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y1_UIO_OUT_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y1_UIO_OUT_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y1_UIO_OUT_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y1_UIO_OUT_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y1_UIO_OUT_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y1_UIO_OUT_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y1_UIO_OUT_TT_PROJECT7, //EXTERNAL
+        input  Tile_X5Y1_UIO_OE_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y1_UIO_OE_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y1_UIO_OE_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y1_UIO_OE_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y1_UIO_OE_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y1_UIO_OE_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y1_UIO_OE_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y1_UIO_OE_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y1_UI_IN_TT_PROJECT0, //EXTERNAL
+        output  Tile_X5Y1_UI_IN_TT_PROJECT1, //EXTERNAL
+        output  Tile_X5Y1_UI_IN_TT_PROJECT2, //EXTERNAL
+        output  Tile_X5Y1_UI_IN_TT_PROJECT3, //EXTERNAL
+        output  Tile_X5Y1_UI_IN_TT_PROJECT4, //EXTERNAL
+        output  Tile_X5Y1_UI_IN_TT_PROJECT5, //EXTERNAL
+        output  Tile_X5Y1_UI_IN_TT_PROJECT6, //EXTERNAL
+        output  Tile_X5Y1_UI_IN_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y1_UIO_IN_TT_PROJECT0, //EXTERNAL
+        output  Tile_X5Y1_UIO_IN_TT_PROJECT1, //EXTERNAL
+        output  Tile_X5Y1_UIO_IN_TT_PROJECT2, //EXTERNAL
+        output  Tile_X5Y1_UIO_IN_TT_PROJECT3, //EXTERNAL
+        output  Tile_X5Y1_UIO_IN_TT_PROJECT4, //EXTERNAL
+        output  Tile_X5Y1_UIO_IN_TT_PROJECT5, //EXTERNAL
+        output  Tile_X5Y1_UIO_IN_TT_PROJECT6, //EXTERNAL
+        output  Tile_X5Y1_UIO_IN_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y1_ENA_TT_PROJECT, //EXTERNAL
+        output  Tile_X5Y1_CLK_TT_PROJECT, //EXTERNAL
+        output  Tile_X5Y1_RST_N_TT_PROJECT, //EXTERNAL
         input  Tile_X0Y2_UO_OUT_TT_PROJECT0, //EXTERNAL
         input  Tile_X0Y2_UO_OUT_TT_PROJECT1, //EXTERNAL
         input  Tile_X0Y2_UO_OUT_TT_PROJECT2, //EXTERNAL
@@ -95,119 +138,49 @@ module classic_fabric_heichips25
         output  Tile_X0Y2_ENA_TT_PROJECT, //EXTERNAL
         output  Tile_X0Y2_CLK_TT_PROJECT, //EXTERNAL
         output  Tile_X0Y2_RST_N_TT_PROJECT, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM0, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM1, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM2, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM3, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM4, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM5, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM6, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM7, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM8, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM9, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM10, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM11, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM12, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM13, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM14, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM15, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM16, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM17, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM18, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM19, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM20, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM21, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM22, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM23, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM24, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM25, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM26, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM27, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM28, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM29, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM30, //EXTERNAL
-        input  Tile_X5Y2_DOUT_SRAM31, //EXTERNAL
-        input  Tile_X5Y2_CONFIGURED_top, //EXTERNAL
-        output  Tile_X5Y2_CLK_SRAM, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM0, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM1, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM2, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM3, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM4, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM5, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM6, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM7, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM8, //EXTERNAL
-        output  Tile_X5Y2_ADDR_SRAM9, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM0, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM1, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM2, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM3, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM4, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM5, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM6, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM7, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM8, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM9, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM10, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM11, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM12, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM13, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM14, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM15, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM16, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM17, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM18, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM19, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM20, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM21, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM22, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM23, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM24, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM25, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM26, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM27, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM28, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM29, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM30, //EXTERNAL
-        output  Tile_X5Y2_DIN_SRAM31, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM0, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM1, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM2, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM3, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM4, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM5, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM6, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM7, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM8, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM9, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM10, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM11, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM12, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM13, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM14, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM15, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM16, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM17, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM18, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM19, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM20, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM21, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM22, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM23, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM24, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM25, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM26, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM27, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM28, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM29, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM30, //EXTERNAL
-        output  Tile_X5Y2_BM_SRAM31, //EXTERNAL
-        output  Tile_X5Y2_WEN_SRAM, //EXTERNAL
-        output  Tile_X5Y2_MEN_SRAM, //EXTERNAL
-        output  Tile_X5Y2_REN_SRAM, //EXTERNAL
-        output  Tile_X5Y2_TIE_HIGH_SRAM, //EXTERNAL
-        output  Tile_X5Y2_TIE_LOW_SRAM, //EXTERNAL
+        input  Tile_X5Y2_UO_OUT_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y2_UO_OUT_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y2_UO_OUT_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y2_UO_OUT_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y2_UO_OUT_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y2_UO_OUT_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y2_UO_OUT_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y2_UO_OUT_TT_PROJECT7, //EXTERNAL
+        input  Tile_X5Y2_UIO_OUT_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y2_UIO_OUT_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y2_UIO_OUT_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y2_UIO_OUT_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y2_UIO_OUT_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y2_UIO_OUT_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y2_UIO_OUT_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y2_UIO_OUT_TT_PROJECT7, //EXTERNAL
+        input  Tile_X5Y2_UIO_OE_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y2_UIO_OE_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y2_UIO_OE_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y2_UIO_OE_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y2_UIO_OE_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y2_UIO_OE_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y2_UIO_OE_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y2_UIO_OE_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y2_UI_IN_TT_PROJECT0, //EXTERNAL
+        output  Tile_X5Y2_UI_IN_TT_PROJECT1, //EXTERNAL
+        output  Tile_X5Y2_UI_IN_TT_PROJECT2, //EXTERNAL
+        output  Tile_X5Y2_UI_IN_TT_PROJECT3, //EXTERNAL
+        output  Tile_X5Y2_UI_IN_TT_PROJECT4, //EXTERNAL
+        output  Tile_X5Y2_UI_IN_TT_PROJECT5, //EXTERNAL
+        output  Tile_X5Y2_UI_IN_TT_PROJECT6, //EXTERNAL
+        output  Tile_X5Y2_UI_IN_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y2_UIO_IN_TT_PROJECT0, //EXTERNAL
+        output  Tile_X5Y2_UIO_IN_TT_PROJECT1, //EXTERNAL
+        output  Tile_X5Y2_UIO_IN_TT_PROJECT2, //EXTERNAL
+        output  Tile_X5Y2_UIO_IN_TT_PROJECT3, //EXTERNAL
+        output  Tile_X5Y2_UIO_IN_TT_PROJECT4, //EXTERNAL
+        output  Tile_X5Y2_UIO_IN_TT_PROJECT5, //EXTERNAL
+        output  Tile_X5Y2_UIO_IN_TT_PROJECT6, //EXTERNAL
+        output  Tile_X5Y2_UIO_IN_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y2_ENA_TT_PROJECT, //EXTERNAL
+        output  Tile_X5Y2_CLK_TT_PROJECT, //EXTERNAL
+        output  Tile_X5Y2_RST_N_TT_PROJECT, //EXTERNAL
         input  Tile_X0Y3_UO_OUT_TT_PROJECT0, //EXTERNAL
         input  Tile_X0Y3_UO_OUT_TT_PROJECT1, //EXTERNAL
         input  Tile_X0Y3_UO_OUT_TT_PROJECT2, //EXTERNAL
@@ -251,6 +224,49 @@ module classic_fabric_heichips25
         output  Tile_X0Y3_ENA_TT_PROJECT, //EXTERNAL
         output  Tile_X0Y3_CLK_TT_PROJECT, //EXTERNAL
         output  Tile_X0Y3_RST_N_TT_PROJECT, //EXTERNAL
+        input  Tile_X5Y3_UO_OUT_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y3_UO_OUT_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y3_UO_OUT_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y3_UO_OUT_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y3_UO_OUT_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y3_UO_OUT_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y3_UO_OUT_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y3_UO_OUT_TT_PROJECT7, //EXTERNAL
+        input  Tile_X5Y3_UIO_OUT_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y3_UIO_OUT_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y3_UIO_OUT_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y3_UIO_OUT_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y3_UIO_OUT_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y3_UIO_OUT_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y3_UIO_OUT_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y3_UIO_OUT_TT_PROJECT7, //EXTERNAL
+        input  Tile_X5Y3_UIO_OE_TT_PROJECT0, //EXTERNAL
+        input  Tile_X5Y3_UIO_OE_TT_PROJECT1, //EXTERNAL
+        input  Tile_X5Y3_UIO_OE_TT_PROJECT2, //EXTERNAL
+        input  Tile_X5Y3_UIO_OE_TT_PROJECT3, //EXTERNAL
+        input  Tile_X5Y3_UIO_OE_TT_PROJECT4, //EXTERNAL
+        input  Tile_X5Y3_UIO_OE_TT_PROJECT5, //EXTERNAL
+        input  Tile_X5Y3_UIO_OE_TT_PROJECT6, //EXTERNAL
+        input  Tile_X5Y3_UIO_OE_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y3_UI_IN_TT_PROJECT0, //EXTERNAL
+        output  Tile_X5Y3_UI_IN_TT_PROJECT1, //EXTERNAL
+        output  Tile_X5Y3_UI_IN_TT_PROJECT2, //EXTERNAL
+        output  Tile_X5Y3_UI_IN_TT_PROJECT3, //EXTERNAL
+        output  Tile_X5Y3_UI_IN_TT_PROJECT4, //EXTERNAL
+        output  Tile_X5Y3_UI_IN_TT_PROJECT5, //EXTERNAL
+        output  Tile_X5Y3_UI_IN_TT_PROJECT6, //EXTERNAL
+        output  Tile_X5Y3_UI_IN_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y3_UIO_IN_TT_PROJECT0, //EXTERNAL
+        output  Tile_X5Y3_UIO_IN_TT_PROJECT1, //EXTERNAL
+        output  Tile_X5Y3_UIO_IN_TT_PROJECT2, //EXTERNAL
+        output  Tile_X5Y3_UIO_IN_TT_PROJECT3, //EXTERNAL
+        output  Tile_X5Y3_UIO_IN_TT_PROJECT4, //EXTERNAL
+        output  Tile_X5Y3_UIO_IN_TT_PROJECT5, //EXTERNAL
+        output  Tile_X5Y3_UIO_IN_TT_PROJECT6, //EXTERNAL
+        output  Tile_X5Y3_UIO_IN_TT_PROJECT7, //EXTERNAL
+        output  Tile_X5Y3_ENA_TT_PROJECT, //EXTERNAL
+        output  Tile_X5Y3_CLK_TT_PROJECT, //EXTERNAL
+        output  Tile_X5Y3_RST_N_TT_PROJECT, //EXTERNAL
         input  Tile_X0Y4_UO_OUT_TT_PROJECT0, //EXTERNAL
         input  Tile_X0Y4_UO_OUT_TT_PROJECT1, //EXTERNAL
         input  Tile_X0Y4_UO_OUT_TT_PROJECT2, //EXTERNAL
@@ -380,49 +396,6 @@ module classic_fabric_heichips25
         output  Tile_X0Y5_ENA_TT_PROJECT, //EXTERNAL
         output  Tile_X0Y5_CLK_TT_PROJECT, //EXTERNAL
         output  Tile_X0Y5_RST_N_TT_PROJECT, //EXTERNAL
-        input  Tile_X5Y5_UO_OUT_TT_PROJECT0, //EXTERNAL
-        input  Tile_X5Y5_UO_OUT_TT_PROJECT1, //EXTERNAL
-        input  Tile_X5Y5_UO_OUT_TT_PROJECT2, //EXTERNAL
-        input  Tile_X5Y5_UO_OUT_TT_PROJECT3, //EXTERNAL
-        input  Tile_X5Y5_UO_OUT_TT_PROJECT4, //EXTERNAL
-        input  Tile_X5Y5_UO_OUT_TT_PROJECT5, //EXTERNAL
-        input  Tile_X5Y5_UO_OUT_TT_PROJECT6, //EXTERNAL
-        input  Tile_X5Y5_UO_OUT_TT_PROJECT7, //EXTERNAL
-        input  Tile_X5Y5_UIO_OUT_TT_PROJECT0, //EXTERNAL
-        input  Tile_X5Y5_UIO_OUT_TT_PROJECT1, //EXTERNAL
-        input  Tile_X5Y5_UIO_OUT_TT_PROJECT2, //EXTERNAL
-        input  Tile_X5Y5_UIO_OUT_TT_PROJECT3, //EXTERNAL
-        input  Tile_X5Y5_UIO_OUT_TT_PROJECT4, //EXTERNAL
-        input  Tile_X5Y5_UIO_OUT_TT_PROJECT5, //EXTERNAL
-        input  Tile_X5Y5_UIO_OUT_TT_PROJECT6, //EXTERNAL
-        input  Tile_X5Y5_UIO_OUT_TT_PROJECT7, //EXTERNAL
-        input  Tile_X5Y5_UIO_OE_TT_PROJECT0, //EXTERNAL
-        input  Tile_X5Y5_UIO_OE_TT_PROJECT1, //EXTERNAL
-        input  Tile_X5Y5_UIO_OE_TT_PROJECT2, //EXTERNAL
-        input  Tile_X5Y5_UIO_OE_TT_PROJECT3, //EXTERNAL
-        input  Tile_X5Y5_UIO_OE_TT_PROJECT4, //EXTERNAL
-        input  Tile_X5Y5_UIO_OE_TT_PROJECT5, //EXTERNAL
-        input  Tile_X5Y5_UIO_OE_TT_PROJECT6, //EXTERNAL
-        input  Tile_X5Y5_UIO_OE_TT_PROJECT7, //EXTERNAL
-        output  Tile_X5Y5_UI_IN_TT_PROJECT0, //EXTERNAL
-        output  Tile_X5Y5_UI_IN_TT_PROJECT1, //EXTERNAL
-        output  Tile_X5Y5_UI_IN_TT_PROJECT2, //EXTERNAL
-        output  Tile_X5Y5_UI_IN_TT_PROJECT3, //EXTERNAL
-        output  Tile_X5Y5_UI_IN_TT_PROJECT4, //EXTERNAL
-        output  Tile_X5Y5_UI_IN_TT_PROJECT5, //EXTERNAL
-        output  Tile_X5Y5_UI_IN_TT_PROJECT6, //EXTERNAL
-        output  Tile_X5Y5_UI_IN_TT_PROJECT7, //EXTERNAL
-        output  Tile_X5Y5_UIO_IN_TT_PROJECT0, //EXTERNAL
-        output  Tile_X5Y5_UIO_IN_TT_PROJECT1, //EXTERNAL
-        output  Tile_X5Y5_UIO_IN_TT_PROJECT2, //EXTERNAL
-        output  Tile_X5Y5_UIO_IN_TT_PROJECT3, //EXTERNAL
-        output  Tile_X5Y5_UIO_IN_TT_PROJECT4, //EXTERNAL
-        output  Tile_X5Y5_UIO_IN_TT_PROJECT5, //EXTERNAL
-        output  Tile_X5Y5_UIO_IN_TT_PROJECT6, //EXTERNAL
-        output  Tile_X5Y5_UIO_IN_TT_PROJECT7, //EXTERNAL
-        output  Tile_X5Y5_ENA_TT_PROJECT, //EXTERNAL
-        output  Tile_X5Y5_CLK_TT_PROJECT, //EXTERNAL
-        output  Tile_X5Y5_RST_N_TT_PROJECT, //EXTERNAL
         input  Tile_X0Y6_UO_OUT_TT_PROJECT0, //EXTERNAL
         input  Tile_X0Y6_UO_OUT_TT_PROJECT1, //EXTERNAL
         input  Tile_X0Y6_UO_OUT_TT_PROJECT2, //EXTERNAL
@@ -466,49 +439,119 @@ module classic_fabric_heichips25
         output  Tile_X0Y6_ENA_TT_PROJECT, //EXTERNAL
         output  Tile_X0Y6_CLK_TT_PROJECT, //EXTERNAL
         output  Tile_X0Y6_RST_N_TT_PROJECT, //EXTERNAL
-        input  Tile_X5Y6_UO_OUT_TT_PROJECT0, //EXTERNAL
-        input  Tile_X5Y6_UO_OUT_TT_PROJECT1, //EXTERNAL
-        input  Tile_X5Y6_UO_OUT_TT_PROJECT2, //EXTERNAL
-        input  Tile_X5Y6_UO_OUT_TT_PROJECT3, //EXTERNAL
-        input  Tile_X5Y6_UO_OUT_TT_PROJECT4, //EXTERNAL
-        input  Tile_X5Y6_UO_OUT_TT_PROJECT5, //EXTERNAL
-        input  Tile_X5Y6_UO_OUT_TT_PROJECT6, //EXTERNAL
-        input  Tile_X5Y6_UO_OUT_TT_PROJECT7, //EXTERNAL
-        input  Tile_X5Y6_UIO_OUT_TT_PROJECT0, //EXTERNAL
-        input  Tile_X5Y6_UIO_OUT_TT_PROJECT1, //EXTERNAL
-        input  Tile_X5Y6_UIO_OUT_TT_PROJECT2, //EXTERNAL
-        input  Tile_X5Y6_UIO_OUT_TT_PROJECT3, //EXTERNAL
-        input  Tile_X5Y6_UIO_OUT_TT_PROJECT4, //EXTERNAL
-        input  Tile_X5Y6_UIO_OUT_TT_PROJECT5, //EXTERNAL
-        input  Tile_X5Y6_UIO_OUT_TT_PROJECT6, //EXTERNAL
-        input  Tile_X5Y6_UIO_OUT_TT_PROJECT7, //EXTERNAL
-        input  Tile_X5Y6_UIO_OE_TT_PROJECT0, //EXTERNAL
-        input  Tile_X5Y6_UIO_OE_TT_PROJECT1, //EXTERNAL
-        input  Tile_X5Y6_UIO_OE_TT_PROJECT2, //EXTERNAL
-        input  Tile_X5Y6_UIO_OE_TT_PROJECT3, //EXTERNAL
-        input  Tile_X5Y6_UIO_OE_TT_PROJECT4, //EXTERNAL
-        input  Tile_X5Y6_UIO_OE_TT_PROJECT5, //EXTERNAL
-        input  Tile_X5Y6_UIO_OE_TT_PROJECT6, //EXTERNAL
-        input  Tile_X5Y6_UIO_OE_TT_PROJECT7, //EXTERNAL
-        output  Tile_X5Y6_UI_IN_TT_PROJECT0, //EXTERNAL
-        output  Tile_X5Y6_UI_IN_TT_PROJECT1, //EXTERNAL
-        output  Tile_X5Y6_UI_IN_TT_PROJECT2, //EXTERNAL
-        output  Tile_X5Y6_UI_IN_TT_PROJECT3, //EXTERNAL
-        output  Tile_X5Y6_UI_IN_TT_PROJECT4, //EXTERNAL
-        output  Tile_X5Y6_UI_IN_TT_PROJECT5, //EXTERNAL
-        output  Tile_X5Y6_UI_IN_TT_PROJECT6, //EXTERNAL
-        output  Tile_X5Y6_UI_IN_TT_PROJECT7, //EXTERNAL
-        output  Tile_X5Y6_UIO_IN_TT_PROJECT0, //EXTERNAL
-        output  Tile_X5Y6_UIO_IN_TT_PROJECT1, //EXTERNAL
-        output  Tile_X5Y6_UIO_IN_TT_PROJECT2, //EXTERNAL
-        output  Tile_X5Y6_UIO_IN_TT_PROJECT3, //EXTERNAL
-        output  Tile_X5Y6_UIO_IN_TT_PROJECT4, //EXTERNAL
-        output  Tile_X5Y6_UIO_IN_TT_PROJECT5, //EXTERNAL
-        output  Tile_X5Y6_UIO_IN_TT_PROJECT6, //EXTERNAL
-        output  Tile_X5Y6_UIO_IN_TT_PROJECT7, //EXTERNAL
-        output  Tile_X5Y6_ENA_TT_PROJECT, //EXTERNAL
-        output  Tile_X5Y6_CLK_TT_PROJECT, //EXTERNAL
-        output  Tile_X5Y6_RST_N_TT_PROJECT, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM0, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM1, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM2, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM3, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM4, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM5, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM6, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM7, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM8, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM9, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM10, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM11, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM12, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM13, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM14, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM15, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM16, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM17, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM18, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM19, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM20, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM21, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM22, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM23, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM24, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM25, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM26, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM27, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM28, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM29, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM30, //EXTERNAL
+        input  Tile_X5Y6_DOUT_SRAM31, //EXTERNAL
+        input  Tile_X5Y6_CONFIGURED_top, //EXTERNAL
+        output  Tile_X5Y6_CLK_SRAM, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM0, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM1, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM2, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM3, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM4, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM5, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM6, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM7, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM8, //EXTERNAL
+        output  Tile_X5Y6_ADDR_SRAM9, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM0, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM1, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM2, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM3, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM4, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM5, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM6, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM7, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM8, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM9, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM10, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM11, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM12, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM13, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM14, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM15, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM16, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM17, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM18, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM19, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM20, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM21, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM22, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM23, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM24, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM25, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM26, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM27, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM28, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM29, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM30, //EXTERNAL
+        output  Tile_X5Y6_DIN_SRAM31, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM0, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM1, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM2, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM3, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM4, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM5, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM6, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM7, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM8, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM9, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM10, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM11, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM12, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM13, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM14, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM15, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM16, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM17, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM18, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM19, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM20, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM21, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM22, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM23, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM24, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM25, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM26, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM27, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM28, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM29, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM30, //EXTERNAL
+        output  Tile_X5Y6_BM_SRAM31, //EXTERNAL
+        output  Tile_X5Y6_WEN_SRAM, //EXTERNAL
+        output  Tile_X5Y6_MEN_SRAM, //EXTERNAL
+        output  Tile_X5Y6_REN_SRAM, //EXTERNAL
+        output  Tile_X5Y6_TIE_HIGH_SRAM, //EXTERNAL
+        output  Tile_X5Y6_TIE_LOW_SRAM, //EXTERNAL
         input  Tile_X0Y7_UO_OUT_TT_PROJECT0, //EXTERNAL
         input  Tile_X0Y7_UO_OUT_TT_PROJECT1, //EXTERNAL
         input  Tile_X0Y7_UO_OUT_TT_PROJECT2, //EXTERNAL
@@ -595,49 +638,6 @@ module classic_fabric_heichips25
         output  Tile_X5Y7_ENA_TT_PROJECT, //EXTERNAL
         output  Tile_X5Y7_CLK_TT_PROJECT, //EXTERNAL
         output  Tile_X5Y7_RST_N_TT_PROJECT, //EXTERNAL
-        input  Tile_X0Y8_UO_OUT_TT_PROJECT0, //EXTERNAL
-        input  Tile_X0Y8_UO_OUT_TT_PROJECT1, //EXTERNAL
-        input  Tile_X0Y8_UO_OUT_TT_PROJECT2, //EXTERNAL
-        input  Tile_X0Y8_UO_OUT_TT_PROJECT3, //EXTERNAL
-        input  Tile_X0Y8_UO_OUT_TT_PROJECT4, //EXTERNAL
-        input  Tile_X0Y8_UO_OUT_TT_PROJECT5, //EXTERNAL
-        input  Tile_X0Y8_UO_OUT_TT_PROJECT6, //EXTERNAL
-        input  Tile_X0Y8_UO_OUT_TT_PROJECT7, //EXTERNAL
-        input  Tile_X0Y8_UIO_OUT_TT_PROJECT0, //EXTERNAL
-        input  Tile_X0Y8_UIO_OUT_TT_PROJECT1, //EXTERNAL
-        input  Tile_X0Y8_UIO_OUT_TT_PROJECT2, //EXTERNAL
-        input  Tile_X0Y8_UIO_OUT_TT_PROJECT3, //EXTERNAL
-        input  Tile_X0Y8_UIO_OUT_TT_PROJECT4, //EXTERNAL
-        input  Tile_X0Y8_UIO_OUT_TT_PROJECT5, //EXTERNAL
-        input  Tile_X0Y8_UIO_OUT_TT_PROJECT6, //EXTERNAL
-        input  Tile_X0Y8_UIO_OUT_TT_PROJECT7, //EXTERNAL
-        input  Tile_X0Y8_UIO_OE_TT_PROJECT0, //EXTERNAL
-        input  Tile_X0Y8_UIO_OE_TT_PROJECT1, //EXTERNAL
-        input  Tile_X0Y8_UIO_OE_TT_PROJECT2, //EXTERNAL
-        input  Tile_X0Y8_UIO_OE_TT_PROJECT3, //EXTERNAL
-        input  Tile_X0Y8_UIO_OE_TT_PROJECT4, //EXTERNAL
-        input  Tile_X0Y8_UIO_OE_TT_PROJECT5, //EXTERNAL
-        input  Tile_X0Y8_UIO_OE_TT_PROJECT6, //EXTERNAL
-        input  Tile_X0Y8_UIO_OE_TT_PROJECT7, //EXTERNAL
-        output  Tile_X0Y8_UI_IN_TT_PROJECT0, //EXTERNAL
-        output  Tile_X0Y8_UI_IN_TT_PROJECT1, //EXTERNAL
-        output  Tile_X0Y8_UI_IN_TT_PROJECT2, //EXTERNAL
-        output  Tile_X0Y8_UI_IN_TT_PROJECT3, //EXTERNAL
-        output  Tile_X0Y8_UI_IN_TT_PROJECT4, //EXTERNAL
-        output  Tile_X0Y8_UI_IN_TT_PROJECT5, //EXTERNAL
-        output  Tile_X0Y8_UI_IN_TT_PROJECT6, //EXTERNAL
-        output  Tile_X0Y8_UI_IN_TT_PROJECT7, //EXTERNAL
-        output  Tile_X0Y8_UIO_IN_TT_PROJECT0, //EXTERNAL
-        output  Tile_X0Y8_UIO_IN_TT_PROJECT1, //EXTERNAL
-        output  Tile_X0Y8_UIO_IN_TT_PROJECT2, //EXTERNAL
-        output  Tile_X0Y8_UIO_IN_TT_PROJECT3, //EXTERNAL
-        output  Tile_X0Y8_UIO_IN_TT_PROJECT4, //EXTERNAL
-        output  Tile_X0Y8_UIO_IN_TT_PROJECT5, //EXTERNAL
-        output  Tile_X0Y8_UIO_IN_TT_PROJECT6, //EXTERNAL
-        output  Tile_X0Y8_UIO_IN_TT_PROJECT7, //EXTERNAL
-        output  Tile_X0Y8_ENA_TT_PROJECT, //EXTERNAL
-        output  Tile_X0Y8_CLK_TT_PROJECT, //EXTERNAL
-        output  Tile_X0Y8_RST_N_TT_PROJECT, //EXTERNAL
         input  Tile_X5Y8_UO_OUT_TT_PROJECT0, //EXTERNAL
         input  Tile_X5Y8_UO_OUT_TT_PROJECT1, //EXTERNAL
         input  Tile_X5Y8_UO_OUT_TT_PROJECT2, //EXTERNAL
@@ -1103,9 +1103,6 @@ wire[7:0] Tile_X5Y1_W2BEG;
 wire[7:0] Tile_X5Y1_W2BEGb;
 wire[15:0] Tile_X5Y1_WW4BEG;
 wire[11:0] Tile_X5Y1_W6BEG;
-wire[15:0] Tile_X5Y1_top2bot_DIN;
-wire[15:0] Tile_X5Y1_top2bot_BM;
-wire[4:0] Tile_X5Y1_top2bot_ADDR;
 wire[3:0] Tile_X0Y2_S_GBUF_FEED_BEG;
 wire[3:0] Tile_X0Y2_N_GBUF_BEG;
 wire[3:0] Tile_X0Y2_E1BEG;
@@ -1209,7 +1206,6 @@ wire[7:0] Tile_X5Y2_W2BEG;
 wire[7:0] Tile_X5Y2_W2BEGb;
 wire[15:0] Tile_X5Y2_WW4BEG;
 wire[11:0] Tile_X5Y2_W6BEG;
-wire[15:0] Tile_X5Y2_bot2top_DOUT;
 wire[3:0] Tile_X0Y3_S_GBUF_FEED_BEG;
 wire[3:0] Tile_X0Y3_N_GBUF_BEG;
 wire[3:0] Tile_X0Y3_E1BEG;
@@ -1311,7 +1307,6 @@ wire[7:0] Tile_X5Y3_W2BEG;
 wire[7:0] Tile_X5Y3_W2BEGb;
 wire[15:0] Tile_X5Y3_WW4BEG;
 wire[11:0] Tile_X5Y3_W6BEG;
-wire[7:0] Tile_X5Y3_top2bot_UIO_IN;
 wire[3:0] Tile_X0Y4_S_GBUF_FEED_BEG;
 wire[3:0] Tile_X0Y4_N_GBUF_BEG;
 wire[3:0] Tile_X0Y4_E1BEG;
@@ -1413,8 +1408,6 @@ wire[7:0] Tile_X5Y4_W2BEG;
 wire[7:0] Tile_X5Y4_W2BEGb;
 wire[15:0] Tile_X5Y4_WW4BEG;
 wire[11:0] Tile_X5Y4_W6BEG;
-wire[7:0] Tile_X5Y4_bot2top_UIO_OUT;
-wire[7:0] Tile_X5Y4_bot2top_UIO_OE;
 wire[3:0] Tile_X0Y5_S_GBUF_FEED_BEG;
 wire[3:0] Tile_X0Y5_N_GBUF_BEG;
 wire[3:0] Tile_X0Y5_E1BEG;
@@ -1516,6 +1509,9 @@ wire[7:0] Tile_X5Y5_W2BEG;
 wire[7:0] Tile_X5Y5_W2BEGb;
 wire[15:0] Tile_X5Y5_WW4BEG;
 wire[11:0] Tile_X5Y5_W6BEG;
+wire[15:0] Tile_X5Y5_top2bot_DIN;
+wire[15:0] Tile_X5Y5_top2bot_BM;
+wire[4:0] Tile_X5Y5_top2bot_ADDR;
 wire[3:0] Tile_X0Y6_S_GBUF_FEED_BEG;
 wire[3:0] Tile_X0Y6_N_GBUF_BEG;
 wire[3:0] Tile_X0Y6_E1BEG;
@@ -1617,6 +1613,7 @@ wire[7:0] Tile_X5Y6_W2BEG;
 wire[7:0] Tile_X5Y6_W2BEGb;
 wire[15:0] Tile_X5Y6_WW4BEG;
 wire[11:0] Tile_X5Y6_W6BEG;
+wire[15:0] Tile_X5Y6_bot2top_DOUT;
 wire[3:0] Tile_X0Y7_S_GBUF_FEED_BEG;
 wire[3:0] Tile_X0Y7_N_GBUF_BEG;
 wire[3:0] Tile_X0Y7_E1BEG;
@@ -1725,6 +1722,7 @@ wire[7:0] Tile_X0Y8_E2BEG;
 wire[7:0] Tile_X0Y8_E2BEGb;
 wire[15:0] Tile_X0Y8_EE4BEG;
 wire[11:0] Tile_X0Y8_E6BEG;
+wire[7:0] Tile_X0Y8_top2bot_UIO_IN;
 wire[3:0] Tile_X1Y8_N_GBUF_BEG;
 wire[3:0] Tile_X1Y8_N1BEG;
 wire[7:0] Tile_X1Y8_N2BEG;
@@ -1826,6 +1824,8 @@ wire[7:0] Tile_X0Y9_E2BEG;
 wire[7:0] Tile_X0Y9_E2BEGb;
 wire[15:0] Tile_X0Y9_EE4BEG;
 wire[11:0] Tile_X0Y9_E6BEG;
+wire[7:0] Tile_X0Y9_bot2top_UIO_OUT;
+wire[7:0] Tile_X0Y9_bot2top_UIO_OE;
 wire[3:0] Tile_X1Y9_N_GBUF_BEG;
 wire[3:0] Tile_X1Y9_N1BEG;
 wire[7:0] Tile_X1Y9_N2BEG;
@@ -2513,156 +2513,73 @@ LUT4x8_ha
 
  //tile IO port will get directly connected to top-level tile module
  (* keep *)
-E_IHP_SRAM
+E_TT_IF
 `ifdef EMULATION
     #(
-    .Tile_X0Y0_Emulate_Bitstream(`Tile_X5Y1_Emulate_Bitstream),
-    .Tile_X0Y1_Emulate_Bitstream(`Tile_X5Y2_Emulate_Bitstream)
+    .Emulate_Bitstream(`Tile_X5Y1_Emulate_Bitstream)
     )
 `endif
-    Tile_X5Y1_E_IHP_SRAM
+    Tile_X5Y1_E_TT_IF
     (
-    .Tile_X0Y0_E1END(Tile_X4Y1_E1BEG),
-    .Tile_X0Y0_E2MID(Tile_X4Y1_E2BEG),
-    .Tile_X0Y0_E2END(Tile_X4Y1_E2BEGb),
-    .Tile_X0Y0_EE4END(Tile_X4Y1_EE4BEG),
-    .Tile_X0Y0_E6END(Tile_X4Y1_E6BEG),
-    .Tile_X0Y1_N_GBUF_END(Tile_X5Y3_N_GBUF_BEG),
-    .Tile_X0Y1_E1END(Tile_X4Y2_E1BEG),
-    .Tile_X0Y1_E2MID(Tile_X4Y2_E2BEG),
-    .Tile_X0Y1_E2END(Tile_X4Y2_E2BEGb),
-    .Tile_X0Y1_EE4END(Tile_X4Y2_EE4BEG),
-    .Tile_X0Y1_E6END(Tile_X4Y2_E6BEG),
-    .Tile_X0Y0_N_GBUF_BEG(Tile_X5Y1_N_GBUF_BEG),
-    .Tile_X0Y0_W1BEG(Tile_X5Y1_W1BEG),
-    .Tile_X0Y0_W2BEG(Tile_X5Y1_W2BEG),
-    .Tile_X0Y0_W2BEGb(Tile_X5Y1_W2BEGb),
-    .Tile_X0Y0_WW4BEG(Tile_X5Y1_WW4BEG),
-    .Tile_X0Y0_W6BEG(Tile_X5Y1_W6BEG),
-    .Tile_X0Y1_W1BEG(Tile_X5Y2_W1BEG),
-    .Tile_X0Y1_W2BEG(Tile_X5Y2_W2BEG),
-    .Tile_X0Y1_W2BEGb(Tile_X5Y2_W2BEGb),
-    .Tile_X0Y1_WW4BEG(Tile_X5Y2_WW4BEG),
-    .Tile_X0Y1_W6BEG(Tile_X5Y2_W6BEG),
-    .DOUT_SRAM0(Tile_X5Y2_DOUT_SRAM0),
-    .DOUT_SRAM1(Tile_X5Y2_DOUT_SRAM1),
-    .DOUT_SRAM2(Tile_X5Y2_DOUT_SRAM2),
-    .DOUT_SRAM3(Tile_X5Y2_DOUT_SRAM3),
-    .DOUT_SRAM4(Tile_X5Y2_DOUT_SRAM4),
-    .DOUT_SRAM5(Tile_X5Y2_DOUT_SRAM5),
-    .DOUT_SRAM6(Tile_X5Y2_DOUT_SRAM6),
-    .DOUT_SRAM7(Tile_X5Y2_DOUT_SRAM7),
-    .DOUT_SRAM8(Tile_X5Y2_DOUT_SRAM8),
-    .DOUT_SRAM9(Tile_X5Y2_DOUT_SRAM9),
-    .DOUT_SRAM10(Tile_X5Y2_DOUT_SRAM10),
-    .DOUT_SRAM11(Tile_X5Y2_DOUT_SRAM11),
-    .DOUT_SRAM12(Tile_X5Y2_DOUT_SRAM12),
-    .DOUT_SRAM13(Tile_X5Y2_DOUT_SRAM13),
-    .DOUT_SRAM14(Tile_X5Y2_DOUT_SRAM14),
-    .DOUT_SRAM15(Tile_X5Y2_DOUT_SRAM15),
-    .DOUT_SRAM16(Tile_X5Y2_DOUT_SRAM16),
-    .DOUT_SRAM17(Tile_X5Y2_DOUT_SRAM17),
-    .DOUT_SRAM18(Tile_X5Y2_DOUT_SRAM18),
-    .DOUT_SRAM19(Tile_X5Y2_DOUT_SRAM19),
-    .DOUT_SRAM20(Tile_X5Y2_DOUT_SRAM20),
-    .DOUT_SRAM21(Tile_X5Y2_DOUT_SRAM21),
-    .DOUT_SRAM22(Tile_X5Y2_DOUT_SRAM22),
-    .DOUT_SRAM23(Tile_X5Y2_DOUT_SRAM23),
-    .DOUT_SRAM24(Tile_X5Y2_DOUT_SRAM24),
-    .DOUT_SRAM25(Tile_X5Y2_DOUT_SRAM25),
-    .DOUT_SRAM26(Tile_X5Y2_DOUT_SRAM26),
-    .DOUT_SRAM27(Tile_X5Y2_DOUT_SRAM27),
-    .DOUT_SRAM28(Tile_X5Y2_DOUT_SRAM28),
-    .DOUT_SRAM29(Tile_X5Y2_DOUT_SRAM29),
-    .DOUT_SRAM30(Tile_X5Y2_DOUT_SRAM30),
-    .DOUT_SRAM31(Tile_X5Y2_DOUT_SRAM31),
-    .CONFIGURED_top(Tile_X5Y2_CONFIGURED_top),
-    .CLK_SRAM(Tile_X5Y2_CLK_SRAM),
-    .ADDR_SRAM0(Tile_X5Y2_ADDR_SRAM0),
-    .ADDR_SRAM1(Tile_X5Y2_ADDR_SRAM1),
-    .ADDR_SRAM2(Tile_X5Y2_ADDR_SRAM2),
-    .ADDR_SRAM3(Tile_X5Y2_ADDR_SRAM3),
-    .ADDR_SRAM4(Tile_X5Y2_ADDR_SRAM4),
-    .ADDR_SRAM5(Tile_X5Y2_ADDR_SRAM5),
-    .ADDR_SRAM6(Tile_X5Y2_ADDR_SRAM6),
-    .ADDR_SRAM7(Tile_X5Y2_ADDR_SRAM7),
-    .ADDR_SRAM8(Tile_X5Y2_ADDR_SRAM8),
-    .ADDR_SRAM9(Tile_X5Y2_ADDR_SRAM9),
-    .DIN_SRAM0(Tile_X5Y2_DIN_SRAM0),
-    .DIN_SRAM1(Tile_X5Y2_DIN_SRAM1),
-    .DIN_SRAM2(Tile_X5Y2_DIN_SRAM2),
-    .DIN_SRAM3(Tile_X5Y2_DIN_SRAM3),
-    .DIN_SRAM4(Tile_X5Y2_DIN_SRAM4),
-    .DIN_SRAM5(Tile_X5Y2_DIN_SRAM5),
-    .DIN_SRAM6(Tile_X5Y2_DIN_SRAM6),
-    .DIN_SRAM7(Tile_X5Y2_DIN_SRAM7),
-    .DIN_SRAM8(Tile_X5Y2_DIN_SRAM8),
-    .DIN_SRAM9(Tile_X5Y2_DIN_SRAM9),
-    .DIN_SRAM10(Tile_X5Y2_DIN_SRAM10),
-    .DIN_SRAM11(Tile_X5Y2_DIN_SRAM11),
-    .DIN_SRAM12(Tile_X5Y2_DIN_SRAM12),
-    .DIN_SRAM13(Tile_X5Y2_DIN_SRAM13),
-    .DIN_SRAM14(Tile_X5Y2_DIN_SRAM14),
-    .DIN_SRAM15(Tile_X5Y2_DIN_SRAM15),
-    .DIN_SRAM16(Tile_X5Y2_DIN_SRAM16),
-    .DIN_SRAM17(Tile_X5Y2_DIN_SRAM17),
-    .DIN_SRAM18(Tile_X5Y2_DIN_SRAM18),
-    .DIN_SRAM19(Tile_X5Y2_DIN_SRAM19),
-    .DIN_SRAM20(Tile_X5Y2_DIN_SRAM20),
-    .DIN_SRAM21(Tile_X5Y2_DIN_SRAM21),
-    .DIN_SRAM22(Tile_X5Y2_DIN_SRAM22),
-    .DIN_SRAM23(Tile_X5Y2_DIN_SRAM23),
-    .DIN_SRAM24(Tile_X5Y2_DIN_SRAM24),
-    .DIN_SRAM25(Tile_X5Y2_DIN_SRAM25),
-    .DIN_SRAM26(Tile_X5Y2_DIN_SRAM26),
-    .DIN_SRAM27(Tile_X5Y2_DIN_SRAM27),
-    .DIN_SRAM28(Tile_X5Y2_DIN_SRAM28),
-    .DIN_SRAM29(Tile_X5Y2_DIN_SRAM29),
-    .DIN_SRAM30(Tile_X5Y2_DIN_SRAM30),
-    .DIN_SRAM31(Tile_X5Y2_DIN_SRAM31),
-    .BM_SRAM0(Tile_X5Y2_BM_SRAM0),
-    .BM_SRAM1(Tile_X5Y2_BM_SRAM1),
-    .BM_SRAM2(Tile_X5Y2_BM_SRAM2),
-    .BM_SRAM3(Tile_X5Y2_BM_SRAM3),
-    .BM_SRAM4(Tile_X5Y2_BM_SRAM4),
-    .BM_SRAM5(Tile_X5Y2_BM_SRAM5),
-    .BM_SRAM6(Tile_X5Y2_BM_SRAM6),
-    .BM_SRAM7(Tile_X5Y2_BM_SRAM7),
-    .BM_SRAM8(Tile_X5Y2_BM_SRAM8),
-    .BM_SRAM9(Tile_X5Y2_BM_SRAM9),
-    .BM_SRAM10(Tile_X5Y2_BM_SRAM10),
-    .BM_SRAM11(Tile_X5Y2_BM_SRAM11),
-    .BM_SRAM12(Tile_X5Y2_BM_SRAM12),
-    .BM_SRAM13(Tile_X5Y2_BM_SRAM13),
-    .BM_SRAM14(Tile_X5Y2_BM_SRAM14),
-    .BM_SRAM15(Tile_X5Y2_BM_SRAM15),
-    .BM_SRAM16(Tile_X5Y2_BM_SRAM16),
-    .BM_SRAM17(Tile_X5Y2_BM_SRAM17),
-    .BM_SRAM18(Tile_X5Y2_BM_SRAM18),
-    .BM_SRAM19(Tile_X5Y2_BM_SRAM19),
-    .BM_SRAM20(Tile_X5Y2_BM_SRAM20),
-    .BM_SRAM21(Tile_X5Y2_BM_SRAM21),
-    .BM_SRAM22(Tile_X5Y2_BM_SRAM22),
-    .BM_SRAM23(Tile_X5Y2_BM_SRAM23),
-    .BM_SRAM24(Tile_X5Y2_BM_SRAM24),
-    .BM_SRAM25(Tile_X5Y2_BM_SRAM25),
-    .BM_SRAM26(Tile_X5Y2_BM_SRAM26),
-    .BM_SRAM27(Tile_X5Y2_BM_SRAM27),
-    .BM_SRAM28(Tile_X5Y2_BM_SRAM28),
-    .BM_SRAM29(Tile_X5Y2_BM_SRAM29),
-    .BM_SRAM30(Tile_X5Y2_BM_SRAM30),
-    .BM_SRAM31(Tile_X5Y2_BM_SRAM31),
-    .WEN_SRAM(Tile_X5Y2_WEN_SRAM),
-    .MEN_SRAM(Tile_X5Y2_MEN_SRAM),
-    .REN_SRAM(Tile_X5Y2_REN_SRAM),
-    .TIE_HIGH_SRAM(Tile_X5Y2_TIE_HIGH_SRAM),
-    .TIE_LOW_SRAM(Tile_X5Y2_TIE_LOW_SRAM),
-    .Tile_X0Y0_FrameData(Tile_X4Y1_FrameData_O),
-    .Tile_X0Y0_FrameData_O(Tile_X5Y1_FrameData_O),
-    .Tile_X0Y0_FrameStrobe_O(Tile_X5Y1_FrameStrobe_O),
-    .Tile_X0Y1_FrameData(Tile_X4Y2_FrameData_O),
-    .Tile_X0Y1_FrameData_O(Tile_X5Y2_FrameData_O),
-    .Tile_X0Y1_FrameStrobe(Tile_X5Y3_FrameStrobe_O)
+    .N_GBUF_END(Tile_X5Y2_N_GBUF_BEG),
+    .E1END(Tile_X4Y1_E1BEG),
+    .E2MID(Tile_X4Y1_E2BEG),
+    .E2END(Tile_X4Y1_E2BEGb),
+    .EE4END(Tile_X4Y1_EE4BEG),
+    .E6END(Tile_X4Y1_E6BEG),
+    .N_GBUF_BEG(Tile_X5Y1_N_GBUF_BEG),
+    .W1BEG(Tile_X5Y1_W1BEG),
+    .W2BEG(Tile_X5Y1_W2BEG),
+    .W2BEGb(Tile_X5Y1_W2BEGb),
+    .WW4BEG(Tile_X5Y1_WW4BEG),
+    .W6BEG(Tile_X5Y1_W6BEG),
+    .UO_OUT_TT_PROJECT0(Tile_X5Y1_UO_OUT_TT_PROJECT0),
+    .UO_OUT_TT_PROJECT1(Tile_X5Y1_UO_OUT_TT_PROJECT1),
+    .UO_OUT_TT_PROJECT2(Tile_X5Y1_UO_OUT_TT_PROJECT2),
+    .UO_OUT_TT_PROJECT3(Tile_X5Y1_UO_OUT_TT_PROJECT3),
+    .UO_OUT_TT_PROJECT4(Tile_X5Y1_UO_OUT_TT_PROJECT4),
+    .UO_OUT_TT_PROJECT5(Tile_X5Y1_UO_OUT_TT_PROJECT5),
+    .UO_OUT_TT_PROJECT6(Tile_X5Y1_UO_OUT_TT_PROJECT6),
+    .UO_OUT_TT_PROJECT7(Tile_X5Y1_UO_OUT_TT_PROJECT7),
+    .UIO_OUT_TT_PROJECT0(Tile_X5Y1_UIO_OUT_TT_PROJECT0),
+    .UIO_OUT_TT_PROJECT1(Tile_X5Y1_UIO_OUT_TT_PROJECT1),
+    .UIO_OUT_TT_PROJECT2(Tile_X5Y1_UIO_OUT_TT_PROJECT2),
+    .UIO_OUT_TT_PROJECT3(Tile_X5Y1_UIO_OUT_TT_PROJECT3),
+    .UIO_OUT_TT_PROJECT4(Tile_X5Y1_UIO_OUT_TT_PROJECT4),
+    .UIO_OUT_TT_PROJECT5(Tile_X5Y1_UIO_OUT_TT_PROJECT5),
+    .UIO_OUT_TT_PROJECT6(Tile_X5Y1_UIO_OUT_TT_PROJECT6),
+    .UIO_OUT_TT_PROJECT7(Tile_X5Y1_UIO_OUT_TT_PROJECT7),
+    .UIO_OE_TT_PROJECT0(Tile_X5Y1_UIO_OE_TT_PROJECT0),
+    .UIO_OE_TT_PROJECT1(Tile_X5Y1_UIO_OE_TT_PROJECT1),
+    .UIO_OE_TT_PROJECT2(Tile_X5Y1_UIO_OE_TT_PROJECT2),
+    .UIO_OE_TT_PROJECT3(Tile_X5Y1_UIO_OE_TT_PROJECT3),
+    .UIO_OE_TT_PROJECT4(Tile_X5Y1_UIO_OE_TT_PROJECT4),
+    .UIO_OE_TT_PROJECT5(Tile_X5Y1_UIO_OE_TT_PROJECT5),
+    .UIO_OE_TT_PROJECT6(Tile_X5Y1_UIO_OE_TT_PROJECT6),
+    .UIO_OE_TT_PROJECT7(Tile_X5Y1_UIO_OE_TT_PROJECT7),
+    .UI_IN_TT_PROJECT0(Tile_X5Y1_UI_IN_TT_PROJECT0),
+    .UI_IN_TT_PROJECT1(Tile_X5Y1_UI_IN_TT_PROJECT1),
+    .UI_IN_TT_PROJECT2(Tile_X5Y1_UI_IN_TT_PROJECT2),
+    .UI_IN_TT_PROJECT3(Tile_X5Y1_UI_IN_TT_PROJECT3),
+    .UI_IN_TT_PROJECT4(Tile_X5Y1_UI_IN_TT_PROJECT4),
+    .UI_IN_TT_PROJECT5(Tile_X5Y1_UI_IN_TT_PROJECT5),
+    .UI_IN_TT_PROJECT6(Tile_X5Y1_UI_IN_TT_PROJECT6),
+    .UI_IN_TT_PROJECT7(Tile_X5Y1_UI_IN_TT_PROJECT7),
+    .UIO_IN_TT_PROJECT0(Tile_X5Y1_UIO_IN_TT_PROJECT0),
+    .UIO_IN_TT_PROJECT1(Tile_X5Y1_UIO_IN_TT_PROJECT1),
+    .UIO_IN_TT_PROJECT2(Tile_X5Y1_UIO_IN_TT_PROJECT2),
+    .UIO_IN_TT_PROJECT3(Tile_X5Y1_UIO_IN_TT_PROJECT3),
+    .UIO_IN_TT_PROJECT4(Tile_X5Y1_UIO_IN_TT_PROJECT4),
+    .UIO_IN_TT_PROJECT5(Tile_X5Y1_UIO_IN_TT_PROJECT5),
+    .UIO_IN_TT_PROJECT6(Tile_X5Y1_UIO_IN_TT_PROJECT6),
+    .UIO_IN_TT_PROJECT7(Tile_X5Y1_UIO_IN_TT_PROJECT7),
+    .ENA_TT_PROJECT(Tile_X5Y1_ENA_TT_PROJECT),
+    .CLK_TT_PROJECT(Tile_X5Y1_CLK_TT_PROJECT),
+    .RST_N_TT_PROJECT(Tile_X5Y1_RST_N_TT_PROJECT),
+    .FrameData(Tile_X4Y1_FrameData_O),
+    .FrameData_O(Tile_X5Y1_FrameData_O),
+    .FrameStrobe(Tile_X5Y2_FrameStrobe_O),
+    .FrameStrobe_O(Tile_X5Y1_FrameStrobe_O)
 );
 
 
@@ -2907,6 +2824,78 @@ LUT4x8_ha
     .FrameData_O(Tile_X4Y2_FrameData_O),
     .FrameStrobe(Tile_X4Y3_FrameStrobe_O),
     .FrameStrobe_O(Tile_X4Y2_FrameStrobe_O)
+);
+
+
+ //tile IO port will get directly connected to top-level tile module
+ (* keep *)
+E_TT_IF
+`ifdef EMULATION
+    #(
+    .Emulate_Bitstream(`Tile_X5Y2_Emulate_Bitstream)
+    )
+`endif
+    Tile_X5Y2_E_TT_IF
+    (
+    .N_GBUF_END(Tile_X5Y3_N_GBUF_BEG),
+    .E1END(Tile_X4Y2_E1BEG),
+    .E2MID(Tile_X4Y2_E2BEG),
+    .E2END(Tile_X4Y2_E2BEGb),
+    .EE4END(Tile_X4Y2_EE4BEG),
+    .E6END(Tile_X4Y2_E6BEG),
+    .N_GBUF_BEG(Tile_X5Y2_N_GBUF_BEG),
+    .W1BEG(Tile_X5Y2_W1BEG),
+    .W2BEG(Tile_X5Y2_W2BEG),
+    .W2BEGb(Tile_X5Y2_W2BEGb),
+    .WW4BEG(Tile_X5Y2_WW4BEG),
+    .W6BEG(Tile_X5Y2_W6BEG),
+    .UO_OUT_TT_PROJECT0(Tile_X5Y2_UO_OUT_TT_PROJECT0),
+    .UO_OUT_TT_PROJECT1(Tile_X5Y2_UO_OUT_TT_PROJECT1),
+    .UO_OUT_TT_PROJECT2(Tile_X5Y2_UO_OUT_TT_PROJECT2),
+    .UO_OUT_TT_PROJECT3(Tile_X5Y2_UO_OUT_TT_PROJECT3),
+    .UO_OUT_TT_PROJECT4(Tile_X5Y2_UO_OUT_TT_PROJECT4),
+    .UO_OUT_TT_PROJECT5(Tile_X5Y2_UO_OUT_TT_PROJECT5),
+    .UO_OUT_TT_PROJECT6(Tile_X5Y2_UO_OUT_TT_PROJECT6),
+    .UO_OUT_TT_PROJECT7(Tile_X5Y2_UO_OUT_TT_PROJECT7),
+    .UIO_OUT_TT_PROJECT0(Tile_X5Y2_UIO_OUT_TT_PROJECT0),
+    .UIO_OUT_TT_PROJECT1(Tile_X5Y2_UIO_OUT_TT_PROJECT1),
+    .UIO_OUT_TT_PROJECT2(Tile_X5Y2_UIO_OUT_TT_PROJECT2),
+    .UIO_OUT_TT_PROJECT3(Tile_X5Y2_UIO_OUT_TT_PROJECT3),
+    .UIO_OUT_TT_PROJECT4(Tile_X5Y2_UIO_OUT_TT_PROJECT4),
+    .UIO_OUT_TT_PROJECT5(Tile_X5Y2_UIO_OUT_TT_PROJECT5),
+    .UIO_OUT_TT_PROJECT6(Tile_X5Y2_UIO_OUT_TT_PROJECT6),
+    .UIO_OUT_TT_PROJECT7(Tile_X5Y2_UIO_OUT_TT_PROJECT7),
+    .UIO_OE_TT_PROJECT0(Tile_X5Y2_UIO_OE_TT_PROJECT0),
+    .UIO_OE_TT_PROJECT1(Tile_X5Y2_UIO_OE_TT_PROJECT1),
+    .UIO_OE_TT_PROJECT2(Tile_X5Y2_UIO_OE_TT_PROJECT2),
+    .UIO_OE_TT_PROJECT3(Tile_X5Y2_UIO_OE_TT_PROJECT3),
+    .UIO_OE_TT_PROJECT4(Tile_X5Y2_UIO_OE_TT_PROJECT4),
+    .UIO_OE_TT_PROJECT5(Tile_X5Y2_UIO_OE_TT_PROJECT5),
+    .UIO_OE_TT_PROJECT6(Tile_X5Y2_UIO_OE_TT_PROJECT6),
+    .UIO_OE_TT_PROJECT7(Tile_X5Y2_UIO_OE_TT_PROJECT7),
+    .UI_IN_TT_PROJECT0(Tile_X5Y2_UI_IN_TT_PROJECT0),
+    .UI_IN_TT_PROJECT1(Tile_X5Y2_UI_IN_TT_PROJECT1),
+    .UI_IN_TT_PROJECT2(Tile_X5Y2_UI_IN_TT_PROJECT2),
+    .UI_IN_TT_PROJECT3(Tile_X5Y2_UI_IN_TT_PROJECT3),
+    .UI_IN_TT_PROJECT4(Tile_X5Y2_UI_IN_TT_PROJECT4),
+    .UI_IN_TT_PROJECT5(Tile_X5Y2_UI_IN_TT_PROJECT5),
+    .UI_IN_TT_PROJECT6(Tile_X5Y2_UI_IN_TT_PROJECT6),
+    .UI_IN_TT_PROJECT7(Tile_X5Y2_UI_IN_TT_PROJECT7),
+    .UIO_IN_TT_PROJECT0(Tile_X5Y2_UIO_IN_TT_PROJECT0),
+    .UIO_IN_TT_PROJECT1(Tile_X5Y2_UIO_IN_TT_PROJECT1),
+    .UIO_IN_TT_PROJECT2(Tile_X5Y2_UIO_IN_TT_PROJECT2),
+    .UIO_IN_TT_PROJECT3(Tile_X5Y2_UIO_IN_TT_PROJECT3),
+    .UIO_IN_TT_PROJECT4(Tile_X5Y2_UIO_IN_TT_PROJECT4),
+    .UIO_IN_TT_PROJECT5(Tile_X5Y2_UIO_IN_TT_PROJECT5),
+    .UIO_IN_TT_PROJECT6(Tile_X5Y2_UIO_IN_TT_PROJECT6),
+    .UIO_IN_TT_PROJECT7(Tile_X5Y2_UIO_IN_TT_PROJECT7),
+    .ENA_TT_PROJECT(Tile_X5Y2_ENA_TT_PROJECT),
+    .CLK_TT_PROJECT(Tile_X5Y2_CLK_TT_PROJECT),
+    .RST_N_TT_PROJECT(Tile_X5Y2_RST_N_TT_PROJECT),
+    .FrameData(Tile_X4Y2_FrameData_O),
+    .FrameData_O(Tile_X5Y2_FrameData_O),
+    .FrameStrobe(Tile_X5Y3_FrameStrobe_O),
+    .FrameStrobe_O(Tile_X5Y2_FrameStrobe_O)
 );
 
 
@@ -3230,86 +3219,73 @@ LUT4x8_ha
 
  //tile IO port will get directly connected to top-level tile module
  (* keep *)
-E_TT_IF2
+E_TT_IF
 `ifdef EMULATION
     #(
-    .Tile_X0Y0_Emulate_Bitstream(`Tile_X5Y3_Emulate_Bitstream),
-    .Tile_X0Y1_Emulate_Bitstream(`Tile_X5Y4_Emulate_Bitstream)
+    .Emulate_Bitstream(`Tile_X5Y3_Emulate_Bitstream)
     )
 `endif
-    Tile_X5Y3_E_TT_IF2
+    Tile_X5Y3_E_TT_IF
     (
-    .Tile_X0Y0_E1END(Tile_X4Y3_E1BEG),
-    .Tile_X0Y0_E2MID(Tile_X4Y3_E2BEG),
-    .Tile_X0Y0_E2END(Tile_X4Y3_E2BEGb),
-    .Tile_X0Y0_EE4END(Tile_X4Y3_EE4BEG),
-    .Tile_X0Y0_E6END(Tile_X4Y3_E6BEG),
-    .Tile_X0Y1_N_GBUF_END(Tile_X5Y5_N_GBUF_BEG),
-    .Tile_X0Y1_E1END(Tile_X4Y4_E1BEG),
-    .Tile_X0Y1_E2MID(Tile_X4Y4_E2BEG),
-    .Tile_X0Y1_E2END(Tile_X4Y4_E2BEGb),
-    .Tile_X0Y1_EE4END(Tile_X4Y4_EE4BEG),
-    .Tile_X0Y1_E6END(Tile_X4Y4_E6BEG),
-    .Tile_X0Y0_N_GBUF_BEG(Tile_X5Y3_N_GBUF_BEG),
-    .Tile_X0Y0_W1BEG(Tile_X5Y3_W1BEG),
-    .Tile_X0Y0_W2BEG(Tile_X5Y3_W2BEG),
-    .Tile_X0Y0_W2BEGb(Tile_X5Y3_W2BEGb),
-    .Tile_X0Y0_WW4BEG(Tile_X5Y3_WW4BEG),
-    .Tile_X0Y0_W6BEG(Tile_X5Y3_W6BEG),
-    .Tile_X0Y1_W1BEG(Tile_X5Y4_W1BEG),
-    .Tile_X0Y1_W2BEG(Tile_X5Y4_W2BEG),
-    .Tile_X0Y1_W2BEGb(Tile_X5Y4_W2BEGb),
-    .Tile_X0Y1_WW4BEG(Tile_X5Y4_WW4BEG),
-    .Tile_X0Y1_W6BEG(Tile_X5Y4_W6BEG),
-    .UO_OUT_TT_PROJECT0(Tile_X5Y4_UO_OUT_TT_PROJECT0),
-    .UO_OUT_TT_PROJECT1(Tile_X5Y4_UO_OUT_TT_PROJECT1),
-    .UO_OUT_TT_PROJECT2(Tile_X5Y4_UO_OUT_TT_PROJECT2),
-    .UO_OUT_TT_PROJECT3(Tile_X5Y4_UO_OUT_TT_PROJECT3),
-    .UO_OUT_TT_PROJECT4(Tile_X5Y4_UO_OUT_TT_PROJECT4),
-    .UO_OUT_TT_PROJECT5(Tile_X5Y4_UO_OUT_TT_PROJECT5),
-    .UO_OUT_TT_PROJECT6(Tile_X5Y4_UO_OUT_TT_PROJECT6),
-    .UO_OUT_TT_PROJECT7(Tile_X5Y4_UO_OUT_TT_PROJECT7),
-    .UIO_OUT_TT_PROJECT0(Tile_X5Y4_UIO_OUT_TT_PROJECT0),
-    .UIO_OUT_TT_PROJECT1(Tile_X5Y4_UIO_OUT_TT_PROJECT1),
-    .UIO_OUT_TT_PROJECT2(Tile_X5Y4_UIO_OUT_TT_PROJECT2),
-    .UIO_OUT_TT_PROJECT3(Tile_X5Y4_UIO_OUT_TT_PROJECT3),
-    .UIO_OUT_TT_PROJECT4(Tile_X5Y4_UIO_OUT_TT_PROJECT4),
-    .UIO_OUT_TT_PROJECT5(Tile_X5Y4_UIO_OUT_TT_PROJECT5),
-    .UIO_OUT_TT_PROJECT6(Tile_X5Y4_UIO_OUT_TT_PROJECT6),
-    .UIO_OUT_TT_PROJECT7(Tile_X5Y4_UIO_OUT_TT_PROJECT7),
-    .UIO_OE_TT_PROJECT0(Tile_X5Y4_UIO_OE_TT_PROJECT0),
-    .UIO_OE_TT_PROJECT1(Tile_X5Y4_UIO_OE_TT_PROJECT1),
-    .UIO_OE_TT_PROJECT2(Tile_X5Y4_UIO_OE_TT_PROJECT2),
-    .UIO_OE_TT_PROJECT3(Tile_X5Y4_UIO_OE_TT_PROJECT3),
-    .UIO_OE_TT_PROJECT4(Tile_X5Y4_UIO_OE_TT_PROJECT4),
-    .UIO_OE_TT_PROJECT5(Tile_X5Y4_UIO_OE_TT_PROJECT5),
-    .UIO_OE_TT_PROJECT6(Tile_X5Y4_UIO_OE_TT_PROJECT6),
-    .UIO_OE_TT_PROJECT7(Tile_X5Y4_UIO_OE_TT_PROJECT7),
-    .UI_IN_TT_PROJECT0(Tile_X5Y4_UI_IN_TT_PROJECT0),
-    .UI_IN_TT_PROJECT1(Tile_X5Y4_UI_IN_TT_PROJECT1),
-    .UI_IN_TT_PROJECT2(Tile_X5Y4_UI_IN_TT_PROJECT2),
-    .UI_IN_TT_PROJECT3(Tile_X5Y4_UI_IN_TT_PROJECT3),
-    .UI_IN_TT_PROJECT4(Tile_X5Y4_UI_IN_TT_PROJECT4),
-    .UI_IN_TT_PROJECT5(Tile_X5Y4_UI_IN_TT_PROJECT5),
-    .UI_IN_TT_PROJECT6(Tile_X5Y4_UI_IN_TT_PROJECT6),
-    .UI_IN_TT_PROJECT7(Tile_X5Y4_UI_IN_TT_PROJECT7),
-    .UIO_IN_TT_PROJECT0(Tile_X5Y4_UIO_IN_TT_PROJECT0),
-    .UIO_IN_TT_PROJECT1(Tile_X5Y4_UIO_IN_TT_PROJECT1),
-    .UIO_IN_TT_PROJECT2(Tile_X5Y4_UIO_IN_TT_PROJECT2),
-    .UIO_IN_TT_PROJECT3(Tile_X5Y4_UIO_IN_TT_PROJECT3),
-    .UIO_IN_TT_PROJECT4(Tile_X5Y4_UIO_IN_TT_PROJECT4),
-    .UIO_IN_TT_PROJECT5(Tile_X5Y4_UIO_IN_TT_PROJECT5),
-    .UIO_IN_TT_PROJECT6(Tile_X5Y4_UIO_IN_TT_PROJECT6),
-    .UIO_IN_TT_PROJECT7(Tile_X5Y4_UIO_IN_TT_PROJECT7),
-    .ENA_TT_PROJECT(Tile_X5Y4_ENA_TT_PROJECT),
-    .CLK_TT_PROJECT(Tile_X5Y4_CLK_TT_PROJECT),
-    .RST_N_TT_PROJECT(Tile_X5Y4_RST_N_TT_PROJECT),
-    .Tile_X0Y0_FrameData(Tile_X4Y3_FrameData_O),
-    .Tile_X0Y0_FrameData_O(Tile_X5Y3_FrameData_O),
-    .Tile_X0Y0_FrameStrobe_O(Tile_X5Y3_FrameStrobe_O),
-    .Tile_X0Y1_FrameData(Tile_X4Y4_FrameData_O),
-    .Tile_X0Y1_FrameData_O(Tile_X5Y4_FrameData_O),
-    .Tile_X0Y1_FrameStrobe(Tile_X5Y5_FrameStrobe_O)
+    .N_GBUF_END(Tile_X5Y4_N_GBUF_BEG),
+    .E1END(Tile_X4Y3_E1BEG),
+    .E2MID(Tile_X4Y3_E2BEG),
+    .E2END(Tile_X4Y3_E2BEGb),
+    .EE4END(Tile_X4Y3_EE4BEG),
+    .E6END(Tile_X4Y3_E6BEG),
+    .N_GBUF_BEG(Tile_X5Y3_N_GBUF_BEG),
+    .W1BEG(Tile_X5Y3_W1BEG),
+    .W2BEG(Tile_X5Y3_W2BEG),
+    .W2BEGb(Tile_X5Y3_W2BEGb),
+    .WW4BEG(Tile_X5Y3_WW4BEG),
+    .W6BEG(Tile_X5Y3_W6BEG),
+    .UO_OUT_TT_PROJECT0(Tile_X5Y3_UO_OUT_TT_PROJECT0),
+    .UO_OUT_TT_PROJECT1(Tile_X5Y3_UO_OUT_TT_PROJECT1),
+    .UO_OUT_TT_PROJECT2(Tile_X5Y3_UO_OUT_TT_PROJECT2),
+    .UO_OUT_TT_PROJECT3(Tile_X5Y3_UO_OUT_TT_PROJECT3),
+    .UO_OUT_TT_PROJECT4(Tile_X5Y3_UO_OUT_TT_PROJECT4),
+    .UO_OUT_TT_PROJECT5(Tile_X5Y3_UO_OUT_TT_PROJECT5),
+    .UO_OUT_TT_PROJECT6(Tile_X5Y3_UO_OUT_TT_PROJECT6),
+    .UO_OUT_TT_PROJECT7(Tile_X5Y3_UO_OUT_TT_PROJECT7),
+    .UIO_OUT_TT_PROJECT0(Tile_X5Y3_UIO_OUT_TT_PROJECT0),
+    .UIO_OUT_TT_PROJECT1(Tile_X5Y3_UIO_OUT_TT_PROJECT1),
+    .UIO_OUT_TT_PROJECT2(Tile_X5Y3_UIO_OUT_TT_PROJECT2),
+    .UIO_OUT_TT_PROJECT3(Tile_X5Y3_UIO_OUT_TT_PROJECT3),
+    .UIO_OUT_TT_PROJECT4(Tile_X5Y3_UIO_OUT_TT_PROJECT4),
+    .UIO_OUT_TT_PROJECT5(Tile_X5Y3_UIO_OUT_TT_PROJECT5),
+    .UIO_OUT_TT_PROJECT6(Tile_X5Y3_UIO_OUT_TT_PROJECT6),
+    .UIO_OUT_TT_PROJECT7(Tile_X5Y3_UIO_OUT_TT_PROJECT7),
+    .UIO_OE_TT_PROJECT0(Tile_X5Y3_UIO_OE_TT_PROJECT0),
+    .UIO_OE_TT_PROJECT1(Tile_X5Y3_UIO_OE_TT_PROJECT1),
+    .UIO_OE_TT_PROJECT2(Tile_X5Y3_UIO_OE_TT_PROJECT2),
+    .UIO_OE_TT_PROJECT3(Tile_X5Y3_UIO_OE_TT_PROJECT3),
+    .UIO_OE_TT_PROJECT4(Tile_X5Y3_UIO_OE_TT_PROJECT4),
+    .UIO_OE_TT_PROJECT5(Tile_X5Y3_UIO_OE_TT_PROJECT5),
+    .UIO_OE_TT_PROJECT6(Tile_X5Y3_UIO_OE_TT_PROJECT6),
+    .UIO_OE_TT_PROJECT7(Tile_X5Y3_UIO_OE_TT_PROJECT7),
+    .UI_IN_TT_PROJECT0(Tile_X5Y3_UI_IN_TT_PROJECT0),
+    .UI_IN_TT_PROJECT1(Tile_X5Y3_UI_IN_TT_PROJECT1),
+    .UI_IN_TT_PROJECT2(Tile_X5Y3_UI_IN_TT_PROJECT2),
+    .UI_IN_TT_PROJECT3(Tile_X5Y3_UI_IN_TT_PROJECT3),
+    .UI_IN_TT_PROJECT4(Tile_X5Y3_UI_IN_TT_PROJECT4),
+    .UI_IN_TT_PROJECT5(Tile_X5Y3_UI_IN_TT_PROJECT5),
+    .UI_IN_TT_PROJECT6(Tile_X5Y3_UI_IN_TT_PROJECT6),
+    .UI_IN_TT_PROJECT7(Tile_X5Y3_UI_IN_TT_PROJECT7),
+    .UIO_IN_TT_PROJECT0(Tile_X5Y3_UIO_IN_TT_PROJECT0),
+    .UIO_IN_TT_PROJECT1(Tile_X5Y3_UIO_IN_TT_PROJECT1),
+    .UIO_IN_TT_PROJECT2(Tile_X5Y3_UIO_IN_TT_PROJECT2),
+    .UIO_IN_TT_PROJECT3(Tile_X5Y3_UIO_IN_TT_PROJECT3),
+    .UIO_IN_TT_PROJECT4(Tile_X5Y3_UIO_IN_TT_PROJECT4),
+    .UIO_IN_TT_PROJECT5(Tile_X5Y3_UIO_IN_TT_PROJECT5),
+    .UIO_IN_TT_PROJECT6(Tile_X5Y3_UIO_IN_TT_PROJECT6),
+    .UIO_IN_TT_PROJECT7(Tile_X5Y3_UIO_IN_TT_PROJECT7),
+    .ENA_TT_PROJECT(Tile_X5Y3_ENA_TT_PROJECT),
+    .CLK_TT_PROJECT(Tile_X5Y3_CLK_TT_PROJECT),
+    .RST_N_TT_PROJECT(Tile_X5Y3_RST_N_TT_PROJECT),
+    .FrameData(Tile_X4Y3_FrameData_O),
+    .FrameData_O(Tile_X5Y3_FrameData_O),
+    .FrameStrobe(Tile_X5Y4_FrameStrobe_O),
+    .FrameStrobe_O(Tile_X5Y3_FrameStrobe_O)
 );
 
 
@@ -3633,6 +3609,78 @@ LUT4x8_ha
 
  //tile IO port will get directly connected to top-level tile module
  (* keep *)
+E_TT_IF
+`ifdef EMULATION
+    #(
+    .Emulate_Bitstream(`Tile_X5Y4_Emulate_Bitstream)
+    )
+`endif
+    Tile_X5Y4_E_TT_IF
+    (
+    .N_GBUF_END(Tile_X5Y5_N_GBUF_BEG),
+    .E1END(Tile_X4Y4_E1BEG),
+    .E2MID(Tile_X4Y4_E2BEG),
+    .E2END(Tile_X4Y4_E2BEGb),
+    .EE4END(Tile_X4Y4_EE4BEG),
+    .E6END(Tile_X4Y4_E6BEG),
+    .N_GBUF_BEG(Tile_X5Y4_N_GBUF_BEG),
+    .W1BEG(Tile_X5Y4_W1BEG),
+    .W2BEG(Tile_X5Y4_W2BEG),
+    .W2BEGb(Tile_X5Y4_W2BEGb),
+    .WW4BEG(Tile_X5Y4_WW4BEG),
+    .W6BEG(Tile_X5Y4_W6BEG),
+    .UO_OUT_TT_PROJECT0(Tile_X5Y4_UO_OUT_TT_PROJECT0),
+    .UO_OUT_TT_PROJECT1(Tile_X5Y4_UO_OUT_TT_PROJECT1),
+    .UO_OUT_TT_PROJECT2(Tile_X5Y4_UO_OUT_TT_PROJECT2),
+    .UO_OUT_TT_PROJECT3(Tile_X5Y4_UO_OUT_TT_PROJECT3),
+    .UO_OUT_TT_PROJECT4(Tile_X5Y4_UO_OUT_TT_PROJECT4),
+    .UO_OUT_TT_PROJECT5(Tile_X5Y4_UO_OUT_TT_PROJECT5),
+    .UO_OUT_TT_PROJECT6(Tile_X5Y4_UO_OUT_TT_PROJECT6),
+    .UO_OUT_TT_PROJECT7(Tile_X5Y4_UO_OUT_TT_PROJECT7),
+    .UIO_OUT_TT_PROJECT0(Tile_X5Y4_UIO_OUT_TT_PROJECT0),
+    .UIO_OUT_TT_PROJECT1(Tile_X5Y4_UIO_OUT_TT_PROJECT1),
+    .UIO_OUT_TT_PROJECT2(Tile_X5Y4_UIO_OUT_TT_PROJECT2),
+    .UIO_OUT_TT_PROJECT3(Tile_X5Y4_UIO_OUT_TT_PROJECT3),
+    .UIO_OUT_TT_PROJECT4(Tile_X5Y4_UIO_OUT_TT_PROJECT4),
+    .UIO_OUT_TT_PROJECT5(Tile_X5Y4_UIO_OUT_TT_PROJECT5),
+    .UIO_OUT_TT_PROJECT6(Tile_X5Y4_UIO_OUT_TT_PROJECT6),
+    .UIO_OUT_TT_PROJECT7(Tile_X5Y4_UIO_OUT_TT_PROJECT7),
+    .UIO_OE_TT_PROJECT0(Tile_X5Y4_UIO_OE_TT_PROJECT0),
+    .UIO_OE_TT_PROJECT1(Tile_X5Y4_UIO_OE_TT_PROJECT1),
+    .UIO_OE_TT_PROJECT2(Tile_X5Y4_UIO_OE_TT_PROJECT2),
+    .UIO_OE_TT_PROJECT3(Tile_X5Y4_UIO_OE_TT_PROJECT3),
+    .UIO_OE_TT_PROJECT4(Tile_X5Y4_UIO_OE_TT_PROJECT4),
+    .UIO_OE_TT_PROJECT5(Tile_X5Y4_UIO_OE_TT_PROJECT5),
+    .UIO_OE_TT_PROJECT6(Tile_X5Y4_UIO_OE_TT_PROJECT6),
+    .UIO_OE_TT_PROJECT7(Tile_X5Y4_UIO_OE_TT_PROJECT7),
+    .UI_IN_TT_PROJECT0(Tile_X5Y4_UI_IN_TT_PROJECT0),
+    .UI_IN_TT_PROJECT1(Tile_X5Y4_UI_IN_TT_PROJECT1),
+    .UI_IN_TT_PROJECT2(Tile_X5Y4_UI_IN_TT_PROJECT2),
+    .UI_IN_TT_PROJECT3(Tile_X5Y4_UI_IN_TT_PROJECT3),
+    .UI_IN_TT_PROJECT4(Tile_X5Y4_UI_IN_TT_PROJECT4),
+    .UI_IN_TT_PROJECT5(Tile_X5Y4_UI_IN_TT_PROJECT5),
+    .UI_IN_TT_PROJECT6(Tile_X5Y4_UI_IN_TT_PROJECT6),
+    .UI_IN_TT_PROJECT7(Tile_X5Y4_UI_IN_TT_PROJECT7),
+    .UIO_IN_TT_PROJECT0(Tile_X5Y4_UIO_IN_TT_PROJECT0),
+    .UIO_IN_TT_PROJECT1(Tile_X5Y4_UIO_IN_TT_PROJECT1),
+    .UIO_IN_TT_PROJECT2(Tile_X5Y4_UIO_IN_TT_PROJECT2),
+    .UIO_IN_TT_PROJECT3(Tile_X5Y4_UIO_IN_TT_PROJECT3),
+    .UIO_IN_TT_PROJECT4(Tile_X5Y4_UIO_IN_TT_PROJECT4),
+    .UIO_IN_TT_PROJECT5(Tile_X5Y4_UIO_IN_TT_PROJECT5),
+    .UIO_IN_TT_PROJECT6(Tile_X5Y4_UIO_IN_TT_PROJECT6),
+    .UIO_IN_TT_PROJECT7(Tile_X5Y4_UIO_IN_TT_PROJECT7),
+    .ENA_TT_PROJECT(Tile_X5Y4_ENA_TT_PROJECT),
+    .CLK_TT_PROJECT(Tile_X5Y4_CLK_TT_PROJECT),
+    .RST_N_TT_PROJECT(Tile_X5Y4_RST_N_TT_PROJECT),
+    .FrameData(Tile_X4Y4_FrameData_O),
+    .FrameData_O(Tile_X5Y4_FrameData_O),
+    .FrameStrobe(Tile_X5Y5_FrameStrobe_O),
+    .FrameStrobe_O(Tile_X5Y4_FrameStrobe_O)
+);
+
+
+ //tile IO port will get directly connected to top-level tile module
+ (* keep *)
 W_TT_IF
 `ifdef EMULATION
     #(
@@ -3951,73 +3999,156 @@ LUT4x8_ha
 
  //tile IO port will get directly connected to top-level tile module
  (* keep *)
-E_TT_IF
+E_IHP_SRAM
 `ifdef EMULATION
     #(
-    .Emulate_Bitstream(`Tile_X5Y5_Emulate_Bitstream)
+    .Tile_X0Y0_Emulate_Bitstream(`Tile_X5Y5_Emulate_Bitstream),
+    .Tile_X0Y1_Emulate_Bitstream(`Tile_X5Y6_Emulate_Bitstream)
     )
 `endif
-    Tile_X5Y5_E_TT_IF
+    Tile_X5Y5_E_IHP_SRAM
     (
-    .N_GBUF_END(Tile_X5Y6_N_GBUF_BEG),
-    .E1END(Tile_X4Y5_E1BEG),
-    .E2MID(Tile_X4Y5_E2BEG),
-    .E2END(Tile_X4Y5_E2BEGb),
-    .EE4END(Tile_X4Y5_EE4BEG),
-    .E6END(Tile_X4Y5_E6BEG),
-    .N_GBUF_BEG(Tile_X5Y5_N_GBUF_BEG),
-    .W1BEG(Tile_X5Y5_W1BEG),
-    .W2BEG(Tile_X5Y5_W2BEG),
-    .W2BEGb(Tile_X5Y5_W2BEGb),
-    .WW4BEG(Tile_X5Y5_WW4BEG),
-    .W6BEG(Tile_X5Y5_W6BEG),
-    .UO_OUT_TT_PROJECT0(Tile_X5Y5_UO_OUT_TT_PROJECT0),
-    .UO_OUT_TT_PROJECT1(Tile_X5Y5_UO_OUT_TT_PROJECT1),
-    .UO_OUT_TT_PROJECT2(Tile_X5Y5_UO_OUT_TT_PROJECT2),
-    .UO_OUT_TT_PROJECT3(Tile_X5Y5_UO_OUT_TT_PROJECT3),
-    .UO_OUT_TT_PROJECT4(Tile_X5Y5_UO_OUT_TT_PROJECT4),
-    .UO_OUT_TT_PROJECT5(Tile_X5Y5_UO_OUT_TT_PROJECT5),
-    .UO_OUT_TT_PROJECT6(Tile_X5Y5_UO_OUT_TT_PROJECT6),
-    .UO_OUT_TT_PROJECT7(Tile_X5Y5_UO_OUT_TT_PROJECT7),
-    .UIO_OUT_TT_PROJECT0(Tile_X5Y5_UIO_OUT_TT_PROJECT0),
-    .UIO_OUT_TT_PROJECT1(Tile_X5Y5_UIO_OUT_TT_PROJECT1),
-    .UIO_OUT_TT_PROJECT2(Tile_X5Y5_UIO_OUT_TT_PROJECT2),
-    .UIO_OUT_TT_PROJECT3(Tile_X5Y5_UIO_OUT_TT_PROJECT3),
-    .UIO_OUT_TT_PROJECT4(Tile_X5Y5_UIO_OUT_TT_PROJECT4),
-    .UIO_OUT_TT_PROJECT5(Tile_X5Y5_UIO_OUT_TT_PROJECT5),
-    .UIO_OUT_TT_PROJECT6(Tile_X5Y5_UIO_OUT_TT_PROJECT6),
-    .UIO_OUT_TT_PROJECT7(Tile_X5Y5_UIO_OUT_TT_PROJECT7),
-    .UIO_OE_TT_PROJECT0(Tile_X5Y5_UIO_OE_TT_PROJECT0),
-    .UIO_OE_TT_PROJECT1(Tile_X5Y5_UIO_OE_TT_PROJECT1),
-    .UIO_OE_TT_PROJECT2(Tile_X5Y5_UIO_OE_TT_PROJECT2),
-    .UIO_OE_TT_PROJECT3(Tile_X5Y5_UIO_OE_TT_PROJECT3),
-    .UIO_OE_TT_PROJECT4(Tile_X5Y5_UIO_OE_TT_PROJECT4),
-    .UIO_OE_TT_PROJECT5(Tile_X5Y5_UIO_OE_TT_PROJECT5),
-    .UIO_OE_TT_PROJECT6(Tile_X5Y5_UIO_OE_TT_PROJECT6),
-    .UIO_OE_TT_PROJECT7(Tile_X5Y5_UIO_OE_TT_PROJECT7),
-    .UI_IN_TT_PROJECT0(Tile_X5Y5_UI_IN_TT_PROJECT0),
-    .UI_IN_TT_PROJECT1(Tile_X5Y5_UI_IN_TT_PROJECT1),
-    .UI_IN_TT_PROJECT2(Tile_X5Y5_UI_IN_TT_PROJECT2),
-    .UI_IN_TT_PROJECT3(Tile_X5Y5_UI_IN_TT_PROJECT3),
-    .UI_IN_TT_PROJECT4(Tile_X5Y5_UI_IN_TT_PROJECT4),
-    .UI_IN_TT_PROJECT5(Tile_X5Y5_UI_IN_TT_PROJECT5),
-    .UI_IN_TT_PROJECT6(Tile_X5Y5_UI_IN_TT_PROJECT6),
-    .UI_IN_TT_PROJECT7(Tile_X5Y5_UI_IN_TT_PROJECT7),
-    .UIO_IN_TT_PROJECT0(Tile_X5Y5_UIO_IN_TT_PROJECT0),
-    .UIO_IN_TT_PROJECT1(Tile_X5Y5_UIO_IN_TT_PROJECT1),
-    .UIO_IN_TT_PROJECT2(Tile_X5Y5_UIO_IN_TT_PROJECT2),
-    .UIO_IN_TT_PROJECT3(Tile_X5Y5_UIO_IN_TT_PROJECT3),
-    .UIO_IN_TT_PROJECT4(Tile_X5Y5_UIO_IN_TT_PROJECT4),
-    .UIO_IN_TT_PROJECT5(Tile_X5Y5_UIO_IN_TT_PROJECT5),
-    .UIO_IN_TT_PROJECT6(Tile_X5Y5_UIO_IN_TT_PROJECT6),
-    .UIO_IN_TT_PROJECT7(Tile_X5Y5_UIO_IN_TT_PROJECT7),
-    .ENA_TT_PROJECT(Tile_X5Y5_ENA_TT_PROJECT),
-    .CLK_TT_PROJECT(Tile_X5Y5_CLK_TT_PROJECT),
-    .RST_N_TT_PROJECT(Tile_X5Y5_RST_N_TT_PROJECT),
-    .FrameData(Tile_X4Y5_FrameData_O),
-    .FrameData_O(Tile_X5Y5_FrameData_O),
-    .FrameStrobe(Tile_X5Y6_FrameStrobe_O),
-    .FrameStrobe_O(Tile_X5Y5_FrameStrobe_O)
+    .Tile_X0Y0_E1END(Tile_X4Y5_E1BEG),
+    .Tile_X0Y0_E2MID(Tile_X4Y5_E2BEG),
+    .Tile_X0Y0_E2END(Tile_X4Y5_E2BEGb),
+    .Tile_X0Y0_EE4END(Tile_X4Y5_EE4BEG),
+    .Tile_X0Y0_E6END(Tile_X4Y5_E6BEG),
+    .Tile_X0Y1_N_GBUF_END(Tile_X5Y7_N_GBUF_BEG),
+    .Tile_X0Y1_E1END(Tile_X4Y6_E1BEG),
+    .Tile_X0Y1_E2MID(Tile_X4Y6_E2BEG),
+    .Tile_X0Y1_E2END(Tile_X4Y6_E2BEGb),
+    .Tile_X0Y1_EE4END(Tile_X4Y6_EE4BEG),
+    .Tile_X0Y1_E6END(Tile_X4Y6_E6BEG),
+    .Tile_X0Y0_N_GBUF_BEG(Tile_X5Y5_N_GBUF_BEG),
+    .Tile_X0Y0_W1BEG(Tile_X5Y5_W1BEG),
+    .Tile_X0Y0_W2BEG(Tile_X5Y5_W2BEG),
+    .Tile_X0Y0_W2BEGb(Tile_X5Y5_W2BEGb),
+    .Tile_X0Y0_WW4BEG(Tile_X5Y5_WW4BEG),
+    .Tile_X0Y0_W6BEG(Tile_X5Y5_W6BEG),
+    .Tile_X0Y1_W1BEG(Tile_X5Y6_W1BEG),
+    .Tile_X0Y1_W2BEG(Tile_X5Y6_W2BEG),
+    .Tile_X0Y1_W2BEGb(Tile_X5Y6_W2BEGb),
+    .Tile_X0Y1_WW4BEG(Tile_X5Y6_WW4BEG),
+    .Tile_X0Y1_W6BEG(Tile_X5Y6_W6BEG),
+    .DOUT_SRAM0(Tile_X5Y6_DOUT_SRAM0),
+    .DOUT_SRAM1(Tile_X5Y6_DOUT_SRAM1),
+    .DOUT_SRAM2(Tile_X5Y6_DOUT_SRAM2),
+    .DOUT_SRAM3(Tile_X5Y6_DOUT_SRAM3),
+    .DOUT_SRAM4(Tile_X5Y6_DOUT_SRAM4),
+    .DOUT_SRAM5(Tile_X5Y6_DOUT_SRAM5),
+    .DOUT_SRAM6(Tile_X5Y6_DOUT_SRAM6),
+    .DOUT_SRAM7(Tile_X5Y6_DOUT_SRAM7),
+    .DOUT_SRAM8(Tile_X5Y6_DOUT_SRAM8),
+    .DOUT_SRAM9(Tile_X5Y6_DOUT_SRAM9),
+    .DOUT_SRAM10(Tile_X5Y6_DOUT_SRAM10),
+    .DOUT_SRAM11(Tile_X5Y6_DOUT_SRAM11),
+    .DOUT_SRAM12(Tile_X5Y6_DOUT_SRAM12),
+    .DOUT_SRAM13(Tile_X5Y6_DOUT_SRAM13),
+    .DOUT_SRAM14(Tile_X5Y6_DOUT_SRAM14),
+    .DOUT_SRAM15(Tile_X5Y6_DOUT_SRAM15),
+    .DOUT_SRAM16(Tile_X5Y6_DOUT_SRAM16),
+    .DOUT_SRAM17(Tile_X5Y6_DOUT_SRAM17),
+    .DOUT_SRAM18(Tile_X5Y6_DOUT_SRAM18),
+    .DOUT_SRAM19(Tile_X5Y6_DOUT_SRAM19),
+    .DOUT_SRAM20(Tile_X5Y6_DOUT_SRAM20),
+    .DOUT_SRAM21(Tile_X5Y6_DOUT_SRAM21),
+    .DOUT_SRAM22(Tile_X5Y6_DOUT_SRAM22),
+    .DOUT_SRAM23(Tile_X5Y6_DOUT_SRAM23),
+    .DOUT_SRAM24(Tile_X5Y6_DOUT_SRAM24),
+    .DOUT_SRAM25(Tile_X5Y6_DOUT_SRAM25),
+    .DOUT_SRAM26(Tile_X5Y6_DOUT_SRAM26),
+    .DOUT_SRAM27(Tile_X5Y6_DOUT_SRAM27),
+    .DOUT_SRAM28(Tile_X5Y6_DOUT_SRAM28),
+    .DOUT_SRAM29(Tile_X5Y6_DOUT_SRAM29),
+    .DOUT_SRAM30(Tile_X5Y6_DOUT_SRAM30),
+    .DOUT_SRAM31(Tile_X5Y6_DOUT_SRAM31),
+    .CONFIGURED_top(Tile_X5Y6_CONFIGURED_top),
+    .CLK_SRAM(Tile_X5Y6_CLK_SRAM),
+    .ADDR_SRAM0(Tile_X5Y6_ADDR_SRAM0),
+    .ADDR_SRAM1(Tile_X5Y6_ADDR_SRAM1),
+    .ADDR_SRAM2(Tile_X5Y6_ADDR_SRAM2),
+    .ADDR_SRAM3(Tile_X5Y6_ADDR_SRAM3),
+    .ADDR_SRAM4(Tile_X5Y6_ADDR_SRAM4),
+    .ADDR_SRAM5(Tile_X5Y6_ADDR_SRAM5),
+    .ADDR_SRAM6(Tile_X5Y6_ADDR_SRAM6),
+    .ADDR_SRAM7(Tile_X5Y6_ADDR_SRAM7),
+    .ADDR_SRAM8(Tile_X5Y6_ADDR_SRAM8),
+    .ADDR_SRAM9(Tile_X5Y6_ADDR_SRAM9),
+    .DIN_SRAM0(Tile_X5Y6_DIN_SRAM0),
+    .DIN_SRAM1(Tile_X5Y6_DIN_SRAM1),
+    .DIN_SRAM2(Tile_X5Y6_DIN_SRAM2),
+    .DIN_SRAM3(Tile_X5Y6_DIN_SRAM3),
+    .DIN_SRAM4(Tile_X5Y6_DIN_SRAM4),
+    .DIN_SRAM5(Tile_X5Y6_DIN_SRAM5),
+    .DIN_SRAM6(Tile_X5Y6_DIN_SRAM6),
+    .DIN_SRAM7(Tile_X5Y6_DIN_SRAM7),
+    .DIN_SRAM8(Tile_X5Y6_DIN_SRAM8),
+    .DIN_SRAM9(Tile_X5Y6_DIN_SRAM9),
+    .DIN_SRAM10(Tile_X5Y6_DIN_SRAM10),
+    .DIN_SRAM11(Tile_X5Y6_DIN_SRAM11),
+    .DIN_SRAM12(Tile_X5Y6_DIN_SRAM12),
+    .DIN_SRAM13(Tile_X5Y6_DIN_SRAM13),
+    .DIN_SRAM14(Tile_X5Y6_DIN_SRAM14),
+    .DIN_SRAM15(Tile_X5Y6_DIN_SRAM15),
+    .DIN_SRAM16(Tile_X5Y6_DIN_SRAM16),
+    .DIN_SRAM17(Tile_X5Y6_DIN_SRAM17),
+    .DIN_SRAM18(Tile_X5Y6_DIN_SRAM18),
+    .DIN_SRAM19(Tile_X5Y6_DIN_SRAM19),
+    .DIN_SRAM20(Tile_X5Y6_DIN_SRAM20),
+    .DIN_SRAM21(Tile_X5Y6_DIN_SRAM21),
+    .DIN_SRAM22(Tile_X5Y6_DIN_SRAM22),
+    .DIN_SRAM23(Tile_X5Y6_DIN_SRAM23),
+    .DIN_SRAM24(Tile_X5Y6_DIN_SRAM24),
+    .DIN_SRAM25(Tile_X5Y6_DIN_SRAM25),
+    .DIN_SRAM26(Tile_X5Y6_DIN_SRAM26),
+    .DIN_SRAM27(Tile_X5Y6_DIN_SRAM27),
+    .DIN_SRAM28(Tile_X5Y6_DIN_SRAM28),
+    .DIN_SRAM29(Tile_X5Y6_DIN_SRAM29),
+    .DIN_SRAM30(Tile_X5Y6_DIN_SRAM30),
+    .DIN_SRAM31(Tile_X5Y6_DIN_SRAM31),
+    .BM_SRAM0(Tile_X5Y6_BM_SRAM0),
+    .BM_SRAM1(Tile_X5Y6_BM_SRAM1),
+    .BM_SRAM2(Tile_X5Y6_BM_SRAM2),
+    .BM_SRAM3(Tile_X5Y6_BM_SRAM3),
+    .BM_SRAM4(Tile_X5Y6_BM_SRAM4),
+    .BM_SRAM5(Tile_X5Y6_BM_SRAM5),
+    .BM_SRAM6(Tile_X5Y6_BM_SRAM6),
+    .BM_SRAM7(Tile_X5Y6_BM_SRAM7),
+    .BM_SRAM8(Tile_X5Y6_BM_SRAM8),
+    .BM_SRAM9(Tile_X5Y6_BM_SRAM9),
+    .BM_SRAM10(Tile_X5Y6_BM_SRAM10),
+    .BM_SRAM11(Tile_X5Y6_BM_SRAM11),
+    .BM_SRAM12(Tile_X5Y6_BM_SRAM12),
+    .BM_SRAM13(Tile_X5Y6_BM_SRAM13),
+    .BM_SRAM14(Tile_X5Y6_BM_SRAM14),
+    .BM_SRAM15(Tile_X5Y6_BM_SRAM15),
+    .BM_SRAM16(Tile_X5Y6_BM_SRAM16),
+    .BM_SRAM17(Tile_X5Y6_BM_SRAM17),
+    .BM_SRAM18(Tile_X5Y6_BM_SRAM18),
+    .BM_SRAM19(Tile_X5Y6_BM_SRAM19),
+    .BM_SRAM20(Tile_X5Y6_BM_SRAM20),
+    .BM_SRAM21(Tile_X5Y6_BM_SRAM21),
+    .BM_SRAM22(Tile_X5Y6_BM_SRAM22),
+    .BM_SRAM23(Tile_X5Y6_BM_SRAM23),
+    .BM_SRAM24(Tile_X5Y6_BM_SRAM24),
+    .BM_SRAM25(Tile_X5Y6_BM_SRAM25),
+    .BM_SRAM26(Tile_X5Y6_BM_SRAM26),
+    .BM_SRAM27(Tile_X5Y6_BM_SRAM27),
+    .BM_SRAM28(Tile_X5Y6_BM_SRAM28),
+    .BM_SRAM29(Tile_X5Y6_BM_SRAM29),
+    .BM_SRAM30(Tile_X5Y6_BM_SRAM30),
+    .BM_SRAM31(Tile_X5Y6_BM_SRAM31),
+    .WEN_SRAM(Tile_X5Y6_WEN_SRAM),
+    .MEN_SRAM(Tile_X5Y6_MEN_SRAM),
+    .REN_SRAM(Tile_X5Y6_REN_SRAM),
+    .TIE_HIGH_SRAM(Tile_X5Y6_TIE_HIGH_SRAM),
+    .TIE_LOW_SRAM(Tile_X5Y6_TIE_LOW_SRAM),
+    .Tile_X0Y0_FrameData(Tile_X4Y5_FrameData_O),
+    .Tile_X0Y0_FrameData_O(Tile_X5Y5_FrameData_O),
+    .Tile_X0Y0_FrameStrobe_O(Tile_X5Y5_FrameStrobe_O),
+    .Tile_X0Y1_FrameData(Tile_X4Y6_FrameData_O),
+    .Tile_X0Y1_FrameData_O(Tile_X5Y6_FrameData_O),
+    .Tile_X0Y1_FrameStrobe(Tile_X5Y7_FrameStrobe_O)
 );
 
 
@@ -4336,78 +4467,6 @@ LUT4x8_ha
     .FrameData_O(Tile_X4Y6_FrameData_O),
     .FrameStrobe(Tile_X4Y7_FrameStrobe_O),
     .FrameStrobe_O(Tile_X4Y6_FrameStrobe_O)
-);
-
-
- //tile IO port will get directly connected to top-level tile module
- (* keep *)
-E_TT_IF
-`ifdef EMULATION
-    #(
-    .Emulate_Bitstream(`Tile_X5Y6_Emulate_Bitstream)
-    )
-`endif
-    Tile_X5Y6_E_TT_IF
-    (
-    .N_GBUF_END(Tile_X5Y7_N_GBUF_BEG),
-    .E1END(Tile_X4Y6_E1BEG),
-    .E2MID(Tile_X4Y6_E2BEG),
-    .E2END(Tile_X4Y6_E2BEGb),
-    .EE4END(Tile_X4Y6_EE4BEG),
-    .E6END(Tile_X4Y6_E6BEG),
-    .N_GBUF_BEG(Tile_X5Y6_N_GBUF_BEG),
-    .W1BEG(Tile_X5Y6_W1BEG),
-    .W2BEG(Tile_X5Y6_W2BEG),
-    .W2BEGb(Tile_X5Y6_W2BEGb),
-    .WW4BEG(Tile_X5Y6_WW4BEG),
-    .W6BEG(Tile_X5Y6_W6BEG),
-    .UO_OUT_TT_PROJECT0(Tile_X5Y6_UO_OUT_TT_PROJECT0),
-    .UO_OUT_TT_PROJECT1(Tile_X5Y6_UO_OUT_TT_PROJECT1),
-    .UO_OUT_TT_PROJECT2(Tile_X5Y6_UO_OUT_TT_PROJECT2),
-    .UO_OUT_TT_PROJECT3(Tile_X5Y6_UO_OUT_TT_PROJECT3),
-    .UO_OUT_TT_PROJECT4(Tile_X5Y6_UO_OUT_TT_PROJECT4),
-    .UO_OUT_TT_PROJECT5(Tile_X5Y6_UO_OUT_TT_PROJECT5),
-    .UO_OUT_TT_PROJECT6(Tile_X5Y6_UO_OUT_TT_PROJECT6),
-    .UO_OUT_TT_PROJECT7(Tile_X5Y6_UO_OUT_TT_PROJECT7),
-    .UIO_OUT_TT_PROJECT0(Tile_X5Y6_UIO_OUT_TT_PROJECT0),
-    .UIO_OUT_TT_PROJECT1(Tile_X5Y6_UIO_OUT_TT_PROJECT1),
-    .UIO_OUT_TT_PROJECT2(Tile_X5Y6_UIO_OUT_TT_PROJECT2),
-    .UIO_OUT_TT_PROJECT3(Tile_X5Y6_UIO_OUT_TT_PROJECT3),
-    .UIO_OUT_TT_PROJECT4(Tile_X5Y6_UIO_OUT_TT_PROJECT4),
-    .UIO_OUT_TT_PROJECT5(Tile_X5Y6_UIO_OUT_TT_PROJECT5),
-    .UIO_OUT_TT_PROJECT6(Tile_X5Y6_UIO_OUT_TT_PROJECT6),
-    .UIO_OUT_TT_PROJECT7(Tile_X5Y6_UIO_OUT_TT_PROJECT7),
-    .UIO_OE_TT_PROJECT0(Tile_X5Y6_UIO_OE_TT_PROJECT0),
-    .UIO_OE_TT_PROJECT1(Tile_X5Y6_UIO_OE_TT_PROJECT1),
-    .UIO_OE_TT_PROJECT2(Tile_X5Y6_UIO_OE_TT_PROJECT2),
-    .UIO_OE_TT_PROJECT3(Tile_X5Y6_UIO_OE_TT_PROJECT3),
-    .UIO_OE_TT_PROJECT4(Tile_X5Y6_UIO_OE_TT_PROJECT4),
-    .UIO_OE_TT_PROJECT5(Tile_X5Y6_UIO_OE_TT_PROJECT5),
-    .UIO_OE_TT_PROJECT6(Tile_X5Y6_UIO_OE_TT_PROJECT6),
-    .UIO_OE_TT_PROJECT7(Tile_X5Y6_UIO_OE_TT_PROJECT7),
-    .UI_IN_TT_PROJECT0(Tile_X5Y6_UI_IN_TT_PROJECT0),
-    .UI_IN_TT_PROJECT1(Tile_X5Y6_UI_IN_TT_PROJECT1),
-    .UI_IN_TT_PROJECT2(Tile_X5Y6_UI_IN_TT_PROJECT2),
-    .UI_IN_TT_PROJECT3(Tile_X5Y6_UI_IN_TT_PROJECT3),
-    .UI_IN_TT_PROJECT4(Tile_X5Y6_UI_IN_TT_PROJECT4),
-    .UI_IN_TT_PROJECT5(Tile_X5Y6_UI_IN_TT_PROJECT5),
-    .UI_IN_TT_PROJECT6(Tile_X5Y6_UI_IN_TT_PROJECT6),
-    .UI_IN_TT_PROJECT7(Tile_X5Y6_UI_IN_TT_PROJECT7),
-    .UIO_IN_TT_PROJECT0(Tile_X5Y6_UIO_IN_TT_PROJECT0),
-    .UIO_IN_TT_PROJECT1(Tile_X5Y6_UIO_IN_TT_PROJECT1),
-    .UIO_IN_TT_PROJECT2(Tile_X5Y6_UIO_IN_TT_PROJECT2),
-    .UIO_IN_TT_PROJECT3(Tile_X5Y6_UIO_IN_TT_PROJECT3),
-    .UIO_IN_TT_PROJECT4(Tile_X5Y6_UIO_IN_TT_PROJECT4),
-    .UIO_IN_TT_PROJECT5(Tile_X5Y6_UIO_IN_TT_PROJECT5),
-    .UIO_IN_TT_PROJECT6(Tile_X5Y6_UIO_IN_TT_PROJECT6),
-    .UIO_IN_TT_PROJECT7(Tile_X5Y6_UIO_IN_TT_PROJECT7),
-    .ENA_TT_PROJECT(Tile_X5Y6_ENA_TT_PROJECT),
-    .CLK_TT_PROJECT(Tile_X5Y6_CLK_TT_PROJECT),
-    .RST_N_TT_PROJECT(Tile_X5Y6_RST_N_TT_PROJECT),
-    .FrameData(Tile_X4Y6_FrameData_O),
-    .FrameData_O(Tile_X5Y6_FrameData_O),
-    .FrameStrobe(Tile_X5Y7_FrameStrobe_O),
-    .FrameStrobe_O(Tile_X5Y6_FrameStrobe_O)
 );
 
 
@@ -4803,75 +4862,88 @@ E_TT_IF
 
  //tile IO port will get directly connected to top-level tile module
  (* keep *)
-W_TT_IF
+W_TT_IF2
 `ifdef EMULATION
     #(
-    .Emulate_Bitstream(`Tile_X0Y8_Emulate_Bitstream)
+    .Tile_X0Y0_Emulate_Bitstream(`Tile_X0Y8_Emulate_Bitstream),
+    .Tile_X0Y1_Emulate_Bitstream(`Tile_X0Y9_Emulate_Bitstream)
     )
 `endif
-    Tile_X0Y8_W_TT_IF
+    Tile_X0Y8_W_TT_IF2
     (
-    .N_GBUF_END(Tile_X0Y9_N_GBUF_BEG),
-    .S_GBUF_FEED_END(Tile_X0Y7_S_GBUF_FEED_BEG),
-    .W1END(Tile_X1Y8_W1BEG),
-    .W2MID(Tile_X1Y8_W2BEG),
-    .W2END(Tile_X1Y8_W2BEGb),
-    .WW4END(Tile_X1Y8_WW4BEG),
-    .W6END(Tile_X1Y8_W6BEG),
-    .S_GBUF_FEED_BEG(Tile_X0Y8_S_GBUF_FEED_BEG),
-    .N_GBUF_BEG(Tile_X0Y8_N_GBUF_BEG),
-    .E1BEG(Tile_X0Y8_E1BEG),
-    .E2BEG(Tile_X0Y8_E2BEG),
-    .E2BEGb(Tile_X0Y8_E2BEGb),
-    .EE4BEG(Tile_X0Y8_EE4BEG),
-    .E6BEG(Tile_X0Y8_E6BEG),
-    .UO_OUT_TT_PROJECT0(Tile_X0Y8_UO_OUT_TT_PROJECT0),
-    .UO_OUT_TT_PROJECT1(Tile_X0Y8_UO_OUT_TT_PROJECT1),
-    .UO_OUT_TT_PROJECT2(Tile_X0Y8_UO_OUT_TT_PROJECT2),
-    .UO_OUT_TT_PROJECT3(Tile_X0Y8_UO_OUT_TT_PROJECT3),
-    .UO_OUT_TT_PROJECT4(Tile_X0Y8_UO_OUT_TT_PROJECT4),
-    .UO_OUT_TT_PROJECT5(Tile_X0Y8_UO_OUT_TT_PROJECT5),
-    .UO_OUT_TT_PROJECT6(Tile_X0Y8_UO_OUT_TT_PROJECT6),
-    .UO_OUT_TT_PROJECT7(Tile_X0Y8_UO_OUT_TT_PROJECT7),
-    .UIO_OUT_TT_PROJECT0(Tile_X0Y8_UIO_OUT_TT_PROJECT0),
-    .UIO_OUT_TT_PROJECT1(Tile_X0Y8_UIO_OUT_TT_PROJECT1),
-    .UIO_OUT_TT_PROJECT2(Tile_X0Y8_UIO_OUT_TT_PROJECT2),
-    .UIO_OUT_TT_PROJECT3(Tile_X0Y8_UIO_OUT_TT_PROJECT3),
-    .UIO_OUT_TT_PROJECT4(Tile_X0Y8_UIO_OUT_TT_PROJECT4),
-    .UIO_OUT_TT_PROJECT5(Tile_X0Y8_UIO_OUT_TT_PROJECT5),
-    .UIO_OUT_TT_PROJECT6(Tile_X0Y8_UIO_OUT_TT_PROJECT6),
-    .UIO_OUT_TT_PROJECT7(Tile_X0Y8_UIO_OUT_TT_PROJECT7),
-    .UIO_OE_TT_PROJECT0(Tile_X0Y8_UIO_OE_TT_PROJECT0),
-    .UIO_OE_TT_PROJECT1(Tile_X0Y8_UIO_OE_TT_PROJECT1),
-    .UIO_OE_TT_PROJECT2(Tile_X0Y8_UIO_OE_TT_PROJECT2),
-    .UIO_OE_TT_PROJECT3(Tile_X0Y8_UIO_OE_TT_PROJECT3),
-    .UIO_OE_TT_PROJECT4(Tile_X0Y8_UIO_OE_TT_PROJECT4),
-    .UIO_OE_TT_PROJECT5(Tile_X0Y8_UIO_OE_TT_PROJECT5),
-    .UIO_OE_TT_PROJECT6(Tile_X0Y8_UIO_OE_TT_PROJECT6),
-    .UIO_OE_TT_PROJECT7(Tile_X0Y8_UIO_OE_TT_PROJECT7),
-    .UI_IN_TT_PROJECT0(Tile_X0Y8_UI_IN_TT_PROJECT0),
-    .UI_IN_TT_PROJECT1(Tile_X0Y8_UI_IN_TT_PROJECT1),
-    .UI_IN_TT_PROJECT2(Tile_X0Y8_UI_IN_TT_PROJECT2),
-    .UI_IN_TT_PROJECT3(Tile_X0Y8_UI_IN_TT_PROJECT3),
-    .UI_IN_TT_PROJECT4(Tile_X0Y8_UI_IN_TT_PROJECT4),
-    .UI_IN_TT_PROJECT5(Tile_X0Y8_UI_IN_TT_PROJECT5),
-    .UI_IN_TT_PROJECT6(Tile_X0Y8_UI_IN_TT_PROJECT6),
-    .UI_IN_TT_PROJECT7(Tile_X0Y8_UI_IN_TT_PROJECT7),
-    .UIO_IN_TT_PROJECT0(Tile_X0Y8_UIO_IN_TT_PROJECT0),
-    .UIO_IN_TT_PROJECT1(Tile_X0Y8_UIO_IN_TT_PROJECT1),
-    .UIO_IN_TT_PROJECT2(Tile_X0Y8_UIO_IN_TT_PROJECT2),
-    .UIO_IN_TT_PROJECT3(Tile_X0Y8_UIO_IN_TT_PROJECT3),
-    .UIO_IN_TT_PROJECT4(Tile_X0Y8_UIO_IN_TT_PROJECT4),
-    .UIO_IN_TT_PROJECT5(Tile_X0Y8_UIO_IN_TT_PROJECT5),
-    .UIO_IN_TT_PROJECT6(Tile_X0Y8_UIO_IN_TT_PROJECT6),
-    .UIO_IN_TT_PROJECT7(Tile_X0Y8_UIO_IN_TT_PROJECT7),
-    .ENA_TT_PROJECT(Tile_X0Y8_ENA_TT_PROJECT),
-    .CLK_TT_PROJECT(Tile_X0Y8_CLK_TT_PROJECT),
-    .RST_N_TT_PROJECT(Tile_X0Y8_RST_N_TT_PROJECT),
-    .FrameData(Row_Y8_FrameData),
-    .FrameData_O(Tile_X0Y8_FrameData_O),
-    .FrameStrobe(Tile_X0Y9_FrameStrobe_O),
-    .FrameStrobe_O(Tile_X0Y8_FrameStrobe_O)
+    .Tile_X0Y0_S_GBUF_FEED_END(Tile_X0Y7_S_GBUF_FEED_BEG),
+    .Tile_X0Y0_W1END(Tile_X1Y8_W1BEG),
+    .Tile_X0Y0_W2MID(Tile_X1Y8_W2BEG),
+    .Tile_X0Y0_W2END(Tile_X1Y8_W2BEGb),
+    .Tile_X0Y0_WW4END(Tile_X1Y8_WW4BEG),
+    .Tile_X0Y0_W6END(Tile_X1Y8_W6BEG),
+    .Tile_X0Y1_N_GBUF_END(Tile_X0Y10_N_GBUF_BEG),
+    .Tile_X0Y1_W1END(Tile_X1Y9_W1BEG),
+    .Tile_X0Y1_W2MID(Tile_X1Y9_W2BEG),
+    .Tile_X0Y1_W2END(Tile_X1Y9_W2BEGb),
+    .Tile_X0Y1_WW4END(Tile_X1Y9_WW4BEG),
+    .Tile_X0Y1_W6END(Tile_X1Y9_W6BEG),
+    .Tile_X0Y0_N_GBUF_BEG(Tile_X0Y8_N_GBUF_BEG),
+    .Tile_X0Y0_E1BEG(Tile_X0Y8_E1BEG),
+    .Tile_X0Y0_E2BEG(Tile_X0Y8_E2BEG),
+    .Tile_X0Y0_E2BEGb(Tile_X0Y8_E2BEGb),
+    .Tile_X0Y0_EE4BEG(Tile_X0Y8_EE4BEG),
+    .Tile_X0Y0_E6BEG(Tile_X0Y8_E6BEG),
+    .Tile_X0Y1_E1BEG(Tile_X0Y9_E1BEG),
+    .Tile_X0Y1_E2BEG(Tile_X0Y9_E2BEG),
+    .Tile_X0Y1_E2BEGb(Tile_X0Y9_E2BEGb),
+    .Tile_X0Y1_EE4BEG(Tile_X0Y9_EE4BEG),
+    .Tile_X0Y1_E6BEG(Tile_X0Y9_E6BEG),
+    .Tile_X0Y1_S_GBUF_FEED_BEG(Tile_X0Y9_S_GBUF_FEED_BEG),
+    .UO_OUT_TT_PROJECT0(Tile_X0Y9_UO_OUT_TT_PROJECT0),
+    .UO_OUT_TT_PROJECT1(Tile_X0Y9_UO_OUT_TT_PROJECT1),
+    .UO_OUT_TT_PROJECT2(Tile_X0Y9_UO_OUT_TT_PROJECT2),
+    .UO_OUT_TT_PROJECT3(Tile_X0Y9_UO_OUT_TT_PROJECT3),
+    .UO_OUT_TT_PROJECT4(Tile_X0Y9_UO_OUT_TT_PROJECT4),
+    .UO_OUT_TT_PROJECT5(Tile_X0Y9_UO_OUT_TT_PROJECT5),
+    .UO_OUT_TT_PROJECT6(Tile_X0Y9_UO_OUT_TT_PROJECT6),
+    .UO_OUT_TT_PROJECT7(Tile_X0Y9_UO_OUT_TT_PROJECT7),
+    .UIO_OUT_TT_PROJECT0(Tile_X0Y9_UIO_OUT_TT_PROJECT0),
+    .UIO_OUT_TT_PROJECT1(Tile_X0Y9_UIO_OUT_TT_PROJECT1),
+    .UIO_OUT_TT_PROJECT2(Tile_X0Y9_UIO_OUT_TT_PROJECT2),
+    .UIO_OUT_TT_PROJECT3(Tile_X0Y9_UIO_OUT_TT_PROJECT3),
+    .UIO_OUT_TT_PROJECT4(Tile_X0Y9_UIO_OUT_TT_PROJECT4),
+    .UIO_OUT_TT_PROJECT5(Tile_X0Y9_UIO_OUT_TT_PROJECT5),
+    .UIO_OUT_TT_PROJECT6(Tile_X0Y9_UIO_OUT_TT_PROJECT6),
+    .UIO_OUT_TT_PROJECT7(Tile_X0Y9_UIO_OUT_TT_PROJECT7),
+    .UIO_OE_TT_PROJECT0(Tile_X0Y9_UIO_OE_TT_PROJECT0),
+    .UIO_OE_TT_PROJECT1(Tile_X0Y9_UIO_OE_TT_PROJECT1),
+    .UIO_OE_TT_PROJECT2(Tile_X0Y9_UIO_OE_TT_PROJECT2),
+    .UIO_OE_TT_PROJECT3(Tile_X0Y9_UIO_OE_TT_PROJECT3),
+    .UIO_OE_TT_PROJECT4(Tile_X0Y9_UIO_OE_TT_PROJECT4),
+    .UIO_OE_TT_PROJECT5(Tile_X0Y9_UIO_OE_TT_PROJECT5),
+    .UIO_OE_TT_PROJECT6(Tile_X0Y9_UIO_OE_TT_PROJECT6),
+    .UIO_OE_TT_PROJECT7(Tile_X0Y9_UIO_OE_TT_PROJECT7),
+    .UI_IN_TT_PROJECT0(Tile_X0Y9_UI_IN_TT_PROJECT0),
+    .UI_IN_TT_PROJECT1(Tile_X0Y9_UI_IN_TT_PROJECT1),
+    .UI_IN_TT_PROJECT2(Tile_X0Y9_UI_IN_TT_PROJECT2),
+    .UI_IN_TT_PROJECT3(Tile_X0Y9_UI_IN_TT_PROJECT3),
+    .UI_IN_TT_PROJECT4(Tile_X0Y9_UI_IN_TT_PROJECT4),
+    .UI_IN_TT_PROJECT5(Tile_X0Y9_UI_IN_TT_PROJECT5),
+    .UI_IN_TT_PROJECT6(Tile_X0Y9_UI_IN_TT_PROJECT6),
+    .UI_IN_TT_PROJECT7(Tile_X0Y9_UI_IN_TT_PROJECT7),
+    .UIO_IN_TT_PROJECT0(Tile_X0Y9_UIO_IN_TT_PROJECT0),
+    .UIO_IN_TT_PROJECT1(Tile_X0Y9_UIO_IN_TT_PROJECT1),
+    .UIO_IN_TT_PROJECT2(Tile_X0Y9_UIO_IN_TT_PROJECT2),
+    .UIO_IN_TT_PROJECT3(Tile_X0Y9_UIO_IN_TT_PROJECT3),
+    .UIO_IN_TT_PROJECT4(Tile_X0Y9_UIO_IN_TT_PROJECT4),
+    .UIO_IN_TT_PROJECT5(Tile_X0Y9_UIO_IN_TT_PROJECT5),
+    .UIO_IN_TT_PROJECT6(Tile_X0Y9_UIO_IN_TT_PROJECT6),
+    .UIO_IN_TT_PROJECT7(Tile_X0Y9_UIO_IN_TT_PROJECT7),
+    .ENA_TT_PROJECT(Tile_X0Y9_ENA_TT_PROJECT),
+    .CLK_TT_PROJECT(Tile_X0Y9_CLK_TT_PROJECT),
+    .RST_N_TT_PROJECT(Tile_X0Y9_RST_N_TT_PROJECT),
+    .Tile_X0Y0_FrameData(Row_Y8_FrameData),
+    .Tile_X0Y0_FrameData_O(Tile_X0Y8_FrameData_O),
+    .Tile_X0Y0_FrameStrobe_O(Tile_X0Y8_FrameStrobe_O),
+    .Tile_X0Y1_FrameData(Row_Y9_FrameData),
+    .Tile_X0Y1_FrameData_O(Tile_X0Y9_FrameData_O),
+    .Tile_X0Y1_FrameStrobe(Tile_X0Y10_FrameStrobe_O)
 );
 
 
@@ -5188,80 +5260,6 @@ E_TT_IF
     .FrameData_O(Tile_X5Y8_FrameData_O),
     .FrameStrobe(Tile_X5Y9_FrameStrobe_O),
     .FrameStrobe_O(Tile_X5Y8_FrameStrobe_O)
-);
-
-
- //tile IO port will get directly connected to top-level tile module
- (* keep *)
-W_TT_IF
-`ifdef EMULATION
-    #(
-    .Emulate_Bitstream(`Tile_X0Y9_Emulate_Bitstream)
-    )
-`endif
-    Tile_X0Y9_W_TT_IF
-    (
-    .N_GBUF_END(Tile_X0Y10_N_GBUF_BEG),
-    .S_GBUF_FEED_END(Tile_X0Y8_S_GBUF_FEED_BEG),
-    .W1END(Tile_X1Y9_W1BEG),
-    .W2MID(Tile_X1Y9_W2BEG),
-    .W2END(Tile_X1Y9_W2BEGb),
-    .WW4END(Tile_X1Y9_WW4BEG),
-    .W6END(Tile_X1Y9_W6BEG),
-    .S_GBUF_FEED_BEG(Tile_X0Y9_S_GBUF_FEED_BEG),
-    .N_GBUF_BEG(Tile_X0Y9_N_GBUF_BEG),
-    .E1BEG(Tile_X0Y9_E1BEG),
-    .E2BEG(Tile_X0Y9_E2BEG),
-    .E2BEGb(Tile_X0Y9_E2BEGb),
-    .EE4BEG(Tile_X0Y9_EE4BEG),
-    .E6BEG(Tile_X0Y9_E6BEG),
-    .UO_OUT_TT_PROJECT0(Tile_X0Y9_UO_OUT_TT_PROJECT0),
-    .UO_OUT_TT_PROJECT1(Tile_X0Y9_UO_OUT_TT_PROJECT1),
-    .UO_OUT_TT_PROJECT2(Tile_X0Y9_UO_OUT_TT_PROJECT2),
-    .UO_OUT_TT_PROJECT3(Tile_X0Y9_UO_OUT_TT_PROJECT3),
-    .UO_OUT_TT_PROJECT4(Tile_X0Y9_UO_OUT_TT_PROJECT4),
-    .UO_OUT_TT_PROJECT5(Tile_X0Y9_UO_OUT_TT_PROJECT5),
-    .UO_OUT_TT_PROJECT6(Tile_X0Y9_UO_OUT_TT_PROJECT6),
-    .UO_OUT_TT_PROJECT7(Tile_X0Y9_UO_OUT_TT_PROJECT7),
-    .UIO_OUT_TT_PROJECT0(Tile_X0Y9_UIO_OUT_TT_PROJECT0),
-    .UIO_OUT_TT_PROJECT1(Tile_X0Y9_UIO_OUT_TT_PROJECT1),
-    .UIO_OUT_TT_PROJECT2(Tile_X0Y9_UIO_OUT_TT_PROJECT2),
-    .UIO_OUT_TT_PROJECT3(Tile_X0Y9_UIO_OUT_TT_PROJECT3),
-    .UIO_OUT_TT_PROJECT4(Tile_X0Y9_UIO_OUT_TT_PROJECT4),
-    .UIO_OUT_TT_PROJECT5(Tile_X0Y9_UIO_OUT_TT_PROJECT5),
-    .UIO_OUT_TT_PROJECT6(Tile_X0Y9_UIO_OUT_TT_PROJECT6),
-    .UIO_OUT_TT_PROJECT7(Tile_X0Y9_UIO_OUT_TT_PROJECT7),
-    .UIO_OE_TT_PROJECT0(Tile_X0Y9_UIO_OE_TT_PROJECT0),
-    .UIO_OE_TT_PROJECT1(Tile_X0Y9_UIO_OE_TT_PROJECT1),
-    .UIO_OE_TT_PROJECT2(Tile_X0Y9_UIO_OE_TT_PROJECT2),
-    .UIO_OE_TT_PROJECT3(Tile_X0Y9_UIO_OE_TT_PROJECT3),
-    .UIO_OE_TT_PROJECT4(Tile_X0Y9_UIO_OE_TT_PROJECT4),
-    .UIO_OE_TT_PROJECT5(Tile_X0Y9_UIO_OE_TT_PROJECT5),
-    .UIO_OE_TT_PROJECT6(Tile_X0Y9_UIO_OE_TT_PROJECT6),
-    .UIO_OE_TT_PROJECT7(Tile_X0Y9_UIO_OE_TT_PROJECT7),
-    .UI_IN_TT_PROJECT0(Tile_X0Y9_UI_IN_TT_PROJECT0),
-    .UI_IN_TT_PROJECT1(Tile_X0Y9_UI_IN_TT_PROJECT1),
-    .UI_IN_TT_PROJECT2(Tile_X0Y9_UI_IN_TT_PROJECT2),
-    .UI_IN_TT_PROJECT3(Tile_X0Y9_UI_IN_TT_PROJECT3),
-    .UI_IN_TT_PROJECT4(Tile_X0Y9_UI_IN_TT_PROJECT4),
-    .UI_IN_TT_PROJECT5(Tile_X0Y9_UI_IN_TT_PROJECT5),
-    .UI_IN_TT_PROJECT6(Tile_X0Y9_UI_IN_TT_PROJECT6),
-    .UI_IN_TT_PROJECT7(Tile_X0Y9_UI_IN_TT_PROJECT7),
-    .UIO_IN_TT_PROJECT0(Tile_X0Y9_UIO_IN_TT_PROJECT0),
-    .UIO_IN_TT_PROJECT1(Tile_X0Y9_UIO_IN_TT_PROJECT1),
-    .UIO_IN_TT_PROJECT2(Tile_X0Y9_UIO_IN_TT_PROJECT2),
-    .UIO_IN_TT_PROJECT3(Tile_X0Y9_UIO_IN_TT_PROJECT3),
-    .UIO_IN_TT_PROJECT4(Tile_X0Y9_UIO_IN_TT_PROJECT4),
-    .UIO_IN_TT_PROJECT5(Tile_X0Y9_UIO_IN_TT_PROJECT5),
-    .UIO_IN_TT_PROJECT6(Tile_X0Y9_UIO_IN_TT_PROJECT6),
-    .UIO_IN_TT_PROJECT7(Tile_X0Y9_UIO_IN_TT_PROJECT7),
-    .ENA_TT_PROJECT(Tile_X0Y9_ENA_TT_PROJECT),
-    .CLK_TT_PROJECT(Tile_X0Y9_CLK_TT_PROJECT),
-    .RST_N_TT_PROJECT(Tile_X0Y9_RST_N_TT_PROJECT),
-    .FrameData(Row_Y9_FrameData),
-    .FrameData_O(Tile_X0Y9_FrameData_O),
-    .FrameStrobe(Tile_X0Y10_FrameStrobe_O),
-    .FrameStrobe_O(Tile_X0Y9_FrameStrobe_O)
 );
 
 

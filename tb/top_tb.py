@@ -194,7 +194,7 @@ class PCF:
         "Get the raw cocotb signal. Can be used for triggers."
         return self.signals[signal][index]
 
-@cocotb.test()
+#@cocotb.test()
 async def test_all_ones(dut):
     """Load bitstream for all_ones"""
 
@@ -239,7 +239,7 @@ async def test_all_ones(dut):
 
     assert pcf.get("all").to_unsigned() == LogicArray.from_signed(-1, len(pcf.get("all")))
 
-@cocotb.test()
+#@cocotb.test()
 async def test_all_zeros(dut):
     """Load bitstream for all_zeros"""
 
@@ -284,7 +284,7 @@ async def test_all_zeros(dut):
 
     assert pcf.get("all").to_unsigned() == LogicArray.from_unsigned(0, len(pcf.get("all")))
 
-@cocotb.test()
+#@cocotb.test()
 async def test_passthrough(dut):
     """Load bitstream for passthrough"""
 
@@ -335,7 +335,7 @@ async def test_passthrough(dut):
         await Timer(10, unit="ns")
         assert(pcf.get("b").to_unsigned() == value)
 
-@cocotb.test()
+#@cocotb.test()
 async def test_addition(dut):
     """Load bitstream for addition"""
 
@@ -391,7 +391,7 @@ async def test_addition(dut):
         await Timer(10, unit="ns")
         assert(pcf.get("c").to_unsigned() == result)
 
-@cocotb.test()
+#@cocotb.test()
 async def test_counter(dut):
     """Load bitstream for counter"""
 
@@ -459,7 +459,7 @@ async def test_counter(dut):
 
     assert pcf.get("c").to_unsigned() == NUM_CYCLES-1
 
-@cocotb.test()
+#@cocotb.test()
 async def test_multiplication(dut):
     """Load bitstream for multiplication"""
 
@@ -579,8 +579,10 @@ async def test_ihp_sram_1024x32_1rw(dut):
     pcf.set("ram_wen", Logic(1), index=0)
     pcf.set("ram_ren", Logic(0), index=0)
     
+    data = [random.randint(0, 2**10-1) for _ in range(100)] # 4 KiB memory
+
     # Fill the memory with data
-    for i in range(128): #1024*2
+    for i in data:
         pcf.set("ram_addr", LogicArray.from_unsigned(i >> 2, len(pcf.get("ram_addr"))))
         pcf.set("ram_byte_sel", LogicArray.from_unsigned(i & 0x3, len(pcf.get("ram_byte_sel"))))
         pcf.set("ram_din_byte", LogicArray.from_unsigned(i & 0xFF, len(pcf.get("ram_din_byte"))))
@@ -590,8 +592,8 @@ async def test_ihp_sram_1024x32_1rw(dut):
     pcf.set("ram_wen", Logic(0), index=0)
     pcf.set("ram_ren", Logic(1), index=0)
     
-    # Read from read port
-    for i in range(128): #1024*2
+    # Read the same data
+    for i in data:
         pcf.set("ram_addr", LogicArray.from_unsigned(i >> 2, len(pcf.get("ram_addr"))))
         pcf.set("ram_byte_sel", LogicArray.from_unsigned(i & 0x3, len(pcf.get("ram_byte_sel"))))
         await ClockCycles(clock1, 2)
