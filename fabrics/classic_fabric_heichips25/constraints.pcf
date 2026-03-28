@@ -187,3 +187,30 @@ set_io uio[4] X4Y0/A
 set_io uio[5] X4Y0/B
 set_io uio[6] X4Y0/C
 set_io uio[7] X4Y0/D
+
+# For FazyRV-ExoTiny CCX
+
+set_io fazyrv_clk_i         X1Y10/A
+set_io fazyrv_en_i          X1Y10/C
+set_io fazyrv_rst_in        X1Y10/D
+
+set_io fazyrv_qspi_sdio[0]  X3Y10/A
+set_io fazyrv_qspi_sdio[1]  X3Y10/B
+set_io fazyrv_qspi_sdio[2]  X3Y10/C
+set_io fazyrv_qspi_sdio[3]  X3Y10/D
+set_io fazyrv_qspi_sck_o    X4Y10/A
+set_io fazyrv_qspi_cs_rom_o X4Y10/B
+set_io fazyrv_qspi_cs_ram_o X4Y10/C
+
+set_io fazyrv_spi_sdi_i     X1Y0/A
+set_io fazyrv_spi_sdo_o     X1Y0/B
+set_io fazyrv_spi_sck_o     X1Y0/C
+
+set_io fazyrv_gpi_i[0]      X3Y0/A
+set_io fazyrv_gpi_i[1]      X3Y0/B
+set_io fazyrv_gpi_i[2]      X3Y0/C
+set_io fazyrv_gpi_i[3]      X3Y0/D
+set_io fazyrv_gpi_i[4]      X4Y0/A
+set_io fazyrv_gpi_i[5]      X4Y0/B
+
+set_io fazyrv_gpo_o         X4Y0/C
