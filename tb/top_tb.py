@@ -194,7 +194,7 @@ class PCF:
         "Get the raw cocotb signal. Can be used for triggers."
         return self.signals[signal][index]
 
-#@cocotb.test()
+@cocotb.test()
 async def test_all_ones(dut):
     """Load bitstream for all_ones"""
 
@@ -239,7 +239,7 @@ async def test_all_ones(dut):
 
     assert pcf.get("all").to_unsigned() == LogicArray.from_signed(-1, len(pcf.get("all")))
 
-#@cocotb.test()
+@cocotb.test()
 async def test_all_zeros(dut):
     """Load bitstream for all_zeros"""
 
@@ -284,7 +284,7 @@ async def test_all_zeros(dut):
 
     assert pcf.get("all").to_unsigned() == LogicArray.from_unsigned(0, len(pcf.get("all")))
 
-#@cocotb.test()
+@cocotb.test()
 async def test_passthrough(dut):
     """Load bitstream for passthrough"""
 
@@ -335,7 +335,7 @@ async def test_passthrough(dut):
         await Timer(10, unit="ns")
         assert(pcf.get("b").to_unsigned() == value)
 
-#@cocotb.test()
+@cocotb.test()
 async def test_addition(dut):
     """Load bitstream for addition"""
 
@@ -391,7 +391,7 @@ async def test_addition(dut):
         await Timer(10, unit="ns")
         assert(pcf.get("c").to_unsigned() == result)
 
-#@cocotb.test()
+@cocotb.test()
 async def test_counter(dut):
     """Load bitstream for counter"""
 
@@ -459,7 +459,7 @@ async def test_counter(dut):
 
     assert pcf.get("c").to_unsigned() == NUM_CYCLES-1
 
-#@cocotb.test()
+@cocotb.test()
 async def test_multiplication(dut):
     """Load bitstream for multiplication"""
 

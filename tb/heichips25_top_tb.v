@@ -104,6 +104,10 @@ module heichips25_top_tb;
     //assign fpga_cs_n_PAD = 1'b1;
     //assign fpga_sclk_PAD = 1'b0;
     //assign fpga_mosi_PAD = 1'b0;
+    
+    // Required for GL simulation
+    pullup(fpga_cs_n_PAD);
+    pulldown(fpga_sclk_PAD);
 
     `endif
 
