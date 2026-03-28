@@ -62,6 +62,8 @@ async def clear_bitstream_spi(spi_master):
     if emulation:
         return
 
+    print("Clearing the bitstream...")
+
     FRAME_BITS_PER_ROW = 32
     MAX_FRAMES_PER_COL = 20
     FRAME_SELECT_WIDTH = 5 # hardcoded, should be based on FABRIC_NUM_COLUMNS
@@ -69,26 +71,30 @@ async def clear_bitstream_spi(spi_master):
     BITSTREAM_START = 0xFAB0FAB1
     DESYNC_FLAG = 20
 
+    NUM_ROWS = 11
+    NUM_COLUMNS = 6
+
     # Header
     await spi_master.write([0xFA, 0xB0, 0xFA, 0xB1])
 
-    for column in range(6):
-        for frame in range(MAX_FRAMES_PER_COL):
-            
-            header = (column & 0x1F) << 27 | frame & 0xFFFFF
-            header_bytes = [header & 0xFF000000 >> 24, header & 0xFF0000 >> 16, header & 0xFF00 >> 8, header & 0xFF]
+    for column in reversed(range(NUM_COLUMNS)):
+        for frame in reversed(range(MAX_FRAMES_PER_COL)):
+            header = (column & 0x1F) << 27 | (1<<frame) & 0xFFFFF
+            header_bytes = [(header & 0xFF000000) >> 24, (header & 0xFF0000) >> 16, (header & 0xFF00) >> 8, header & 0xFF]
             await spi_master.write(header_bytes)
-            
-            for row in range(11):
+
+            for row in reversed(range(NUM_ROWS)):
                 await spi_master.write([0x00, 0x00, 0x00, 0x00])
-            
+    
     header = 1 << DESYNC_FLAG
-    header_bytes = [header & 0xFF000000 >> 24, header & 0xFF0000 >> 16, header & 0xFF00 >> 8, header & 0xFF]
+    header_bytes = [(header & 0xFF000000) >> 24, (header & 0xFF0000) >> 16, (header & 0xFF00) >> 8, header & 0xFF]
     await spi_master.write(header_bytes)
 
 async def upload_bitstream_spi(bitstream_path, spi_master):
     if emulation:
         return
+
+    print("Writing the bitstream...")
 
     with open(bitstream_path, 'br') as f:
         data = f.read(4)

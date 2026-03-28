@@ -11,12 +11,12 @@ can be held high, no idle cycles required.
 */
 
 module fabric_config #(
-    	parameter FrameBitsPerRow = 32,
-	parameter MaxFramesPerCol = 20,
+    parameter FrameBitsPerRow = 32,
+    parameter MaxFramesPerCol = 20,
     parameter FrameSelectWidth = 5, // hardcoded, should be based on NumColumns
-	
-	parameter NumColumns = 12,
-	parameter NumRows = 18
+    
+    parameter NumColumns = 12,
+    parameter NumRows = 18
 )(
     input  logic  clk_i,
     input  logic  rst_ni,
