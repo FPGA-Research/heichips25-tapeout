@@ -47,7 +47,7 @@
           ))
           (final: prev: {
             openroad = prev.openroad.overrideAttrs {
-              patches = prev.openroad.patches ++ [./disable_auto_taper.patch];
+              patches = prev.openroad.patches ++ [./nix/disable_auto_taper.patch];
             };
           })
           ];
